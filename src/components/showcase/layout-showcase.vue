@@ -1,11 +1,17 @@
 <template>
   <quasar-layout>
     <div slot="header" class="toolbar primary shadow-1">
-      <button v-link="'/'">
+      <button v-link="store.backRoute">
         <i>arrow_back</i>
       </button>
       <quasar-toolbar-title :padding="1">
-        Quasar Framework Showcase
+        <i
+          v-show="store.icon"
+          style="font-size: 2rem; margin-right: 5px;"
+        >
+          {{ store.icon }}
+        </i>
+        {{ store.title }}
       </quasar-toolbar-title>
     </div>
 
@@ -16,9 +22,13 @@
 </template>
 
 <script>
+import store from './showcase-store'
+
 export default {
   data () {
-    return {}
+    return {
+      store: store.state
+    }
   }
 }
 </script>

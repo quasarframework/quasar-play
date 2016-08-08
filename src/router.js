@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import categories from './components/showcase/categories'
+import showcaseStore from './components/showcase/showcase-store'
 Vue.use(VueRouter)
 
 /*
@@ -35,14 +37,33 @@ let routes = {
     subRoutes: {
       '/': {component: load('showcase/showcase')}
     }
+  },
+  '*': {
+    component: load('error404')
   }
 }
 
-let router = new VueRouter()
+categories.forEach(category => {
+  category.features.forEach(feature => {
+    let path = '/' + category.hash + '/' + feature.hash
 
-router.map(routes)
-router.redirect({
-  '*': '/'
+    routes['/showcase'].subRoutes[path] = {
+      component: $.extend(
+        {},
+        load('showcase' + path),
+        {
+          route: {
+            activate ({next}) {
+              showcaseStore.set(feature)
+              next()
+            }
+          }
+        }
+      )
+    }
+  })
 })
 
+let router = new VueRouter()
+router.map(routes)
 export default router

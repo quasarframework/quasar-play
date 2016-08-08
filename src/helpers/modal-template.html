@@ -1,0 +1,25 @@
+<quasar-layout>
+
+  <div slot="header" class="toolbar">
+    <button @click="close()"><i>keyboard_arrow_left</i></button>
+    <quasar-toolbar-title :padding="1">
+      Header
+    </quasar-toolbar-title>
+    <button @click="openModal()"><i>open_in_new</i></button>
+  </div>
+
+  <div slot="footer" class="toolbar">
+    <quasar-toolbar-title :padding="1">
+      Footer
+    </quasar-toolbar-title>
+  </div>
+
+  <div class="layout-scroll-area">
+    <div class="layout-padding">
+      <h1>Modal {{number}}</h1>
+      <button class="primary" @click="openModal()">Open Another Modal</button>
+      <h5 v-for="n in 15">This is a Modal presenting a Screen.</h5>
+    </div>
+  </div>
+
+</quasar-layout>
