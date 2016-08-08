@@ -14,11 +14,11 @@
           Option 1
         </label>
         <label>
-          <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
+          <quasar-radio :model.sync="option" value="opt2" class="teal"></quasar-radio>
           Option 2
         </label>
         <label>
-          <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
+          <quasar-radio :model.sync="option" value="opt3" class="orange"></quasar-radio>
           Option 3
         </label>
       </div>
@@ -30,21 +30,21 @@
           <i>mail</i>
           <div class="item-content">
             <div class="item-label">Option 1</div>
-            <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
+            <quasar-radio :model.sync="option" value="opt1" class="teal"></quasar-radio>
           </div>
         </label>
         <label class="item">
           <i>mail</i>
           <div class="item-content">
             <div class="item-label">Option 2</div>
-            <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
+            <quasar-radio :model.sync="option" value="opt2" class="teal"></quasar-radio>
           </div>
         </label>
         <label class="item">
           <i>mail</i>
           <div class="item-content">
             <div class="item-label">Option 3</div>
-            <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
+            <quasar-radio :model.sync="option" value="opt3" class="teal"></quasar-radio>
           </div>
         </label>
       </div>

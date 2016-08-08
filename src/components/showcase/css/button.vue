@@ -72,7 +72,7 @@
 
       <h5>Bordered Buttons</h5>
       <p class="group">
-        <button class="light bordered">Push</button>
+        <button class="light bordered">Bordered</button>
         <button class="circular light bordered"><i>card_giftcard</i></button>
       <p>
 

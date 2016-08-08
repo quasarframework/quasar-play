@@ -12,6 +12,21 @@
         <quasar-toggle :model.sync="checked"></quasar-toggle>
         Toggle Label
       </label>
+      <br><br>
+      <label>
+        <quasar-toggle :model.sync="checked" class="orange"></quasar-toggle>
+        Toggle Label
+      </label>
+      <br><br>
+      <label>
+        <quasar-toggle :model.sync="checked" class="teal"></quasar-toggle>
+        Toggle Label
+      </label>
+      <br><br>
+      <label>
+        <quasar-toggle :model.sync="checked" class="dark"></quasar-toggle>
+        Toggle Label
+      </label>
 
       <br><br>
 
@@ -21,14 +36,14 @@
           <i>mail</i>
           <div class="item-content">
             <div class="item-label">Toggle Label</div>
-            <quasar-toggle :model.sync="checked"></quasar-toggle>
+            <quasar-toggle :model.sync="checked" class="purple"></quasar-toggle>
           </div>
         </label>
         <label class="item">
           <i>mail</i>
           <div class="item-content">
             <div class="item-label">Toggle Label</div>
-            <quasar-toggle :model.sync="checked"></quasar-toggle>
+            <quasar-toggle :model.sync="checked" class="red"></quasar-toggle>
           </div>
         </label>
       </div>
@@ -55,7 +70,7 @@
 export default {
   data () {
     return {
-      checked: false
+      checked: true
     }
   }
 }

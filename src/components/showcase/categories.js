@@ -157,14 +157,14 @@ export default [
         hash: 'rating'
       },
       {
-        title: 'Searchbar',
+        title: 'Search',
         icon: 'search',
-        hash: 'searchbar'
+        hash: 'search'
       },
       {
-        title: 'Selectbox',
+        title: 'Select',
         icon: 'event_note',
-        hash: 'selectbox'
+        hash: 'select'
       },
       {
         title: 'Toggle',
@@ -215,7 +215,7 @@ export default [
       {
         title: 'Progress Bar',
         icon: 'hourglass_empty',
-        hash: 'progress-bar'
+        hash: 'progress'
       },
       {
         title: 'Pull to Refresh',
@@ -277,6 +277,11 @@ export default [
         title: 'App Visibility',
         icon: 'visibility',
         hash: 'app-visibility'
+      },
+      {
+        title: 'Platform Detection',
+        icon: 'phonelink',
+        hash: 'platform-detection'
       },
       {
         title: 'Vue Transitions',

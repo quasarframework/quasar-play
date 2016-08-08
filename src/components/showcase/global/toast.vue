@@ -119,7 +119,7 @@ export default {
       var self = this
 
       this.toast = Toast.create({
-        html: 'Dismiss this toast with nearby Dissmiss Toast button',
+        html: 'Dismiss this toast with nearby "Hide Toast" button',
         timeout: 0,
         onDismiss () {
           self.toastShowing = false

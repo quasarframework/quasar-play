@@ -190,7 +190,7 @@ export default {
                   }
                 }
               ]
-            })
+            }).show()
           }
         },
         {

@@ -12,6 +12,21 @@
         <quasar-checkbox :model.sync="checked"></quasar-checkbox>
         Checkbox Label
       </label>
+      <br>
+      <label>
+        <quasar-checkbox :model.sync="checked" class="teal"></quasar-checkbox>
+        Checkbox Label
+      </label>
+      <br>
+      <label>
+        <quasar-checkbox :model.sync="checked" class="orange"></quasar-checkbox>
+        Checkbox Label
+      </label>
+      <br>
+      <label>
+        <quasar-checkbox :model.sync="checked" class="dark"></quasar-checkbox>
+        Checkbox Label
+      </label>
 
       <br><br>
       <h5>Inside of a List</h5>
@@ -55,7 +70,7 @@
 export default {
   data () {
     return {
-      checked: false
+      checked: true
     }
   }
 }
