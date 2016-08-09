@@ -63,7 +63,69 @@ export default [
       {
         title: 'Card',
         icon: 'contact_mail',
-        hash: 'card'
+        hash: 'card',
+        tabs: [
+          {
+            title: 'Basic Card',
+            label: 'Basic',
+            hash: 'basic',
+            icon: 'account_box'
+          },
+          {
+            title: 'Coloring Cards',
+            label: 'Coloring',
+            hash: 'coloring',
+            icon: 'style'
+          },
+          {
+            title: 'Minimizing Cards',
+            label: 'Minimizing',
+            hash: 'minimizing',
+            icon: 'vertical_align_bottom'
+          },
+          {
+            title: 'Card with List',
+            label: 'With List',
+            hash: 'with-list',
+            icon: 'list'
+          },
+          {
+            title: 'Card with Images',
+            label: 'With Images',
+            hash: 'with-images',
+            icon: 'insert_photo'
+          },
+          {
+            title: 'Card with Videos',
+            label: 'With Videos',
+            hash: 'with-videos',
+            icon: 'subscriptions'
+          },
+          {
+            title: 'Social Card',
+            label: 'Social',
+            hash: 'social',
+            icon: 'person_add'
+          },
+          {
+            title: 'Card with Map',
+            label: 'With Map',
+            hash: 'map',
+            icon: 'map'
+          },
+          {
+            title: 'Card with Collapsible',
+            label: 'With Collapsible',
+            hash: 'with-collapsible',
+            icon: 'format_line_spacing'
+          },
+          {
+            title: 'Card with FAB',
+            label: 'With FAB',
+            hash: 'with-fab',
+            icon: 'play_for_work'
+          }
+        ]
       },
       {
         title: 'Chat',
@@ -93,7 +155,51 @@ export default [
       {
         title: 'List',
         icon: 'list',
-        hash: 'list'
+        hash: 'list',
+        tabs: [
+          {
+            title: 'Basic List',
+            label: 'Basic',
+            hash: 'basic',
+            icon: 'view_list'
+          },
+          {
+            title: 'Complex List',
+            label: 'Complex',
+            hash: 'complex',
+            icon: 'line_style'
+          },
+          {
+            title: 'List Headers',
+            label: 'Headers',
+            hash: 'headers',
+            icon: 'view_headline'
+          },
+          {
+            title: 'Multiline List Items',
+            label: 'Multiline',
+            hash: 'multiline',
+            icon: 'short_text'
+          },
+          {
+            title: 'List with Sliding Actions',
+            label: 'Sliding Actions',
+            hash: 'sliding-actions',
+            icon: 'settings_ethernet'
+          },
+          {
+            title: 'List with Form Components',
+            label: 'With Form Components',
+            hash: 'with-form-components',
+            icon: 'format_shapes'
+          },
+          {
+            title: 'List with Images',
+            label: 'With Images',
+            hash: 'with-images',
+            icon: 'insert_photo'
+          }
+        ]
       },
       {
         title: 'Shadows',
@@ -134,7 +240,21 @@ export default [
       {
         title: 'Text Inputs',
         icon: 'border_color',
-        hash: 'text-inputs'
+        hash: 'text-input',
+        tabs: [
+          {
+            title: 'Input Textbox',
+            label: 'Textbox',
+            hash: 'textbox',
+            icon: 'text_format'
+          },
+          {
+            title: 'Input Textarea',
+            label: 'Textarea',
+            hash: 'textarea',
+            icon: 'content_paste'
+          }
+        ]
       },
       {
         title: 'Numeric',
@@ -243,9 +363,9 @@ export default [
         hash: 'state'
       },
       {
-        title: 'Tab',
+        title: 'Tabs',
         icon: 'tab',
-        hash: 'tab'
+        hash: 'tabs'
       },
       {
         title: 'Tooltip',

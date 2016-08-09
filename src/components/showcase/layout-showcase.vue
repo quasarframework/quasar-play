@@ -14,6 +14,15 @@
         {{ store.title }}
       </quasar-toolbar-title>
     </div>
+    <quasar-tabs v-if="store.tabs.length > 0" slot="navigation" class="primary">
+      <quasar-tab
+        v-for="tab in store.tabs"
+        :icon="tab.icon"
+        v-link="{path: '/showcase' + store.hash + '/' + tab.hash, exact: true}"
+      >
+        {{ tab.label }}
+      </quasar-tab>
+    </quasar-tabs>
 
     <div class="layout-view">
       <router-view class="layout-scroll-area"></router-view>

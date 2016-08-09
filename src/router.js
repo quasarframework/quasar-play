@@ -43,27 +43,49 @@ let routes = {
   }
 }
 
+function component (path, config) {
+  return {
+    component: $.extend(
+      {},
+      load('showcase' + path),
+      {
+        route: {
+          activate ({next}) {
+            showcaseStore.set(config)
+            next()
+          }
+        }
+      }
+    )
+  }
+}
+
+let router = new VueRouter()
+
 categories.forEach(category => {
   category.features.forEach(feature => {
     let path = '/' + category.hash + '/' + feature.hash
 
-    routes['/showcase'].subRoutes[path] = {
-      component: $.extend(
-        {},
-        load('showcase' + path),
-        {
-          route: {
-            activate ({next}) {
-              showcaseStore.set(feature)
-              next()
-            }
-          }
-        }
-      )
+    if (!feature.tabs) {
+      routes['/showcase'].subRoutes[path] = component(path, feature)
+      return
     }
+
+    feature.tabs.forEach(tab => {
+      let subpath = path + '/' + tab.hash
+      routes['/showcase'].subRoutes[subpath] = component(subpath, {
+        title: tab.title,
+        hash: path,
+        icon: feature.icon,
+        tabs: feature.tabs
+      })
+    })
+
+    router.redirect({
+      ['/showcase' + path]: '/showcase' + path + '/' + feature.tabs[0].hash
+    })
   })
 })
 
-let router = new VueRouter()
 router.map(routes)
 export default router

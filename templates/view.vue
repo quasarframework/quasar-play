@@ -1,6 +1,8 @@
 <template>
-  <!-- Place content inside a root node -->
-  <div></div>
+  <div>
+    <div class="layout-padding">
+    </div>
+  </div>
 </template>
 
 <script>
