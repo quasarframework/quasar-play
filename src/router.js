@@ -63,6 +63,9 @@ function component (path, config) {
 let router = new VueRouter()
 
 categories.forEach(category => {
+  if (category.extract) {
+    return
+  }
   category.features.forEach(feature => {
     let path = '/' + category.hash + '/' + feature.hash
 
@@ -87,5 +90,12 @@ categories.forEach(category => {
   })
 })
 
+router.on('/showcase/layout', {
+  component: load('showcase/layout/layout'),
+  subRoutes: {
+    '/': {component: load('showcase/layout/about')},
+    '/drawer': {component: load('showcase/layout/drawer')}
+  }
+})
 router.map(routes)
 export default router

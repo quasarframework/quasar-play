@@ -29,7 +29,7 @@
       </div>
 
       <h5 style="margin-bottom: 100px;">
-        There's also the fixed positioned one on bottom
+        There's also the absolute positioned one on bottom
         right of screen which maintains position on Page scroll.
         It has a click/tap event injected on itself when expanded.
         You can close it by clicking/tapping on the whitey backdrop.

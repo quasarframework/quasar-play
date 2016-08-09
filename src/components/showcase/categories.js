@@ -33,11 +33,12 @@ export default [
   {
     title: 'Layout',
     hash: 'layout',
+    extract: true,
     features: [
       {
         title: 'Layout',
         icon: 'web',
-        hash: 'layout'
+        hash: ''
       },
       {
         title: 'Drawer',
