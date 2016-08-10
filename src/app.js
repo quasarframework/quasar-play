@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueTouch from 'vue-touch'
 import Quasar from 'quasar'
-import 'velocity-animate'
-import 'velocity-animate/velocity.ui'
 import Router from './router'
 
 Vue.use(VueTouch)

@@ -2,21 +2,21 @@
   <div>
     <div class="layout-padding" style="max-width: 600px;">
       <h5>Accordion</h5>
-      <ul v-collapsible>
-        <li>
+      <ul class="collapsible">
+        <li v-collapsible>
           <div><i>assignment_ind</i>First</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </div>
         </li>
-        <li>
+        <li v-collapsible>
           <div><i>explore</i>Second</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
         </li>
-        <li>
+        <li v-collapsible>
           <div><i>shopping_cart</i>Third</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -26,22 +26,22 @@
       </ul>
 
       <h5>Popout</h5>
-      <ul class="popout" v-collapsible>
-        <li>
+      <ul class="popout collapsible">
+        <li v-collapsible>
           <div><i>room</i>First</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </div>
         </li>
-        <li>
+        <li v-collapsible>
           <div><i>shopping_basket</i>Second</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </div>
         </li>
-        <li>
+        <li v-collapsible>
           <div><i>loyalty</i>Third</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -50,8 +50,8 @@
       </ul>
 
       <h5>Ubiquity. Using Cards as content.</h5>
-      <ul v-collapsible>
-        <li>
+      <ul class="collapsible">
+        <li v-collapsible>
           <div><i>assignment_ind</i>First Card</div>
           <div class="card bg-primary text-white">
             <div class="card-title">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li v-collapsible>
           <div><i>explore</i>Second Card</div>
           <div class="card">
             <img :src="'statics/mountains.jpg'">
@@ -71,7 +71,7 @@
             </div>
           </div>
         </li>
-        <li>
+        <li v-collapsible>
           <div><i>shopping_cart</i>Third Card</div>
           <div class="card">
             <div class="card-media">
@@ -124,22 +124,22 @@
         </li>
       </ul>
 
-      <h5>Freely - Can open multiple items simultaneously</h5>
-      <ul v-collapsible="true">
-        <li>
+      <h5>Free - Can open multiple items simultaneously</h5>
+      <ul class="collapsible">
+        <li v-collapsible.free>
           <div><i>assignment_ind</i>First</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </div>
         </li>
-        <li>
+        <li v-collapsible.free>
           <div><i>explore</i>Second</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
         </li>
-        <li>
+        <li v-collapsible.free>
           <div><i>shopping_cart</i>Third</div>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

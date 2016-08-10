@@ -7,10 +7,6 @@
       <quasar-toolbar-title :padding="1">
         Play URL
       </quasar-toolbar-title>
-      <button v-link="'/showcase'">
-        Showcase
-        <i class="on-right">layers</i>
-      </button>
     </div>
 
     <quasar-tabs slot="navigation" class="primary">

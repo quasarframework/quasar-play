@@ -79,12 +79,6 @@ export default [
             icon: 'style'
           },
           {
-            title: 'Minimizing Cards',
-            label: 'Minimizing',
-            hash: 'minimizing',
-            icon: 'vertical_align_bottom'
-          },
-          {
             title: 'Card with List',
             label: 'With List',
             hash: 'with-list',

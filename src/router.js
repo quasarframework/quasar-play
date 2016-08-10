@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import categories from './components/showcase/categories'
 import showcaseStore from './components/showcase/showcase-store'
+import { Utils } from 'quasar'
 Vue.use(VueRouter)
 
 /*
@@ -9,14 +10,7 @@ Vue.use(VueRouter)
   to benefit from HMR
  */
 function load (name) {
-  if (process.env.NODE_ENV === 'development') {
-    return require('components/' + name + '.vue')
-  }
-  else {
-    return (resolve) => {
-      require('bundle?lazy!components/' + name + '.vue')(resolve)
-    }
-  }
+  return require('components/' + name + '.vue')
 }
 
 let routes = {
@@ -45,7 +39,7 @@ let routes = {
 
 function component (path, config) {
   return {
-    component: $.extend(
+    component: Utils.extend(
       {},
       load('showcase' + path),
       {

@@ -80,7 +80,7 @@
 
       <h1>Links</h1>
       <p>
-         Links: <a href="#!/showcase">Some link</a> and <a href="#!/showcase">Some other link</a>.
+         Links: <a>Some link</a> and <a>Some other link</a>.
       </p>
     </div>
   </div>
