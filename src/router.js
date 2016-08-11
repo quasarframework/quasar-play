@@ -91,5 +91,11 @@ router.on('/showcase/layout', {
     '/drawer': {component: load('showcase/layout/drawer')}
   }
 })
+routes['/showcase'].subRoutes['/layout/grid-layout'] = component('/layout/grid-layout', {
+  title: 'Grid Layout',
+  hash: '/showcase/layout/grid-layout',
+  icon: 'web'
+})
+
 router.map(routes)
 export default router

@@ -44,6 +44,11 @@ export default [
         title: 'Drawer',
         icon: 'input',
         hash: 'drawer'
+      },
+      {
+        title: 'Grid Layout',
+        icon: 'web',
+        hash: 'grid-layout'
       }
     ]
   },
@@ -136,11 +141,6 @@ export default [
         title: 'HTML Table',
         icon: 'widgets',
         hash: 'html-table'
-      },
-      {
-        title: 'Flexbox',
-        icon: 'web',
-        hash: 'flexbox'
       },
       {
         title: 'Label',

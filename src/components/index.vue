@@ -3,7 +3,7 @@
     <h1 class="text-center">Quasar Play</h1>
     <small>for Quasar Framework</small>
     <br><br>
-    <button class="secondary push" v-link="'/play'">
+    <button class="secondary push cordova-only" v-link="'/play'">
       <i class="on-left">play_circle_outline</i>
       Play URL
     </button>

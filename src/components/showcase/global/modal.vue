@@ -75,7 +75,7 @@ function openScreenModal () {
 
 function openMinimizedModal () {
   Modal.create({
-    template: '<h1>Minimized Modal</h1><p>This one has backdrop on small screens too.</p>' +
+    template: '<h4>Minimized Modal</h4><p>This one has backdrop on small screens too.</p>' +
               '<button class="tertiary" @click="close()">Close Me</button>'
   }).set({
     minimized: true
@@ -86,7 +86,7 @@ function openMinimizedModal () {
 
 function openMaximizedModal () {
   Modal.create({
-    template: '<h1>Maximized Modal</h1><p>This one is maximized on bigger screens too.</p>' +
+    template: '<h4>Maximized Modal</h4><p>This one is maximized on bigger screens too.</p>' +
               '<button class="tertiary" @click="close()">Close Me</button>'
   }).set({
     maximized: true
