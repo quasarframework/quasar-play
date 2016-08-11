@@ -233,7 +233,6 @@ export default {
 #view-flexbox
   margin-top 30px
   max-width 95vw
-  padding-left 12px
 
   .row, .column, .flex
     > div > div
