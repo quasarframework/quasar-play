@@ -4,7 +4,9 @@
       <h2>"Slide" Transition</h2>
 
       <p>
-        Click/Tap on the Toggle below to see the transition in action.
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on the Toggle below to see the transition in action.
       </p>
       <p>
         <label>

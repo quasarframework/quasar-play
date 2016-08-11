@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Basic Notifiers</h5>
+      <h5>Basic Toasts</h5>
       <p class="group">
         <button class="primary" @click="basicToast()">
           Basic Toast
@@ -12,7 +12,7 @@
         </button>
       </p>
 
-      <h5>Types of Notifiers</h5>
+      <h5>Types of Toasts</h5>
       <p class="group">
         <button
           v-for="type in types"
@@ -23,7 +23,7 @@
         </button>
       </p>
 
-      <h5>Notifiers with Options</h5>
+      <h5>Toasts with Options</h5>
       <p class="group">
         <button class="primary" @click="noTimeoutToast()">
           Basic Toast with No Timeout
@@ -38,7 +38,7 @@
         </button>
       </p>
 
-      <h5>Controlling Notifiers</h5>
+      <h5>Controlling Toasts</h5>
       <p class="group">
         <button
           class="secondary"
@@ -56,10 +56,23 @@
         </button>
       </p>
 
-      <h5>Simultaneous Multiple Notifiers</h5>
+      <h5>Simultaneous Multiple Toasts</h5>
       <p class="group">
-        <button class="primary" @click="showMultipleNotifiers()">
-          Show Multiple Notifiers
+        <button class="primary" @click="showMultipleToasts()">
+          Show Multiple Toasts
+        </button>
+      </p>
+
+      <h5>Custom Colors</h5>
+      <p class="group">
+        <button class="orange" @click="showColorToast('orange')">
+          Orange
+        </button>
+        <button class="purple" @click="showColorToast('purple')">
+          Purple
+        </button>
+        <button class="brown" @click="showColorToast('brown')">
+          Brown
         </button>
       </p>
     </div>
@@ -119,7 +132,7 @@ export default {
       var self = this
 
       this.toast = Toast.create({
-        html: 'Dismiss this toast with nearby "Hide Toast" button',
+        html: 'Dismiss this toast with nearby "Dismiss Toast" button',
         timeout: 0,
         onDismiss () {
           self.toastShowing = false
@@ -135,9 +148,15 @@ export default {
       this.toast.dismiss()
       this.toastShowing = false
     },
-    showMultipleNotifiers () {
+    showMultipleToasts () {
       this.types.forEach((type) => {
         this.toastWithType(type)
+      })
+    },
+    showColorToast (color) {
+      Toast.create({
+        html: `Some ${color} toast.`,
+        color
       })
     }
   }

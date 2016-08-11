@@ -2,7 +2,13 @@
   <div>
     <div class="layout-padding">
       <p class="caption">
-        Click/Tap on progress bars to change their value
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on progress bars to change their binded value.
+        <span class="desktop-only">
+          On a real mobile device the Progress bars
+          are much thinner by default.
+        </span>
       </p>
 
       <h5>Determinate State</h5>

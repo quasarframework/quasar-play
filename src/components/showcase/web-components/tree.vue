@@ -2,7 +2,9 @@
   <div>
     <div class="layout-padding">
       <p>
-        Tap on items to expand/contract and especially on "Item 1.3"
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on items to expand/contract and especially on "Item 1.3"
         to trigger an event.
       </p>
       <p>

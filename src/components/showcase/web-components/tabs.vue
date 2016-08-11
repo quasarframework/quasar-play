@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="layout-padding">
-      <p class="caption">
+      <p class="caption desktop-only">
         On a real mobile device Tabs look a little different
         in the sense that arrows won't be shown since user can
         pan (touch action) through the menu.
-      </h5>
+      </p>
 
       <h5>They come in colors</h5>
       <div class="group">
@@ -27,7 +27,11 @@
       </div>
 
       <br>
-      <h5>Click/Tap Tabs from below.</h5>
+      <h5>
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on Tabs from below.
+      </h5>
 
       <quasar-tabs>
         <quasar-tab
@@ -62,7 +66,8 @@ export default {
         {
           label: 'Tab 1',
           icon: 'message',
-          target: '#tab-1'
+          target: '#tab-1',
+          active: true
         },
         {
           label: 'Disabled',

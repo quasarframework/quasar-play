@@ -14,8 +14,6 @@
       <quasar-tab icon="info" v-link="'/play/how-to'">How To</quasar-tab>
     </quasar-tabs>
 
-    <div class="layout-view">
-      <router-view class="layout-scroll-area"></router-view>
-    </div>
+    <router-view class="layout-view"></router-view>
   </quasar-layout>
 </template>

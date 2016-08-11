@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     bounceImage (element) {
-      console.log(element)
       Velocity(element, 'callout.tada', {
         display: null,
         stagger: 200

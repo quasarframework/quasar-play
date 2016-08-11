@@ -2,7 +2,9 @@
   <div>
     <div class="layout-padding">
       <h5>
-        Tap on each inline FABs below.
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on each inline FABs below.
         The one that opens on the right also has a backdrop.
       </h5>
 
@@ -41,7 +43,7 @@
         type="primary"
         active-icon="alarm"
         direction="up"
-        style="right: 20px;"
+        style="right: 18px; bottom: 18px;"
       >
         <quasar-small-fab class="purple">mail</quasar-small-fab>
         <quasar-small-fab class="secondary">alarm</quasar-small-fab>

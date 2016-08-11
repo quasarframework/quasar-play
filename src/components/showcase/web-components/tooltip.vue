@@ -1,8 +1,18 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Hover the elements below.</h5>
-      <div v-tooltip.literal="Quasar Rulz!" style="width: 200px; height: 70px;background-color: #26A69A;">
+      <h5>
+        <span class="desktop-only">
+          Move mouse over the elements below. On a mobile device,
+          you need to tap the elements.
+        </span>
+        <span class="mobile-only">
+          Tap on elements below. On desktop you can move the mouse
+          over the elements.
+        </span>
+      </h5>
+
+      <div v-tooltip.literal="Quasar Rulz!" style="margin-top: 40px;width: 200px; height: 70px;background-color: #26A69A;">
         &nbsp;
       </div>
       <br><br>

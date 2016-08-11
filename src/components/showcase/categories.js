@@ -177,12 +177,6 @@ export default [
             icon: 'short_text'
           },
           {
-            title: 'List with Sliding Actions',
-            label: 'Sliding Actions',
-            hash: 'sliding-actions',
-            icon: 'settings_ethernet'
-          },
-          {
             title: 'List with Form Components',
             label: 'With Form Components',
             hash: 'with-form-components',

@@ -2,7 +2,9 @@
   <div>
     <div class="layout-padding">
       <p class="caption">
-        Click/Tap on each type to see it in action.
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on each type to see it in action.
       </p>
 
       <div class="list item-delimiter highlight" style="max-width: 600px;">
@@ -117,11 +119,11 @@ export default {
 
             var timeout = setInterval(() => {
               progress.model++
-              if (progress.model === 50) {
+              if (progress.model === 40) {
                 clearInterval(timeout)
                 dialog.close()
               }
-            }, 1000)
+            }, 500)
           }
         },
         {

@@ -3,8 +3,10 @@
     <div class="layout-padding">
       <blockquote>
         <small>
-          This view contains two drawers. One on left and one on right. Click/Tap on menu
-          buttons from top-left or top-right corners of the screen, or swipe the
+          This view contains two drawers. One on left and one on right.
+          <span class="desktop-only">Click</span>
+          <span class="mobile-only">Tap</span> on menu buttons from top-left
+          or top-right corners of the screen, or swipe the
           Drawers into view from the left or right edge of screen.
         </small>
       </blockquote>

@@ -2,7 +2,9 @@
   <div>
     <div class="layout-padding">
       <p class="caption">
-        Click/Tap on each type to see an Action Sheet in action.
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on each type to see an Action Sheet in action.
       </p>
 
       <div class="list item-delimiter highlight">

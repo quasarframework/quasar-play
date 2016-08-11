@@ -31,7 +31,7 @@ export default {
   },
   beforeCompile () {
     store.set({
-      title: 'Quasar Framework Showcase',
+      title: 'Quasar Showcase',
       icon: 'layers',
       backRoute: '/'
     })

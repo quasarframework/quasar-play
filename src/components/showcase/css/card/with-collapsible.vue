@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Click/Tap on items to expand.</h5>
+      <h5>
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on items to expand.
+      </h5>
 
       <div class="card" style="margin-top: 25px;">
         <div class="card-title">

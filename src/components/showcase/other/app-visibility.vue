@@ -2,7 +2,14 @@
   <div>
     <div class="layout-padding">
       <p class="caption">
-        Switch to other tab in your browser then back to see Visibility in action.
+        Switch to another
+        <span class="cordova-hide">
+          tab in your browser
+        </span>
+        <span class="cordova-only">
+          App
+        </span>
+        then come back here to see Visibility in action.
       </p>
 
       <p v-el:visibility></p>

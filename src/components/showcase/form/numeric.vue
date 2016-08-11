@@ -3,7 +3,7 @@
   <div>
     <div class="layout-padding">
       <div class="label bg-secondary text-white">
-        Model <span class="right-detail"><em>{{number}}</em> &nbsp;&nbsp;(1-7)</span>
+        Model <span class="right-detail"><em>{{number}}</em> &nbsp;&nbsp;(1-17)</span>
       </div>
 
       <br><br>
@@ -17,7 +17,7 @@
         <label class="item">
           <div class="item-content">
             <div class="item-label fixed-label">
-              Some quasar-numeric
+              Some number
             </div>
             <div class="item-value">
               <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
@@ -27,7 +27,7 @@
         <label class="item">
           <div class="item-content">
             <div class="item-label fixed-label">
-              Some quasar-numeric
+              Some number
             </div>
             <div class="item-value">
               <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>

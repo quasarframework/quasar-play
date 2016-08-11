@@ -12,9 +12,9 @@
         <table :class="style">
           <thead>
             <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>In Stock</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>In Stock</th>
             </tr>
           </thead>
 

@@ -38,9 +38,7 @@
       </div>
     </quasar-drawer>
 
-    <div class="layout-view">
-      <router-view class="layout-scroll-area"></router-view>
-    </div>
+    <router-view class="layout-view"></router-view>
 
     <quasar-drawer right-side swipe-only>
       <div class="toolbar light">
