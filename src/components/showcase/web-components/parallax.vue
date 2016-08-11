@@ -1,10 +1,10 @@
 <template>
   <div class="view-parallax">
     <div class="layout-padding">
-      <h5>
+      <p class="caption">
         Scroll down (best using scrollbar instead of mouse scroll
         if on desktop) to see Parallax in action.
-      </h5>
+      </p>
 
       <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
     </div>

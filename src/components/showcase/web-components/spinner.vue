@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Configure them</h5>
+      <p class="caption">Configure them</p>
 
       <div class="list item-delimiter bordered">
         <div class="item">
@@ -21,7 +21,10 @@
         </div>
       </div>
 
-      <h5>Hover over them to see their names</h5>
+      <br>
+      <p class="caption">
+        Hover over them to see their names
+      </p>
 
       <div style="margin-top: 20px" class="group">
         <spinner
@@ -33,10 +36,11 @@
         ></spinner>
       </div>
 
-      <h5>
+      <br><br>
+      <p class="caption">
         Default Theme Spinner:
         <spinner :color="color" :size="size"></spinner>
-      </h5>
+      </p>
     </div>
   </div>
 </template>

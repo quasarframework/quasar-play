@@ -78,7 +78,6 @@
               <button class="primary clear">View</button>
             </div>
           </div>
-          </div>
         </div>
       </div>
 

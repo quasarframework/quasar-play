@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>
+      <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
         on items to expand.
-      </h5>
+      </p>
 
       <div class="card" style="margin-top: 25px;">
         <div class="card-title">

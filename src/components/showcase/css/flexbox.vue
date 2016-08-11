@@ -38,7 +38,7 @@
           <div class="auto"><div>auto</div></div>
         </div>
 
-        <h5>Grid in Grid in Grid</h5>
+        <p class="caption">Grid in Grid in Grid</p>
         <div class="row gutter">
           <div>
             <div>
@@ -66,7 +66,7 @@
           </div>
         </div>
 
-        <h5>Top-aligned Row Cells</h5>
+        <p class="caption">Top-aligned Row Cells</p>
         <div class="row gutter items-start">
           <div>
             <div>This cell should be top-aligned.</div>
@@ -78,7 +78,7 @@
             <div>This cell should be top-aligned.</div>
           </div>
         </div>
-        <h5>Bottom-aligned Row Cells</h5>
+        <p class="caption">Bottom-aligned Row Cells</p>
         <div class="row gutter items-end">
           <div class="auto">
             <div>This cell should be bottom-aligned.</div>
@@ -90,7 +90,7 @@
             <div>This cell should be bottom-aligned.</div>
           </div>
         </div>
-        <h5>Vertically Centered Row Cells</h5>
+        <p class="caption">Vertically Centered Row Cells</p>
         <div class="row gutter items-center">
           <div>
             <div>This cell should be vertically-centered with the cell to its right.</div>
@@ -99,7 +99,7 @@
             <div>Curabitur pulvinar dolor lectus, quis porta turpis ullamcorper nec. Quisque eget varius turpis, quis iaculis nibh. Ut interdum ligula id metus hendrerit cursus. Integer eu leo felis. Aenean commodo ultrices nunc, sit amet blandit elit gravida in. Sed est ligula, ornare ac nisi adipiscing, iaculis facilisis tellus. Nullam vel facilisis libero. Duis semper lobortis elit, vitae dictum erat.</div>
           </div>
         </div>
-        <h5>Mixed Vertical Alignment</h5>
+        <p class="caption">Mixed Vertical Alignment</p>
         <div class="row gutter">
           <div class="self-start">
             <div>This cell should be top aligned.</div>
@@ -115,7 +115,7 @@
           </div>
         </div>
 
-        <h5>Small Gutter</h5>
+        <p class="caption">Small Gutter</p>
         <div class="row small-gutter">
           <div class="auto">
             <div>1/2</div>
@@ -133,7 +133,7 @@
           </div>
         </div>
 
-        <h5>Medium Gutter</h5>
+        <p class="caption">Medium Gutter</p>
         <div class="row gutter">
           <div class="auto">
             <div>1/2</div>
@@ -151,7 +151,7 @@
           </div>
         </div>
 
-        <h5>Big Gutter</h5>
+        <p class="caption">Big Gutter</p>
         <div class="row big-gutter">
           <div class="auto">
             <div>1/2</div>
@@ -169,7 +169,7 @@
           </div>
         </div>
 
-        <h5>Large Gutter</h5>
+        <p class="caption">Large Gutter</p>
         <div class="row large-gutter">
           <div class="auto">
             <div>1/2</div>
@@ -188,7 +188,7 @@
         </div>
 
 
-        <h5>Responsive Gutter</h5>
+        <p class="caption">Responsive Gutter</p>
         <div class="row sm-small-gutter md-gutter gt-md-large-gutter">
           <div class="auto">
             <div>1/2</div>
@@ -206,7 +206,7 @@
           </div>
         </div>
 
-        <h5>Responsive</h5>
+        <p class="caption">Responsive</p>
         <div class="row gutter sm-column">
           <div class="width-2of3"><div>2/3</div></div>
           <div class="width-1of5"><div>1/5</div></div>

@@ -1,15 +1,15 @@
 <template>
   <quasar-slider arrows dots class="text-white full-height">
     <div slot="slide" class="bg-primary centered">
-      <div>Slide 1</div>
+      <h1>Slide 1</h1>
       <button class="dark glossy" @click="close()">Close Me</button>
     </div>
     <div slot="slide" class="bg-secondary centered">
-      <div>Slide 2</div>
+      <h1>Slide 2</h1>
       <button class="dark glossy" @click="close()">Close Me</button>
     </div>
     <div slot="slide" class="bg-tertiary centered">
-      <div>Slide 3</div>
+      <h1>Slide 3</h1>
       <button class="dark glossy" @click="close()">Close Me</button>
     </div>
   </quasar-slider>

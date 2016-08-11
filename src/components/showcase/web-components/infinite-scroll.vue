@@ -2,7 +2,7 @@
   <!-- Place content inside a root node -->
   <div>
     <div class="layout-padding">
-      <h5>Scroll down to see it in action.</h5>
+      <p class="caption">Scroll down to see it in action.</p>
 
       <br>
       <quasar-infinite-scroll :handler="refresher">

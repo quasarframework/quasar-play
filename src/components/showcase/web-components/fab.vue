@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>
+      <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
         on each inline FABs below.
         The one that opens on the right also has a backdrop.
-      </h5>
+      </p>
 
       <div class="column items-center" style="margin-top: 100px; margin-bottom: 100px;">
         <quasar-fab type="purple" icon="keyboard_arrow_up" direction="up">

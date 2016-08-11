@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h2>"Slide" Transition</h2>
+      <h5>"Slide" Transition</h5>
 
       <p>
         <span class="desktop-only">Click</span>

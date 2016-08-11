@@ -2,10 +2,10 @@
   <div>
     <div class="layout-padding">
       <quasar-pull-to-refresh :handler="refresher">
-        <h5>
+        <p class="caption">
           Pull down to refresh on the content below.
           On desktop it works by dragging the content down.
-        </h5>
+        </p>
 
         <br>
         <p v-for="item in items" class="caption highlight-and-fade">

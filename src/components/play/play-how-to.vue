@@ -14,16 +14,15 @@
             <p>
               This will start a webserver equipped with hot-reload and display a QR code
               that points to that server. Use Quasar Play app to scan the QR code by tapping
-              on the FAB <button class="small circular primary"><i>add</i></button> button and
-              then on <button class="small circular secondary"><i>phonelink_ring</i></button>.
+              on the FAB (<i>add</i>) button and
+              then on (<i>phonelink_ring</i>).
             </p>
             <p>
               If your development machine has multiple IPs then Quasar CLI will
               ask you to select one. Make sure that your phone and dev machine are on the
               same network and can ping themselves and so select correct IP interface.
               Manually add URL by tapping on the FAB
-              <button class="small circular primary"><i>add</i></button> button and then on
-              <button class="small circular primary clear shadow-1"><i>add</i></button>.
+              (<i>add</i>) button and then on (<i>add</i>).
             </p>
             <blockquote>
               <small>
@@ -38,8 +37,7 @@
           <div>
             <p>
               Now that you have your URL, you can play with your App on your mobile phone by
-              tapping on the <button class="primary small clear shadow-1"><i>ondemand_video</i></button>
-              button.
+              tapping on the (<i>ondemand_video</i>) button.
             </p>
             <p>
               Whenever you change your code the App is updated (quite fast). Due to hot-reload,

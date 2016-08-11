@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Click on buttons and image below to open Dropdowns.</h5>
+      <p class="caption">Click on buttons and image below to open Dropdowns.</p>
 
       <div>
         <quasar-dropdown>

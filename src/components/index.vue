@@ -1,6 +1,6 @@
 <template>
   <div class="full-height full-width column items-center justify-center bg-primary text-white">
-    <h1>Quasar Play</h1>
+    <h1 class="text-center">Quasar Play</h1>
     <small>for Quasar Framework</small>
     <br><br>
     <button class="secondary push" v-link="'/play'">

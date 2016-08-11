@@ -28,7 +28,7 @@
       </quasar-tab>
     </quasar-tabs>
 
-    <quasar-drawer swipe-only>
+    <quasar-drawer>
       <div class="list bordered inner-delimiter highlight">
         <template v-for="category in categories">
           <div class="list-header">

@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>
+      <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
         to switch between fullscreen mode and default mode.
-      </h5>
+      </p>
 
       <p>
         <button

@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>
+      <p class="caption">
         Right click (or long tap) anywhere on the Page below (not on header though).
-      </h5>
+      </p>
     </div>
 
     <quasar-context-menu>

@@ -5,9 +5,12 @@
         On a real mobile device Tabs look a little different
         in the sense that arrows won't be shown since user can
         pan (touch action) through the menu.
+        <br>
       </p>
 
-      <h5>They come in colors</h5>
+      <p class="caption">
+        They come in colors
+      </p>
       <div class="group">
         <quasar-tabs class="primary">
           <quasar-tab icon="mail">Mails</quasar-tab>
@@ -27,11 +30,11 @@
       </div>
 
       <br>
-      <h5>
+      <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
         on Tabs from below.
-      </h5>
+      </p>
 
       <quasar-tabs>
         <quasar-tab

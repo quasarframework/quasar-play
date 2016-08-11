@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>
+      <p class="caption">
         Basic Slider. No controls. Just swipe between slides or
         use you mouse to drag slides to left or right.
-      </h5>
+      </p>
       <quasar-slider class="text-white">
         <div slot="slide" class="bg-primary">
           Slide 1
@@ -17,7 +17,10 @@
         </div>
       </quasar-slider>
 
-      <h5>Slider with Arrows, Dots and Fullscreen controls.</h5>
+      <br>
+      <p class="caption">
+        Slider with Arrows, Dots and Fullscreen controls.
+      </p>
       <quasar-slider arrows dots fullscreen class="text-white">
         <div slot="slide" class="bg-primary">
           <div>Slide 1</div>
@@ -31,7 +34,10 @@
         </div>
       </quasar-slider>
 
-      <h5>Slider with Centered Content</h5>
+      <br>
+      <p class="caption">
+        Slider with Centered Content
+      </p>
       <quasar-slider arrows dots class="text-white">
         <div slot="slide" class="bg-primary centered">
           Slide 1
@@ -44,7 +50,10 @@
         </div>
       </quasar-slider>
 
-      <h5>Slider with Custom Actions as Controls</h5>
+      <br>
+      <p class="caption">
+        Slider with Custom Actions as Controls
+      </p>
       <quasar-slider arrows dots actions class="text-white">
         <div slot="slide" class="bg-primary">
           <div v-for="n in 20">Slide {{n}}</div>
@@ -60,7 +69,10 @@
         <i slot="action">add_shopping_cart</i>
       </quasar-slider>
 
-      <h5>Launch Slider on Fullscreen</h5>
+      <br>
+      <p class="caption">
+        Launch Slider on Fullscreen
+      </p>
       <button class="primary glossy" @click="launchModal()">
         Launch
       </button>

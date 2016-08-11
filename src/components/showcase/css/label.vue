@@ -2,14 +2,14 @@
   <!-- Place content inside a root node -->
   <div>
     <div class="layout-padding">
-      <h5>Basic Labels</h5>
+      <p>Basic Labels</p>
       <p>
         <span class="label bg-primary text-white">label</span>
         <span class="label bg-secondary text-white shadow-1">10k</span>
       </p>
       <br>
 
-      <h5>Floating Labels</h5>
+      <p>Floating Labels</p>
       <p>
         <button class="light relative-position">
           Inbox
@@ -23,7 +23,7 @@
       </p>
       <br>
 
-      <h5>Tag Labels</h5>
+      <p>Tag Labels</p>
       <p>
         <span class="tag label tag bg-light">New <i class="on-right">mail</i></span>
       </p>
@@ -35,7 +35,7 @@
       </p>
       <br>
 
-      <h5>Pointing Labels</h5>
+      <p>Pointing Labels</p>
       <p>
         <span class="label pointing-up bg-primary text-white">up</span>
         <span class="label pointing-down bg-primary text-white">down</span>
@@ -44,7 +44,7 @@
       </p>
       <br>
 
-      <h5>With Icons</h5>
+      <p>With Icons</p>
       <p>
         <span class="label bg-primary text-white">
           <i class="on-left">mail</i>
@@ -57,7 +57,7 @@
       </p>
       <br>
 
-      <h5>With Text or Icon Detail</h5>
+      <p>With Text or Icon Detail</p>
       <p>
         <span class="label bg-amber">
           <span class="left-detail">Left</span> Detail
@@ -76,7 +76,7 @@
       </p>
       <br>
 
-      <h5>Circular/Oval Labels</h5>
+      <p>Circular/Oval Labels</p>
       <p>
         <span class="label circular bg-primary text-white">2</span>
         <span class="label circular bg-secondary text-white shadow-1">10k</span>
