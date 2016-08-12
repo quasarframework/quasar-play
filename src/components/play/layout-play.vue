@@ -1,6 +1,6 @@
 <template>
   <quasar-layout>
-    <div slot="header" class="toolbar primary">
+    <div slot="header" class="toolbar">
       <button v-link="'/'">
         <i>arrow_back</i>
       </button>
@@ -9,7 +9,7 @@
       </quasar-toolbar-title>
     </div>
 
-    <quasar-tabs slot="navigation" class="primary">
+    <quasar-tabs slot="navigation">
       <quasar-tab icon="queue_play_next" v-link="{path: '/play', exact: true}">URL List</quasar-tab>
       <quasar-tab icon="info" v-link="'/play/how-to'">How To</quasar-tab>
     </quasar-tabs>

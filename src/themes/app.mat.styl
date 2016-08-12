@@ -13,12 +13,14 @@ $generic-input-size            ?= 25px
 $generic-input-border-width    ?= 2px
 
 $typography-font-family     ?= 'Roboto'
-$typography-p-margin        ?= .5rem 0 1rem 0
-$typography-p-line-height   ?= 1.4rem
 
+$toolbar-color              ?= white
+$toolbar-background         ?= $primary
+$toolbar-active-color       ?= $primary
+$toolbar-faded-color        ?= composite-color($primary)
 
 // Quasar Material Design Stylus
 // --------------------------------------------------
 // Custom App variables must be declared before importing Quasar.
 // Quasar will use its default values when a custom variable isn't provided.
-@import '~quasar-framework/dist/quasar.mat'
+@import '~quasar-framework/dist/quasar.mat.styl'

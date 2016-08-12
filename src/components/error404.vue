@@ -1,5 +1,5 @@
 <template>
-  <div class="full-height full-width text-white bg-primary column items-center justify-center">
+  <div class="full-height full-width bg-light column items-center justify-center">
     <h1>Quasar Play</h1>
     <h5>
       Oops. Nothing to see here...

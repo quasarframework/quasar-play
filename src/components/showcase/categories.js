@@ -46,6 +46,16 @@ export default [
         hash: 'drawer'
       },
       {
+        title: 'Toolbar',
+        icon: 'view_day',
+        hash: 'toolbar'
+      },
+      {
+        title: 'Tabs',
+        icon: 'tab',
+        hash: 'tabs'
+      },
+      {
         title: 'Grid Layout',
         icon: 'web',
         hash: 'grid-layout'
@@ -350,11 +360,6 @@ export default [
         title: 'State',
         icon: 'shuffle',
         hash: 'state'
-      },
-      {
-        title: 'Tabs',
-        icon: 'tab',
-        hash: 'tabs'
       },
       {
         title: 'Tooltip',

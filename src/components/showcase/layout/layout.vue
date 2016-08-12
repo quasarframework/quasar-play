@@ -1,6 +1,6 @@
 <template>
   <quasar-layout>
-    <div slot="header" class="toolbar primary">
+    <div slot="header" class="toolbar">
       <button class="left-drawer-opener">
         <i>menu</i>
       </button>
@@ -18,6 +18,8 @@
 
     <quasar-tabs slot="navigation">
       <quasar-tab icon="view_quilt" v-link="{path: '/showcase/layout', exact: true}">About</quasar-tab>
+      <quasar-tab icon="view_day" v-link="'/showcase/layout/toolbar'">Toolbar</quasar-tab>
+      <quasar-tab icon="view_day" v-link="'/showcase/layout/tabs'">Tabs</quasar-tab>
       <quasar-tab icon="input" v-link="'/showcase/layout/drawer'">Drawer</quasar-tab>
     </quasar-tabs>
 
@@ -53,7 +55,7 @@
       </p>
     </quasar-drawer>
 
-    <div slot="footer" class="toolbar primary">
+    <div slot="footer" class="toolbar">
       <div class="auto flex justify-center">
         <button v-link="{path: '/showcase', exact: true}">
           <i class="on-left blink">

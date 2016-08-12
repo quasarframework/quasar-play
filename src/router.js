@@ -88,6 +88,8 @@ router.on('/showcase/layout', {
   component: load('showcase/layout/layout'),
   subRoutes: {
     '/': {component: load('showcase/layout/about')},
+    '/toolbar': {component: load('showcase/layout/toolbar')},
+    '/tabs': {component: load('showcase/layout/tabs')},
     '/drawer': {component: load('showcase/layout/drawer')}
   }
 })

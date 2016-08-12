@@ -1,5 +1,5 @@
 <template>
-  <div class="full-height full-width column items-center justify-center bg-primary text-white">
+  <div class="full-height full-width column items-center justify-center bg-light">
     <h1 class="text-center">Quasar Play</h1>
     <small>for Quasar Framework</small>
     <br><br>
