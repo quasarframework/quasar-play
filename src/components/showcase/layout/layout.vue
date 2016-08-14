@@ -57,12 +57,15 @@
 
     <div slot="footer" class="toolbar">
       <div class="auto flex justify-center">
-        <button v-link="{path: '/showcase', exact: true}">
+        <button class="cordova-only" v-link="{path: '/showcase', exact: true}">
           <i class="on-left blink">
             replay
           </i>
           Back to Showcase
         </button>
+        <quasar-toolbar-title :padding="0" class="cordova-hide">
+          Footer
+        </quasar-toolbar-title>
       </div>
     </div>
   </quasar-layout>

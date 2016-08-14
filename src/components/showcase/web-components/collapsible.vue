@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding" style="max-width: 600px;">
-      <h5>Accordion</h5>
+      <p class="caption">Accordion</p>
       <ul class="collapsible">
         <li v-collapsible>
           <div><i>assignment_ind</i>First</div>
@@ -25,7 +25,8 @@
         </li>
       </ul>
 
-      <h5>Popout</h5>
+      <br>
+      <p class="caption">Popout</p>
       <ul class="popout collapsible">
         <li v-collapsible>
           <div><i>room</i>First</div>
@@ -49,7 +50,8 @@
         </li>
       </ul>
 
-      <h5>Ubiquity. Using Cards as content.</h5>
+      <br>
+      <p class="caption">Ubiquity. Using Cards as content.</p>
       <ul class="collapsible">
         <li v-collapsible>
           <div><i>assignment_ind</i>First Card</div>
@@ -124,7 +126,8 @@
         </li>
       </ul>
 
-      <h5>Free - Can open multiple items simultaneously</h5>
+      <br>
+      <p class="caption">Free - Can open multiple items simultaneously</p>
       <ul class="collapsible">
         <li v-collapsible.free>
           <div><i>assignment_ind</i>First</div>

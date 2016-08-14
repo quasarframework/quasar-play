@@ -1,7 +1,7 @@
 <template>
   <quasar-layout>
     <div slot="header" class="toolbar">
-      <button v-link="store.backRoute">
+      <button v-link="store.backRoute" class="cordova-only">
         <i>arrow_back</i>
       </button>
       <quasar-toolbar-title :padding="1">
@@ -15,7 +15,7 @@
       </quasar-toolbar-title>
     </div>
 
-    <quasar-tabs slot="navigation" v-if="store.tabs.length > 0">
+    <quasar-tabs slot="navigation" v-if="store.tabs.length > 0" class="cordova-only">
       <quasar-tab
         v-for="tab in store.tabs"
         :icon="tab.icon"

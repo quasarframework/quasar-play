@@ -2,7 +2,12 @@
   <div>
     <div class="layout-padding">
       <p class="caption">
-        Right click (or long tap) anywhere on the Page below (not on header though).
+        <span class="desktop-only">
+          Right click (or long tap) anywhere on the Page below (not on header though).
+        </span>
+        <span class="mobile-only">
+          Context Menu Component currently works only on desktop.
+        </span>
       </p>
     </div>
 

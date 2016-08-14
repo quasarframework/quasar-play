@@ -227,16 +227,6 @@ export default [
         hash: 'checkbox'
       },
       {
-        title: 'Context Menu',
-        icon: 'content_paste',
-        hash: 'context-menu'
-      },
-      {
-        title: 'Dropdown',
-        icon: 'content_paste',
-        hash: 'dropdown'
-      },
-      {
         title: 'Text Inputs',
         icon: 'border_color',
         hash: 'text-input',
@@ -300,6 +290,16 @@ export default [
         title: 'Collapsible',
         icon: 'format_line_spacing',
         hash: 'collapsible'
+      },
+      {
+        title: 'Context Menu',
+        icon: 'content_paste',
+        hash: 'context-menu'
+      },
+      {
+        title: 'Dropdown',
+        icon: 'content_paste',
+        hash: 'dropdown'
       },
       {
         title: 'Floating Action Button',

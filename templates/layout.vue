@@ -2,7 +2,9 @@
   <quasar-layout>
     <div slot="header" class="toolbar">
       <!-- opens drawer below
-      <button class="left-drawer-opener"><i>menu</i></button>
+      <button class="left-drawer-opener">
+        <i>menu</i>
+      </button>
       -->
       <quasar-toolbar-title :padding="1">
         Title
@@ -10,7 +12,7 @@
     </div>
 
     <!-- Navigation Tabs
-    <quasar-tabs slot="navigation" class="primary">
+    <quasar-tabs slot="navigation">
       <quasar-tab icon="mail" v-link="{path: '/layout', exact: true}">Mails</quasar-tab>
       <quasar-tab icon="alarm" v-link="'/layout/alarm'">Alarms</quasar-tab>
       <quasar-tab icon="help" v-link="'/layout/help'">Help</quasar-tab>
@@ -19,12 +21,10 @@
 
     <!-- Drawer
     <quasar-drawer>
-      <div class="toolbar light border-bottom">
-        <div class="toolbar-content">
-          <div class="toolbar-title no-padding">
-            <div>Drawer</div>
-          </div>
-        </div>
+      <div class="toolbar">
+        <quasar-toolbar-title>
+          Drawer Title
+        </quasar-toolbar-title>
       </div>
 
       <div class="list platform-delimiter">
@@ -38,8 +38,7 @@
     <router-view class="layout-view"></router-view>
 
     <!-- Footer
-    <div slot="footer" class="toolbar">
-    </div>
+    <div slot="footer" class="toolbar"></div>
     -->
   </quasar-layout>
 </template>

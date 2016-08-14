@@ -29,13 +29,10 @@ export default {
     writeVisibilityState (state) {
       const date = new Date()
 
-      this.$els.visibility.innerHTML =
-        `${pad(date.getHours())}:
-         ${pad(date.getMinutes())}:
-         ${pad(date.getSeconds())}.
-         ${date.getMilliseconds()}
-         App became ${state}.<br>` +
-         this.$els.visibility.innerHTML
+      this.$els.visibility.innerHTML = pad(date.getHours()) + ':' +
+        pad(date.getMinutes()) + ':' + pad(date.getSeconds()) + '.' +
+        date.getMilliseconds() + ` App became ${state}.<br>` +
+        this.$els.visibility.innerHTML
     }
   },
   ready () {

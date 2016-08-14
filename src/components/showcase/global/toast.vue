@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { Toast, Utils } from 'quasar'
+import { Toast } from 'quasar'
 
 export default {
   data () {
@@ -98,7 +98,7 @@ export default {
     },
     toastWithType (type) {
       Toast.create[type]({
-        html: Utils.capitalize(type) + ' toast'
+        html: type.charAt(0).toUpperCase() + type.slice(1) + ' toast'
       })
     },
     noTimeoutToast () {

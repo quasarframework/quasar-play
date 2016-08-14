@@ -20,6 +20,11 @@
           </tr>
         </tbody>
       </table>
+
+      <br>
+      <p class="caption">
+        Your device <strong>{{ touch }}</strong> touch capability.
+      </p>
     </div>
   </div>
 </template>
@@ -31,6 +36,11 @@ export default {
   data () {
     return {
       platform: Platform.is
+    }
+  },
+  computed: {
+    touch () {
+      return Platform.has.touch ? 'has' : 'does not have'
     }
   }
 }
