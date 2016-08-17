@@ -17,10 +17,10 @@
     </div>
 
     <quasar-tabs slot="navigation">
-      <quasar-tab icon="view_quilt" v-link="{path: '/showcase/layout', exact: true}">About</quasar-tab>
-      <quasar-tab icon="view_day" v-link="'/showcase/layout/toolbar'">Toolbar</quasar-tab>
-      <quasar-tab icon="view_day" v-link="'/showcase/layout/tabs'">Tabs</quasar-tab>
-      <quasar-tab icon="input" v-link="'/showcase/layout/drawer'">Drawer</quasar-tab>
+      <quasar-tab icon="view_quilt" v-link="{path: '/showcase/layout', exact: true, replace: true}">About</quasar-tab>
+      <quasar-tab icon="view_day" v-link="{path: '/showcase/layout/toolbar', replace: true}">Toolbar</quasar-tab>
+      <quasar-tab icon="view_day" v-link="{path: '/showcase/layout/tabs', replace: true}">Tabs</quasar-tab>
+      <quasar-tab icon="input" v-link="{path: '/showcase/layout/drawer', replace: true}">Drawer</quasar-tab>
     </quasar-tabs>
 
     <quasar-drawer>

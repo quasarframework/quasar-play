@@ -64,7 +64,9 @@ function showActionSheetWithIcons (gallery) {
         label: 'Cancel',
         icon: 'cancel',
         classes: 'text-primary',
-        handler () {}
+        handler () {
+          Toast.create('Cancelled...')
+        }
       }
     ]
   }).show()
@@ -107,7 +109,9 @@ function showActionSheetWithAvatar (gallery) {
         label: 'Cancel',
         icon: 'cancel',
         classes: 'text-primary',
-        handler () {}
+        handler () {
+          Toast.create('Cancelled...')
+        }
       }
     ]
   }).show()
