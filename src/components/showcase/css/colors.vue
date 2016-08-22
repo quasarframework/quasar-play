@@ -9,6 +9,13 @@
       >
         {{color}}
       </div>
+      <div
+        class="main-color shadow-1 row inline items-center justify-center text-dark"
+        v-for="color in mainLightColors"
+        :class="'bg-' + color"
+      >
+        {{color}}
+      </div>
 
       <h5>Full Palette</h5>
       <div class="detail" v-for="color in colors">
@@ -23,7 +30,8 @@
 export default {
   data () {
     return {
-      mainColors: ['primary', 'secondary', 'tertiary', 'neutral', 'positive', 'negative', 'info', 'warning', 'light', 'dark', 'faded'],
+      mainColors: ['primary', 'secondary', 'tertiary', 'positive', 'negative', 'info', 'warning', 'faded', 'dark'],
+      mainLightColors: ['white', 'light'],
       colors: ['red', 'pink', 'purple', 'deep-purple', 'indigo', 'blue', 'light-blue', 'cyan', 'teal', 'green', 'light-green', 'lime', 'yellow', 'amber', 'orange', 'deep-orange', 'brown', 'grey', 'blue-grey']
     }
   }

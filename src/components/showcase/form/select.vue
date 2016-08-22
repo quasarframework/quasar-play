@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <quasar-select :model.sync="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-select>
 
-      <h5>Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list item-delimiter bordered">
         <div class="list-header">Single Selection: <em>{{select}}</em></div>
         <div class="item">

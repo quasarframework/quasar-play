@@ -10,23 +10,23 @@
 
       <div class="column items-center" style="margin-top: 100px; margin-bottom: 100px;">
         <quasar-fab type="purple" icon="keyboard_arrow_up" direction="up">
-          <quasar-small-fab @click="toast('mail')">mail</quasar-small-fab>
-          <quasar-small-fab @click="toast('alarm')">alarm</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('mail')">mail</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('alarm')">alarm</quasar-small-fab>
         </quasar-fab>
 
         <quasar-fab icon="keyboard_arrow_left" direction="left">
-          <quasar-small-fab @click="toast('mail')">mail</quasar-small-fab>
-          <quasar-small-fab @click="toast('alarm')">alarm</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('mail')">mail</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('alarm')">alarm</quasar-small-fab>
         </quasar-fab>
 
         <quasar-fab backdrop type="secondary push" icon="keyboard_arrow_right" direction="right">
           <quasar-small-fab class="primary" @click="toast('mail')">mail</quasar-small-fab>
-          <quasar-small-fab @click="toast('alarm')">alarm</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('alarm')">alarm</quasar-small-fab>
         </quasar-fab>
 
         <quasar-fab :type="['tertiary', 'glossy']" icon="keyboard_arrow_down" direction="down">
-          <quasar-small-fab @click="toast('mail')">mail</quasar-small-fab>
-          <quasar-small-fab @click="toast('alarm')">alarm</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('mail')">mail</quasar-small-fab>
+          <quasar-small-fab class="white" @click="toast('alarm')">alarm</quasar-small-fab>
         </quasar-fab>
       </div>
 

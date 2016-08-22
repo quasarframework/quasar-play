@@ -5,9 +5,7 @@
         Model <span class="right-detail"><em>{{option}}</em></span>
       </div>
 
-      <br><br>
-
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <div class="column">
         <label>
           <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
@@ -23,8 +21,7 @@
         </label>
       </div>
 
-      <br>
-      <h5>Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list bordered inner-delimiter">
         <label class="item">
           <i>mail</i>

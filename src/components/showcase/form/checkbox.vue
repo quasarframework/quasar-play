@@ -5,9 +5,7 @@
         Model <span class="right-detail"><em>{{checked}}</em></span>
       </div>
 
-      <br><br>
-
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <label>
         <quasar-checkbox :model.sync="checked"></quasar-checkbox>
         Checkbox Label
@@ -28,8 +26,7 @@
         Checkbox Label
       </label>
 
-      <br><br>
-      <h5>Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list bordered inner-delimiter">
         <label class="item">
           <quasar-checkbox :model.sync="checked"></quasar-checkbox>

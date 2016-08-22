@@ -1,6 +1,11 @@
 <template>
   <div>
     <div class="layout-padding">
+      <p class="caption">
+        Grid Component is displayed as a table on wide enough windows and as a list on
+        narrow windows.
+      </p>
+
       <quasar-grid
         :columns="columns"
         :data="data"

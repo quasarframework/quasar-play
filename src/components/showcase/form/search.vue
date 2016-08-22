@@ -8,8 +8,9 @@
       <br><br>
 
       <quasar-search :model.sync="search"></quasar-search>
-      <quasar-search :model.sync="search" class="primary"></quasar-search>
+      <quasar-search :model.sync="search" class="orange"></quasar-search>
       <quasar-search :model.sync="search" class="secondary"></quasar-search>
+      <quasar-search :model.sync="search" class="primary"></quasar-search>
       <quasar-search :model.sync="search" class="dark"></quasar-search>
     </div>
   </div>

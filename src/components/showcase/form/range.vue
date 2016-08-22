@@ -5,9 +5,7 @@
         Model <span class="right-detail"><em>{{number}}</em> &nbsp;&nbsp;({{min}}-{{max}})</span>
       </div>
 
-      <br><br>
-
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <quasar-range :model.sync="number" :min="min" :max="max"></quasar-range>
       <p class="caption">With step:</p>
       <quasar-range :model.sync="number" :min="min" :max="max" :step="step"></quasar-range>
@@ -16,7 +14,7 @@
       <p class="caption">Snaps to steps:</p>
       <quasar-range :model.sync="number" :min="min" :max="max" :step="step" label snap></quasar-range>
 
-      <h5>Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list bordered inner-delimiter">
         <div class="item">
           <i class="item-right-margin">volume_down</i>
@@ -30,10 +28,10 @@
         </div>
       </div>
 
-      <h5>Coloring</h5>
-      <quasar-range class="secondary" :model.sync="number" :min="min" :max="max" :step="step" label snap></quasar-range>
-      <quasar-range class="orange" :model.sync="number" :min="min" :max="max" :step="step" label snap></quasar-range>
-      <quasar-range class="dark" :model.sync="number" :min="min" :max="max" :step="step" label snap></quasar-range>
+      <p class="caption">Coloring</p>
+      <quasar-range class="secondary" :model.sync="number" :min="min" :max="max" label></quasar-range>
+      <quasar-range class="orange" :model.sync="number" :min="min" :max="max" label></quasar-range>
+      <quasar-range class="dark" :model.sync="number" :min="min" :max="max" label></quasar-range>
     </div>
   </div>
 </template>

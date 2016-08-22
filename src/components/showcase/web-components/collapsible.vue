@@ -25,7 +25,6 @@
         </li>
       </ul>
 
-      <br>
       <p class="caption">Popout</p>
       <ul class="popout collapsible">
         <li v-collapsible>
@@ -50,7 +49,6 @@
         </li>
       </ul>
 
-      <br>
       <p class="caption">Ubiquity. Using Cards as content.</p>
       <ul class="collapsible">
         <li v-collapsible>
@@ -126,7 +124,6 @@
         </li>
       </ul>
 
-      <br>
       <p class="caption">Free - Can open multiple items simultaneously</p>
       <ul class="collapsible">
         <li v-collapsible.free>

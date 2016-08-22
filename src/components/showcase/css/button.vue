@@ -90,6 +90,12 @@
         <button class="circular secondary glossy"><i>card_giftcard</i></button>
         <button class="circular deep-orange glossy"><i>card_giftcard</i></button>
       <p>
+
+      <p class="caption">Block / Full Width Buttons</p>
+      <div class="group">
+        <button class="primary full-width">Full Width</button>
+        <button class="secondary full-width">Full Width</button>
+      </div>
     </div>
   </div>
 </template>

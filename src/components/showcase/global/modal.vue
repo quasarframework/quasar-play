@@ -58,14 +58,14 @@ function openBasicModalWithEvents () {
   .show()
 }
 
-function openScreenModal () {
+function openLayoutModal () {
   Modal.create({
     template: modalTemplate,
     data: {
       number: ++number
     },
     methods: {
-      openModal: openScreenModal
+      openModal: openLayoutModal
     }
   }).css({
     minWidth: '80vw',
@@ -108,8 +108,8 @@ export default {
           handler: openBasicModalWithEvents
         },
         {
-          label: 'Screen Modal',
-          handler: openScreenModal
+          label: 'Layout Modal',
+          handler: openLayoutModal
         },
         {
           label: 'Always Minimized Modal',

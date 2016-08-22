@@ -21,7 +21,6 @@
         </tbody>
       </table>
 
-      <br>
       <p class="caption">
         Your device <strong>{{ touch }}</strong> touch capability.
       </p>

@@ -1,5 +1,4 @@
 <template>
-  <!-- Place content inside a root node -->
   <div>
     <div class="layout-padding">
       <div class="timeline">
@@ -12,6 +11,9 @@
           <div class="timeline-badge">
             <img v-if="n % 2 === 0" :src="'statics/linux-avatar.png'">
             <i v-else>alarm</i>
+          </div>
+          <div class="timeline-title">
+            Mountain Trip
           </div>
           <div class="timeline-date text-italic">
             <div>17:01</div>

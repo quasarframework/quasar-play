@@ -7,7 +7,6 @@
           On desktop it works by dragging the content down.
         </p>
 
-        <br>
         <p v-for="item in items" class="caption highlight-and-fade">
           <span class="label bg-secondary text-white shadow-1">
             {{ items.length - $index }}

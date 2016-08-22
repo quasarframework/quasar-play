@@ -1,6 +1,11 @@
 <template>
   <div>
     <div class="layout-padding">
+      <p class="caption">
+        Breadcrumbs are great for navigation.
+        <br>
+        If window is wide enough then labels are also displayed.
+      </p>
       <ul class="breadcrumb">
         <li>
           <a>

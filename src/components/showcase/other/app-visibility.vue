@@ -12,7 +12,14 @@
         then come back here to see Visibility in action.
       </p>
 
-      <p v-el:visibility></p>
+      <table class="striped" v-if="eventList.length > 0">
+        <tbody>
+          <tr v-for="evt in eventList" track-by="$index">
+            <td>{{ evt.timestamp }}</td>
+            <td>{{ evt.label }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -25,14 +32,21 @@ function pad (number) {
 }
 
 export default {
+  data () {
+    return {
+      eventList: []
+    }
+  },
   methods: {
     writeVisibilityState (state) {
       const date = new Date()
 
-      this.$els.visibility.innerHTML = pad(date.getHours()) + ':' +
-        pad(date.getMinutes()) + ':' + pad(date.getSeconds()) + '.' +
-        date.getMilliseconds() + ` App became ${state}.<br>` +
-        this.$els.visibility.innerHTML
+      this.eventList.unshift({
+        timestamp: pad(date.getHours()) + ':' +
+            pad(date.getMinutes()) + ':' + pad(date.getSeconds()) + '.' +
+            date.getMilliseconds(),
+        label: ` App became ${state}`
+      })
     }
   },
   ready () {

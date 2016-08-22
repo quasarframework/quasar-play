@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="layout-padding">
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <input v-model="username">
 
-      <h5 style="margin-top: 50px;">Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list inner-delimiter bordered">
         <div class="list-header">Fixed Label</div>
         <div class="item fixed-label">

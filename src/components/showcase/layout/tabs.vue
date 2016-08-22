@@ -29,7 +29,6 @@
         <quasar-tab icon="movie">Movies</quasar-tab>
       </quasar-tabs>
 
-      <br><br>
       <p class="caption">
         They come in all colors.
       </p>
@@ -49,7 +48,6 @@
         <quasar-tab icon="movie">Movies</quasar-tab>
       </quasar-tabs>
 
-      <br><br>
       <p class="caption">
         And also "inverted".
       </p>
@@ -69,11 +67,10 @@
         <quasar-tab icon="movie">Movies</quasar-tab>
       </quasar-tabs>
 
-      <br>
       <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
-        on Tabs from below.
+        on next Tabs to see target below them swapping views.
       </p>
 
       <quasar-tabs class="primary inverted">

@@ -3,7 +3,7 @@
     <div class="layout-padding">
       <h5>"Slide" Transition</h5>
 
-      <p>
+      <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
         on the Toggle below to see the transition in action.
@@ -15,11 +15,12 @@
         </label>
       </p>
 
-      <p>
+      <p
+        v-show="visible"
+        transition="slide"
+      >
         <img
           class="responsive"
-          v-show="visible"
-          transition="slide"
           :src="'statics/quasar.jpg'"
         >
       </p>

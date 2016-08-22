@@ -36,28 +36,28 @@ function showActionSheetWithIcons (gallery) {
         label: 'Delete',
         icon: 'delete',
         handler () {
-          Toast.create.positive('Deleted Article')
+          Toast.create('Deleted Article')
         }
       },
       {
         label: 'Share',
         icon: 'share',
         handler () {
-          Toast.create.positive('Shared!')
+          Toast.create('Shared!')
         }
       },
       {
         label: 'Play',
         icon: 'gamepad',
         handler () {
-          Toast.create.positive('Launched Game')
+          Toast.create('Launched Game')
         }
       },
       {
         label: 'Favorite',
         icon: 'favorite',
         handler () {
-          Toast.create.positive('Added to favorites')
+          Toast.create('Added to favorites')
         }
       },
       {
@@ -81,28 +81,28 @@ function showActionSheetWithAvatar (gallery) {
         label: 'Joe',
         avatar: 'statics/linux-avatar.png',
         handler () {
-          Toast.create.positive('Shared to Joe!')
+          Toast.create('Shared to Joe!')
         }
       },
       {
         label: 'John',
         avatar: 'statics/boy-avatar.png',
         handler () {
-          Toast.create.positive('Shared to John!')
+          Toast.create('Shared to John!')
         }
       },
       {
         label: 'Jim',
         avatar: 'statics/linux-avatar.png',
         handler () {
-          Toast.create.positive('Shared to Jim!')
+          Toast.create('Shared to Jim!')
         }
       },
       {
         label: 'Jack',
         avatar: 'statics/guy-avatar.png',
         handler () {
-          Toast.create.positive('Shared to Jack!')
+          Toast.create('Shared to Jack!')
         }
       },
       {

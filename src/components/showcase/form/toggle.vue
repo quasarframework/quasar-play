@@ -5,9 +5,7 @@
         Model <span class="right-detail"><em>{{checked}}</em></span>
       </div>
 
-      <br><br>
-
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <label>
         <quasar-toggle :model.sync="checked"></quasar-toggle>
         Toggle Label
@@ -28,9 +26,7 @@
         Toggle Label
       </label>
 
-      <br><br>
-
-      <h5>Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list inner-delimiter bordered">
         <label class="item">
           <i>mail</i>

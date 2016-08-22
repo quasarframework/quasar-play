@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding">
-      <p>Basic Toasts</p>
+      <p class="caption">Basic Toasts</p>
       <p class="group">
         <button class="primary" @click="basicToast()">
           Basic Toast
@@ -12,7 +12,7 @@
         </button>
       </p>
 
-      <p>Types of Toasts</p>
+      <p class="caption">Types of Toasts</p>
       <p class="group">
         <button
           v-for="type in types"
@@ -23,7 +23,7 @@
         </button>
       </p>
 
-      <p>Toasts with Options</p>
+      <p class="caption">Toasts with Options</p>
       <p class="group">
         <button class="primary" @click="noTimeoutToast()">
           Basic Toast with No Timeout
@@ -38,7 +38,7 @@
         </button>
       </p>
 
-      <p>Controlling Toasts</p>
+      <p class="caption">Controlling Toasts</p>
       <p class="group">
         <button
           class="secondary"
@@ -56,14 +56,14 @@
         </button>
       </p>
 
-      <p>Simultaneous Multiple Toasts</p>
+      <p class="caption">Simultaneous Multiple Toasts</p>
       <p class="group">
         <button class="primary" @click="showMultipleToasts()">
           Show Multiple Toasts
         </button>
       </p>
 
-      <p>Custom Colors</p>
+      <p class="caption">Custom Colors</p>
       <p class="group">
         <button class="orange" @click="showColorToast('orange')">
           Orange

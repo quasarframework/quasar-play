@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="layout-padding">
-      <p>
+      <p class="caption">
         Toolbars are mainly used in Layout headers and footers, but they can be used
         in your Page view too.
       </p>
@@ -18,7 +18,6 @@
         </button>
       </div>
 
-      <br><br>
       <p class="caption">
         They come in all colors.
       </p>
@@ -50,7 +49,6 @@
         <button><i>tv</i></button>
       </div>
 
-      <br><br>
       <p class="caption">
         And also "inverted".
       </p>

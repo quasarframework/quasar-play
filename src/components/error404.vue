@@ -1,9 +1,9 @@
 <template>
   <div class="full-height full-width bg-light column items-center justify-center">
     <h1>Quasar Play</h1>
-    <h5>
+    <p class="caption">
       Oops. Nothing to see here...
-    </h5>
+    </p>
     <p>
       <button v-if="canGoBack" class="secondary push" @click="goBack">
         <i class="on-left">keyboard_arrow_left</i>

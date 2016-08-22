@@ -17,7 +17,6 @@
         </div>
       </quasar-slider>
 
-      <br>
       <p class="caption">
         Slider with Arrows, Dots and Fullscreen controls.
       </p>
@@ -34,7 +33,6 @@
         </div>
       </quasar-slider>
 
-      <br>
       <p class="caption">
         Slider with Centered Content
       </p>
@@ -50,7 +48,6 @@
         </div>
       </quasar-slider>
 
-      <br>
       <p class="caption">
         Slider with Custom Actions as Controls
       </p>
@@ -69,7 +66,6 @@
         <i slot="action">add_shopping_cart</i>
       </quasar-slider>
 
-      <br>
       <p class="caption">
         Launch Slider on Fullscreen
       </p>

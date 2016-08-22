@@ -6,13 +6,10 @@
         Model <span class="right-detail"><em>{{number}}</em> &nbsp;&nbsp;(1-17)</span>
       </div>
 
-      <br><br>
-
-      <h5>Standalone</h5>
+      <p class="caption">Standalone</p>
       <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
 
-      <br><br>
-      <h5>Inside of a List</h5>
+      <p class="caption">Inside of a List</p>
       <div class="list inner-delimiter bordered">
         <label class="item">
           <div class="item-content">

@@ -238,6 +238,12 @@ export default [
             icon: 'text_format'
           },
           {
+            title: 'Chips Textbox',
+            label: 'Chips',
+            hash: 'chips',
+            icon: 'folder_special'
+          },
+          {
             title: 'Input Textarea',
             label: 'Textarea',
             hash: 'textarea',
@@ -297,11 +303,6 @@ export default [
         hash: 'context-menu'
       },
       {
-        title: 'Dropdown',
-        icon: 'content_paste',
-        hash: 'dropdown'
-      },
-      {
         title: 'Floating Action Button',
         icon: 'play_for_work',
         hash: 'fab'
@@ -332,6 +333,11 @@ export default [
         hash: 'parallax'
       },
       {
+        title: 'Popover',
+        icon: 'content_paste',
+        hash: 'popover'
+      },
+      {
         title: 'Progress Bar',
         icon: 'hourglass_empty',
         hash: 'progress'
@@ -360,6 +366,11 @@ export default [
         title: 'State',
         icon: 'shuffle',
         hash: 'state'
+      },
+      {
+        title: 'Stepper',
+        icon: 'directions_run',
+        hash: 'stepper'
       },
       {
         title: 'Tooltip',
