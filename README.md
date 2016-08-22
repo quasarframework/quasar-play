@@ -4,6 +4,10 @@
 
 > App which helps develop Quasar Framework Apps http://quasar-framework.org
 
+Please rate it on [Google Play](https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay).
+
+Requiring funding to release on Apple App Store. Help [here](http://quasar-framework.org/support-quasar-framework.html).
+
 ## Quasar Framework
 > Simultaneously build desktop/mobile SPA websites & phone/tablet apps.
 
