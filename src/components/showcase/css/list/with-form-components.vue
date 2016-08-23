@@ -110,14 +110,13 @@
           <i>volume_up</i>
           <div class="item-content">
             <span class="item-value item-right-margin">1</span>
-            <quasar-range :model.sync="rangeModel" :min="1" :max="10"></quasar-range>
+            <quasar-range :model.sync="rangeModel" :min="1" :max="10" label></quasar-range>
             <span class="item-value item-left-margin">10</span>
-            <div class="item-left-margin" style="font-weight: bold">{{rangeModel}}</div>
           </div>
         </div>
         <div class="item">
           <i class="item-right-margin">volume_down</i>
-          <quasar-range :model.sync="rangeModel" :min="1" :max="10"></quasar-range>
+          <quasar-range :model.sync="rangeModel" :min="1" :max="10" snap></quasar-range>
           <i class="item-left-margin">volume_up</i>
         </div>
       </div>

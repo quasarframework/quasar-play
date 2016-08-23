@@ -155,7 +155,7 @@ export default {
         },
         {
           label: 'Pick One Option',
-          icon: 'warning',
+          icon: 'radio_button_checked',
           handler () {
             Dialog.create({
               title: 'Radios',
@@ -197,7 +197,7 @@ export default {
         },
         {
           label: 'Pick Multiple Options',
-          icon: 'playlist_add_check',
+          icon: 'check_box',
           handler () {
             Dialog.create({
               title: 'Checkboxes',
@@ -241,7 +241,7 @@ export default {
         },
         {
           label: 'Pick Multiple Options #2',
-          icon: 'playlist_add_check',
+          icon: 'repeat',
           handler () {
             Dialog.create({
               title: 'Toggles',
@@ -275,50 +275,6 @@ export default {
                 },
                 {
                   label: 'Ok',
-                  handler (data) {
-                    Toast.create('Returned ' + JSON.stringify(data))
-                  }
-                }
-              ]
-            }).show()
-          }
-        },
-        {
-          label: 'Pick Range',
-          icon: 'warning',
-          handler () {
-            Dialog.create({
-              title: 'Ranges',
-              ranges: [
-                {
-                  label: 'Volume',
-                  min: 1,
-                  max: 5,
-                  iconMin: 'volume_down',
-                  iconMax: 'volume_up'
-                },
-                {
-                  label: 'Brightness',
-                  min: 1,
-                  max: 5,
-                  value: 2
-                },
-                {
-                  label: 'Speed',
-                  min: 1,
-                  max: 10,
-                  value: 6
-                },
-                {
-                  label: 'Noise Level',
-                  min: 4,
-                  max: 15
-                }
-              ],
-              buttons: [
-                'Cancel',
-                {
-                  label: 'Change',
                   handler (data) {
                     Toast.create('Returned ' + JSON.stringify(data))
                   }

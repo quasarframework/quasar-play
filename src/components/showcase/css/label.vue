@@ -20,7 +20,7 @@
         </button>
       </p>
 
-      <p class="caption">Chips Labels</p>
+      <p class="caption">Chip Labels</p>
       <p>
         <div class="group">
           <div class="chip label bg-grey-4"><img :src="'statics/boy-avatar.png'"> John</div>

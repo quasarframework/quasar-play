@@ -40,7 +40,7 @@
 export default {
   data () {
     return {
-      number: 3,
+      number: 20,
       min: 0,
       max: 50,
       step: 5

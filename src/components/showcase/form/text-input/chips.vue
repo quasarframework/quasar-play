@@ -10,7 +10,12 @@
         track-by="$index"
       >{{ chip }}</div>
 
-      <br><br><br>
+      <br>
+      <p class="caption">
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on Chips Textbox below to start adding Chips.
+      </p>
       <quasar-chips :model.sync="model"></quasar-chips>
     </div>
   </div>
@@ -20,7 +25,7 @@
 export default {
   data () {
     return {
-      model: ['Joe', 'Jim']
+      model: ['Joe']
     }
   }
 }
