@@ -1,18 +1,23 @@
 <template>
   <div>
     <div class="layout-padding">
-      <div class="list bordered inner-delimiter highlight">
+      <div class="list">
         <template v-for="category in categories">
-          <div class="list-header">
+          <div class="list-label">
             {{ category.title }}
           </div>
-          <div class="item" v-for="feature in category.features">
-            <i>{{ feature.icon }}</i>
-            <div class="item-content cursor-pointer" v-link="'/showcase/' + category.hash + '/' + feature.hash">
-              <div class="item-label">{{ feature.title }}</div>
-              <i>chevron_right</i>
+          <div
+            class="item item-link item-inset-delimiter"
+            v-for="feature in category.features"
+            v-link="'/showcase/' + category.hash + '/' + feature.hash"
+          >
+            <i class="item-primary">{{ feature.icon }}</i>
+            <div class="item-content has-secondary">
+              <div>{{ feature.title }}</div>
             </div>
+            <i class="item-secondary">chevron_right</i>
           </div>
+          <hr>
         </template>
       </div>
     </div>

@@ -5,11 +5,11 @@
         Based on the device you are using to view this, Quasar detects the following:
       </p>
 
-      <table class="striped">
+      <table class="quasar-table striped">
         <thead>
           <tr>
-            <th>Property</th>
-            <th>Value</th>
+            <th class="text-left">Property</th>
+            <th class="text-left">Value</th>
           </tr>
         </thead>
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="play-view full-height full-width">
+  <div class="play-view window-height window-width" style="overflow: hidden">
     <div
       class="toolbar primary fixed shadow-1"
       :class="{active: active || !showedToolbar}"
     >
-      <button v-link="'/play'">
+      <button v-go-back="'/play'">
         <i>close</i>
       </button>
       <quasar-toolbar-title :padding="1">
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div
-      class="full-height full-width row items-center justify-center"
+      class="window-height window-width row items-center justify-center"
       v-show="!iframeLoaded"
     >
       <spinner></spinner>

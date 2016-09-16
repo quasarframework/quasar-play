@@ -2,13 +2,11 @@
   <div>
     <div class="layout-padding">
       <div class="card">
-        <div class="item">
-          <img class="avatar" :src="'statics/linux-avatar.png'">
+        <div class="item two-lines">
+          <img class="item-primary" :src="'statics/linux-avatar.png'">
           <div class="item-content">
-            <div class="item-label">
-              <p class="item-title">Joe</p>
-              <p>Web Developer</p>
-            </div>
+            <div>Joe</div>
+            <div>Web Developer</div>
           </div>
         </div>
         <img :src="'statics/mountains.jpg'">

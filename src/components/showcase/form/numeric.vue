@@ -9,28 +9,26 @@
       <p class="caption">Standalone</p>
       <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
 
+      <p class="caption">Disabled State</p>
+      <quasar-numeric :model.sync="number" :min="1" :max="17" disable></quasar-numeric>
+
       <p class="caption">Inside of a List</p>
-      <div class="list inner-delimiter bordered">
-        <label class="item">
+      <div class="list">
+        <div class="item two-lines">
+          <i class="item-primary">edit</i>
           <div class="item-content">
-            <div class="item-label fixed-label">
-              Some number
-            </div>
-            <div class="item-value">
-              <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
-            </div>
+            <span class="item-label">Number: </span>
+            <quasar-numeric :model.sync="number"></quasar-numeric>
           </div>
-        </label>
-        <label class="item">
+        </div>
+        <hr class="inset">
+        <div class="item two-lines">
+          <i class="item-primary">edit</i>
           <div class="item-content">
-            <div class="item-label fixed-label">
-              Some number
-            </div>
-            <div class="item-value">
-              <quasar-numeric :model.sync="number" :min="1" :max="17"></quasar-numeric>
-            </div>
+            <span class="item-label">Number: </span>
+            <quasar-numeric :model.sync="number"></quasar-numeric>
           </div>
-        </label>
+        </div>
       </div>
     </div>
   </div>

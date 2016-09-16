@@ -5,15 +5,13 @@
         Notify the user something is going on under the covers.
         There is also the <em>progress</em> Dialog type you can use.
       </p>
-      <div class="row justify-center">
-        <div class="group">
-          <button class="light push" @click="showLoading">
-            Show
-          </button>
-          <button class="primary push" @click="showLoadingWithMessage">
-            Show with message
-          </button>
-        </div>
+      <div class="group">
+        <button class="light push" @click="showLoading">
+          Show
+        </button>
+        <button class="primary push" @click="showLoadingWithMessage">
+          Show with message
+        </button>
       </div>
     </div>
   </div>

@@ -2,83 +2,87 @@
   <div>
     <div class="layout-padding">
       <p class="caption">Standalone</p>
-      <input v-model="username">
+      <small>Default:</small> <input v-model="username">
+      <br>
+      <small>Password:</small> <input type="password" v-model="password">
+
+      <p class="caption">Placeholder</p>
+      <input placeholder="Placeholder">
+
+      <p class="caption">Stacked Label</p>
+      <div class="stacked-label">
+        <input class="full-width">
+        <label>Stacked Label</label>
+      </div>
+
+      <p class="caption">Floating Label</p>
+      <div class="floating-label">
+        <input required class="full-width">
+        <label>Floating Label</label>
+      </div>
+
+      <p class="caption">Disabled State</p>
+      <input disabled value="You cannot edit me.">
 
       <p class="caption">Inside of a List</p>
-      <div class="list inner-delimiter bordered">
-        <div class="list-header">Fixed Label</div>
-        <div class="item fixed-label">
+      <div class="list">
+        <div class="item two-lines">
+          <i class="item-primary">edit</i>
           <div class="item-content">
-            <label for="user1" class="item-label">Username</label>
-            <input id="user1" v-model="username">
+            <input class="full-width">
           </div>
         </div>
-        <div class="item fixed-label">
+
+        <hr>
+        <div class="item two-lines">
+          <i class="item-primary">edit</i>
           <div class="item-content">
-            <label for="pass1" class="item-label">Password</label>
-            <input id="pass1" v-model="password" type="password">
+            <input placeholder="Placeholder" class="full-width">
+          </div>
+        </div>
+
+        <hr>
+        <div class="item two-lines">
+          <i class="item-primary">edit</i>
+          <div class="item-content row items-center wrap">
+            <div style="margin-right: 10px;" class="item-label">Label:</div>
+            <input class="auto">
+          </div>
+        </div>
+
+        <hr>
+        <div class="item multiple-lines">
+          <i class="item-primary">edit</i>
+          <div class="item-content">
+            <div class="stacked-label">
+              <input class="full-width">
+              <label>Stacked Label</label>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+        <div class="item multiple-lines">
+          <i class="item-primary">edit</i>
+          <div class="item-content">
+            <div class="floating-label">
+              <input required class="full-width">
+              <label>Floating Label</label>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="list inner-delimiter bordered">
-        <div class="list-header">Floating Label</div>
-        <div class="item floating-label">
+      <p class="caption">Textbox and Textarea with No Borders</p>
+      <div class="list">
+        <div class="item multiple-lines item-delimiter">
           <div class="item-content">
-            <input v-model="username" required>
-            <label>Username</label>
+            <input class="full-width no-border" value="Textbox here with no border and full width.">
           </div>
         </div>
-        <div class="item floating-label">
+        <div class="item multiple-lines item-delimiter">
           <div class="item-content">
-            <input v-model="password" type="password" required>
-            <label>Password</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="list inner-delimiter bordered">
-        <div class="list-header">Inline Label</div>
-        <div class="item inline-label">
-          <label class="item-content">
-            Username
-            <input v-model="username">
-          </label>
-        </div>
-        <div class="item inline-label">
-          <label class="item-content">
-            Password
-            <input v-model="password" type="password">
-          </label>
-        </div>
-      </div>
-
-      <div class="list inner-delimiter bordered">
-        <div class="list-header">Placeholder Label</div>
-        <div class="item">
-          <div class="item-content">
-            <input v-model="username" placeholder="Username">
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-content">
-            <input v-model="password" type="password" placeholder="Password">
-          </div>
-        </div>
-      </div>
-
-      <div class="list inner-delimiter bordered">
-        <div class="list-header">Stacked Label</div>
-        <div class="item stacked-label">
-          <div class="item-content">
-            <input id="user4" v-model="username" required>
-            <label for="user4">Username</label>
-          </div>
-        </div>
-        <div class="item stacked-label">
-          <div class="item-content">
-            <input id="pass4" v-model="password" type="password" required>
-            <label for="pass4">Password</label>
+            <textarea class="full-width no-border">Textarea here with no border and full width.</textarea>
           </div>
         </div>
       </div>
@@ -96,9 +100,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.list {
-  margin-bottom: 25px;
-}
-</style>

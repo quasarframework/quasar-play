@@ -23,12 +23,61 @@
       >
         <i>settings</i>
       </button>
+
+      <quasar-modal v-ref:grid-modal :set="{minimized: true}" :css="{padding: '5px'}">
+        <div class="list no-border">
+          <div class="list-label">
+            Selection
+          </div>
+          <label class="item item-link">
+            <div class="item-primary">
+              <quasar-radio :model.sync="grid.selection" class="secondary" value="none"></quasar-radio>
+            </div>
+            <div class="item-content">
+              <i>view_module</i>
+              No Selection
+            </div>
+          </label>
+          <label class="item item-link">
+            <div class="item-primary">
+              <quasar-radio :model.sync="grid.selection" value="single"></quasar-radio>
+            </div>
+            <div class="item-content">
+              <i>done</i>
+              Single
+            </div>
+          </label>
+          <label class="item item-link">
+            <div class="item-primary">
+              <quasar-radio :model.sync="grid.selection" value="multiple"></quasar-radio>
+            </div>
+            <div class="item-content">
+              <i>done_all</i>
+              Multiple
+            </div>
+          </label>
+          <div class="list-label">
+            Other Options
+          </div>
+          <label class="item item-link">
+            <div class="item-primary">
+              <quasar-checkbox :model.sync="grid.sortable" class="secondary"></quasar-checkbox>
+            </div>
+            <div class="item-content">
+              <i>swap_vert</i>
+              Sortable Columns
+            </div>
+          </label>
+        </div>
+        <div class="row justify-end" style="margin-top: 25px;">
+          <button class="primary clear" @click="$refs.gridModal.close()">Close</button>
+        </div>
+      </quasar-modal>
     </div>
   </div>
 </template>
 
 <script>
-import { Modal } from 'quasar'
 import gridData from '../grid-data.json'
 
 export default {
@@ -94,60 +143,7 @@ export default {
   },
   methods: {
     openSettings () {
-      let self = this
-
-      Modal.create({
-        template: `
-<div class="list platform-delimiter">
-  <div class="list-header">
-    Selection
-  </div>
-  <label class="item item-link">
-    <i>view_module</i>
-    <div class="item-content">
-      <div class="item-label">No Selection</div>
-      <quasar-radio :model.sync="grid.selection" class="secondary" value="none"></quasar-radio>
-    </div>
-  </label>
-  <label class="item item-link">
-    <i>done</i>
-    <div class="item-content">
-      <div class="item-label">Single</div>
-      <quasar-radio :model.sync="grid.selection" value="single"></quasar-radio>
-    </div>
-  </label>
-  <label class="item item-link">
-    <i>done_all</i>
-    <div class="item-content">
-      <div class="item-label">Multiple</div>
-      <quasar-radio :model.sync="grid.selection" value="multiple"></quasar-radio>
-    </div>
-  </label>
-  <div class="list-header">
-    Other Options
-  </div>
-  <label class="item item-link">
-    <i>swap_vert</i>
-    <div class="item-content">
-      <div class="item-label">Sortable Columns</div>
-      <quasar-checkbox :model.sync="grid.sortable" class="secondary"></quasar-checkbox>
-    </div>
-  </label>
-</div>
-<div class="row justify-end" style="margin-top: 25px;">
-  <button class="primary clear" @click="close()">Close</button>
-</div>
-        `,
-        data () {
-          return {
-            grid: self.grid
-          }
-        }
-      }).set({
-        minimized: true
-      }).css({
-        padding: '20px'
-      }).show()
+      this.$refs.gridModal.show()
     }
   }
 }

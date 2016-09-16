@@ -12,7 +12,7 @@
         then come back here to see Visibility in action.
       </p>
 
-      <table class="striped" v-if="eventList.length > 0">
+      <table class="quasar-table striped" v-if="eventList.length > 0">
         <tbody>
           <tr v-for="evt in eventList" track-by="$index">
             <td>{{ evt.timestamp }}</td>

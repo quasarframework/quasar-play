@@ -9,7 +9,7 @@
           7 minutes ago
         </div>
         <div class="chat-message">
-          <p>
+          <p class="bg-orange">
             hey, if you type in your pw, it will show as stars
           </p>
         </div>

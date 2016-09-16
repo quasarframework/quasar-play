@@ -5,10 +5,6 @@ import showcaseStore from './components/showcase/showcase-store'
 import { Utils } from 'quasar'
 Vue.use(VueRouter)
 
-/*
-  Avoid lazy loading while in dev mode
-  to benefit from HMR
- */
 function load (name) {
   return require('components/' + name + '.vue')
 }

@@ -30,12 +30,20 @@
         </quasar-toolbar-title>
       </div>
 
-      <div class="list platform-delimiter">
+      <div class="list no-border platform-delimiter">
         <quasar-drawer-link v-link="{path: '/showcase/layout', exact: true}" icon="view_quilt">
           About Layout
         </quasar-drawer-link>
-        <quasar-drawer-link v-link="{path: '/showcase/layout/drawer', exact: true}" icon="view_quilt">
+        <hr>
+        <div class="list-label">Layout Components</div>
+        <quasar-drawer-link v-link="{path: '/showcase/layout/drawer', exact: true}" icon="compare_arrows">
           Layout Drawer
+        </quasar-drawer-link>
+        <quasar-drawer-link v-link="{path: '/showcase/layout/toolbar', exact: true}" icon="build">
+          Toolbar
+        </quasar-drawer-link>
+        <quasar-drawer-link v-link="{path: '/showcase/layout/tabs', exact: true}" icon="tab">
+          Tabs
         </quasar-drawer-link>
       </div>
     </quasar-drawer>
@@ -56,17 +64,17 @@
     </quasar-drawer>
 
     <div slot="footer" class="toolbar">
-      <div class="auto flex justify-center">
-        <button class="cordova-only" v-link="{path: '/showcase', exact: true}">
+      <div class="auto flex justify-center within-iframe-hide">
+        <button v-go-back="{path: '/showcase', exact: true}">
           <i class="on-left blink">
             replay
           </i>
           Back to Showcase
         </button>
-        <quasar-toolbar-title :padding="0" class="cordova-hide">
-          Footer
-        </quasar-toolbar-title>
       </div>
+      <quasar-toolbar-title :padding="0" class="within-iframe-only">
+        Footer
+      </quasar-toolbar-title>
     </div>
   </quasar-layout>
 </template>

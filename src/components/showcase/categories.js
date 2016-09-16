@@ -36,6 +36,11 @@ export default [
     extract: true,
     features: [
       {
+        title: 'Grid Layout',
+        icon: 'web',
+        hash: 'grid-layout'
+      },
+      {
         title: 'Layout',
         icon: 'web',
         hash: ''
@@ -54,11 +59,6 @@ export default [
         title: 'Tabs',
         icon: 'tab',
         hash: 'tabs'
-      },
-      {
-        title: 'Grid Layout',
-        icon: 'web',
-        hash: 'grid-layout'
       }
     ]
   },
@@ -163,40 +163,88 @@ export default [
         hash: 'list',
         tabs: [
           {
-            title: 'Basic List',
-            label: 'Basic',
+            title: 'List Basics',
+            label: 'Basics',
             hash: 'basic',
             icon: 'view_list'
           },
           {
-            title: 'Complex List',
-            label: 'Complex',
-            hash: 'complex',
-            icon: 'line_style'
+            title: 'List Items',
+            label: 'Items',
+            hash: 'item',
+            icon: 'view_list'
           },
           {
-            title: 'List Headers',
-            label: 'Headers',
-            hash: 'headers',
-            icon: 'view_headline'
-          },
-          {
-            title: 'Multiline List Items',
-            label: 'Multiline',
+            title: 'Multi Line Items',
+            label: 'Multilines',
             hash: 'multiline',
-            icon: 'short_text'
+            icon: 'view_list'
           },
           {
-            title: 'List with Form Components',
-            label: 'With Form Components',
-            hash: 'with-form-components',
-            icon: 'format_shapes'
+            title: 'Collapsible Items',
+            label: 'Collapsible',
+            hash: 'collapsible',
+            icon: 'view_list'
           },
           {
-            title: 'List with Images',
-            label: 'With Images',
-            hash: 'with-images',
-            icon: 'insert_photo'
+            title: 'Textfields List',
+            label: 'Textfields',
+            hash: 'example-textfields',
+            icon: 'view_list'
+          },
+          {
+            title: 'Form Components List',
+            label: 'Form Comps',
+            hash: 'example-form',
+            icon: 'view_list'
+          },
+          {
+            title: 'Simple List',
+            label: 'Simple Example',
+            hash: 'example-simple',
+            icon: 'view_list'
+          },
+          {
+            title: 'Persons List',
+            label: 'Persons Example',
+            hash: 'example-persons',
+            icon: 'view_list'
+          },
+          {
+            title: 'Chat List',
+            label: 'Chat Example',
+            hash: 'example-chat',
+            icon: 'view_list'
+          },
+          {
+            title: 'Movies List',
+            label: 'Movie Example',
+            hash: 'example-movies',
+            icon: 'view_list'
+          },
+          {
+            title: 'Contact List',
+            label: 'Contacts Example',
+            hash: 'example-contacts',
+            icon: 'view_list'
+          },
+          {
+            title: 'Folder List',
+            label: 'Folders Example',
+            hash: 'example-folders',
+            icon: 'view_list'
+          },
+          {
+            title: 'Phone Book List',
+            label: 'Phonebook Example',
+            hash: 'example-phonebook',
+            icon: 'view_list'
+          },
+          {
+            title: 'Messages List',
+            label: 'Messages Example',
+            hash: 'example-messages',
+            icon: 'view_list'
           }
         ]
       },
@@ -227,6 +275,30 @@ export default [
         hash: 'checkbox'
       },
       {
+        title: 'Date & Time',
+        icon: 'access_time',
+        hash: 'datetime',
+        tabs: [
+          {
+            title: 'DateTime Input',
+            label: 'Basic',
+            icon: 'access_time',
+            hash: 'input'
+          },
+          {
+            title: 'Inline DateTime',
+            label: 'Inline',
+            icon: 'access_time',
+            hash: 'inline'
+          }
+        ]
+      },
+      {
+        title: 'Knob',
+        icon: 'timelapse',
+        hash: 'knob'
+      },
+      {
         title: 'Text Inputs',
         icon: 'border_color',
         hash: 'text-input',
@@ -238,16 +310,16 @@ export default [
             icon: 'text_format'
           },
           {
-            title: 'Chips Textbox',
-            label: 'Chips',
-            hash: 'chips',
-            icon: 'folder_special'
-          },
-          {
             title: 'Input Textarea',
             label: 'Textarea',
             hash: 'textarea',
             icon: 'content_paste'
+          },
+          {
+            title: 'Chips Textbox',
+            label: 'Chips',
+            hash: 'chips',
+            icon: 'folder_special'
           }
         ]
       },
@@ -262,9 +334,23 @@ export default [
         hash: 'radio'
       },
       {
-        title: 'Range',
+        title: 'Ranges',
         icon: 'tune',
-        hash: 'range'
+        hash: 'range',
+        tabs: [
+          {
+            title: 'Basic Range',
+            label: 'Basic',
+            icon: 'tune',
+            hash: 'basic'
+          },
+          {
+            title: 'Double Range',
+            label: 'Double',
+            icon: 'tune',
+            hash: 'double'
+          }
+        ]
       },
       {
         title: 'Rating',
@@ -279,7 +365,21 @@ export default [
       {
         title: 'Select',
         icon: 'event_note',
-        hash: 'select'
+        hash: 'select',
+        tabs: [
+          {
+            title: 'Basic Select',
+            label: 'Basic',
+            icon: 'chat_bubble',
+            hash: 'basic'
+          },
+          {
+            title: 'Dialog Select',
+            label: 'Dialog',
+            icon: 'crop_din',
+            hash: 'dialog'
+          }
+        ]
       },
       {
         title: 'Toggle',
@@ -341,6 +441,11 @@ export default [
         title: 'Progress Bar',
         icon: 'hourglass_empty',
         hash: 'progress'
+      },
+      {
+        title: 'Progress Buttons',
+        icon: 'directions_walk',
+        hash: 'progress-button'
       },
       {
         title: 'Pull to Refresh',

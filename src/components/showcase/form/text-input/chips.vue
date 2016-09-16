@@ -4,11 +4,7 @@
       <div class="label bg-secondary text-white">
         Model:
       </div>
-      <div
-        class="label chip"
-        v-for="chip in model"
-        track-by="$index"
-      >{{ chip }}</div>
+      <span class="thin-paragraph">[{{ model.length ? model.join(', ') : '*empty*' }}]</span>
 
       <br>
       <p class="caption">
@@ -17,6 +13,19 @@
         on Chips Textbox below to start adding Chips.
       </p>
       <quasar-chips :model.sync="model"></quasar-chips>
+
+      <p class="caption">Disabled State</p>
+      <quasar-chips :model.sync="model" disable></quasar-chips>
+
+      <p class="caption">Inside of a List</p>
+      <div class="list">
+        <div class="item multiple-lines">
+          <i class="item-primary">edit</i>
+          <div class="item-content">
+            <quasar-chips :model.sync="model" placeholder="Type names"></quasar-chips>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

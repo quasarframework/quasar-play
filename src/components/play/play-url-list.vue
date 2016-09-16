@@ -9,42 +9,51 @@
       </small>
     </blockquote>
 
-    <div v-else class="list item-delimiter">
-      <div class="item" v-for="(id, item) in urls">
-        <button
-          class="primary clear small-padding"
-          @click="deleteURL(id)"
+    <div v-else class="list no-border">
+      <div class="item two-lines item-delimiter" v-for="(id, item) in urls">
+        <i
+          class="item-primary cursor-pointer"
+          @click="play(item.url)"
         >
-          <i>delete</i>
-        </button>
-        <div class="item-content">
-          <div class="item-label">
-            <p class="item-title">{{item.name}}</p>
-            <p>{{item.url}}</p>
-          </div>
-          <div class="item-value">
-            <button
-              style="margin-right: 5px;"
-              class="primary clear small-padding"
-              @click="editURL(id)"
-            >
-              <i>edit</i>
-            </button>
-            <button
-              class="primary clear small-padding"
-              @click="play(item.url)"
-            >
-              <i>ondemand_video</i>
-            </button>
-          </div>
+          ondemand_video
+        </i>
+        <div class="item-content has-secondary">
+          <div>{{item.name}}</div>
+          <div class="text-primary">{{item.url}}</div>
+        </div>
+        <div class="item-secondary">
+          <quasar-popover v-ref:popover>
+            <i slot="target">
+              more_vert
+            </i>
+
+            <div class="list">
+              <div class="item item-link" @click="$refs.popover.close(), editURL(id)">
+                <i class="item-primary">edit</i>
+                <div class="item-content">Edit</div>
+              </div>
+              <div class="item item-link" @click="$refs.popover.close(), deleteURL(id)">
+                <i class="item-primary">delete</i>
+                <div class="item-content">Delete</div>
+              </div>
+            </div>
+          </quasar-popover>
         </div>
       </div>
     </div>
 
-    <quasar-fab backdrop class="absolute-bottom-right" type="primary" direction="up">
+    <quasar-fab backdrop class="cordova-only absolute-bottom-right" type="primary" direction="up">
       <quasar-small-fab class="secondary" @click="scanQR">phonelink_ring</quasar-small-fab>
       <quasar-small-fab class="primary clear" @click="addURL">add</quasar-small-fab>
     </quasar-fab>
+
+    <button
+      class="cordova-hide circular primary absolute-bottom-right"
+      @click="addURL"
+      style="right: 16px; bottom: 16px;"
+    >
+      <i>add</i>
+    </button>
   </div>
 </template>
 
@@ -56,11 +65,7 @@ function addURL (name, url) {
   let id = Math.random().toString(36).substr(2, 9)
 
   store.set(id, {name, url})
-
-  Toast.create.positive({
-    html: 'URL added',
-    timeout: 1500
-  })
+  Toast.create.positive('URL added')
 }
 
 export default {
@@ -88,6 +93,7 @@ export default {
             label: 'Delete',
             handler () {
               store.del(id)
+              Toast.create.positive('URL removed')
             }
           }
         ]
@@ -144,6 +150,7 @@ export default {
           },
           {
             name: 'url',
+            model: 'http://',
             label: 'URL'
           }
         ],
@@ -152,11 +159,16 @@ export default {
           {
             label: 'Add',
             handler (data) {
-              if (!data[0].value.length || !data[1].value.length) {
-                Dialog.create({
-                  title: 'Error',
-                  message: 'Please fill in both name and URL'
-                }).show()
+              if (!data[0].value.length && (!data[1].value.length || data[1].value === 'http://')) {
+                Toast.create.warning('Please fill in both name and URL.')
+                return
+              }
+              if (!data[0].value.length) {
+                Toast.create.warning('Please fill in a name for your URL.')
+                return
+              }
+              if (!data[1].value.length || data[1].value === 'http://') {
+                Toast.create.warning('Please fill in the URL.')
                 return
               }
 
@@ -179,10 +191,7 @@ export default {
       cordova.plugins.barcodeScanner.scan(
         (result) => {
           if (result.cancelled) {
-            Toast.create.warning({
-              html: 'QR code scanning aborted...',
-              timeout: 1500
-            })
+            Toast.create('QR code scanning aborted...')
             return
           }
 
@@ -245,9 +254,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.small-padding {
-  padding: 0;
-}
-</style>

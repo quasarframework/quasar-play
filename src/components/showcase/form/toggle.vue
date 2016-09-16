@@ -6,55 +6,72 @@
       </div>
 
       <p class="caption">Standalone</p>
+      <div class="column group">
+        <label>
+          <quasar-toggle :model.sync="checked"></quasar-toggle>
+          Toggle Label
+        </label>
+
+        <label>
+          <quasar-toggle :model.sync="checked" class="orange"></quasar-toggle>
+          Toggle Label
+        </label>
+
+        <label>
+          <quasar-toggle :model.sync="checked" class="teal"></quasar-toggle>
+          Toggle Label
+        </label>
+
+        <label>
+          <quasar-toggle :model.sync="checked" class="dark"></quasar-toggle>
+          Toggle Label
+        </label>
+      </div>
+
+      <p class="caption">With Icon</p>
+      <div class="column group">
+        <label>
+          <quasar-toggle :model.sync="checked" icon="alarm"></quasar-toggle>
+          Toggle Label
+        </label>
+        <label>
+          <quasar-toggle :model.sync="checked" icon="mail" class="secondary"></quasar-toggle>
+          Toggle Label
+        </label>
+      </div>
+
+      <p class="caption">Disabled State</p>
       <label>
-        <quasar-toggle :model.sync="checked"></quasar-toggle>
-        Toggle Label
-      </label>
-      <br><br>
-      <label>
-        <quasar-toggle :model.sync="checked" class="orange"></quasar-toggle>
-        Toggle Label
-      </label>
-      <br><br>
-      <label>
-        <quasar-toggle :model.sync="checked" class="teal"></quasar-toggle>
-        Toggle Label
-      </label>
-      <br><br>
-      <label>
-        <quasar-toggle :model.sync="checked" class="dark"></quasar-toggle>
+        <quasar-toggle :model.sync="checked" disable></quasar-toggle>
         Toggle Label
       </label>
 
       <p class="caption">Inside of a List</p>
-      <div class="list inner-delimiter bordered">
+      <div class="list">
         <label class="item">
-          <i>mail</i>
-          <div class="item-content">
-            <div class="item-label">Toggle Label</div>
+          <div class="item-content has-secondary">
+            Events and reminders
+          </div>
+          <div class="item-secondary">
+            <quasar-toggle :model.sync="checked"></quasar-toggle>
+          </div>
+        </label>
+        <label class="item two-lines">
+          <div class="item-content has-secondary">
+            <div>Events and reminders</div>
+            <div>Lorem ipsum</div>
+          </div>
+          <div class="item-secondary">
             <quasar-toggle :model.sync="checked" class="purple"></quasar-toggle>
           </div>
         </label>
-        <label class="item">
-          <i>mail</i>
-          <div class="item-content">
-            <div class="item-label">Toggle Label</div>
+        <label class="item three-lines">
+          <div class="item-content has-secondary">
+            <div>Events and reminders</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+          <div class="item-secondary">
             <quasar-toggle :model.sync="checked" class="red"></quasar-toggle>
-          </div>
-        </label>
-      </div>
-
-      <div class="list inner-delimiter bordered">
-        <label class="item">
-          <quasar-toggle :model.sync="checked"></quasar-toggle>
-          <div class="item-content">
-            Toggle Label
-          </div>
-        </label>
-        <label class="item">
-          <quasar-toggle :model.sync="checked"></quasar-toggle>
-          <div class="item-content">
-            Toggle Label
           </div>
         </label>
       </div>

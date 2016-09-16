@@ -50,6 +50,9 @@
 
           <p class="text-bold">Bold text</p>
           <p class="text-italic">Italic text</p>
+
+          <p class="caption">Tokens</p>
+          Some <span class="token">token</span> and <span class="token">other token</span>
         </div>
       </div>
 

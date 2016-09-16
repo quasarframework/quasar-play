@@ -1,0 +1,214 @@
+<template>
+  <div>
+    <div class="layout-padding">
+      <p class="caption">Checkboxes</p>
+      <div class="list">
+        <label class="item">
+          <div class="item-primary">
+            <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+          </div>
+          <div class="item-content">
+            Notifications
+          </div>
+        </label>
+        <label class="item two-lines">
+          <div class="item-primary">
+            <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+          </div>
+          <div class="item-content">
+            <div>Notifications</div>
+            <div>Allow notifications</div>
+          </div>
+        </label>
+        <label class="item three-lines">
+          <div class="item-primary">
+            <quasar-checkbox :model.sync="checked"></quasar-checkbox>
+          </div>
+          <div class="item-content">
+            <div>Notifications</div>
+            <div>Allow notifications Allow notifications Allow notifications Allow notifications Allow notifications </div>
+          </div>
+        </label>
+      </div>
+
+      <p class="caption">Radios</p>
+      <div class="list">
+        <label class="item">
+          <div class="item-primary">
+            <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
+          </div>
+          <div class="item-content">
+            Option 1
+          </div>
+        </label>
+        <label class="item two-lines">
+          <div class="item-primary">
+            <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
+          </div>
+          <div class="item-content">
+            <div>Option 2</div>
+            <div>Allows notifications</div>
+          </div>
+        </label>
+        <label class="item three-lines">
+          <div class="item-primary">
+            <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
+          </div>
+          <div class="item-content">
+            <div>Option 3</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+        </label>
+      </div>
+
+      <p class="caption">Toggles</p>
+      <div class="list">
+        <label class="item">
+          <div class="item-content has-secondary">
+            Events and reminders
+          </div>
+          <div class="item-secondary">
+            <quasar-toggle :model.sync="checked"></quasar-toggle>
+          </div>
+        </label>
+        <label class="item two-lines">
+          <div class="item-content has-secondary">
+            <div>Events and reminders</div>
+            <div>Lorem ipsum</div>
+          </div>
+          <div class="item-secondary">
+            <quasar-toggle :model.sync="checked" class="purple"></quasar-toggle>
+          </div>
+        </label>
+        <label class="item three-lines">
+          <div class="item-content has-secondary">
+            <div>Events and reminders</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+          <div class="item-secondary">
+            <quasar-toggle :model.sync="checked" class="red"></quasar-toggle>
+          </div>
+        </label>
+      </div>
+
+      <p class="caption">Select</p>
+      <div class="list">
+        <div class="list-label">Single Selection</div>
+        <div class="item multiple-lines">
+          <i class="item-primary">supervisor_account</i>
+          <div class="item-content">
+            <quasar-select class="full-width" type="radio" :model.sync="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-select>
+          </div>
+        </div>
+        <hr>
+        <div class="list-label">Multiple Selection</div>
+        <div class="item multiple-lines">
+          <i class="item-primary">supervisor_account</i>
+          <div class="item-content">
+            <quasar-select class="full-width" type="checkbox" :model.sync="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+          </div>
+        </div>
+        <div class="item multiple-lines">
+          <i class="item-primary">supervisor_account</i>
+          <div class="item-content">
+            <quasar-select class="full-width" type="toggle" :model.sync="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+          </div>
+        </div>
+      </div>
+
+      <p class="caption">Ranges</p>
+      <div class="list">
+        <div class="item two-lines">
+          <i class="item-primary">volume_up</i>
+          <div class="item-content">
+            <quasar-range :model.sync="standalone" :min="0" :max="50" label></quasar-range>
+          </div>
+        </div>
+        <div class="item two-lines">
+          <i class="item-primary">brightness_medium</i>
+          <div class="item-content">
+            <quasar-range :model.sync="standalone" :min="0" :max="50" label></quasar-range>
+          </div>
+        </div>
+        <hr>
+        <div class="list-label">Double Range</div>
+        <div class="item two-lines">
+          <i class="item-primary">local_atm</i>
+          <div class="item-content">
+            <quasar-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></quasar-double-range>
+          </div>
+        </div>
+        <div class="item two-lines">
+          <i class="item-primary">euro_symbol</i>
+          <div class="item-content">
+            <quasar-double-range :model-min.sync="standaloneMin" :model-max.sync="standaloneMax" :min="0" :max="50" label></quasar-double-range>
+          </div>
+        </div>
+      </div>
+
+      <p class="caption">Date and Time</p>
+      <div class="list">
+        <div class="list-label">Date or Time</div>
+        <div class="item two-lines">
+          <i class="item-primary">access_time</i>
+          <div class="item-content">
+            <quasar-datetime class="full-width" :model.sync="timestamp" type="time"></quasar-datetime>
+          </div>
+        </div>
+        <div class="item two-lines">
+          <i class="item-primary">update</i>
+          <div class="item-content row items-baseline">
+            <quasar-datetime class="full-width" :model.sync="timestamp" type="date"></quasar-datetime>
+          </div>
+        </div>
+        <hr>
+        <div class="list-label">Date & Time</div>
+        <div class="item two-lines">
+          <i class="item-primary">notifications</i>
+          <div class="item-content row items-baseline">
+            <quasar-datetime class="full-width" :model.sync="timestamp" type="datetime"></quasar-datetime>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      checked: false,
+      option: 'opt1',
+      select: 'fb',
+      multipleSelect: ['goog', 'twtr'],
+      selectOptions: [
+        {
+          label: 'Google',
+          value: 'goog'
+        },
+        {
+          label: 'Facebook',
+          value: 'fb'
+        },
+        {
+          label: 'Twitter',
+          value: 'twtr'
+        },
+        {
+          label: 'Apple Inc.',
+          value: 'appl'
+        },
+        {
+          label: 'Oracle',
+          value: 'ora'
+        }
+      ],
+      standalone: 20,
+      standaloneMin: 10,
+      standaloneMax: 35,
+      timestamp: '2016-09-18T10:45:00.000Z'
+    }
+  }
+}
+</script>

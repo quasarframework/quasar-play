@@ -1,6 +1,15 @@
 <template>
   <div>
     <div class="layout-padding">
+      <p class="caption">
+        Switch between two views easily with State component.
+      </p>
+      <p class="caption">
+        In the example below, the first state displays a button and
+        the second one displays an hourglass animated icon along with
+        a text.
+      </p>
+
       <div class="row justify-center" style="margin-top: 20px;">
         <quasar-state :model.sync="state">
           <div slot="active">

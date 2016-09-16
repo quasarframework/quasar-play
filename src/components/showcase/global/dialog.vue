@@ -7,17 +7,17 @@
         on each type to see it in action.
       </p>
 
-      <div class="list item-delimiter highlight" style="max-width: 600px;">
+      <div class="list" style="max-width: 600px;">
         <div
           class="item item-link"
           v-for="dialog in types"
           @click="dialog.handler()"
         >
-          <i class="text-primary">{{dialog.icon}}</i>
-          <div class="item-content">
-            <div class="item-label">{{dialog.label}}</div>
-            <i>keyboard_arrow_right</i>
+          <i class="item-primary">{{dialog.icon}}</i>
+          <div class="item-content has-secondary">
+            <div>{{dialog.label}}</div>
           </div>
+          <i class="item-secondary">keyboard_arrow_right</i>
         </div>
       </div>
     </div>

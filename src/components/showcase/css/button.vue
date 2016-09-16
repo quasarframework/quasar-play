@@ -91,11 +91,24 @@
         <button class="circular deep-orange glossy"><i>card_giftcard</i></button>
       <p>
 
-      <p class="caption">Block / Full Width Buttons</p>
+      <p class="caption">Block Buttons</p>
       <div class="group">
-        <button class="primary full-width">Full Width</button>
-        <button class="secondary full-width">Full Width</button>
+        <button class="primary block">Block</button>
+        <button class="secondary block">Block</button>
       </div>
+
+      <p class="caption">Full Width Buttons</p>
+      <div class="group">
+        <button class="primary full-width">Full-width</button>
+        <button class="secondary full-width">Full-width</button>
+      </div>
+
+      <p class="caption">
+        Also see
+        <a href="#!/showcase/web-components/progress-button">
+          <i>launch</i> Progress Buttons
+        </a>
+      </p>
     </div>
   </div>
 </template>

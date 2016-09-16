@@ -10,24 +10,42 @@
       <div>
         <quasar-popover v-ref:popover1>
           <button slot="target" class="primary">
-            <i>menu</i>
+            <i>assignment</i>
           </button>
 
-          <div class="list item-delimiter highlight">
+          <div class="list highlight">
             <div
-              class="item item-link"
+              class="item item-link two-lines item-delimiter"
               v-for="n in 20"
               @click="showToast(), $refs.popover1.close()"
             >
               <div class="item-content">
-                <div class="item-label">Label</div>
-                <div class="item-value">Value</div>
+                <div>Label</div>
+                <div>Value</div>
               </div>
             </div>
           </div>
         </quasar-popover>
 
-        <quasar-popover v-ref:popover2 class="absolute-top-right" style="top: 10px; right: 10px; z-index: 49;">
+        <quasar-popover v-ref:popover2 position="left top">
+          <button slot="target" class="positive">
+            Forced Position
+          </button>
+
+          <div class="list highlight">
+            <div
+              class="item item-link item-delimiter"
+              v-for="n in 3"
+              @click="showToast(), $refs.popover2.close()"
+            >
+              <div class="item-content">
+                Label
+              </div>
+            </div>
+          </div>
+        </quasar-popover>
+
+        <quasar-popover v-ref:popover3 class="absolute-top-right" style="top: 10px; right: 10px; right: 16px;">
           <button slot="target" class="secondary">
             <i>directions</i>
           </button>
@@ -35,61 +53,79 @@
           <img
             :src="'statics/map.png'"
             style="height: 150px; width: 200px;"
-            @click="showToast(), $refs.popover2.close()">
+            @click="showToast(), $refs.popover3.close()">
         </quasar-popover>
 
-        <quasar-popover v-ref:popover3 class="absolute-bottom-right" style="bottom: 10px; right: 10px; z-index: 49;">
+        <quasar-popover v-ref:popover4 class="absolute-bottom-right" style="bottom: 10px; right: 16px;">
           <button slot="target" class="tertiary">
             <i>plus_one</i>
           </button>
 
-          <div class="group">
-            <button class="primary clear" @click="showToast(), $refs.popover3.close()">
+          <div class="group" style="width: 200px; height: 50px; text-align: center;">
+            <button class="primary clear" @click="showToast(), $refs.popover4.close()">
               <i>thumb_up</i>
             </button>
-            <button class="primary clear" @click="showToast(), $refs.popover3.close()">
+            <button class="primary clear" @click="showToast(), $refs.popover4.close()">
               <i>thumb_down</i>
             </button>
-            <button class="secondary clear" @click="showToast(), $refs.popover3.close()">
+            <button class="secondary clear" @click="showToast(), $refs.popover4.close()">
               <i>share</i>
             </button>
           </div>
         </quasar-popover>
       </div>
 
-      <quasar-popover v-ref:popover4 class="absolute-bottom-left" style="bottom: 10px; left: 10px; z-index: 49;">
+      <quasar-popover v-ref:popover5 class="absolute-bottom-left" style="bottom: 10px; left: 10px;">
         <button slot="target" class="primary">
           <i>menu</i>
         </button>
 
-        <div class="list item-delimiter highlight">
+        <div class="list highlight">
           <div
-            class="item item-link"
+            class="item item-link two-lines item-delimiter"
             v-for="n in 20"
-            @click="showToast(), $refs.popover4.close()"
+            @click="showToast(), $refs.popover5.close()"
           >
             <div class="item-content">
-              <div class="item-label">Label</div>
-              <div class="item-value">Value</div>
+              <div>Label</div>
+              <div>Value</div>
             </div>
           </div>
         </div>
       </quasar-popover>
 
       <br><br>
-      <div style="margin-bottom: 200px; z-index: 49;">
-        <quasar-popover touch-position v-ref:popover5>
+      <div style="margin-bottom: 700px;">
+        <quasar-popover touch-position v-ref:popover6>
           <img slot="target" :src="'statics/map.png'" class="responsive">
 
-          <div class="list item-delimiter highlight">
+          <div class="list highlight">
             <div
-              class="item item-link"
+              class="item item-link item-delimiter"
               v-for="n in 20"
-              @click="showToast(), $refs.popover5.close()"
+              @click="showToast(), $refs.popover6.close()"
             >
-              <i>share</i>
+              <i class="item-primary">share</i>
               <div class="item-content">
                 Share
+              </div>
+            </div>
+          </div>
+        </quasar-popover>
+
+        <br><br>
+        <quasar-popover v-ref:popover7 disable>
+          <button slot="target" class="negative">
+            Disabled Popover
+          </button>
+
+          <div class="list highlight">
+            <div
+              class="item item-link item-delimiter"
+              @click="showToast(), $refs.popover7.close()"
+            >
+              <div class="item-content">
+                Label
               </div>
             </div>
           </div>

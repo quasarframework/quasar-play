@@ -9,9 +9,12 @@
 
       <quasar-search :model.sync="search"></quasar-search>
       <quasar-search :model.sync="search" class="orange"></quasar-search>
-      <quasar-search :model.sync="search" class="secondary"></quasar-search>
-      <quasar-search :model.sync="search" class="primary"></quasar-search>
-      <quasar-search :model.sync="search" class="dark"></quasar-search>
+      <quasar-search :model.sync="search" class="secondary" icon="explore" placeholder="Places"></quasar-search>
+      <quasar-search :model.sync="search" class="primary" icon="local_airport" placeholder="Airports"></quasar-search>
+      <quasar-search :model.sync="search" class="dark" icon="local_hotel" placeholder="Hotels"></quasar-search>
+
+      <p class="caption">Disabled State</p>
+      <quasar-search :model.sync="search" class="primary" disable></quasar-search>
     </div>
   </div>
 </template>

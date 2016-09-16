@@ -1,5 +1,5 @@
 <template>
-  <div class="full-height full-width column items-center justify-center bg-light">
+  <div class="window-height window-width column items-center justify-center bg-light">
     <h1 class="text-center">Quasar Play</h1>
     <button class="secondary push" v-link="'/play'">
       <i class="on-left">play_circle_outline</i>

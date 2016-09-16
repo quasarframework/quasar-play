@@ -1,24 +1,18 @@
 <template>
   <div>
     <div class="layout-padding">
-      <p class="caption">Configure them</p>
+      <div>
+        <div class="light-paragraph">
+          Size: {{ size }}px
+        </div>
+        <div>
+          <quasar-range label :model.sync="size" min="20" max="256"></quasar-range>
+        </div>
 
-      <div class="list item-delimiter bordered">
-        <div class="item">
-          <i>format_size</i>
-          <div class="item-content">
-            <quasar-range :model.sync="size" min="20" max="256"></quasar-range>
-            <div class="item-left-margin">{{size}}px</div>
-          </div>
-        </div>
-        <div class="item">
-          <i>palette</i>
-          <label for="color-spinner" class="item-label">Color</label>
-          <div class="item-content">
-            <input id="color-spinner" v-model="color" style="width: 80px;">
-            <quasar-select :model.sync="color" :options="colorOptions" ok-label="Pick" title="Spinner Color"></quasar-select>
-          </div>
-        </div>
+        <i class="text-grey-7" style="font-size: 2rem">palette</i>
+        <label for="color-spinner" class="auto">Color</label>
+        <input id="color-spinner" v-model="color" style="width: 80px; text-align: center; margin-right: 10px;">
+        <quasar-dialog-select type="radio" :model.sync="color" :options="colorOptions" ok-label="Pick" title="Spinner Color"></quasar-select>
       </div>
 
       <p class="caption">

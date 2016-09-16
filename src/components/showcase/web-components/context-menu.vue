@@ -18,18 +18,28 @@
           Works with any elements you want. It doesn't have to be a List.
         </small>
       </blockquote>
+      <p class="caption">
+        <span class="mobile-only">
+          On a desktop browser user
+        </span>
+        <span class="desktop-only">
+          User
+        </span>
+        can dismiss the Context Menu
+        by hitting the &lt;ESCAPE&gt; key.
+      </p>
     </div>
 
     <quasar-context-menu v-ref:context>
-      <div class="list item-delimiter highlight">
+      <div class="list highlight">
         <div
-          class="item item-link"
+          class="item item-link two-lines item-delimiter"
           v-for="n in 30"
           @click="showToast(), $refs.context.close()"
         >
           <div class="item-content">
-            <div class="item-label">Label</div>
-            <div class="item-value">Value</div>
+            <div>Label</div>
+            <div>Value</div>
           </div>
         </div>
       </div>

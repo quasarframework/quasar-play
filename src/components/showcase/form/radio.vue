@@ -6,7 +6,7 @@
       </div>
 
       <p class="caption">Standalone</p>
-      <div class="column">
+      <div class="column group">
         <label>
           <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
           Option 1
@@ -21,47 +21,38 @@
         </label>
       </div>
 
+      <p class="caption">Disabled State</p>
+      <label>
+        <quasar-radio :model.sync="option" value="opt1" disable></quasar-radio>
+        Option 1
+      </label>
+
       <p class="caption">Inside of a List</p>
-      <div class="list bordered inner-delimiter">
+      <div class="list">
         <label class="item">
-          <i>mail</i>
+          <div class="item-primary">
+            <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
+          </div>
           <div class="item-content">
-            <div class="item-label">Option 1</div>
-            <quasar-radio :model.sync="option" value="opt1" class="teal"></quasar-radio>
+            Option 1
           </div>
         </label>
-        <label class="item">
-          <i>mail</i>
+        <label class="item two-lines">
+          <div class="item-primary">
+            <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
+          </div>
           <div class="item-content">
-            <div class="item-label">Option 2</div>
-            <quasar-radio :model.sync="option" value="opt2" class="teal"></quasar-radio>
+            <div>Option 2</div>
+            <div>Allows notifications</div>
           </div>
         </label>
-        <label class="item">
-          <i>mail</i>
-          <div class="item-content">
-            <div class="item-label">Option 3</div>
-            <quasar-radio :model.sync="option" value="opt3" class="teal"></quasar-radio>
+        <label class="item three-lines">
+          <div class="item-primary">
+            <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
           </div>
-        </label>
-      </div>
-      <div class="list bordered inner-delimiter">
-        <label class="item">
-          <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
           <div class="item-content">
-              Option 1
-          </div>
-        </label>
-        <label class="item">
-          <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
-          <div class="item-content">
-              Option 2
-          </div>
-        </label>
-        <label class="item">
-          <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
-          <div class="item-content">
-              Option 3
+            <div>Option 3</div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
           </div>
         </label>
       </div>

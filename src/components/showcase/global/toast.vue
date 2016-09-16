@@ -4,11 +4,11 @@
       <p class="caption">Basic Toasts</p>
       <p class="group">
         <button class="primary" @click="basicToast()">
-          Basic Toast
+          Default Toast
         </button>
 
         <button class="primary" @click="basicToastWithLongMessage()">
-          Basic Toast with Long Message
+          Default Toast with Long Message
         </button>
       </p>
 
@@ -25,10 +25,6 @@
 
       <p class="caption">Toasts with Options</p>
       <p class="group">
-        <button class="primary" @click="noTimeoutToast()">
-          Basic Toast with No Timeout
-        </button>
-
         <button class="primary" @click="toastWithIcon()">
           Toast With an Icon
         </button>
@@ -36,23 +32,25 @@
         <button class="primary" @click="toastWithButton()">
           Toast With a Button
         </button>
-      </p>
 
-      <p class="caption">Controlling Toasts</p>
-      <p class="group">
-        <button
-          class="secondary"
-          @click="showToast()"
-          :class="{disabled: toastShowing}"
-        >
-          Show Toast
+        <button class="primary" @click="toastWithImage()">
+          Toast With an Image
         </button>
-        <button
-          class="secondary"
-          @click="dismissToast()"
-          :class="{disabled: !toastShowing}"
-        >
-          Dismiss Toast
+
+        <button class="purple" @click="toastWithStyle()">
+          Styled Toast
+        </button>
+
+        <button class="orange" @click="toastWithButtonAndStyle()">
+          Styled Toast with Button
+        </button>
+
+        <button class="primary" @click="toastWithTimeout()">
+          Toast With Custom Timeout
+        </button>
+
+        <button class="primary" @click="toastWithOnDismiss()">
+          Toast With Dismiss Trigger
         </button>
       </p>
 
@@ -62,25 +60,12 @@
           Show Multiple Toasts
         </button>
       </p>
-
-      <p class="caption">Custom Colors</p>
-      <p class="group">
-        <button class="orange" @click="showColorToast('orange')">
-          Orange
-        </button>
-        <button class="purple" @click="showColorToast('purple')">
-          Purple
-        </button>
-        <button class="brown" @click="showColorToast('brown')">
-          Brown
-        </button>
-      </p>
     </div>
   </div>
 </template>
 
 <script>
-import { Toast } from 'quasar'
+import { Toast, Dialog } from 'quasar'
 
 export default {
   data () {
@@ -91,7 +76,7 @@ export default {
   },
   methods: {
     basicToast () {
-      Toast.create('Basic toast. Can be dismissed by swiping it left or right.')
+      Toast.create('Lorem ipsum dolor')
     },
     basicToastWithLongMessage () {
       Toast.create('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')
@@ -101,15 +86,9 @@ export default {
         html: type.charAt(0).toUpperCase() + type.slice(1) + ' toast'
       })
     },
-    noTimeoutToast () {
-      Toast.create({
-        html: 'This toast won\'t timeout. User must acknowledge it.',
-        timeout: 0
-      })
-    },
     toastWithIcon () {
       Toast.create({
-        html: 'Toast with an icon',
+        html: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         icon: 'camera_enhance'
       })
     },
@@ -119,45 +98,60 @@ export default {
         button: {
           label: 'Undo',
           handler () {
-            Toast.create.positive('Undone!')
+            Toast.create('Undone')
           }
         }
       })
     },
-    showToast () {
-      if (this.toastShowing) {
-        return
-      }
-
-      var self = this
-
-      this.toast = Toast.create({
-        html: 'Dismiss this toast with nearby "Dismiss Toast" button',
-        timeout: 0,
+    toastWithImage () {
+      Toast.create({
+        html: 'Toast with an image',
+        image: 'statics/linux-avatar.png'
+      })
+    },
+    toastWithOnDismiss () {
+      Toast.create({
+        html: 'Showing Dialog after Toast is dismissed.',
+        timeout: 5000,
         onDismiss () {
-          self.toastShowing = false
+          Dialog.create({
+            title: 'Dismissed',
+            message: 'Toast was just dismissed!'
+          }).show()
         }
       })
-      this.toastShowing = true
     },
-    dismissToast () {
-      if (!this.toastShowing) {
-        return
-      }
-
-      this.toast.dismiss()
-      this.toastShowing = false
+    toastWithTimeout () {
+      Toast.create({
+        html: 'Toast being displayed for 6s.',
+        timeout: 6000
+      })
+    },
+    toastWithStyle () {
+      Toast.create({
+        html: 'Styled Toast',
+        color: '#BBB',
+        bgColor: 'purple'
+      })
+    },
+    toastWithButtonAndStyle () {
+      Toast.create({
+        html: 'Styled Toast',
+        color: 'black',
+        bgColor: 'orange',
+        button: {
+          label: 'Show Me',
+          color: '#555',
+          handler () {
+            Toast.create('But, but... I just showed you..')
+          }
+        }
+      })
     },
     showMultipleToasts () {
-      this.types.forEach((type) => {
-        this.toastWithType(type)
-      })
-    },
-    showColorToast (color) {
-      Toast.create({
-        html: `Some ${color} toast.`,
-        color
-      })
+      for (let i = 1; i <= 3; i++) {
+        Toast.create('Showing Toast #' + i)
+      }
     }
   }
 }

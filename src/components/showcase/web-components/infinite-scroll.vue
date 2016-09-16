@@ -39,7 +39,7 @@ export default {
 
         this.items = this.items.concat(items)
         done()
-      }, 1500)
+      }, 2500)
     }
   }
 }

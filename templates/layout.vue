@@ -27,7 +27,7 @@
         </quasar-toolbar-title>
       </div>
 
-      <div class="list platform-delimiter">
+      <div class="list">
         <quasar-drawer-link v-link="{path: '/', exact: true}" icon="mail">
           Link
         </quasar-drawer-link>

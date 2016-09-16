@@ -1,6 +1,6 @@
 <template>
-  <div class="full-height full-width bg-light column items-center justify-center">
-    <h1>Quasar Play</h1>
+  <div class="window-height window-width bg-light column items-center justify-center">
+    <h1 class="text-center">Quasar Play</h1>
     <p class="caption">
       Oops. Nothing to see here...
     </p>
