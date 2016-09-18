@@ -1,5 +1,9 @@
 <template>
   <div class="window-height window-width column items-center justify-center bg-light">
+    <small>
+      Presenting only Material theme
+    </small>
+
     <h1 class="text-center">Quasar Play</h1>
     <button class="secondary push" v-link="'/play'">
       <i class="on-left">play_circle_outline</i>
