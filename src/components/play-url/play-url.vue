@@ -4,7 +4,7 @@
       class="toolbar primary fixed shadow-1"
       :class="{active: active || !showedToolbar}"
     >
-      <button v-go-back="'/play'">
+      <button @click="goBack()">
         <i>close</i>
       </button>
       <quasar-toolbar-title :padding="1">
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { Platform } from 'quasar'
+
 export default {
   data () {
     let url = decodeURIComponent(this.$route.params.url)
@@ -67,9 +69,18 @@ export default {
       }, 350)
 
       this.active = false
+    },
+    goBack () {
+      if (Platform.is.cordova) {
+        window.history.go(this.historyLevel - 1 - window.history.length)
+        return
+      }
+
+      this.$router.go('/play')
     }
   },
   ready () {
+    this.historyLevel = window.history.length
     setTimeout(() => {
       this.showedToolbar = true
     }, 1000)
