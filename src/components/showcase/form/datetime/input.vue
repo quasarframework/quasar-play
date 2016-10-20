@@ -34,7 +34,7 @@
           </span>
         </small>
       </p>
-      <quasar-datetime :model.sync="model" type="date"></quasar-datetime>
+      <quasar-datetime v-model="model" type="date"></quasar-datetime>
 
       <p class="caption">
         Time
@@ -49,13 +49,13 @@
           <span class="mat-only">inside of the clock</span>.
         </small>
       </p>
-      <quasar-datetime :model.sync="model" type="time"></quasar-datetime>
+      <quasar-datetime v-model="model" type="time"></quasar-datetime>
 
       <p class="caption">Date & Time</p>
-      <quasar-datetime :model.sync="model" type="datetime"></quasar-datetime>
+      <quasar-datetime v-model="model" type="datetime"></quasar-datetime>
 
       <p class="caption">Disabled State</p>
-      <quasar-datetime disable :model.sync="model" type="datetime"></quasar-datetime>
+      <quasar-datetime disable v-model="model" type="datetime"></quasar-datetime>
 
       <p class="caption">Inside of a List</p>
       <div class="list">
@@ -63,13 +63,13 @@
         <div class="item multiple-lines">
           <i class="item-primary">access_time</i>
           <div class="item-content">
-            <quasar-datetime class="full-width" :model.sync="model" type="time"></quasar-datetime>
+            <quasar-datetime class="full-width" v-model="model" type="time"></quasar-datetime>
           </div>
         </div>
         <div class="item multiple-lines">
           <i class="item-primary">update</i>
           <div class="item-content row items-baseline">
-            <quasar-datetime class="full-width" :model.sync="model" type="date"></quasar-datetime>
+            <quasar-datetime class="full-width" v-model="model" type="date"></quasar-datetime>
           </div>
         </div>
         <hr>
@@ -77,7 +77,7 @@
         <div class="item multiple-lines">
           <i class="item-primary">notifications</i>
           <div class="item-content row items-baseline">
-            <quasar-datetime class="full-width" :model.sync="model" type="datetime"></quasar-datetime>
+            <quasar-datetime class="full-width" v-model="model" type="datetime"></quasar-datetime>
           </div>
         </div>
       </div>

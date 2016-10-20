@@ -8,7 +8,7 @@
       </p>
 
       <div>
-        <quasar-popover v-ref:popover1>
+        <quasar-popover ref="popover1">
           <button slot="target" class="primary">
             <i>assignment</i>
           </button>
@@ -27,7 +27,7 @@
           </div>
         </quasar-popover>
 
-        <quasar-popover v-ref:popover2 position="left top">
+        <quasar-popover ref="popover2" position="left top">
           <button slot="target" class="positive">
             Forced Position
           </button>
@@ -45,7 +45,7 @@
           </div>
         </quasar-popover>
 
-        <quasar-popover v-ref:popover3 class="absolute-top-right" style="top: 10px; right: 10px; right: 16px;">
+        <quasar-popover ref="popover3" class="absolute-top-right" style="top: 10px; right: 10px; right: 16px;">
           <button slot="target" class="secondary">
             <i>directions</i>
           </button>
@@ -56,7 +56,7 @@
             @click="showToast(), $refs.popover3.close()">
         </quasar-popover>
 
-        <quasar-popover v-ref:popover4 class="absolute-bottom-right" style="bottom: 10px; right: 16px;">
+        <quasar-popover ref="popover4" class="absolute-bottom-right" style="bottom: 10px; right: 16px;">
           <button slot="target" class="tertiary">
             <i>plus_one</i>
           </button>
@@ -75,7 +75,7 @@
         </quasar-popover>
       </div>
 
-      <quasar-popover v-ref:popover5 class="absolute-bottom-left" style="bottom: 10px; left: 10px;">
+      <quasar-popover ref="popover5" class="absolute-bottom-left" style="bottom: 10px; left: 10px;">
         <button slot="target" class="primary">
           <i>menu</i>
         </button>
@@ -96,7 +96,7 @@
 
       <br><br>
       <div style="margin-bottom: 700px;">
-        <quasar-popover touch-position v-ref:popover6>
+        <quasar-popover touch-position ref="popover6">
           <img slot="target" :src="'statics/map.png'" class="responsive">
 
           <div class="list highlight">
@@ -114,7 +114,7 @@
         </quasar-popover>
 
         <br><br>
-        <quasar-popover v-ref:popover7 disable>
+        <quasar-popover ref="popover7" disable>
           <button slot="target" class="negative">
             Disabled Popover
           </button>

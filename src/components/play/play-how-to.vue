@@ -70,7 +70,6 @@ import { Utils } from 'quasar'
 export default {
   methods: {
     openURL () {
-      console.log(Utils)
       Utils.openURL('https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging?hl=en')
     }
   }

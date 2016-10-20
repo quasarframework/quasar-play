@@ -19,7 +19,7 @@
       <quasar-tab
         v-for="tab in store.tabs"
         :icon="tab.icon"
-        v-link="{path: '/showcase' + store.hash + '/' + tab.hash, exact: true, replace: true}"
+        :route="'/showcase' + store.hash + '/' + tab.hash" exact replace
       >
         {{ tab.label }}
       </quasar-tab>

@@ -7,7 +7,7 @@
 
       <p class="caption">Default</p>
       <quasar-knob
-        :model.sync="model"
+        v-model="model"
         :min="min"
         :max="max"
       ></quasar-knob>
@@ -15,7 +15,7 @@
       <p class="caption">With Step</p>
       <div class="group">
         <quasar-knob
-          :model.sync="model"
+          v-model="model"
           :min="min"
           :max="max"
           :step="10"
@@ -23,7 +23,7 @@
 
         <p class="caption">Styling</p>
         <quasar-knob
-          :model.sync="model"
+          v-model="model"
           size="150px"
           color="red"
           line-width="2px"
@@ -34,7 +34,7 @@
         ></quasar-knob>
 
         <quasar-knob
-          :model.sync="model"
+          v-model="model"
           style="font-size: 3rem"
           color="#26a69a"
           :min="min"
@@ -43,7 +43,7 @@
         ></quasar-knob>
 
         <quasar-knob
-          :model.sync="model"
+          v-model="model"
           size="120px"
           style="font-size: 1.5rem"
           color="rgba(0, 0, 0, .8)"
@@ -58,7 +58,7 @@
 
       <p class="caption">Disabled state</p>
       <quasar-knob
-        :model.sync="model"
+        v-model="model"
         :min="min"
         :max="max"
         :placeholder="'<i>volume_up</i> ' + model"

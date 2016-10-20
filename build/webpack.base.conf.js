@@ -8,7 +8,7 @@ var
 
 module.exports = {
   entry: {
-    app: './src/app.js'
+    main: './src/main.js'
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -48,7 +48,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,
-        exclude: /node_modules/
+        exclude: /node_modules|quasar\.common/
       },
       {
         test: /\.html$/,

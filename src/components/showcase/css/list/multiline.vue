@@ -54,7 +54,7 @@
             <div class="item-label item-smaller">...as many as you need!</div>
           </div>
           <div class="item-secondary">
-            <quasar-popover v-ref:popover>
+            <quasar-popover ref="popover">
               <i slot="target">
                 more_vert
               </i>

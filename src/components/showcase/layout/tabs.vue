@@ -8,6 +8,11 @@
         <br>
       </p>
 
+      <p>
+        Check Layout source code to see how you can link
+        tabs to navigation routes.
+      </p>
+
       <quasar-tabs>
         <quasar-tab icon="mail">Mails</quasar-tab>
         <quasar-tab icon="alarm">Alarms</quasar-tab>
@@ -73,26 +78,66 @@
         on next Tabs to see target below them swapping views.
       </p>
 
-      <quasar-tabs class="primary inverted">
-        <quasar-tab
-          v-for="tab in tabs"
-          :hidden="tab.hidden"
-          :disabled="tab.disabled"
-          :icon="tab.icon"
-          :target="tab.target"
+      <div class="shadow-1">
+        <quasar-tabs
+          :refs="$refs"
+          default-tab="tab-4"
+          class="primary shadow-1"
+          style="padding-top: 5px"
         >
-          {{tab.label}}
-        </quasar-tab>
-      </quasar-tabs>
+          <quasar-tab name="tab-1" icon="message">Tab 1</quasar-tab>
+          <quasar-tab name="tab-2" disable icon="fingerprint">Tab 2</quasar-tab>
+          <quasar-tab name="tab-3" icon="alarm">Tab 3</quasar-tab>
+          <quasar-tab name="tab-4" icon="accessibility">Tab 4</quasar-tab>
+          <quasar-tab name="tab-5" hidden icon="accessibility">Tab 5</quasar-tab>
+        </quasar-tabs>
 
-      <div id="tab-1">
-        <div v-for="n in 5">Tab 1</div>
+        <div style="padding: 15px;">
+          <div ref="tab-1">
+            <div v-for="n in 5">Tab 1</div>
+          </div>
+          <div ref="tab-2">
+            <div v-for="n in 10">Tab 2</div>
+          </div>
+          <div ref="tab-3">
+            <div v-for="n in 7">Tab 3</div>
+          </div>
+          <div ref="tab-4">
+            <div v-for="n in 4">Tab 4</div>
+          </div>
+          <div ref="tab-5">
+            <div v-for="n in 2">Tab 5</div>
+          </div>
+        </div>
       </div>
-      <div id="tab-2">
-        <div v-for="n in 10">Tab 2</div>
-      </div>
-      <div id="tab-3">
-        <div v-for="n in 7">Tab 3</div>
+
+      <br><br>
+      <div class="shadow-1">
+        <quasar-tabs
+          :refs="$refs"
+          v-model="xTabsModel"
+          class="orange shadow-1"
+          style="padding-top: 5px"
+        >
+          <quasar-tab name="xtab-1" icon="message">Tab 1</quasar-tab>
+          <quasar-tab name="xtab-2" icon="alarm">Tab 2</quasar-tab>
+          <quasar-tab name="xtab-3" icon="accessibility">Tab 3</quasar-tab>
+        </quasar-tabs>
+
+        <div style="padding: 15px;">
+          Programmatic select tab:
+          <quasar-select type="radio" v-model="xTabsModel" :options="xTabsOptions"></quasar-select>
+
+          <div ref="xtab-1">
+            <div v-for="n in 5">Tab 1</div>
+          </div>
+          <div ref="xtab-2">
+            <div v-for="n in 7">Tab 2</div>
+          </div>
+          <div ref="xtab-3">
+            <div v-for="n in 4">Tab 3</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -102,42 +147,13 @@
 export default {
   data () {
     return {
-      tabs: [
-        {
-          label: 'Tab 1',
-          icon: 'message',
-          target: '#tab-1',
-          active: true
-        },
-        {
-          label: 'Disabled',
-          icon: 'fingerprint',
-          disabled: true
-        },
-        {
-          label: 'Tab 2',
-          icon: 'alarm',
-          target: '#tab-2'
-        },
-        {
-          label: 'Tab 3',
-          icon: 'accessibility',
-          target: '#tab-3'
-        },
-        {
-          label: 'Tab 4',
-          icon: 'accessibility',
-          target: '#tab-4',
-          hidden: true
-        }
+      xTabsModel: 'xtab-2',
+      xTabsOptions: [
+        {label: 'Tab 1', value: 'xtab-1'},
+        {label: 'Tab 2', value: 'xtab-2'},
+        {label: 'Tab 3', value: 'xtab-3'}
       ]
     }
   }
 }
 </script>
-
-<style scoped>
-div[id^='tab-'] {
-  margin-top: 20px;
-}
-</style>

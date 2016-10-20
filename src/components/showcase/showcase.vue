@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import store from './showcase-store'
 import categories from './categories'
 
 export default {
@@ -33,13 +32,6 @@ export default {
     return {
       categories
     }
-  },
-  beforeCompile () {
-    store.set({
-      title: 'Quasar Showcase',
-      icon: 'layers',
-      backRoute: '/'
-    })
   }
 }
 </script>

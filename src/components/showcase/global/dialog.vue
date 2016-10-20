@@ -19,7 +19,22 @@
           </div>
           <i class="item-secondary">keyboard_arrow_right</i>
         </div>
+        <hr>
+        <div class="list-label">With Form Components</div>
+        <div
+          class="item item-link"
+          v-for="dialog in form"
+          @click="dialog.handler()"
+        >
+          <i class="item-primary">{{dialog.icon}}</i>
+          <div class="item-content has-secondary">
+            <div>{{dialog.label}}</div>
+          </div>
+          <i class="item-secondary">keyboard_arrow_right</i>
+        </div>
       </div>
+
+      <p class="caption">Form components can be combined and named however you wish. Check source code.</p>
     </div>
   </div>
 </template>
@@ -38,36 +53,7 @@ export default {
             Dialog.create({
               title: 'Alert',
               message: 'Modern HTML5 Single Page Application front-end framework on steroids.'
-            }).show()
-          }
-        },
-        {
-          label: 'Prompt',
-          icon: 'help',
-          handler () {
-            Dialog.create({
-              title: 'Prompt',
-              message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
-              inputs: [
-                {
-                  name: 'input1',
-                  label: 'Placeholder 1'
-                },
-                {
-                  name: 'input2',
-                  label: 'Placeholder 2'
-                }
-              ],
-              buttons: [
-                'Cancel',
-                {
-                  label: 'Ok',
-                  handler (data) {
-                    Toast.create('Returned ' + JSON.stringify(data))
-                  }
-                }
-              ]
-            }).show()
+            })
           }
         },
         {
@@ -91,7 +77,44 @@ export default {
                   }
                 }
               ]
-            }).show()
+            })
+          }
+        },
+        {
+          label: 'Stacked Buttons Example',
+          icon: 'reorder',
+          handler () {
+            Dialog.create({
+              title: 'Favorite Superhero',
+              message: 'What is your superhero of choice?',
+              stackButtons: true,
+              buttons: [
+                {
+                  label: 'Choose Superman',
+                  handler () {
+                    console.log('Superman.')
+                  }
+                },
+                {
+                  label: 'Choose Batman',
+                  handler () {
+                    console.log('Batman.')
+                  }
+                },
+                {
+                  label: 'Choose Spiderman',
+                  handler () {
+                    console.log('Spiderman.')
+                  }
+                },
+                {
+                  label: 'No Thanks',
+                  handler () {
+                    console.log('Ok, no superhero.')
+                  }
+                }
+              ]
+            })
           }
         },
         {
@@ -105,17 +128,17 @@ export default {
             var dialog = Dialog.create({
               title: 'Progress',
               message: 'Computing...',
-              progress: progress,
+              progress,
               buttons: [
                 {
                   label: 'Cancel',
-                  handler (data) {
+                  handler () {
                     clearInterval(timeout)
-                    Toast.create('Canceled on progress ' + data)
+                    Toast.create('Canceled on progress ' + progress.model)
                   }
                 }
               ]
-            }).show()
+            })
 
             var timeout = setInterval(() => {
               progress.model++
@@ -145,44 +168,47 @@ export default {
                   }
                 }
               ]
-            }).show()
+            })
 
             var timeout = setTimeout(() => {
               clearInterval(timeout)
               dialog.close()
             }, 3000)
           }
-        },
+        }
+      ],
+      form: [
         {
-          label: 'Pick One Option',
-          icon: 'radio_button_checked',
+          label: 'Textfields',
+          icon: 'help',
           handler () {
             Dialog.create({
-              title: 'Radios',
-              message: 'Message can be used for all types of Dialogs.',
-              radios: [
-                {
-                  label: 'Option 1',
-                  value: 'opt1'
+              title: 'Prompt',
+              message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
+              form: {
+                name: {
+                  type: 'textbox',
+                  label: 'Textbox',
+                  model: ''
                 },
-                {
-                  label: 'Option 2',
-                  value: 'opt2',
-                  selected: true
+                age: {
+                  type: 'numeric',
+                  label: 'Numeric',
+                  model: 10,
+                  min: 5,
+                  max: 90
                 },
-                {
-                  label: 'Option 3',
-                  value: 'opt3'
+                tags: {
+                  type: 'chips',
+                  label: 'Chips',
+                  model: ['Joe', 'John']
                 },
-                {
-                  label: 'Option 4',
-                  value: 'opt4'
-                },
-                {
-                  label: 'Option 5',
-                  value: 'opt5'
+                comments: {
+                  type: 'textarea',
+                  label: 'Textarea',
+                  model: ''
                 }
-              ],
+              },
               buttons: [
                 'Cancel',
                 {
@@ -192,43 +218,74 @@ export default {
                   }
                 }
               ]
-            }).show()
+            })
           }
         },
         {
-          label: 'Pick Multiple Options',
+          label: 'Single Selection',
+          icon: 'radio_button_checked',
+          handler () {
+            Dialog.create({
+              title: 'Radios',
+              message: 'Message can be used for all types of Dialogs.',
+              form: {
+                option: {
+                  type: 'radio',
+                  model: 'opt1',
+                  items: [
+                    {label: 'Option 1', value: 'opt1'},
+                    {label: 'Option 2', value: 'opt2'},
+                    {label: 'Option 3', value: 'opt3'}
+                  ]
+                }
+              },
+              buttons: [
+                'Cancel',
+                {
+                  label: 'Ok',
+                  handler (data) {
+                    Toast.create('Returned ' + JSON.stringify(data))
+                  }
+                }
+              ]
+            })
+          }
+        },
+        {
+          label: 'Multiple Selection',
           icon: 'check_box',
           handler () {
             Dialog.create({
-              title: 'Checkboxes',
-              checkboxes: [
-                {
-                  label: 'Option 1',
-                  value: 'opt1',
-                  checked: true
+              title: 'Checkbox & Toggle',
+              message: 'Message can be used for all types of Dialogs.',
+              form: {
+                header1: {
+                  type: 'heading',
+                  label: 'Checkboxes'
                 },
-                {
-                  label: 'Option 2',
-                  value: 'opt2'
+                group1: {
+                  type: 'checkbox',
+                  items: [
+                    {label: 'Option 1', value: 'opt1', model: true},
+                    {label: 'Option 2', value: 'opt2', model: false},
+                    {label: 'Option 3', value: 'opt3', model: false}
+                  ]
                 },
-                {
-                  label: 'Option 3',
-                  value: 'opt3'
+                header2: {
+                  type: 'heading',
+                  label: 'Toggles'
                 },
-                {
-                  label: 'Option 4',
-                  value: 'opt4'
-                },
-                {
-                  label: 'Option 5',
-                  value: 'opt5'
+                group2: {
+                  type: 'toggle',
+                  items: [
+                    {label: 'Option 1', value: 'opt1', model: true},
+                    {label: 'Option 2', value: 'opt2', model: false},
+                    {label: 'Option 3', value: 'opt3', model: false}
+                  ]
                 }
-              ],
+              },
               buttons: [
-                {
-                  label: 'Cancel',
-                  handler () {}
-                },
+                'Cancel',
                 {
                   label: 'Ok',
                   handler (data) {
@@ -236,43 +293,48 @@ export default {
                   }
                 }
               ]
-            }).show()
+            })
           }
         },
         {
-          label: 'Pick Multiple Options #2',
-          icon: 'repeat',
+          label: 'Ranges',
+          icon: 'help',
           handler () {
             Dialog.create({
-              title: 'Toggles',
-              toggles: [
-                {
-                  label: 'Option 1',
-                  value: 'opt1',
-                  checked: true
+              title: 'Ranges',
+              form: {
+                range: {
+                  type: 'range',
+                  label: 'Range',
+                  min: 10,
+                  max: 20,
+                  model: 12
                 },
-                {
-                  label: 'Option 2',
-                  value: 'opt2'
+                doubleRange: {
+                  type: 'double-range',
+                  label: 'Double Range',
+                  model: {
+                    min: 7,
+                    max: 12
+                  },
+                  min: 5,
+                  max: 15,
+                  withLabel: true
                 },
-                {
-                  label: 'Option 3',
-                  value: 'opt3'
-                },
-                {
-                  label: 'Option 4',
-                  value: 'opt4'
-                },
-                {
-                  label: 'Option 5',
-                  value: 'opt5'
+                step: {
+                  type: 'range',
+                  label: 'With step & snap',
+                  model: 10,
+                  min: 5,
+                  max: 20,
+                  step: 3,
+                  snap: true,
+                  markers: true,
+                  withLabel: true
                 }
-              ],
+              },
               buttons: [
-                {
-                  label: 'Cancel',
-                  handler () {}
-                },
+                'Cancel',
                 {
                   label: 'Ok',
                   handler (data) {
@@ -280,32 +342,40 @@ export default {
                   }
                 }
               ]
-            }).show()
+            })
           }
         },
         {
-          label: 'Stacked Buttons Example',
-          icon: 'reorder',
+          label: 'Rating',
+          icon: 'help',
           handler () {
             Dialog.create({
-              title: 'Confirm',
-              message: 'Quasar Framework is performance optimized by default, but you can use a speed boost by disabling some of its features.',
-              stackButtons: true,
-              buttons: [
-                {
-                  label: 'Turn on speed boost',
-                  handler () {
-                    console.log('Turning on speed boost.')
-                  }
+              title: 'Rating',
+              form: {
+                rating: {
+                  type: 'rating',
+                  label: 'How many stars?',
+                  model: 0,
+                  max: 5
                 },
+                rating2: {
+                  type: 'rating',
+                  label: 'How many pencils?',
+                  model: 3,
+                  max: 6,
+                  icon: 'create'
+                }
+              },
+              buttons: [
+                'Cancel',
                 {
-                  label: 'No Thanks',
-                  handler () {
-                    console.log('Ok, no speed boost.')
+                  label: 'Ok',
+                  handler (data) {
+                    Toast.create('Returned ' + JSON.stringify(data))
                   }
                 }
               ]
-            }).show()
+            })
           }
         }
       ]

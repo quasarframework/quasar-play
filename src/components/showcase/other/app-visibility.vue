@@ -14,7 +14,7 @@
 
       <table class="quasar-table striped" v-if="eventList.length > 0">
         <tbody>
-          <tr v-for="evt in eventList" track-by="$index">
+          <tr v-for="evt in eventList" :key="evt.timestamp">
             <td>{{ evt.timestamp }}</td>
             <td>{{ evt.label }}</td>
           </tr>
@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     writeVisibilityState (state) {
+      console.log('event', state)
       const date = new Date()
 
       this.eventList.unshift({

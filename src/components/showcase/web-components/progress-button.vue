@@ -8,7 +8,7 @@
         <quasar-progress-button
           class="yellow"
           :percentage="progressBtn"
-          @click="workButton()"
+          @click.native="workButton()"
           dark-filler
         >
           Work it!
@@ -16,7 +16,7 @@
         <quasar-progress-button
           class="dark"
           :percentage="progressBtn"
-          @click="workButton()"
+          @click.native="workButton()"
         >
           Work it!
         </quasar-progress-button>
@@ -28,7 +28,7 @@
           class="primary"
           indeterminate
           :percentage="progressBtn"
-          @click="workButton()"
+          @click.native="workButton()"
         >
           Work it!
         </quasar-progress-button>
@@ -36,7 +36,7 @@
           class="negative"
           indeterminate
           :percentage="progressBtn"
-          @click="workButton()"
+          @click.native="workButton()"
         >
           Work it!
         </quasar-progress-button>

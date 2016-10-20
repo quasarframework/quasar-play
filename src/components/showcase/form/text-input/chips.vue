@@ -12,17 +12,17 @@
         <span class="mobile-only">Tap</span>
         on Chips Textbox below to start adding Chips.
       </p>
-      <quasar-chips :model.sync="model"></quasar-chips>
+      <quasar-chips v-model="model"></quasar-chips>
 
       <p class="caption">Disabled State</p>
-      <quasar-chips :model.sync="model" disable></quasar-chips>
+      <quasar-chips v-model="model" disable></quasar-chips>
 
       <p class="caption">Inside of a List</p>
       <div class="list">
         <div class="item multiple-lines">
           <i class="item-primary">edit</i>
           <div class="item-content">
-            <quasar-chips :model.sync="model" placeholder="Type names"></quasar-chips>
+            <quasar-chips v-model="model" placeholder="Type names"></quasar-chips>
           </div>
         </div>
       </div>

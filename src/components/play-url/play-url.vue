@@ -4,7 +4,7 @@
       class="toolbar primary fixed shadow-1"
       :class="{active: active || !showedToolbar}"
     >
-      <button @click="goBack()">
+      <button v-go-back="'/play'">
         <i>close</i>
       </button>
       <quasar-toolbar-title :padding="1">
@@ -14,9 +14,11 @@
         <i>refresh</i>
       </button>
       <div class="toggle absolute-bottom row justify-center">
-        <a @click="toggle" class="bg-white text-primary">
-          <i v-show="!active">add_circle</i>
-          <i v-else>remove_circle</i>
+        <a
+          @click="toggle"
+          class="bg-white text-primary"
+        >
+          <i v-text="active ? 'remove_circle' : 'add_circle'"></i>
         </a>
       </div>
     </div>
@@ -27,7 +29,7 @@
       <spinner></spinner>
     </div>
     <iframe
-      v-else
+      v-show="iframeLoaded"
       :src="url"
       @load="onload"
       class="full-height full-width"
@@ -37,8 +39,6 @@
 </template>
 
 <script>
-import { Platform } from 'quasar'
-
 export default {
   data () {
     let url = decodeURIComponent(this.$route.params.url)
@@ -69,18 +69,9 @@ export default {
       }, 350)
 
       this.active = false
-    },
-    goBack () {
-      if (Platform.is.cordova) {
-        window.history.go(this.historyLevel - 1 - window.history.length)
-        return
-      }
-
-      this.$router.go('/play')
     }
   },
-  ready () {
-    this.historyLevel = window.history.length
+  mounted () {
     setTimeout(() => {
       this.showedToolbar = true
     }, 1000)

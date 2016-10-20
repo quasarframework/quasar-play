@@ -2,17 +2,17 @@
   <div>
     <div class="layout-padding">
       <p class="caption">With Radios</p>
-      <quasar-select type="radio" :model.sync="select" :options="selectOptions"></quasar-select>
+      <quasar-select type="radio" v-model="select" :options="selectOptions"></quasar-select>
       <p class="caption">With Checkboxes</p>
-      <quasar-select type="checkbox" :model.sync="select" :options="selectOptions"></quasar-select>
+      <quasar-select type="checkbox" v-model="multipleSelect" :options="selectOptions"></quasar-select>
       <p class="caption">With Toggles</p>
-      <quasar-select type="toggle" :model.sync="select" :options="selectOptions"></quasar-select>
+      <quasar-select type="toggle" v-model="multipleSelect" :options="selectOptions"></quasar-select>
 
       <p class="caption">With Placeholder</p>
-      <quasar-select type="radio" :model.sync="select" :options="selectOptions" :placeholder="'Pick Company'"></quasar-select>
+      <quasar-select type="radio" v-model="select" :options="selectOptions" :placeholder="'Pick Company'"></quasar-select>
 
       <p class="caption">Disabled State</p>
-      <quasar-select disable type="radio" :model.sync="select" :options="selectOptions"></quasar-select>
+      <quasar-select disable type="radio" v-model="select" :options="selectOptions"></quasar-select>
 
       <p class="caption">Inside of a List</p>
       <div class="list">
@@ -23,7 +23,7 @@
             <quasar-select
               class="full-width"
               type="radio"
-              :model.sync="select"
+              v-model="select"
               :options="selectOptions"
             ></quasar-select>
           </div>
@@ -36,7 +36,7 @@
             <quasar-select
               class="full-width"
               type="checkbox"
-              :model.sync="multipleSelect"
+              v-model="multipleSelect"
               :options="selectOptions"
             ></quasar-select>
           </div>
@@ -47,7 +47,7 @@
             <quasar-select
               class="full-width"
               type="toggle"
-              :model.sync="multipleSelect"
+              v-model="multipleSelect"
               :options="selectOptions"
             ></quasar-select>
           </div>

@@ -10,10 +10,12 @@
         Go back
       </button>
       <span v-if="canGoBack" style="margin: 0 10px;">or</span>
-      <button class="secondary push" v-link="'/'">
-        Go home
-        <i class="on-right">home</i>
-      </button>
+      <router-link to="/">
+        <button class="secondary push">
+          Go home
+          <i class="on-right">home</i>
+        </button>
+      </router-link>
     </p>
   </div>
 </template>

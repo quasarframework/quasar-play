@@ -105,9 +105,9 @@
 
       <p class="caption">
         Also see
-        <a href="#!/showcase/web-components/progress-button">
+        <router-link to="/showcase/web-components/progress-button" replace>
           <i>launch</i> Progress Buttons
-        </a>
+        </router-link>
       </p>
     </div>
   </div>

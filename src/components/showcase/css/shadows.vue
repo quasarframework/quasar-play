@@ -3,8 +3,8 @@
     <div class="layout-padding">
       <div style="margin: 10px; text-align: center">
         <div class="flex inline shadow-box items-center justify-center inset-shadow">.inset-shadow</div>
-        <div class="flex inline shadow-box items-center justify-center" v-for="n in 5" :class="['shadow-' + (n + 1)]">.shadow-{{n+1}}</div>
-        <div class="flex inline shadow-box items-center justify-center" v-for="n in 5" :class="['shadow-up-' + (n + 1)]">.shadow-up-{{n+1}}</div>
+        <div class="flex inline shadow-box items-center justify-center" v-for="n in 5" :class="['shadow-' + n]">.shadow-{{n}}</div>
+        <div class="flex inline shadow-box items-center justify-center" v-for="n in 5" :class="['shadow-up-' + n]">.shadow-up-{{n}}</div>
       </div>
     </div>
   </div>

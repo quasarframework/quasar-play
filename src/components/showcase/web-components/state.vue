@@ -11,7 +11,7 @@
       </p>
 
       <div class="row justify-center" style="margin-top: 20px;">
-        <quasar-state :model.sync="state">
+        <quasar-state :active="state">
           <div slot="active">
             <spinner name="hourglass" :size="40" color="#90caf9"></spinner>
             &nbsp;&nbsp;&nbsp;Active State

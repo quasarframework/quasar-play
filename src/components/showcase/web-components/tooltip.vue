@@ -12,15 +12,23 @@
         </span>
       </p>
 
-      <div v-tooltip.literal="Quasar Rulz!" style="margin-top: 40px;width: 200px; height: 70px;background-color: #26A69A;">
+      <div v-tooltip="'Quasar Rulz!'" style="margin-top: 40px;width: 200px; height: 70px;background-color: #26A69A;">
         &nbsp;
       </div>
       <br><br>
       <div class="group">
-        <button class="indigo" v-tooltip.wrap.inline.literal="Tooltip">Hover</button>
-        <button class="red" v-tooltip.wrap.inline.literal="Tooltip for the user">Over</button>
-        <button class="purple" v-tooltip.wrap.inline.literal="Lorem Ipsum... Some long tooltip...">These</button>
-        <button class="amber" v-tooltip.wrap.inline.literal="Lorem Ipsum...">Buttons</button>
+        <div v-tooltip.inline="'Tooltip'">
+          <button class="indigo">Hover</button>
+        </div>
+        <div v-tooltip.inline="'Tooltip for the user'">
+          <button class="red">Over</button>
+        </div>
+        <div v-tooltip.inline="'Lorem Ipsum... Some long tooltip...'">
+          <button class="purple">These</button>
+        </div>
+        <div v-tooltip.inline="'Lorem Ipsum...'">
+          <button class="amber">Buttons</button>
+        </div>
       </div>
     </div>
   </div>

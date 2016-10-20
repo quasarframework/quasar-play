@@ -13,16 +13,16 @@
 
       <h5>Determinate State</h5>
       <p>
-        <quasar-progress :model="progress" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe positive" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe info" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe warning" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe secondary" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe tertiary" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe dark" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe negative" @click="randomize()"></quasar-progress>
-        <quasar-progress :model="progress" class="stripe animate" @click="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe positive" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe info" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe warning" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe secondary" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe tertiary" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe dark" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe negative" @click.native="randomize()"></quasar-progress>
+        <quasar-progress :percentage="progress" class="stripe animate" @click.native="randomize()"></quasar-progress>
       </p>
 
       <h5>Indeterminate State</h5>
@@ -40,10 +40,10 @@
       </p>
 
       <h5>Striped</h5>
-      <quasar-progress :model="progress" class="stripe" @click="randomize()"></quasar-progress>
+      <quasar-progress :percentage="progress" class="stripe" @click.native="randomize()"></quasar-progress>
 
       <h5>Striped and Animated</h5>
-      <quasar-progress :model="progress" class="stripe animate" @click="randomize()"></quasar-progress>
+      <quasar-progress :percentage="progress" class="stripe animate" @click.native="randomize()"></quasar-progress>
     </div>
   </div>
 </template>

@@ -19,7 +19,7 @@
           :class="type"
           @click="toastWithType(type)"
         >
-          {{type | capitalize}} Toast
+          {{ capitalize(type) }} Toast
         </button>
       </p>
 
@@ -75,6 +75,9 @@ export default {
     }
   },
   methods: {
+    capitalize (msg) {
+      return msg.charAt(0).toUpperCase() + msg.slice(1)
+    },
     basicToast () {
       Toast.create('Lorem ipsum dolor')
     },
@@ -116,8 +119,9 @@ export default {
         onDismiss () {
           Dialog.create({
             title: 'Dismissed',
-            message: 'Toast was just dismissed!'
-          }).show()
+            message: 'Toast was just dismissed!',
+            buttons: ['OK']
+          })
         }
       })
     },

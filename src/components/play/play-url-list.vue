@@ -10,7 +10,7 @@
     </blockquote>
 
     <div v-else class="list no-border">
-      <div class="item two-lines item-delimiter" v-for="(id, item) in urls">
+      <div class="item two-lines item-delimiter" v-for="(item, id) in urls">
         <i
           class="item-primary cursor-pointer"
           @click="play(item.url)"
@@ -19,20 +19,20 @@
         </i>
         <div class="item-content has-secondary">
           <div>{{item.name}}</div>
-          <div class="text-primary">{{item.url}}</div>
+          <div class="text-primary cursor-pointer" @click="play(item.url)">{{item.url}}</div>
         </div>
         <div class="item-secondary">
-          <quasar-popover v-ref:popover>
+          <quasar-popover :ref="'popover' + id">
             <i slot="target">
               more_vert
             </i>
 
             <div class="list">
-              <div class="item item-link" @click="$refs.popover.close(), editURL(id)">
+              <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
                 <i class="item-primary">edit</i>
                 <div class="item-content">Edit</div>
               </div>
-              <div class="item item-link" @click="$refs.popover.close(), deleteURL(id)">
+              <div class="item item-link" @click="$refs['popover' + id][0].close(), deleteURL(id)">
                 <i class="item-primary">delete</i>
                 <div class="item-content">Delete</div>
               </div>
@@ -42,14 +42,14 @@
       </div>
     </div>
 
-    <quasar-fab backdrop class="cordova-only absolute-bottom-right" type="primary" direction="up">
-      <quasar-small-fab class="secondary" @click="scanQR">phonelink_ring</quasar-small-fab>
-      <quasar-small-fab class="primary clear" @click="addURL">add</quasar-small-fab>
+    <quasar-fab class="cordova-only absolute-bottom-right" classNames="primary" direction="up">
+      <quasar-small-fab class="secondary" @click.native="scanQR()">phonelink_ring</quasar-small-fab>
+      <quasar-small-fab class="primary clear" @click.native="addURL()">add</quasar-small-fab>
     </quasar-fab>
 
     <button
       class="cordova-hide circular primary absolute-bottom-right"
-      @click="addURL"
+      @click="addURL()"
       style="right: 16px; bottom: 16px;"
     >
       <i>add</i>
@@ -97,7 +97,7 @@ export default {
             }
           }
         ]
-      }).show()
+      })
     },
     editURL (id) {
       var item = store.state[id]
@@ -105,82 +105,84 @@ export default {
       Dialog.create({
         title: 'Edit URL',
         message: '',
-        inputs: [
-          {
-            name: 'name',
+        form: {
+          name: {
+            type: 'input',
             label: 'Name',
             model: item.name
           },
-          {
-            name: 'url',
+          url: {
+            type: 'input',
             label: 'URL',
             model: item.url
           }
-        ],
+        },
         buttons: [
           'Cancel',
           {
             label: 'Save',
             handler (data) {
-              if (!data[0].value.length || !data[1].value.length) {
+              if (!data.name.length || !data.url.length) {
                 Dialog.create({
                   title: 'Error',
                   message: 'Please fill in both name and URL'
-                }).show()
+                })
                 return
               }
 
               store.set(id, {
-                name: data[0].value,
-                url: data[1].value
+                name: data.name,
+                url: data.url
               })
             }
           }
         ]
-      }).show()
+      })
     },
     addURL () {
       Dialog.create({
         title: 'Add URL',
         message: '',
-        inputs: [
-          {
-            name: 'name',
-            label: 'Name'
+        form: {
+          name: {
+            type: 'input',
+            label: 'Name',
+            model: ''
           },
-          {
-            name: 'url',
-            model: 'http://',
-            label: 'URL'
+          url: {
+            type: 'input',
+            label: 'URL',
+            model: 'http://'
           }
-        ],
+        },
         buttons: [
           'Cancel',
           {
             label: 'Add',
             handler (data) {
-              if (!data[0].value.length && (!data[1].value.length || data[1].value === 'http://')) {
+              if (!data.name.length && (!data.url.length || data.url === 'http://')) {
                 Toast.create.warning('Please fill in both name and URL.')
                 return
               }
-              if (!data[0].value.length) {
+              if (!data.name.length) {
                 Toast.create.warning('Please fill in a name for your URL.')
                 return
               }
-              if (!data[1].value.length || data[1].value === 'http://') {
+              if (!data.url.length || data.url === 'http://') {
                 Toast.create.warning('Please fill in the URL.')
                 return
               }
 
-              addURL(data[0].value, data[1].value)
+              addURL(data.name, data.url)
             }
           }
         ]
-      }).show()
+      })
     },
     play (url) {
-      this.$router.go({
-        name: 'play-url', params: {
+      this.$router.push({
+        name: 'play-url',
+        params: {
           url: encodeURIComponent(url)
         }
       })
@@ -189,7 +191,7 @@ export default {
       var play = this.play
 
       cordova.plugins.barcodeScanner.scan(
-        (result) => {
+        result => {
           if (result.cancelled) {
             Toast.create('QR code scanning aborted...')
             return
@@ -209,30 +211,30 @@ export default {
                   Dialog.create({
                     title: 'New URL',
                     message: `Set a name for your URL (${result.text}):`,
-                    inputs: [
-                      {
-                        name: 'name',
+                    form: {
+                      name: {
+                        type: 'input',
                         label: 'Name'
                       }
-                    ],
+                    },
                     buttons: [
                       'Cancel',
                       {
                         label: 'Add URL',
                         handler (data) {
-                          if (!data[0].value.length) {
+                          if (!data.name.length) {
                             Dialog.create({
                               title: 'Error',
                               message: 'Please fill in a name'
-                            }).show()
+                            })
                             return
                           }
 
-                          addURL(data[0].value, result.text)
+                          addURL(data.name, result.text)
                         }
                       }
                     ]
-                  }).show()
+                  })
                 }
               },
               {
@@ -242,12 +244,12 @@ export default {
                 }
               }
             ]
-          }).show()
+          })
         },
-        (error) => {
+        error => {
           Dialog.create({
             message: 'Failed to scan the QR code: ' + error
-          }).show()
+          })
         }
       )
     }

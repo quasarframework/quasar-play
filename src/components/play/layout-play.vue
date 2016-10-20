@@ -10,8 +10,8 @@
     </div>
 
     <quasar-tabs slot="navigation">
-      <quasar-tab icon="queue_play_next" v-link="{path: '/play', exact: true, replace: true}">URL List</quasar-tab>
-      <quasar-tab icon="info" v-link="{path: '/play/how-to', replace: true}">How To</quasar-tab>
+      <quasar-tab route="/play" exact replace icon="queue_play_next">URL List</quasar-tab>
+      <quasar-tab route="/play/how-to" replace icon="info">How To</quasar-tab>
     </quasar-tabs>
 
     <router-view class="layout-view"></router-view>

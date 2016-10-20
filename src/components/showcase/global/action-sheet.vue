@@ -31,7 +31,7 @@ function showActionSheetWithIcons (gallery) {
   ActionSheet.create({
     title: 'Article Actions',
     gallery: gallery,
-    buttons: [
+    actions: [
       {
         label: 'Delete',
         icon: 'delete',
@@ -59,24 +59,24 @@ function showActionSheetWithIcons (gallery) {
         handler () {
           Toast.create('Added to favorites')
         }
-      },
-      {
-        label: 'Cancel',
-        icon: 'cancel',
-        classes: 'text-primary',
-        handler () {
-          Toast.create('Cancelled...')
-        }
       }
-    ]
-  }).show()
+    ],
+    dismiss: {
+      label: 'Cancel',
+      icon: 'cancel',
+      classes: 'text-primary',
+      handler () {
+        Toast.create('Cancelled...')
+      }
+    }
+  })
 }
 
 function showActionSheetWithAvatar (gallery) {
   ActionSheet.create({
     title: 'Share to',
     gallery: gallery,
-    buttons: [
+    actions: [
       {
         label: 'Joe',
         avatar: 'statics/linux-avatar.png',
@@ -104,17 +104,17 @@ function showActionSheetWithAvatar (gallery) {
         handler () {
           Toast.create('Shared to Jack!')
         }
-      },
-      {
-        label: 'Cancel',
-        icon: 'cancel',
-        classes: 'text-primary',
-        handler () {
-          Toast.create('Cancelled...')
-        }
       }
-    ]
-  }).show()
+    ],
+    dismiss: {
+      label: 'Cancel',
+      icon: 'cancel',
+      classes: 'text-primary',
+      handler () {
+        Toast.create('Cancelled...')
+      }
+    }
+  })
 }
 
 export default {

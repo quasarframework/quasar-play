@@ -6,14 +6,14 @@
       </div>
 
       <div style="font-size: 2rem; margin-top: 20px;">
-        <quasar-rating :model.sync="ratingModel" :max-grade="3"></quasar-rating>
-        <quasar-rating class="primary" :model.sync="ratingModel" :max-grade="5" icon="pets"></quasar-rating>
-        <quasar-rating class="orange" :model.sync="ratingModel" :max-grade="9" icon="thumb_up"></quasar-rating>
-        <quasar-rating style="font-size: 3rem" class="teal" :model.sync="ratingModel" :max-grade="6" icon="home"></quasar-rating>
+        <quasar-rating v-model="ratingModel" :max="3"></quasar-rating>
+        <quasar-rating class="primary" v-model="ratingModel" :max="5" icon="pets"></quasar-rating>
+        <quasar-rating class="orange" v-model="ratingModel" :max="9" icon="thumb_up"></quasar-rating>
+        <quasar-rating style="font-size: 3rem" class="teal" v-model="ratingModel" :max="6" icon="home"></quasar-rating>
       </div>
 
       <p class="caption">Disabled State</p>
-      <quasar-rating style="font-size: 2rem" class="primary" :model.sync="ratingModel" :max-grade="6" icon="create" disable></quasar-rating>
+      <quasar-rating style="font-size: 2rem" class="primary" v-model="ratingModel" :max="6" icon="create" disable></quasar-rating>
     </div>
   </div>
 </template>

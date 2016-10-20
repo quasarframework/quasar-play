@@ -11,7 +11,7 @@
         <div
           class="item item-link"
           v-for="modal in types"
-          @click="modal.handler()"
+          @click="$refs[modal.ref].open()"
         >
           <i class="item-primary">open_in_new</i>
           <div class="item-content has-secondary">
@@ -22,118 +22,101 @@
       </div>
     </div>
 
-    <quasar-modal :set="{minimized: true}" :css="{minWidth: '30vw', minHeight: '30vh'}" v-ref:modal>
-      <div style="padding: 50px">
-        <h4>Template Inline Modal</h4>
-        <p>Variable from parent Vue scope: {{ modalVariable }}</p>
-        <br><br>
-        <button class="primary" @click="$refs.modal.close()">Close</button>
-      </div>
+    <quasar-modal ref="basicModal" :content-css="{padding: '50px', minWidth: '50vw'}">
+      <h4>Basic Modal</h4>
+      <p v-for="n in 25">Scroll down to close</p>
+      <button class="primary" @click="$refs.basicModal.close()">Close</button>
+    </quasar-modal>
+
+    <quasar-modal
+      ref="eventsModal"
+      @open="notify('open')"
+      @escape-key="notify('escape-key')"
+      @close="notify('close')"
+      :content-css="{padding: '50px', minWidth: '50vw'}"
+    >
+      <h4>Modal with Events</h4>
+      <p v-for="n in 25">Scroll down to close</p>
+      <button class="primary" @click="$refs.eventsModal.close()">Close</button>
+    </quasar-modal>
+
+    <quasar-modal ref="layoutModal" :content-css="{minWidth: '80vw', minHeight: '80vh'}">
+      <quasar-layout>
+        <div slot="header" class="toolbar">
+          <button @click="$refs.layoutModal.close()">
+            <i>keyboard_arrow_left</i>
+          </button>
+          <quasar-toolbar-title :padding="1">
+            Header
+          </quasar-toolbar-title>
+        </div>
+
+        <div slot="header" class="toolbar primary">
+          <quasar-search class="primary"></quasar-search>
+        </div>
+
+        <div slot="footer" class="toolbar">
+          <quasar-toolbar-title :padding="1">
+            Footer
+          </quasar-toolbar-title>
+        </div>
+
+        <div class="layout-view">
+          <div class="layout-padding">
+            <h1>Modal</h1>
+            <button class="primary" @click="$refs.layoutModal.close()">Close</button>
+            <p class="caption" v-for="n in 15">This is a Modal presenting a Layout.</p>
+          </div>
+        </div>
+      </quasar-layout>
+    </quasar-modal>
+
+    <quasar-modal ref="minimizedModal" class="minimized" :content-css="{padding: '50px'}">
+      <h4>Minimized Modal</h4>
+      <p>This one has backdrop on small screens too.</p>
+      <button class="tertiary" @click="$refs.basicModal.close()">Close Me</button>
+    </quasar-modal>
+
+    <quasar-modal ref="maximizedModal" class="maximized" :content-css="{padding: '50px'}">
+      <h4>Maximized Modal</h4><p>This one is maximized on bigger screens too.</p>
+      <button class="tertiary" @click="$refs.maximizedModal.close()">Close Me</button>
     </quasar-modal>
   </div>
 </template>
 
 <script>
-import { Modal, Toast } from 'quasar'
-import modalTemplate from 'helpers/modal-template.html'
+import { Toast } from 'quasar'
 
 export default {
   data () {
     return {
-      modalVariable: 5,
       types: [
         {
           label: 'Basic',
-          handler: () => { this.openBasicModal() }
+          ref: 'basicModal'
         },
         {
           label: 'Basic with Events',
-          handler: () => { this.openBasicModalWithEvents() }
+          ref: 'eventsModal'
         },
         {
           label: 'With Layout',
-          handler: () => { this.openLayoutModal() }
+          ref: 'layoutModal'
         },
         {
           label: 'Always Minimized',
-          handler: () => { this.openMinimizedModal() }
+          ref: 'minimizedModal'
         },
         {
           label: 'Always Maximized',
-          handler: () => { this.openMaximizedModal() }
-        },
-        {
-          label: 'Template Inline Modal',
-          handler: () => { this.openInlineModal() }
+          ref: 'maximizedModal'
         }
       ]
     }
   },
   methods: {
-    openInlineModal () {
-      this.$refs.modal.show()
-    },
-
-    openBasicModal () {
-      Modal.create({
-        template: '<p v-for="n in 10">This is a basic modal. Scroll down to close.</p><button class="secondary" @click="close()">Close Me</button>'
-      })
-      .css({
-        padding: '50px',
-        minWidth: '50vw'
-      })
-      .show()
-    },
-
-    openBasicModalWithEvents () {
-      Modal.create({
-        template: '<p v-for="n in 10">This is a basic modal. Scroll down to close.</p><button class="secondary" @click="close()">Close Me</button>'
-      })
-      .onShow(() => {
-        Toast.create('onShow triggered')
-      })
-      .onClose(() => {
-        Toast.create('onClose triggered')
-      })
-      .css({
-        padding: '50px',
-        minWidth: '50vw'
-      })
-      .show()
-    },
-
-    openLayoutModal () {
-      Modal.create({
-        template: modalTemplate,
-        methods: {
-          openModal: () => { this.openLayoutModal() }
-        }
-      }).css({
-        minWidth: '80vw',
-        minHeight: '80vh'
-      }).show()
-    },
-
-    openMinimizedModal () {
-      Modal.create({
-        template: '<h4>Minimized Modal</h4><p>This one has backdrop on small screens too.</p>' +
-                  '<button class="tertiary" @click="close()">Close Me</button>'
-      }).set({
-        minimized: true
-      }).css({
-        padding: '50px'
-      }).show()
-    },
-
-    openMaximizedModal () {
-      Modal.create({
-        template: '<h4>Maximized Modal</h4><p>This one is maximized on bigger screens too.</p>' +
-                  '<button class="tertiary" @click="close()">Close Me</button>'
-      }).set({
-        maximized: true
-      }).css({
-        padding: '50px'
-      }).show()
+    notify (eventName) {
+      Toast.create(`Event "${eventName}" was triggered.`)
     }
   }
 }

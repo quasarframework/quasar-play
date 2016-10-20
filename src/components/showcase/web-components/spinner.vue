@@ -6,13 +6,13 @@
           Size: {{ size }}px
         </div>
         <div>
-          <quasar-range label :model.sync="size" min="20" max="256"></quasar-range>
+          <quasar-range label v-model="size" :min="20" :max="256"></quasar-range>
         </div>
 
         <i class="text-grey-7" style="font-size: 2rem">palette</i>
         <label for="color-spinner" class="auto">Color</label>
         <input id="color-spinner" v-model="color" style="width: 80px; text-align: center; margin-right: 10px;">
-        <quasar-dialog-select type="radio" :model.sync="color" :options="colorOptions" ok-label="Pick" title="Spinner Color"></quasar-select>
+        <quasar-dialog-select type="radio" v-model="color" :options="colorOptions" ok-label="Pick" title="Spinner Color"></quasar-select>
       </div>
 
       <p class="caption">
@@ -20,13 +20,13 @@
       </p>
 
       <div style="margin-top: 20px" class="group">
-        <spinner
-          v-for="spinner in spinners"
-          v-tooltip.inline="spinner"
-          :name="spinner"
-          :color="color"
-          :size="size"
-        ></spinner>
+        <div v-for="spinner in spinners" v-tooltip.inline="spinner">
+          <spinner
+            :name="spinner"
+            :color="color"
+            :size="size"
+          ></spinner>
+        </div>
       </div>
 
       <p class="caption">
@@ -71,6 +71,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>

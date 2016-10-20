@@ -30,7 +30,7 @@
       </p>
     </div>
 
-    <quasar-context-menu v-ref:context>
+    <quasar-context-menu ref="context">
       <div class="list highlight">
         <div
           class="item item-link two-lines item-delimiter"

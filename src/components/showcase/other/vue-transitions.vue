@@ -10,20 +10,19 @@
       </p>
       <p>
         <label>
-          <quasar-toggle :model.sync="visible"></quasar-toggle>
+          <quasar-toggle v-model="visible"></quasar-toggle>
           Visible image
         </label>
       </p>
 
-      <p
-        v-show="visible"
-        transition="slide"
-      >
-        <img
-          class="responsive"
-          :src="'statics/quasar.jpg'"
-        >
-      </p>
+      <quasar-transition name="slide">
+        <p v-show="visible">
+          <img
+            class="responsive"
+            :src="'statics/quasar.jpg'"
+          >
+        </p>
+      </quasar-transition>
     </div>
   </div>
 </template>

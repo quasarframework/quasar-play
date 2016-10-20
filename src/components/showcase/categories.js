@@ -408,11 +408,6 @@ export default [
         hash: 'fab'
       },
       {
-        title: 'Grid',
-        icon: 'view_module',
-        hash: 'grid'
-      },
-      {
         title: 'Infinite Scroll',
         icon: 'update',
         hash: 'infinite-scroll'

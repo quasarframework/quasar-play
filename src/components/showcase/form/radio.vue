@@ -8,22 +8,22 @@
       <p class="caption">Standalone</p>
       <div class="column group">
         <label>
-          <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
+          <quasar-radio v-model="option" val="opt1"></quasar-radio>
           Option 1
         </label>
         <label>
-          <quasar-radio :model.sync="option" value="opt2" class="teal"></quasar-radio>
+          <quasar-radio v-model="option" val="opt2" class="teal"></quasar-radio>
           Option 2
         </label>
         <label>
-          <quasar-radio :model.sync="option" value="opt3" class="orange"></quasar-radio>
+          <quasar-radio v-model="option" val="opt3" class="orange"></quasar-radio>
           Option 3
         </label>
       </div>
 
       <p class="caption">Disabled State</p>
       <label>
-        <quasar-radio :model.sync="option" value="opt1" disable></quasar-radio>
+        <quasar-radio v-model="option" val="opt1" disable></quasar-radio>
         Option 1
       </label>
 
@@ -31,7 +31,7 @@
       <div class="list">
         <label class="item">
           <div class="item-primary">
-            <quasar-radio :model.sync="option" value="opt1"></quasar-radio>
+            <quasar-radio v-model="option" val="opt1"></quasar-radio>
           </div>
           <div class="item-content">
             Option 1
@@ -39,7 +39,7 @@
         </label>
         <label class="item two-lines">
           <div class="item-primary">
-            <quasar-radio :model.sync="option" value="opt2"></quasar-radio>
+            <quasar-radio v-model="option" val="opt2"></quasar-radio>
           </div>
           <div class="item-content">
             <div>Option 2</div>
@@ -48,7 +48,7 @@
         </label>
         <label class="item three-lines">
           <div class="item-primary">
-            <quasar-radio :model.sync="option" value="opt3"></quasar-radio>
+            <quasar-radio v-model="option" val="opt3"></quasar-radio>
           </div>
           <div class="item-content">
             <div>Option 3</div>
