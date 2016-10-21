@@ -60,13 +60,13 @@
       <p class="caption">Inside of a List</p>
       <div class="list">
         <div class="list-label">Date or Time</div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">access_time</i>
           <div class="item-content">
             <quasar-datetime class="full-width" v-model="model" type="time"></quasar-datetime>
           </div>
         </div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">update</i>
           <div class="item-content row items-baseline">
             <quasar-datetime class="full-width" v-model="model" type="date"></quasar-datetime>
@@ -74,7 +74,7 @@
         </div>
         <hr>
         <div class="list-label">Date & Time</div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">notifications</i>
           <div class="item-content row items-baseline">
             <quasar-datetime class="full-width" v-model="model" type="datetime"></quasar-datetime>

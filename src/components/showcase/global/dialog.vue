@@ -141,8 +141,8 @@ export default {
             })
 
             var timeout = setInterval(() => {
-              progress.model++
-              if (progress.model === 40) {
+              progress.model += Math.floor(Math.random() * 5) + 1
+              if (progress.model >= 42) {
                 clearInterval(timeout)
                 dialog.close()
               }
@@ -308,6 +308,7 @@ export default {
                   label: 'Range',
                   min: 10,
                   max: 20,
+                  withLabel: true,
                   model: 12
                 },
                 doubleRange: {
@@ -324,10 +325,10 @@ export default {
                 step: {
                   type: 'range',
                   label: 'With step & snap',
-                  model: 10,
-                  min: 5,
-                  max: 20,
-                  step: 3,
+                  model: -6,
+                  min: -10,
+                  max: 10,
+                  step: 4,
                   snap: true,
                   markers: true,
                   withLabel: true

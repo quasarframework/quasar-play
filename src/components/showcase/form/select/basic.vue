@@ -17,7 +17,7 @@
       <p class="caption">Inside of a List</p>
       <div class="list">
         <div class="list-label">Single Selection</div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
             <quasar-select
@@ -30,7 +30,7 @@
         </div>
         <hr>
         <div class="list-label">Multiple Selection</div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
             <quasar-select
@@ -41,7 +41,7 @@
             ></quasar-select>
           </div>
         </div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
             <quasar-select

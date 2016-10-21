@@ -37,40 +37,44 @@
       <p class="caption">
         They come in all colors.
       </p>
-      <quasar-tabs class="primary">
-        <quasar-tab icon="mail">Mails</quasar-tab>
-        <quasar-tab icon="alarm">Alarms</quasar-tab>
-        <quasar-tab icon="movie">Movies</quasar-tab>
-      </quasar-tabs>
-      <quasar-tabs class="amber clear">
-        <quasar-tab icon="mail">Mails</quasar-tab>
-        <quasar-tab icon="alarm">Alarms</quasar-tab>
-        <quasar-tab icon="movie">Movies</quasar-tab>
-      </quasar-tabs>
-      <quasar-tabs class="secondary">
-        <quasar-tab icon="mail">Mails</quasar-tab>
-        <quasar-tab icon="alarm">Alarms</quasar-tab>
-        <quasar-tab icon="movie">Movies</quasar-tab>
-      </quasar-tabs>
+      <div class="group">
+        <quasar-tabs class="primary">
+          <quasar-tab icon="mail">Mails</quasar-tab>
+          <quasar-tab icon="alarm">Alarms</quasar-tab>
+          <quasar-tab icon="movie">Movies</quasar-tab>
+        </quasar-tabs>
+        <quasar-tabs class="amber clear">
+          <quasar-tab icon="mail">Mails</quasar-tab>
+          <quasar-tab icon="alarm">Alarms</quasar-tab>
+          <quasar-tab icon="movie">Movies</quasar-tab>
+        </quasar-tabs>
+        <quasar-tabs class="secondary">
+          <quasar-tab icon="mail">Mails</quasar-tab>
+          <quasar-tab icon="alarm">Alarms</quasar-tab>
+          <quasar-tab icon="movie">Movies</quasar-tab>
+        </quasar-tabs>
+      </div>
 
       <p class="caption">
         And also "inverted".
       </p>
-      <quasar-tabs class="orange inverted">
-        <quasar-tab icon="mail">Mails</quasar-tab>
-        <quasar-tab icon="alarm">Alarms</quasar-tab>
-        <quasar-tab icon="movie">Movies</quasar-tab>
-      </quasar-tabs>
-      <quasar-tabs class="secondary inverted">
-        <quasar-tab icon="mail">Mails</quasar-tab>
-        <quasar-tab icon="alarm">Alarms</quasar-tab>
-        <quasar-tab icon="movie">Movies</quasar-tab>
-      </quasar-tabs>
-      <quasar-tabs class="dark inverted">
-        <quasar-tab icon="mail">Mails</quasar-tab>
-        <quasar-tab icon="alarm">Alarms</quasar-tab>
-        <quasar-tab icon="movie">Movies</quasar-tab>
-      </quasar-tabs>
+      <div class="group">
+        <quasar-tabs class="orange inverted">
+          <quasar-tab icon="mail">Mails</quasar-tab>
+          <quasar-tab icon="alarm">Alarms</quasar-tab>
+          <quasar-tab icon="movie">Movies</quasar-tab>
+        </quasar-tabs>
+        <quasar-tabs class="secondary inverted">
+          <quasar-tab icon="mail">Mails</quasar-tab>
+          <quasar-tab icon="alarm">Alarms</quasar-tab>
+          <quasar-tab icon="movie">Movies</quasar-tab>
+        </quasar-tabs>
+        <quasar-tabs class="dark inverted">
+          <quasar-tab icon="mail">Mails</quasar-tab>
+          <quasar-tab icon="alarm">Alarms</quasar-tab>
+          <quasar-tab icon="movie">Movies</quasar-tab>
+        </quasar-tabs>
+      </div>
 
       <p class="caption">
         <span class="desktop-only">Click</span>

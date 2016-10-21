@@ -107,12 +107,12 @@ export default {
         message: '',
         form: {
           name: {
-            type: 'input',
+            type: 'textbox',
             label: 'Name',
             model: item.name
           },
           url: {
-            type: 'input',
+            type: 'textbox',
             label: 'URL',
             model: item.url
           }
@@ -145,12 +145,12 @@ export default {
         message: '',
         form: {
           name: {
-            type: 'input',
+            type: 'textbox',
             label: 'Name',
             model: ''
           },
           url: {
-            type: 'input',
+            type: 'textbox',
             label: 'URL',
             model: 'http://'
           }
@@ -213,7 +213,7 @@ export default {
                     message: `Set a name for your URL (${result.text}):`,
                     form: {
                       name: {
-                        type: 'input',
+                        type: 'textbox',
                         label: 'Name'
                       }
                     },

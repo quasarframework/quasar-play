@@ -20,14 +20,15 @@
         <div class="item multiple-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content row items-baseline">
-            <div style="margin-right: 10px;">Radio:</div>
+            <label style="margin-right: 10px;">Radio:</label>
+            <br>
             <quasar-dialog-select class="auto" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-dialog-select>
           </div>
         </div>
         <div class="item multiple-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content row items-baseline">
-            <div style="margin-right: 10px;">Radio:</div>
+            <label style="margin-right: 10px;">Radio:</label>
             <quasar-dialog-select class="auto" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-dialog-select>
           </div>
         </div>
@@ -36,14 +37,14 @@
         <div class="item multiple-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content row items-baseline">
-            <div style="margin-right: 10px;">Checkbox:</div>
+            <label style="margin-right: 10px;">Checkbox:</label>
             <quasar-dialog-select class="auto" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-dialog-select>
           </div>
         </div>
         <div class="item multiple-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content row items-baseline">
-            <div style="margin-right: 10px;">Toggle:</div>
+            <label style="margin-right: 10px;">Toggle:</label>
             <quasar-dialog-select class="auto" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-dialog-select>
           </div>
         </div>

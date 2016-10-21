@@ -39,7 +39,6 @@ export default {
   },
   methods: {
     writeVisibilityState (state) {
-      console.log('event', state)
       const date = new Date()
 
       this.eventList.unshift({
@@ -50,11 +49,13 @@ export default {
       })
     }
   },
-  ready () {
-    Events.on('app:visibility', this.writeVisibilityState)
+  mounted () {
+    this.$nextTick(() => {
+      Events.$on('app:visibility', this.writeVisibilityState)
+    })
   },
-  destroyed () {
-    Events.off('app:visibility', this.writeVisibilityState)
+  beforeDestroy () {
+    Events.$off('app:visibility', this.writeVisibilityState)
   }
 }
 </script>

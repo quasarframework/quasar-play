@@ -94,7 +94,7 @@
       <p class="caption">Select</p>
       <div class="list">
         <div class="list-label">Single Selection</div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
             <quasar-select class="full-width" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-select>
@@ -102,13 +102,13 @@
         </div>
         <hr>
         <div class="list-label">Multiple Selection</div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
             <quasar-select class="full-width" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
           </div>
         </div>
-        <div class="item multiple-lines">
+        <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
             <quasar-select class="full-width" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
