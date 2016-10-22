@@ -1,25 +1,27 @@
 <template>
-  <div class="window-height window-width column items-center justify-center bg-light">
-    <small>
-      Presenting only Material theme
-    </small>
-
-    <h1 class="text-center">Quasar Play</h1>
-    <button class="secondary push" v-link="'/play'">
-      <i class="on-left">play_circle_outline</i>
-      Play URL
-    </button>
-    <button class="secondary push" v-link="'/showcase'">
-      <i class="on-left">layers</i>
-      Quasar Showcase
-    </button>
-
-    <br>
-    <button class="secondary clear" @click="launch()">
-      <i class="on-left">launch</i>
-      Quasar Documentation
-    </button>
-
+  <div class="index-page bg-white window-height window-width column items-center">
+    <div class="banner bg-primary flex items-center justify-center">
+      Play
+    </div>
+    <div class="text-center">
+      <div class="card bg-grey-2 shadow-3 column items-center justify-center group">
+        <h1 class="text-primary">Quasar</h1>
+        <img :src="'statics/logo.png'">
+        <br>
+        <button class="full-width primary push" v-link="'/play'">
+          <i class="on-left">play_circle_outline</i>
+          Play URL
+        </button>
+        <button class="full-width primary push" v-link="'/showcase'">
+          <i class="on-left">layers</i>
+          Quasar Showcase
+        </button>
+        <button class="grey clear" @click="launch()">
+          <i class="on-left">launch</i>
+          Quasar Documentation
+        </button>
+      </div>
+    </div>
     <a class="ribbon" :title="'Built with Quasar v' + version"></a>
   </div>
 </template>
@@ -41,11 +43,23 @@ export default {
 }
 </script>
 
-<style lang="styl" scoped>
-p
-  margin-bottom 0
-button
-  margin-top 10px
+<style lang="styl">
+.index-page
+  .banner
+    height 50vh
+    width 100%
+    font-size 30vmax
+    color rgba(255, 255, 255, .2)
+    overflow hidden
+  .card
+    width 80vw
+    max-width 500px
+    padding 25px
+    margin-top -35px
+    img
+      height 62px
+      width 62px
+
 .ribbon
   width 12.1em
   height 12.1em
@@ -63,7 +77,7 @@ button
   &:before
     content ''
     padding .38em 0
-    background-color #1e857b
+    background-color #3595e9
     background-image linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15))
     box-shadow 0 .15em .23em 0 rgba(0, 0, 0, .5)
     pointer-events auto
