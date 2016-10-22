@@ -19,6 +19,12 @@
       <button class="light push" @click="customSpinner()">
         Custom Spinner
       </button>
+      <p class="caption">
+        ...with a custom color and spinner size.
+      </p>
+      <button class="light push" @click="customColorSpinner()">
+        Custom Color and Size Spinner
+      </button>
     </div>
   </div>
 </template>
@@ -41,6 +47,15 @@ export default {
     },
     customSpinner () {
       show({spinner: 'facebook'})
+    },
+    customColorSpinner () {
+      show({
+        spinner: 'pie',
+        spinnerColor: '#027be3',
+        spinnerSize: 100,
+        message: 'Some important process is in progress. Hang on...',
+        messageColor: '#ef0'
+      })
     },
     withMessage () {
       show({message: 'Some important process is in progress. Hang on...'})

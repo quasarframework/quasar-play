@@ -145,26 +145,25 @@
             <div>Brunch this weekend?</div>
           </div>
           <div class="item-secondary">
-            <quasar-popover ref="popover">
-              <i slot="target">
-                more_vert
-              </i>
-
-              <div class="list">
-                <div class="item item-link" @click="$refs.popover.close()">
-                  <div class="item-content">Reply</div>
-                </div>
-                <div class="item item-link" @click="$refs.popover.close()">
-                  <div class="item-content">Forward</div>
-                </div>
-                <div class="item item-link" @click="$refs.popover.close()">
-                  <div class="item-content">Delete</div>
-                </div>
-              </div>
-            </quasar-popover>
+            <i ref="target">
+              more_vert
+            </i>
           </div>
         </div>
       </div>
+      <quasar-popover ref="popover" anchor-ref="target">
+        <div class="list">
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Reply</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Forward</div>
+          </div>
+          <div class="item item-link" @click="$refs.popover.close()">
+            <div class="item-content">Delete</div>
+          </div>
+        </div>
+      </quasar-popover>
     </div>
   </div>
 </template>

@@ -54,10 +54,10 @@
             <div class="item-label item-smaller">...as many as you need!</div>
           </div>
           <div class="item-secondary">
-            <quasar-popover ref="popover">
-              <i slot="target">
-                more_vert
-              </i>
+            <i ref="target">
+              more_vert
+            </i>
+            <quasar-popover ref="popover" anchor-ref="target">
 
               <div class="list">
                 <div class="item item-link" @click="$refs.popover.close()">

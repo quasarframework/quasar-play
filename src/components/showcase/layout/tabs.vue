@@ -129,8 +129,10 @@
         </quasar-tabs>
 
         <div style="padding: 15px;">
-          Programmatic select tab:
-          <quasar-select type="radio" v-model="xTabsModel" :options="xTabsOptions"></quasar-select>
+          <div class="flex items-baseline">
+            <div style="margin-right: 10px">Programmatic select tab:</div>
+            <quasar-select type="radio" v-model="xTabsModel" :options="xTabsOptions"></quasar-select>
+          </div>
 
           <div ref="xtab-1">
             <div v-for="n in 5">Tab 1</div>

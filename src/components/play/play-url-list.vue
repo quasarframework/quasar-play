@@ -22,11 +22,10 @@
           <div class="text-primary cursor-pointer" @click="play(item.url)">{{item.url}}</div>
         </div>
         <div class="item-secondary">
-          <quasar-popover :ref="'popover' + id">
-            <i slot="target">
-              more_vert
-            </i>
-
+          <i :ref="'target' + id">
+            more_vert
+          </i>
+          <quasar-popover :ref="'popover' + id" :anchor-ref="'target' + id">
             <div class="list">
               <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
                 <i class="item-primary">edit</i>

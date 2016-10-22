@@ -31,28 +31,20 @@
       </div>
 
       <div class="list no-border platform-delimiter">
-        <router-link to="/showcase/layout" exact>
-          <quasar-drawer-link icon="view_quilt">
-            About Layout
-          </quasar-drawer-link>
-        </router-link>
+        <quasar-drawer-link icon="view_quilt" to="/showcase/layout" exact>
+          About Layout
+        </quasar-drawer-link>
         <hr>
         <div class="list-label">Layout Components</div>
-        <router-link to="/showcase/layout/drawer" exact>
-          <quasar-drawer-link icon="compare_arrows">
-            Layout Drawer
-          </quasar-drawer-link>
-        </router-link>
-        <router-link to="/showcase/layout/toolbar" exact>
-          <quasar-drawer-link icon="build">
-            Toolbar
-          </quasar-drawer-link>
-        </router-link>
-        <router-link to="/showcase/layout/tabs" exact>
-          <quasar-drawer-link icon="tab">
-            Tabs
-          </quasar-drawer-link>
-        </router-link>
+        <quasar-drawer-link icon="build" to="/showcase/layout/toolbar" exact>
+          Toolbar
+        </quasar-drawer-link>
+        <quasar-drawer-link icon="tab" to="/showcase/layout/tabs" exact>
+          Tabs
+        </quasar-drawer-link>
+        <quasar-drawer-link icon="compare_arrows" to="/showcase/layout/drawer" exact>
+          Layout Drawer
+        </quasar-drawer-link>
       </div>
     </quasar-drawer>
 
@@ -74,7 +66,7 @@
     <div slot="footer" class="toolbar">
       <div class="auto flex justify-center within-iframe-hide">
         <button v-go-back="'/showcase'">
-          <i class="on-left blink">
+          <i class="on-left animate-blink">
             replay
           </i>
           Back to Showcase

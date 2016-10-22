@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="layout-padding">
+    <div class="layout-padding" style="margin-bottom: 1000px;">
       <p class="caption">
         <span class="desktop-only">
           Right click anywhere on the Page below (not on header though).
@@ -31,10 +31,10 @@
     </div>
 
     <quasar-context-menu ref="context">
-      <div class="list highlight">
+      <div class="list highlight" style="min-width: 150px; max-height: 300px;">
         <div
           class="item item-link two-lines item-delimiter"
-          v-for="n in 30"
+          v-for="n in 10"
           @click="showToast(), $refs.context.close()"
         >
           <div class="item-content">
