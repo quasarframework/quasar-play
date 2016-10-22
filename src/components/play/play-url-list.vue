@@ -25,19 +25,19 @@
           <i :ref="'target' + id">
             more_vert
           </i>
-          <quasar-popover :ref="'popover' + id" :anchor-ref="'target' + id">
-            <div class="list">
-              <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
-                <i class="item-primary">edit</i>
-                <div class="item-content">Edit</div>
-              </div>
-              <div class="item item-link" @click="$refs['popover' + id][0].close(), deleteURL(id)">
-                <i class="item-primary">delete</i>
-                <div class="item-content">Delete</div>
-              </div>
-            </div>
-          </quasar-popover>
         </div>
+        <quasar-popover :ref="'popover' + id" :anchor-ref="'target' + id">
+          <div class="list">
+            <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
+              <i class="item-primary">edit</i>
+              <div class="item-content">Edit</div>
+            </div>
+            <div class="item item-link" @click="$refs['popover' + id][0].close(), deleteURL(id)">
+              <i class="item-primary">delete</i>
+              <div class="item-content">Delete</div>
+            </div>
+          </div>
+        </quasar-popover>
       </div>
     </div>
 

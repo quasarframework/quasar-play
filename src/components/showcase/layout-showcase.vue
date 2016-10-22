@@ -1,7 +1,7 @@
 <template>
   <quasar-layout>
     <div slot="header" class="toolbar">
-      <button v-go-back="store.backRoute" class="within-iframe-hide">
+      <button v-go-back.single="store.backRoute" class="within-iframe-hide">
         <i>arrow_back</i>
       </button>
       <quasar-toolbar-title :padding="1">

@@ -52,7 +52,7 @@ export default {
       show({
         spinner: 'pie',
         spinnerColor: '#027be3',
-        spinnerSize: 100,
+        spinnerSize: 220,
         message: 'Some important process is in progress. Hang on...',
         messageColor: '#ef0'
       })

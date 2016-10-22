@@ -12,7 +12,14 @@
         <i class="text-grey-7" style="font-size: 2rem">palette</i>
         <label for="color-spinner" class="auto">Color</label>
         <input id="color-spinner" v-model="color" style="width: 80px; text-align: center; margin-right: 10px;">
-        <quasar-dialog-select type="radio" v-model="color" :options="colorOptions" ok-label="Pick" title="Spinner Color"></quasar-select>
+        <quasar-dialog-select
+          type="radio"
+          v-model="color"
+          :options="colorOptions"
+          ok-label="Pick"
+          title="Spinner Color"
+          style="vertical-align: middle"
+        ></quasar-select>
       </div>
 
       <p class="caption">
@@ -42,7 +49,7 @@ export default {
   data () {
     return {
       size: 36,
-      color: '#000000',
+      color: '#00ff00',
       spinners: [
         'audio', 'ball', 'bars', 'circles', 'dots',
         'facebook', 'gears', 'grid', 'hearts',

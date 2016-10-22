@@ -14,7 +14,7 @@
         </thead>
 
         <tbody>
-          <tr v-for="(prop, value) in platform">
+          <tr v-for="(value, prop) in platform">
             <td>{{ prop }}</td>
             <td>{{ value }}</td>
           </tr>

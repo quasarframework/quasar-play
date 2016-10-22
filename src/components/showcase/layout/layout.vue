@@ -1,7 +1,7 @@
 <template>
   <quasar-layout>
     <div slot="header" class="toolbar">
-      <button @click="$refs.leftDrawer.open()">
+      <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
         <i>menu</i>
       </button>
       <quasar-toolbar-title :padding="1">

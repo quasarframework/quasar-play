@@ -35,9 +35,7 @@
 
         <div class="card" style="margin-top: 75px">
           <div class="card-title bg-primary text-center">
-            <button ref="target2" class="orange push">
-              Select Position Below & Tap Me
-            </button>
+            <button ref="target2" class="orange push">Tap</button>
           </div>
           <quasar-popover
             anchor-ref="target2"
@@ -45,7 +43,7 @@
             :anchor-origin="anchorOrigin"
             :target-origin="targetOrigin"
           >
-            <div class="list highlight" style="min-width: 150px">
+            <div class="list highlight" style="min-width: 100px">
               <div
                 class="item item-link item-delimiter"
                 v-for="n in 3"
@@ -58,6 +56,7 @@
             </div>
           </quasar-popover>
 
+          <p class="caption text-center">Configure the Popover for button above.</p>
           <div class="card-content group row sm-column">
             <div class="auto column items-center">
               <p class="caption">Anchor Origin</p>
