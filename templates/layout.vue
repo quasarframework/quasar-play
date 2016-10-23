@@ -13,9 +13,9 @@
 
     <!-- Navigation Tabs
     <quasar-tabs slot="navigation">
-      <quasar-tab icon="mail" v-link="{path: '/layout', exact: true}">Mails</quasar-tab>
-      <quasar-tab icon="alarm" v-link="'/layout/alarm'">Alarms</quasar-tab>
-      <quasar-tab icon="help" v-link="'/layout/help'">Help</quasar-tab>
+      <quasar-tab icon="mail" route="/layout" exact replace>Mails</quasar-tab>
+      <quasar-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</quasar-tab>
+      <quasar-tab icon="help" route="/layout/help" exact replace>Help</quasar-tab>
     </quasar-tabs>
     -->
 
@@ -28,7 +28,7 @@
       </div>
 
       <div class="list">
-        <quasar-drawer-link v-link="{path: '/', exact: true}" icon="mail">
+        <quasar-drawer-link to="/" exact icon="mail">
           Link
         </quasar-drawer-link>
       </div>

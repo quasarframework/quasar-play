@@ -45,8 +45,8 @@
         direction="up"
         style="right: 18px; bottom: 18px;"
       >
-        <quasar-small-fab class="purple" @click="toast('mail')">mail</quasar-small-fab>
-        <quasar-small-fab class="secondary" @click="toast('alarm')">alarm</quasar-small-fab>
+        <quasar-small-fab class="purple" @click.native="toast('mail')">mail</quasar-small-fab>
+        <quasar-small-fab class="secondary" @click.native="toast('alarm')">alarm</quasar-small-fab>
       </quasar-fab>
     </div>
   </div>

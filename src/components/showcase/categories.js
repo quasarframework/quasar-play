@@ -19,11 +19,6 @@ export default [
         hash: 'loading'
       },
       {
-        title: 'Modal',
-        icon: 'settings_overscan',
-        hash: 'modal'
-      },
-      {
         title: 'Toast',
         icon: 'notifications',
         hash: 'toast'
@@ -411,6 +406,11 @@ export default [
         title: 'Infinite Scroll',
         icon: 'update',
         hash: 'infinite-scroll'
+      },
+      {
+        title: 'Modal',
+        icon: 'settings_overscan',
+        hash: 'modal'
       },
       {
         title: 'Image Gallery',

@@ -121,11 +121,11 @@ export default {
           label: 'Determined Progress',
           icon: 'hourglass_empty',
           handler () {
-            var progress = {
+            let progress = {
               model: 25
             }
 
-            var dialog = Dialog.create({
+            const dialog = Dialog.create({
               title: 'Progress',
               message: 'Computing...',
               progress,
@@ -140,7 +140,7 @@ export default {
               ]
             })
 
-            var timeout = setInterval(() => {
+            const timeout = setInterval(() => {
               progress.model += Math.floor(Math.random() * 5) + 1
               if (progress.model >= 42) {
                 clearInterval(timeout)
@@ -153,7 +153,7 @@ export default {
           label: 'Indeterminate Progress',
           icon: 'hourglass_full',
           handler () {
-            var dialog = Dialog.create({
+            const dialog = Dialog.create({
               title: 'Progress',
               message: 'Computing...',
               progress: {
@@ -170,7 +170,7 @@ export default {
               ]
             })
 
-            var timeout = setTimeout(() => {
+            const timeout = setTimeout(() => {
               clearInterval(timeout)
               dialog.close()
             }, 3000)
@@ -350,7 +350,7 @@ export default {
         */
         {
           label: 'Rating',
-          icon: 'help',
+          icon: 'star_half',
           handler () {
             Dialog.create({
               title: 'Rating',

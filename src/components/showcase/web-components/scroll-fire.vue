@@ -23,10 +23,8 @@ export default {
   },
   methods: {
     bounceImage (element) {
-      Velocity(element, 'callout.tada', {
-        display: null,
-        stagger: 200
-      })
+      Velocity(element, 'fadeOut', {duration: 1000})
+      Velocity(element, 'fadeIn', {delay: 300, duration: 1000})
     }
   }
 }

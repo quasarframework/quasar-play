@@ -8,14 +8,14 @@
         <h1 class="text-primary">Quasar</h1>
         <img :src="'statics/logo.png'">
         <br>
-        <button class="full-width primary push" v-link="'/play'">
+        <router-link to="/play" tag="button" class="full-width primary push">
           <i class="on-left">play_circle_outline</i>
           Play URL
-        </button>
-        <button class="full-width primary push" v-link="'/showcase'">
+        </router-link>
+        <router-link to="/showcase" tag="button" class="full-width primary push">
           <i class="on-left">layers</i>
           Quasar Showcase
-        </button>
+        </router-link>
         <button class="grey clear" @click="launch()">
           <i class="on-left">launch</i>
           Quasar Documentation

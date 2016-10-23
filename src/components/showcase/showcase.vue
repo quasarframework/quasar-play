@@ -6,17 +6,18 @@
           <div class="list-label">
             {{ category.title }}
           </div>
-          <div
-            class="item item-link item-inset-delimiter"
+          <router-link
             v-for="feature in category.features"
-            v-link="'/showcase/' + category.hash + '/' + feature.hash"
+            tag="div"
+            class="item item-link item-inset-delimiter"
+            :to="'/showcase/' + category.hash + '/' + feature.hash"
           >
             <i class="item-primary">{{ feature.icon }}</i>
             <div class="item-content has-secondary">
               <div>{{ feature.title }}</div>
             </div>
             <i class="item-secondary">chevron_right</i>
-          </div>
+          </router-link>
           <hr>
         </template>
       </div>
