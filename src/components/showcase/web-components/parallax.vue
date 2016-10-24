@@ -44,7 +44,6 @@
     <div class="layout-padding">
       <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
     </div>
-    </div>
   </div>
 </template>
 
