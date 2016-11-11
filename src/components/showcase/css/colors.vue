@@ -20,7 +20,7 @@
       <h5>Full Palette</h5>
       <div class="detail" v-for="color in colors">
         <h5 class="detailed-color shadow-1 column items-center justify-center text-white" :class="'bg-' + color">{{color}}</h5>
-        <div class="detailed-color column items-center justify-center" v-for="n in 14" :class="'bg-' + color + '-' + (n+1)">{{color}}-{{(n+1)}}</div>
+        <div class="detailed-color column items-center justify-center" v-for="n in 14" :class="'bg-' + color + '-' + n">{{color}}-{{n}}</div>
       </div>
     </div>
   </div>
@@ -60,4 +60,5 @@ export default {
 
   h5
     margin-bottom 5px
+    padding 10px 5px
 </style>
