@@ -6,8 +6,8 @@ import showcaseStore from './components/showcase/showcase-store'
 
 Vue.use(VueRouter)
 
-function load (name) {
-  return require('components/' + name + '.vue')
+function load (component) {
+  return () => System.import(`components/${component}.vue`)
 }
 
 let routes = [

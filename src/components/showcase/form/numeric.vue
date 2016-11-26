@@ -7,10 +7,10 @@
       </div>
 
       <p class="caption">Standalone</p>
-      <quasar-numeric v-model="number" :min="min" :max="max"></quasar-numeric>
+      <q-numeric v-model="number" :min="min" :max="max"></q-numeric>
 
       <p class="caption">Disabled State</p>
-      <quasar-numeric v-model="number" :min="min" :max="max" disable></quasar-numeric>
+      <q-numeric v-model="number" :min="min" :max="max" disable></q-numeric>
 
       <p class="caption">Inside of a List</p>
       <div class="list">
@@ -18,7 +18,7 @@
           <i class="item-primary">edit</i>
           <div class="item-content">
             <span class="item-label">Number: </span>
-            <quasar-numeric v-model="number" :min="min" :max="max"></quasar-numeric>
+            <q-numeric v-model="number" :min="min" :max="max"></q-numeric>
           </div>
         </div>
         <hr class="inset">
@@ -26,7 +26,7 @@
           <i class="item-primary">edit</i>
           <div class="item-content">
             <span class="item-label">Number: </span>
-            <quasar-numeric v-model="number" :min="min" :max="max"></quasar-numeric>
+            <q-numeric v-model="number" :min="min" :max="max"></q-numeric>
           </div>
         </div>
       </div>

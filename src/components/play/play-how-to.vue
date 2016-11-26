@@ -6,7 +6,7 @@
       </p>
 
       <div class="list">
-        <quasar-collapsible icon="phonelink_ring" label="Register App URL">
+        <q-collapsible icon="phonelink_ring" label="Register App URL">
           <p>From inside your App's folder in the console use Quasar CLI:</p>
           <code><pre>$ quasar dev --play</pre></code>
           <p>
@@ -28,9 +28,9 @@
               (displayed in the console) to Quasar Play app.
             </small>
           </blockquote>
-        </quasar-collapsible>
+        </q-collapsible>
         <hr>
-        <quasar-collapsible icon="queue_play_next" label="Play URL">
+        <q-collapsible icon="queue_play_next" label="Play URL">
           <p>
             Now that you have your URL, you can play with your App on your mobile phone by
             tapping on the (<i>ondemand_video</i>) button.
@@ -46,9 +46,9 @@
               has a bug that generates a Java exception and halts your App.
             </small>
           </blockquote>
-        </quasar-collapsible>
+        </q-collapsible>
         <hr>
-        <quasar-collapsible icon="bug_report" label="Debugging your App">
+        <q-collapsible icon="bug_report" label="Debugging your App">
           <p>
             There is a way to debug directly on your phone. Use Chrome Developer Tools to
             see things like console.log() messages or inspect DOM tree.
@@ -58,7 +58,7 @@
             machine. And also Google Chrome browser. Read the complete guide
             <a @click="openURL">here</a>.
           </p>
-        </quasar-collapsible>
+        </q-collapsible>
       </div>
     </div>
   </div>

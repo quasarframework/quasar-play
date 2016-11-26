@@ -26,7 +26,7 @@
             more_vert
           </i>
         </div>
-        <quasar-popover :ref="'popover' + id" :anchor-ref="'target' + id">
+        <q-popover :ref="'popover' + id" :anchor-ref="'target' + id">
           <div class="list">
             <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
               <i class="item-primary">edit</i>
@@ -37,14 +37,14 @@
               <div class="item-content">Delete</div>
             </div>
           </div>
-        </quasar-popover>
+        </q-popover>
       </div>
     </div>
 
-    <quasar-fab class="cordova-only absolute-bottom-right" classNames="primary" direction="up">
-      <quasar-small-fab class="secondary" @click.native="scanQR()">phonelink_ring</quasar-small-fab>
-      <quasar-small-fab class="primary clear" @click.native="addURL()">add</quasar-small-fab>
-    </quasar-fab>
+    <q-fab class="cordova-only absolute-bottom-right" classNames="primary" direction="up">
+      <q-small-fab class="secondary" @click.native="scanQR()">phonelink_ring</q-small-fab>
+      <q-small-fab class="primary clear" @click.native="addURL()">add</q-small-fab>
+    </q-fab>
 
     <button
       class="cordova-hide circular primary absolute-bottom-right"

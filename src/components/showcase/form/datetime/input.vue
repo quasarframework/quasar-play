@@ -34,7 +34,7 @@
           </span>
         </small>
       </p>
-      <quasar-datetime v-model="model" type="date"></quasar-datetime>
+      <q-datetime v-model="model" type="date"></q-datetime>
 
       <p class="caption">
         Time
@@ -49,13 +49,13 @@
           <span class="mat-only">inside of the clock</span>.
         </small>
       </p>
-      <quasar-datetime v-model="model" type="time"></quasar-datetime>
+      <q-datetime v-model="model" type="time"></q-datetime>
 
       <p class="caption">Date & Time</p>
-      <quasar-datetime v-model="model" type="datetime"></quasar-datetime>
+      <q-datetime v-model="model" type="datetime"></q-datetime>
 
       <p class="caption">Disabled State</p>
-      <quasar-datetime disable v-model="model" type="datetime"></quasar-datetime>
+      <q-datetime disable v-model="model" type="datetime"></q-datetime>
 
       <p class="caption">Inside of a List</p>
       <div class="list">
@@ -63,13 +63,13 @@
         <div class="item two-lines">
           <i class="item-primary">access_time</i>
           <div class="item-content">
-            <quasar-datetime class="full-width" v-model="model" type="time"></quasar-datetime>
+            <q-datetime class="full-width" v-model="model" type="time"></q-datetime>
           </div>
         </div>
         <div class="item two-lines">
           <i class="item-primary">update</i>
           <div class="item-content row items-baseline">
-            <quasar-datetime class="full-width" v-model="model" type="date"></quasar-datetime>
+            <q-datetime class="full-width" v-model="model" type="date"></q-datetime>
           </div>
         </div>
         <hr>
@@ -77,7 +77,7 @@
         <div class="item two-lines">
           <i class="item-primary">notifications</i>
           <div class="item-content row items-baseline">
-            <quasar-datetime class="full-width" v-model="model" type="datetime"></quasar-datetime>
+            <q-datetime class="full-width" v-model="model" type="datetime"></q-datetime>
           </div>
         </div>
       </div>

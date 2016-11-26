@@ -151,7 +151,7 @@
           </div>
         </div>
       </div>
-      <quasar-popover ref="popover" anchor-ref="target">
+      <q-popover ref="popover" anchor-ref="target">
         <div class="list">
           <div class="item item-link" @click="$refs.popover.close()">
             <div class="item-content">Reply</div>
@@ -163,7 +163,7 @@
             <div class="item-content">Delete</div>
           </div>
         </div>
-      </quasar-popover>
+      </q-popover>
     </div>
   </div>
 </template>

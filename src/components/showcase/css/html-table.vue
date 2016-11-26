@@ -18,7 +18,7 @@
 
         <br><br>
 
-        <table :class="style" class="quasar-table">
+        <table :class="style" class="q-table">
           <thead>
             <tr>
               <th class="text-left">Name</th>

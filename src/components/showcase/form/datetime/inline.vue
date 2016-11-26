@@ -23,7 +23,7 @@
           </span>
         </small>
       </p>
-      <quasar-inline-datetime v-model="model" type="date"></quasar-inline-datetime>
+      <q-inline-datetime v-model="model" type="date"></q-inline-datetime>
 
       <p class="caption">
         Time
@@ -38,13 +38,13 @@
           <span class="mat-only">inside of the clock</span>.
         </small>
       </p>
-      <quasar-inline-datetime v-model="model" type="time"></quasar-inline-datetime>
+      <q-inline-datetime v-model="model" type="time"></q-inline-datetime>
 
       <p class="caption">Date & Time</p>
-      <quasar-inline-datetime v-model="model" type="datetime"></quasar-inline-datetime>
+      <q-inline-datetime v-model="model" type="datetime"></q-inline-datetime>
 
       <p class="caption">Disabled State</p>
-      <quasar-inline-datetime disable v-model="model" type="datetime"></quasar-inline-datetime>
+      <q-inline-datetime disable v-model="model" type="datetime"></q-inline-datetime>
     </div>
   </div>
 </template>

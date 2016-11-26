@@ -1,38 +1,38 @@
 <template>
-  <quasar-layout>
+  <q-layout>
     <div slot="header" class="toolbar">
       <!-- opens drawer below
       <button class="left-drawer-opener">
         <i>menu</i>
       </button>
       -->
-      <quasar-toolbar-title :padding="1">
+      <q-toolbar-title :padding="1">
         Title
-      </quasar-toolbar-title>
+      </q-toolbar-title>
     </div>
 
     <!-- Navigation Tabs
-    <quasar-tabs slot="navigation">
-      <quasar-tab icon="mail" route="/layout" exact replace>Mails</quasar-tab>
-      <quasar-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</quasar-tab>
-      <quasar-tab icon="help" route="/layout/help" exact replace>Help</quasar-tab>
-    </quasar-tabs>
+    <q-tabs slot="navigation">
+      <q-tab icon="mail" route="/layout" exact replace>Mails</q-tab>
+      <q-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</q-tab>
+      <q-tab icon="help" route="/layout/help" exact replace>Help</q-tab>
+    </q-tabs>
     -->
 
     <!-- Drawer
-    <quasar-drawer>
+    <q-drawer>
       <div class="toolbar">
-        <quasar-toolbar-title>
+        <q-toolbar-title>
           Drawer Title
-        </quasar-toolbar-title>
+        </q-toolbar-title>
       </div>
 
       <div class="list">
-        <quasar-drawer-link to="/" exact icon="mail">
+        <q-drawer-link to="/" exact icon="mail">
           Link
-        </quasar-drawer-link>
+        </q-drawer-link>
       </div>
-    </quasar-drawer>
+    </q-drawer>
     -->
 
     <router-view class="layout-view"></router-view>
@@ -40,7 +40,7 @@
     <!-- Footer
     <div slot="footer" class="toolbar"></div>
     -->
-  </quasar-layout>
+  </q-layout>
 </template>
 
 <script>

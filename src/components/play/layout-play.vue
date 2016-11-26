@@ -1,19 +1,19 @@
 <template>
-  <quasar-layout>
+  <q-layout>
     <div slot="header" class="toolbar">
       <button v-go-back="'/'">
         <i>arrow_back</i>
       </button>
-      <quasar-toolbar-title :padding="1">
+      <q-toolbar-title :padding="1">
         Play URL
-      </quasar-toolbar-title>
+      </q-toolbar-title>
     </div>
 
-    <quasar-tabs slot="navigation">
-      <quasar-tab route="/play" exact replace icon="queue_play_next">URL List</quasar-tab>
-      <quasar-tab route="/play/how-to" replace icon="info">How To</quasar-tab>
-    </quasar-tabs>
+    <q-tabs slot="navigation">
+      <q-tab route="/play" exact replace icon="queue_play_next">URL List</q-tab>
+      <q-tab route="/play/how-to" replace icon="info">How To</q-tab>
+    </q-tabs>
 
     <router-view class="layout-view"></router-view>
-  </quasar-layout>
+  </q-layout>
 </template>

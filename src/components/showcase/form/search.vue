@@ -7,14 +7,14 @@
 
       <br><br>
 
-      <quasar-search v-model="search"></quasar-search>
-      <quasar-search v-model="search" class="orange"></quasar-search>
-      <quasar-search v-model="search" class="secondary" icon="explore" placeholder="Places"></quasar-search>
-      <quasar-search v-model="search" class="primary" icon="local_airport" placeholder="Airports"></quasar-search>
-      <quasar-search v-model="search" class="dark" icon="local_hotel" placeholder="Hotels"></quasar-search>
+      <q-search v-model="search"></q-search>
+      <q-search v-model="search" class="orange"></q-search>
+      <q-search v-model="search" class="secondary" icon="explore" placeholder="Places"></q-search>
+      <q-search v-model="search" class="primary" icon="local_airport" placeholder="Airports"></q-search>
+      <q-search v-model="search" class="dark" icon="local_hotel" placeholder="Hotels"></q-search>
 
       <p class="caption">Disabled State</p>
-      <quasar-search v-model="search" class="primary" disable></quasar-search>
+      <q-search v-model="search" class="primary" disable></q-search>
     </div>
   </div>
 </template>

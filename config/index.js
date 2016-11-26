@@ -1,4 +1,3 @@
-// see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 
 module.exports = {
@@ -15,10 +14,30 @@ module.exports = {
     productionGzipExtensions: ['js', 'css']
   },
   dev: {
-    cssSourceMap: true,
     env: require('./dev.env'),
-    publicPath: '',
+    cssSourceMap: true,
+    // auto open browser or not
+    openBrowser: true,
+    publicPath: '/',
     port: 8080,
+    // Proxy your API if using any.
+    // Also see /build/script.dev.js and search for "proxy api requests"
+    // https://github.com/chimurai/http-proxy-middleware
     proxyTable: {}
   }
 }
+
+/*
+ * proxyTable example:
+ *
+   proxyTable: {
+      // proxy all requests starting with /api
+      '/api': {
+        target: 'https://some.address.com/api',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+ */

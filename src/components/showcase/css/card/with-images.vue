@@ -14,9 +14,9 @@
         <div class="card-title">
           Card with Parallax
         </div>
-        <quasar-parallax :src="'statics/parallax2.jpg'" :height="150">
+        <q-parallax :src="'statics/parallax2.jpg'" :height="150">
           <div slot="loading">Loading...</div>
-        </quasar-parallax>
+        </q-parallax>
         <div class="card-content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

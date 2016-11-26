@@ -5,7 +5,7 @@
       <p class="caption">Scroll down to see it in action.</p>
 
       <br>
-      <quasar-infinite-scroll :handler="refresher">
+      <q-infinite-scroll :handler="refresher">
         <p v-for="(item, index) in items" class="caption">
           <span class="label bg-secondary text-white shadow-1">
             {{ index + 1 }}
@@ -16,7 +16,7 @@
         <div class="row justify-center" style="margin-bottom: 50px;">
           <spinner name="dots" slot="message" :size="40"></spinner>
         </div>
-      </quasar-infinite-scroll>
+      </q-infinite-scroll>
     </div>
   </div>
 </template>

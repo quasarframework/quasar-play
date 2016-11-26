@@ -5,7 +5,7 @@
       <div class="list">
         <label class="item">
           <div class="item-primary">
-            <quasar-checkbox v-model="checked"></quasar-checkbox>
+            <q-checkbox v-model="checked"></q-checkbox>
           </div>
           <div class="item-content">
             Notifications
@@ -13,7 +13,7 @@
         </label>
         <label class="item two-lines">
           <div class="item-primary">
-            <quasar-checkbox v-model="checked"></quasar-checkbox>
+            <q-checkbox v-model="checked"></q-checkbox>
           </div>
           <div class="item-content">
             <div>Notifications</div>
@@ -22,7 +22,7 @@
         </label>
         <label class="item three-lines">
           <div class="item-primary">
-            <quasar-checkbox v-model="checked"></quasar-checkbox>
+            <q-checkbox v-model="checked"></q-checkbox>
           </div>
           <div class="item-content">
             <div>Notifications</div>
@@ -35,7 +35,7 @@
       <div class="list">
         <label class="item">
           <div class="item-primary">
-            <quasar-radio v-model="option" val="opt1"></quasar-radio>
+            <q-radio v-model="option" val="opt1"></q-radio>
           </div>
           <div class="item-content">
             Option 1
@@ -43,7 +43,7 @@
         </label>
         <label class="item two-lines">
           <div class="item-primary">
-            <quasar-radio v-model="option" val="opt2"></quasar-radio>
+            <q-radio v-model="option" val="opt2"></q-radio>
           </div>
           <div class="item-content">
             <div>Option 2</div>
@@ -52,7 +52,7 @@
         </label>
         <label class="item three-lines">
           <div class="item-primary">
-            <quasar-radio v-model="option" val="opt3"></quasar-radio>
+            <q-radio v-model="option" val="opt3"></q-radio>
           </div>
           <div class="item-content">
             <div>Option 3</div>
@@ -68,7 +68,7 @@
             Events and reminders
           </div>
           <div class="item-secondary">
-            <quasar-toggle v-model="checked"></quasar-toggle>
+            <q-toggle v-model="checked"></q-toggle>
           </div>
         </label>
         <label class="item two-lines">
@@ -77,7 +77,7 @@
             <div>Lorem ipsum</div>
           </div>
           <div class="item-secondary">
-            <quasar-toggle v-model="checked" class="purple"></quasar-toggle>
+            <q-toggle v-model="checked" class="purple"></q-toggle>
           </div>
         </label>
         <label class="item three-lines">
@@ -86,7 +86,7 @@
             <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
           </div>
           <div class="item-secondary">
-            <quasar-toggle v-model="checked" class="red"></quasar-toggle>
+            <q-toggle v-model="checked" class="red"></q-toggle>
           </div>
         </label>
       </div>
@@ -97,7 +97,7 @@
         <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
-            <quasar-select class="full-width" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></quasar-select>
+            <q-select class="full-width" type="radio" v-model="select" :options="selectOptions" ok-label="Pick" cancel-label="Neah" title="Company"></q-select>
           </div>
         </div>
         <hr>
@@ -105,13 +105,13 @@
         <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
-            <quasar-select class="full-width" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+            <q-select class="full-width" type="checkbox" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
           </div>
         </div>
         <div class="item two-lines">
           <i class="item-primary">supervisor_account</i>
           <div class="item-content">
-            <quasar-select class="full-width" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></quasar-select>
+            <q-select class="full-width" type="toggle" v-model="multipleSelect" :options="selectOptions" ok-label="Pick" title="Companies"></q-select>
           </div>
         </div>
       </div>
@@ -121,13 +121,13 @@
         <div class="item two-lines">
           <i class="item-primary">volume_up</i>
           <div class="item-content">
-            <quasar-range v-model="range" :min="0" :max="50" label></quasar-range>
+            <q-range v-model="range" :min="0" :max="50" label></q-range>
           </div>
         </div>
         <div class="item two-lines">
           <i class="item-primary">brightness_medium</i>
           <div class="item-content">
-            <quasar-range v-model="range" :min="0" :max="50" label></quasar-range>
+            <q-range v-model="range" :min="0" :max="50" label></q-range>
           </div>
         </div>
         <hr>
@@ -135,13 +135,13 @@
         <div class="item two-lines">
           <i class="item-primary">local_atm</i>
           <div class="item-content">
-            <quasar-double-range v-model="doubleRange" :min="0" :max="50" label></quasar-double-range>
+            <q-double-range v-model="doubleRange" :min="0" :max="50" label></q-double-range>
           </div>
         </div>
         <div class="item two-lines">
           <i class="item-primary">euro_symbol</i>
           <div class="item-content">
-            <quasar-double-range v-model="doubleRange" :min="0" :max="50" label></quasar-double-range>
+            <q-double-range v-model="doubleRange" :min="0" :max="50" label></q-double-range>
           </div>
         </div>
       </div>
@@ -152,13 +152,13 @@
         <div class="item two-lines">
           <i class="item-primary">access_time</i>
           <div class="item-content">
-            <quasar-datetime class="full-width" v-model="timestamp" type="time"></quasar-datetime>
+            <q-datetime class="full-width" v-model="timestamp" type="time"></q-datetime>
           </div>
         </div>
         <div class="item two-lines">
           <i class="item-primary">update</i>
           <div class="item-content row items-baseline">
-            <quasar-datetime class="full-width" v-model="timestamp" type="date"></quasar-datetime>
+            <q-datetime class="full-width" v-model="timestamp" type="date"></q-datetime>
           </div>
         </div>
         <hr>
@@ -166,7 +166,7 @@
         <div class="item two-lines">
           <i class="item-primary">notifications</i>
           <div class="item-content row items-baseline">
-            <quasar-datetime class="full-width" v-model="timestamp" type="datetime"></quasar-datetime>
+            <q-datetime class="full-width" v-model="timestamp" type="datetime"></q-datetime>
           </div>
         </div>
       </div>

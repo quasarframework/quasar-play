@@ -7,9 +7,9 @@
       <button v-go-back="'/play'">
         <i>close</i>
       </button>
-      <quasar-toolbar-title :padding="1">
+      <q-toolbar-title :padding="1">
         {{url}}
-      </quasar-toolbar-title>
+      </q-toolbar-title>
       <button @click="refresh">
         <i>refresh</i>
       </button>

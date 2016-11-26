@@ -7,38 +7,38 @@
       </p>
 
       <div class="list">
-        <quasar-collapsible icon="inbox" label="Inbox">
+        <q-collapsible icon="inbox" label="Inbox">
           <div class="item" v-for="n in 3">
             <i class="item-primary">mail</i>
             <div class="item-content">
               Email {{ n + 1 }}
             </div>
           </div>
-          <quasar-collapsible icon="favorites" label="Favorites">
+          <q-collapsible icon="favorites" label="Favorites">
             <div class="item" v-for="n in 3">
               <i class="item-primary">mail</i>
               <div class="item-content">
                 Favorite {{ n + 1 }}
               </div>
             </div>
-          </quasar-collapsible>
-        </quasar-collapsible>
-        <quasar-collapsible icon="send" label="Sent">
+          </q-collapsible>
+        </q-collapsible>
+        <q-collapsible icon="send" label="Sent">
           <div class="item" v-for="n in 3">
             <i class="item-primary">mail</i>
             <div class="item-content">
               Email {{ n + 1 }}
             </div>
           </div>
-        </quasar-collapsible>
-        <quasar-collapsible icon="delete" label="Trash">
+        </q-collapsible>
+        <q-collapsible icon="delete" label="Trash">
           <div class="item" v-for="n in 3">
             <i class="item-primary">mail</i>
             <div class="item-content">
               Email {{ n + 1 }}
             </div>
           </div>
-        </quasar-collapsible>
+        </q-collapsible>
       </div>
     </div>
   </div>

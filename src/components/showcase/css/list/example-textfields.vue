@@ -96,7 +96,7 @@
           <i class="item-primary">edit</i>
           <div class="item-content">
             <span class="item-label">Number:</span>
-            <quasar-numeric v-model="number"></quasar-numeric>
+            <q-numeric v-model="number"></q-numeric>
           </div>
         </div>
         <hr class="inset">
@@ -104,7 +104,7 @@
           <i class="item-primary">edit</i>
           <div class="item-content">
             <span class="item-label">Number:</span>
-            <quasar-numeric v-model="number"></quasar-numeric>
+            <q-numeric v-model="number"></q-numeric>
           </div>
         </div>
 
@@ -114,7 +114,7 @@
         <div class="item multiple-lines">
           <i class="item-primary">edit</i>
           <div class="item-content">
-            <quasar-chips v-model="chips" placeholder="Type names"></quasar-chips>
+            <q-chips v-model="chips" placeholder="Type names"></q-chips>
           </div>
         </div>
       </div>

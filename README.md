@@ -29,8 +29,8 @@ Head on to the official community forum: [http://forum.quasar-framework.org](htt
 ## Quasar Repositories
 
 * [Quasar Framework](https://github.com/rstoenescu/quasar-framework)
-* [Quasar CLI](https://github.com/rstoenescu/quasar-cli)
-* [Quasar Play App](https://github.com/rstoenescu/quasar-play)
+* [Quasar CLI](https://github.com/rstoenescu/q-cli)
+* [Quasar Play App](https://github.com/rstoenescu/q-play)
 
 ## Contributing
 
