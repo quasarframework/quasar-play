@@ -58,6 +58,21 @@
 
       <div class="card">
         <div class="card-title">
+          Quotes
+        </div>
+        <div class="card-content">
+          <div class="quote">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          </div>
+
+          <div class="quote text-right">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
           Blockquotes
         </div>
         <div class="card-content">

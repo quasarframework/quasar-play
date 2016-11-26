@@ -1,6 +1,14 @@
 var path = require('path')
 
 module.exports = {
+  aliases: {
+    quasar: path.resolve(__dirname, '../node_modules/quasar-framework/'),
+    src: path.resolve(__dirname, '../src'),
+    assets: path.resolve(__dirname, '../src/assets'),
+    components: path.resolve(__dirname, '../src/components'),
+    helpers: path.resolve(__dirname, '../src/helpers')
+  },
+
   build: {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),

@@ -1,5 +1,4 @@
 <template>
-  <!-- Place content inside a root node -->
   <div>
     <div class="layout-padding">
       <div class="label bg-secondary text-white">
@@ -11,6 +10,12 @@
 
       <p class="caption">Disabled State</p>
       <q-numeric v-model="number" :min="min" :max="max" disable></q-numeric>
+
+      <p class="caption">Readonly State</p>
+      <q-numeric v-model="number" :min="min" :max="max" readonly></q-numeric>
+
+      <p class="caption">Error State</p>
+      <q-numeric class="has-error" v-model="number" :min="min" :max="max"></q-numeric>
 
       <p class="caption">Inside of a List</p>
       <div class="list">

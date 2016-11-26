@@ -2,7 +2,7 @@
   <div>
     <div class="layout-padding">
       <p class="caption">
-        <span class="desktop-only">
+        <span class="mobile-hide">
           Move mouse over the elements below. On a mobile device,
           you need to tap the elements.
         </span>
@@ -12,24 +12,150 @@
         </span>
       </p>
 
-      <div v-tooltip="'Quasar Rulz!'" style="margin-top: 40px;width: 200px; height: 70px;background-color: #26A69A;">
+      <div style="margin-top: 40px;width: 200px; height: 70px;background-color: #26A69A;">
         &nbsp;
+        <q-tooltip>
+          Quasar Rulz!
+        </q-tooltip>
       </div>
       <br><br>
       <div class="group">
-        <div v-tooltip.inline="'Tooltip'">
-          <button class="indigo">Hover</button>
+        <button class="indigo">
+          Hover
+          <q-tooltip anchor="top middle" self="bottom middle">
+            Quasar Tooltip 1
+          </q-tooltip>
+        </button>
+        <button class="red">
+          Over
+          <q-tooltip anchor="center right" self="center left">
+            Quasar Tooltip 2
+          </q-tooltip>
+        </button>
+        <button class="purple">
+          These
+          <q-tooltip anchor="center left" self="center right">
+            Quasar Tooltip 3
+          </q-tooltip>
+        </button>
+        <button class="amber">
+          Buttons
+          <q-tooltip anchor="bottom middle" self="top middle">
+            Quasar Tooltip 4
+          </q-tooltip>
+        </button>
+      </div>
+
+      <div class="card" style="margin-top: 75px">
+        <div class="card-title bg-primary text-center">
+          <button class="orange push" style="padding: 35px;">
+            <span class="mobile-hide">Mouse Hover</span>
+            <span class="mobile-only">Tap Me</span>
+
+            <q-tooltip :anchor="anchor" :self="self">
+              Quasar
+            </q-popover>
+          </button>
         </div>
-        <div v-tooltip.inline="'Tooltip for the user'">
-          <button class="red">Over</button>
-        </div>
-        <div v-tooltip.inline="'Lorem Ipsum... Some long tooltip...'">
-          <button class="purple">These</button>
-        </div>
-        <div v-tooltip.inline="'Lorem Ipsum...'">
-          <button class="amber">Buttons</button>
+
+        <p class="caption text-center">Configure the Tooltip for button above.</p>
+        <p class="text-center">
+          <span class="tag label bg-light">anchor="{{anchor}}"</span>
+          <span class="tag label bg-light">self="{{self}}"</span>
+        </p>
+        <div class="card-content group row sm-column">
+          <div class="auto column items-center">
+            <p class="caption">Anchor Origin</p>
+            <div class="flex">
+              <div class="column group">
+                <div>Vertical</div>
+                <label>
+                  <q-radio v-model="anchorOrigin.vertical" val="top"></q-radio>
+                  Top
+                </label>
+                <label>
+                  <q-radio v-model="anchorOrigin.vertical" val="center"></q-radio>
+                  Center
+                </label>
+                <label>
+                  <q-radio v-model="anchorOrigin.vertical" val="bottom"></q-radio>
+                  Bottom
+                </label>
+              </div>
+              <div class="column group">
+                <div>Horizontal</div>
+                <label>
+                  <q-radio v-model="anchorOrigin.horizontal" val="left"></q-radio>
+                  Left
+                </label>
+                <label>
+                  <q-radio v-model="anchorOrigin.horizontal" val="middle"></q-radio>
+                  Middle
+                </label>
+                <label>
+                  <q-radio v-model="anchorOrigin.horizontal" val="right"></q-radio>
+                  Right
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="auto column items-center">
+            <p class="caption">Target Origin</p>
+            <div class="flex">
+              <div class="column group">
+                <div>Vertical</div>
+                <label>
+                  <q-radio v-model="selfOrigin.vertical" val="top"></q-radio>
+                  Top
+                </label>
+                <label>
+                  <q-radio v-model="selfOrigin.vertical" val="center"></q-radio>
+                  Center
+                </label>
+                <label>
+                  <q-radio v-model="selfOrigin.vertical" val="bottom"></q-radio>
+                  Bottom
+                </label>
+              </div>
+              <div class="column group">
+                <div>Horizontal</div>
+                <label>
+                  <q-radio v-model="selfOrigin.horizontal" val="left"></q-radio>
+                  Left
+                </label>
+                <label>
+                  <q-radio v-model="selfOrigin.horizontal" val="middle"></q-radio>
+                  Middle
+                </label>
+                <label>
+                  <q-radio v-model="selfOrigin.horizontal" val="right"></q-radio>
+                  Right
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      anchorOrigin: {vertical: 'bottom', horizontal: 'middle'},
+      selfOrigin: {vertical: 'top', horizontal: 'middle'}
+    }
+  },
+  computed: {
+    anchor () {
+      return `${this.anchorOrigin.vertical} ${this.anchorOrigin.horizontal}`
+    },
+    self () {
+      return `${this.selfOrigin.vertical} ${this.selfOrigin.horizontal}`
+    }
+  }
+}
+</script>

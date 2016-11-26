@@ -26,13 +26,7 @@ module.exports = {
       path.join(__dirname, '../src'),
       'node_modules'
     ],
-    alias: {
-      quasar: path.resolve(__dirname, '../node_modules/quasar-framework/'),
-      src: path.resolve(__dirname, '../src'),
-      assets: path.resolve(__dirname, '../src/assets'),
-      components: path.resolve(__dirname, '../src/components'),
-      helpers: path.resolve(__dirname, '../src/helpers')
-    }
+    alias: config.aliases
   },
   module: {
     rules: [

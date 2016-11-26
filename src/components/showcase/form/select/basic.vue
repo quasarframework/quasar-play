@@ -8,11 +8,20 @@
       <p class="caption">With Toggles</p>
       <q-select type="toggle" v-model="multipleSelect" :options="selectOptions"></q-select>
 
+      <p class="caption">With Label</p>
+      <q-select type="checkbox" v-model="multipleSelect" :options="selectOptions" label="Pick Company"></q-select>
+
       <p class="caption">With Placeholder</p>
-      <q-select type="radio" v-model="select" :options="selectOptions" :placeholder="'Pick Company'"></q-select>
+      <q-select type="checkbox" v-model="multipleSelect" :options="selectOptions" placeholder="Pick Company"></q-select>
 
       <p class="caption">Disabled State</p>
       <q-select disable type="radio" v-model="select" :options="selectOptions"></q-select>
+
+      <p class="caption">Readonly State</p>
+      <q-select readonly type="radio" v-model="select" :options="selectOptions"></q-select>
+
+      <p class="caption">Error State</p>
+      <q-select class="has-error" type="radio" v-model="select" :options="selectOptions"></q-select>
 
       <p class="caption">Inside of a List</p>
       <div class="list">

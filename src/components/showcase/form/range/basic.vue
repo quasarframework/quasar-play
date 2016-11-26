@@ -41,8 +41,19 @@
       </p>
       <q-range v-model="marker" :min="0" :max="10" :step="2" label snap markers></q-range>
 
+      <p class="caption">
+        Display Label Always
+        <span class="label inline bg-secondary text-white">
+          Model <span class="right-detail"><em>{{label}}</em> &nbsp;&nbsp;(-20 to 20, step 4)</span>
+        </span>
+      </p>
+      <q-range v-model="label" :min="-20" :max="20" :step="4" label-always></q-range>
+
       <p class="caption">Disabled State</p>
       <q-range v-model="standalone" :min="0" :max="50" disable></q-range>
+
+      <p class="caption">Error State</p>
+      <q-range class="has-error" v-model="standalone" :min="0" :max="50"></q-range>
 
       <p class="caption">Coloring</p>
       <q-range class="secondary" v-model="standalone" :min="0" :max="50" label></q-range>

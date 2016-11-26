@@ -15,6 +15,12 @@
 
       <p class="caption">Disabled State</p>
       <q-search v-model="search" class="primary" disable></q-search>
+
+      <p class="caption">Readonly State</p>
+      <q-search v-model="search" class="primary" readonly></q-search>
+
+      <p class="caption">Error State</p>
+      <q-search v-model="search" class="primary has-error"></q-search>
     </div>
   </div>
 </template>

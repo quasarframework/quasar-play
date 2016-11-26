@@ -31,11 +31,6 @@ export default [
     extract: true,
     features: [
       {
-        title: 'Grid Layout',
-        icon: 'web',
-        hash: 'grid-layout'
-      },
-      {
         title: 'Layout',
         icon: 'web',
         hash: ''
@@ -141,6 +136,11 @@ export default [
         title: 'Color Palette',
         icon: 'style',
         hash: 'colors'
+      },
+      {
+        title: 'Grid Layout',
+        icon: 'web',
+        hash: 'grid-layout'
       },
       {
         title: 'HTML Table',

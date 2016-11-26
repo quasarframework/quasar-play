@@ -91,12 +91,6 @@ categories.forEach(category => {
   })
 })
 
-showcase.children.push(component('layout/grid-layout', {
-  title: 'Grid Layout',
-  hash: '/showcase/layout/grid-layout',
-  icon: 'web'
-}))
-
 routes.push(showcase)
 routes.push({path: '*', component: load('error404')})
 

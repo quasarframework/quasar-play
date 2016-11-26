@@ -45,15 +45,36 @@
 
       <p class="caption">Disabled State</p>
       <q-inline-datetime disable v-model="model" type="datetime"></q-inline-datetime>
+
+      <p class="caption">Readonly State</p>
+      <q-inline-datetime readonly v-model="model" type="datetime"></q-inline-datetime>
+
+      <p class="caption">Min & Max</p>
+      <q-inline-datetime type="datetime" v-model="minMaxModel" :min="min" :max="max"></q-inline-datetime>
+
+      <p class="caption">Range</p>
+      <q-inline-datetime type="datetime" v-model="range.start" :min="range.min" :max="range.end"></q-inline-datetime>
+      <q-inline-datetime type="datetime" v-model="range.end" :min="range.start" :max="range.max"></q-inline-datetime>
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   data () {
     return {
-      model: '2016-09-18T10:45:00.000Z'
+      model: '',
+      minMaxModel: '2016-10-24T10:40:14.674Z',
+      min: moment('2016-10-24T10:40:14.674Z').subtract(5, 'days').format(),
+      max: moment('2016-10-24T10:40:14.674Z').add(4, 'hours').add(10, 'minutes').format(),
+      range: {
+        start: moment('2016-10-24T10:40:14.674Z').subtract(3, 'days').format(),
+        end: moment('2016-10-24T10:40:14.674Z').add(4, 'hours').add(10, 'minutes').add(1, 'month').format(),
+        min: moment('2016-10-24T10:40:14.674Z').subtract(3, 'days').format(),
+        max: moment('2016-10-24T10:40:14.674Z').add(4, 'hours').add(10, 'minutes').add(1, 'month').format()// .add(1, 'month').add(1, 'year')
+      }
     }
   }
 }

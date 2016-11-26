@@ -129,15 +129,13 @@ export default {
               title: 'Progress',
               message: 'Computing...',
               progress,
-              buttons: [
-                {
-                  label: 'Cancel',
-                  handler () {
-                    clearInterval(timeout)
-                    Toast.create('Canceled on progress ' + progress.model)
-                  }
-                }
-              ]
+              buttons: ['Cancel'],
+              onDismiss () {
+                clearInterval(timeout)
+                Toast.create('Canceled on progress ' + progress.model)
+              },
+              noBackdropDismiss: true,
+              noEscDismiss: true
             })
 
             const timeout = setInterval(() => {
@@ -159,15 +157,13 @@ export default {
               progress: {
                 indeterminate: true
               },
-              buttons: [
-                {
-                  label: 'Cancel',
-                  handler (data) {
-                    clearTimeout(timeout)
-                    Toast.create('Canceled...')
-                  }
-                }
-              ]
+              buttons: ['Cancel'],
+              onDismiss () {
+                clearTimeout(timeout)
+                Toast.create('Canceled...')
+              },
+              noBackdropDismiss: true,
+              noEscDismiss: true
             })
 
             const timeout = setTimeout(() => {

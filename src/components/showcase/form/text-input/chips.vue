@@ -17,6 +17,12 @@
       <p class="caption">Disabled State</p>
       <q-chips v-model="model" disable></q-chips>
 
+      <p class="caption">Readonly State</p>
+      <q-chips v-model="model" readonly></q-chips>
+
+      <p class="caption">Error State</p>
+      <q-chips v-model="model" class="has-error"></q-chips>
+
       <p class="caption">Inside of a List</p>
       <div class="list">
         <div class="item multiple-lines">

@@ -10,16 +10,17 @@
         </div>
 
         <i class="text-grey-7" style="font-size: 2rem">palette</i>
-        <label for="color-spinner" class="auto">Color</label>
-        <input id="color-spinner" v-model="color" style="width: 80px; text-align: center; margin-right: 10px;">
-        <q-dialog-select
+        <q-select
           type="radio"
           v-model="color"
           :options="colorOptions"
           ok-label="Pick"
+          label="Color"
           title="Spinner Color"
           style="vertical-align: middle"
         ></q-select>
+        <span class="text-grey">or</span>
+        <input v-model="color" style="width: 80px; text-align: center; margin-right: 10px;">
       </div>
 
       <p class="caption">
@@ -27,12 +28,13 @@
       </p>
 
       <div style="margin-top: 20px" class="group">
-        <div v-for="spinner in spinners" v-tooltip.inline="spinner">
+        <div v-for="spinner in spinners" class="inline-block">
           <spinner
             :name="spinner"
             :color="color"
             :size="size"
           ></spinner>
+          <q-tooltip>{{spinner}}</q-tooltip>
         </div>
       </div>
 
