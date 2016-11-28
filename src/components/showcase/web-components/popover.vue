@@ -142,8 +142,8 @@
 
         <br><br>
         <span>
-          <img ref="target3" src="~assets/map.png" class="responsive">
-          <q-popover anchor-ref="target3" ref="popover3" touch-position>
+          <img src="~assets/map.png" class="responsive">
+          <q-popover ref="popover3" touch-position>
             <div class="list highlight" style="min-width: 200px; max-height: 300px;">
               <div
                 class="item item-link item-delimiter"

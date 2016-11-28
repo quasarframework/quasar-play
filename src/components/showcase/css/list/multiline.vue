@@ -56,22 +56,23 @@
           <div class="item-secondary">
             <i ref="target">
               more_vert
+
+              <q-popover ref="popover">
+                <div class="list">
+                  <div class="item item-link" @click="$refs.popover.close()">
+                    <div class="item-content">Reply</div>
+                  </div>
+                  <div class="item item-link" @click="$refs.popover.close()">
+                    <div class="item-content">Forward</div>
+                  </div>
+                  <div class="item item-link" @click="$refs.popover.close()">
+                    <div class="item-content">Delete</div>
+                  </div>
+                </div>
+              </q-popover>
             </i>
           </div>
         </div>
-        <q-popover ref="popover" anchor-ref="target">
-          <div class="list">
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Reply</div>
-            </div>
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Forward</div>
-            </div>
-            <div class="item item-link" @click="$refs.popover.close()">
-              <div class="item-content">Delete</div>
-            </div>
-          </div>
-        </q-popover>
       </div>
     </div>
   </div>
