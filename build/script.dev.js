@@ -14,11 +14,16 @@ var
   proxyMiddleware = require('http-proxy-middleware'),
   webpackConfig = require('./webpack.dev.conf'),
   app = express(),
-  compiler = webpack(webpackConfig)
-
-var
   port = process.env.PORT || config.dev.port,
   uri = 'http://localhost:' + port
+
+console.log(' Starting dev server with "' + (process.argv[2] || 'mat').bold + '" theme...')
+console.log(' Will listen at ' + uri.bold)
+if (config.dev.openBrowser) {
+  console.log(' Browser will open when build is ready.\n')
+}
+
+var compiler = webpack(webpackConfig)
 
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
@@ -74,16 +79,10 @@ module.exports = app.listen(port, function (err) {
     return
   }
 
-  console.log(('\n Running with "' + (process.argv[2] || 'mat') + '" theme').bold)
-  console.log((' Listening at ' + uri).bold)
-
   // open browser if set so in /config/index.js
   if (config.dev.openBrowser) {
-    console.log(' Browser will open when build is ready.\n')
     devMiddleware.waitUntilValid(function () {
       opn(uri)
     })
   }
-
-  console.log('\n Building Quasar App. Please wait...\n'.bold)
 })
