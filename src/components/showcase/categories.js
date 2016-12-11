@@ -388,6 +388,11 @@ export default [
     hash: 'web-components',
     features: [
       {
+        title: 'Ajax Bar',
+        icon: 'trending_flat',
+        hash: 'ajax-bar'
+      },
+      {
         title: 'Collapsible',
         icon: 'format_line_spacing',
         hash: 'collapsible'
@@ -396,6 +401,11 @@ export default [
         title: 'Context Menu',
         icon: 'content_paste',
         hash: 'context-menu'
+      },
+      {
+        title: 'Data Table',
+        icon: 'border_all',
+        hash: 'data-table'
       },
       {
         title: 'Floating Action Button',
