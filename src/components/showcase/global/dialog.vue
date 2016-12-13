@@ -187,6 +187,11 @@ export default {
                   label: 'Textbox',
                   model: ''
                 },
+                pass: {
+                  type: 'password',
+                  label: 'Password',
+                  model: ''
+                },
                 age: {
                   type: 'numeric',
                   label: 'Numeric',
