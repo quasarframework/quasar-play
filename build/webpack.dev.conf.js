@@ -32,5 +32,8 @@ module.exports = merge(baseWebpackConfig, {
       template: 'src/index.html',
       inject: true
     })
-  ]
+  ],
+  performance: {
+    hints: false
+  }
 })
