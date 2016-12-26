@@ -6,6 +6,9 @@
 require(`quasar/dist/quasar.${__THEME}.css`)
 // ==============================
 
+// === Enabling IE11+ support ===
+require('es6-promise').polyfill()
+
 import Vue from 'vue'
 import Quasar from 'quasar'
 import router from './router'
