@@ -6,7 +6,8 @@ module.exports = {
     src: path.resolve(__dirname, '../src'),
     assets: path.resolve(__dirname, '../src/assets'),
     components: path.resolve(__dirname, '../src/components'),
-    helpers: path.resolve(__dirname, '../src/helpers')
+    helpers: path.resolve(__dirname, '../src/helpers'),
+    data: path.resolve(__dirname, '../src/data')
   },
   // Progress Bar Webpack plugin format
   // https://github.com/clessg/progress-bar-webpack-plugin#options

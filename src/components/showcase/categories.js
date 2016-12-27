@@ -265,6 +265,11 @@ export default [
     hash: 'form',
     features: [
       {
+        title: 'Autocomplete',
+        icon: 'more_horiz',
+        hash: 'autocomplete'
+      },
+      {
         title: 'Checkbox',
         icon: 'check_box',
         hash: 'checkbox'

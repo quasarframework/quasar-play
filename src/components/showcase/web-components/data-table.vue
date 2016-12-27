@@ -123,7 +123,7 @@
 
 <script>
 import { Utils, Toast } from 'quasar'
-import table from '../../../table-data.json'
+import table from 'data/table.json'
 
 export default {
   methods: {

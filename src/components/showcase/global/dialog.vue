@@ -81,6 +81,27 @@ export default {
           }
         },
         {
+          label: 'Custom CSS classes & style to buttons',
+          icon: 'format_color_fill',
+          handler () {
+            Dialog.create({
+              title: 'Confirm',
+              message: 'Custom button classes.',
+              buttons: [
+                {
+                  label: 'Disagree',
+                  classes: 'negative clear',
+                  style: 'text-decoration: underline'
+                },
+                {
+                  label: 'Agree',
+                  classes: 'positive'
+                }
+              ]
+            })
+          }
+        },
+        {
           label: 'Stacked Buttons Example',
           icon: 'reorder',
           handler () {
@@ -129,13 +150,15 @@ export default {
               title: 'Progress',
               message: 'Computing...',
               progress,
-              buttons: ['Cancel'],
-              onDismiss () {
-                clearInterval(timeout)
-                Toast.create('Canceled on progress ' + progress.model)
-              },
-              noBackdropDismiss: true,
-              noEscDismiss: true
+              buttons: [
+                {
+                  label: 'Cancel',
+                  handler () {
+                    clearInterval(timeout)
+                    Toast.create('Canceled on progress ' + progress.model)
+                  }
+                }
+              ]
             })
 
             const timeout = setInterval(() => {
@@ -157,13 +180,15 @@ export default {
               progress: {
                 indeterminate: true
               },
-              buttons: ['Cancel'],
-              onDismiss () {
-                clearTimeout(timeout)
-                Toast.create('Canceled...')
-              },
-              noBackdropDismiss: true,
-              noEscDismiss: true
+              buttons: [
+                {
+                  label: 'Cancel',
+                  handler (data) {
+                    clearTimeout(timeout)
+                    Toast.create('Canceled...')
+                  }
+                }
+              ]
             })
 
             const timeout = setTimeout(() => {
@@ -185,11 +210,6 @@ export default {
                 name: {
                   type: 'textbox',
                   label: 'Textbox',
-                  model: ''
-                },
-                pass: {
-                  type: 'password',
-                  label: 'Password',
                   model: ''
                 },
                 age: {

@@ -3,6 +3,8 @@
     <div class="layout-padding">
       <p class="caption">With Radios</p>
       <q-select type="radio" v-model="select" :options="selectOptions"></q-select>
+      <p class="caption">With List</p>
+      <q-select type="list" v-model="select" :options="selectOptions"></q-select>
       <p class="caption">With Checkboxes</p>
       <q-select type="checkbox" v-model="multipleSelect" :options="selectOptions"></q-select>
       <p class="caption">With Toggles</p>
