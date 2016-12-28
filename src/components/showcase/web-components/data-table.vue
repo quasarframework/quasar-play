@@ -122,7 +122,7 @@
 </template>
 
 <script>
-import { Utils, Toast } from 'quasar'
+import { Platform, Utils, Toast } from 'quasar'
 import table from 'data/table.json'
 
 export default {
@@ -160,7 +160,7 @@ export default {
         leftStickyColumns: 1,
         rightStickyColumns: 2,
         bodyStyle: {
-          maxHeight: '500px'
+          maxHeight: Platform.is.mobile ? '50vh' : '500px'
         },
         rowHeight: '50px',
         responsive: true,
