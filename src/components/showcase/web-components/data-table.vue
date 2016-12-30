@@ -8,12 +8,8 @@
             <label>Data Table Title</label>
           </div>
 
-          <p class="caption">Features</p>
+          <p class="caption">Features <small>(* filter can be removed in columns definition)</small></p>
           <div class="column group gt-sm-row">
-            <label>
-              <q-checkbox v-model="config.filter" />
-              Filter
-            </label>
             <label>
               <q-checkbox v-model="config.refresh" />
               Refresh
@@ -154,7 +150,6 @@ export default {
       table,
       config: {
         title: 'Data Table',
-        filter: true,
         refresh: true,
         columnPicker: true,
         leftStickyColumns: 1,
@@ -179,6 +174,8 @@ export default {
           label: 'Date',
           field: 'isodate',
           width: '120px',
+          filter: true,
+          sort: 'date',
           format (value) {
             return new Date(value).toLocaleString()
           }
@@ -198,12 +195,14 @@ export default {
           label: 'Message',
           field: 'message',
           sort: true,
+          filter: true,
           width: '500px'
         },
         {
           label: 'Source',
           field: 'source',
           sort: true,
+          filter: true,
           width: '120px'
         },
         {

@@ -43,8 +43,8 @@
     </div>
 
     <q-fab class="cordova-only absolute-bottom-right" classNames="primary" direction="up">
-      <q-small-fab class="secondary" @click.native="scanQR()">phonelink_ring</q-small-fab>
-      <q-small-fab class="primary clear" @click.native="addURL()">add</q-small-fab>
+      <q-small-fab class="secondary" @click.native="scanQR()" icon="phonelink_ring"></q-small-fab>
+      <q-small-fab class="primary clear" @click.native="addURL()" icon="add"></q-small-fab>
     </q-fab>
 
     <button
@@ -121,15 +121,18 @@ export default {
           'Cancel',
           {
             label: 'Save',
-            handler (data) {
-              if (!data.name.length || !data.url.length) {
-                Dialog.create({
-                  title: 'Error',
-                  message: 'Please fill in both name and URL'
-                })
+            preventClose: true,
+            handler (data, close) {
+              if (!data.name.length) {
+                Toast.create.warning('Please fill in a name')
+                return
+              }
+              if (!data.url.length) {
+                Toast.create.warning('Please fill in a URL')
                 return
               }
 
+              close()
               store.set(id, {
                 name: data.name,
                 url: data.url
@@ -159,20 +162,18 @@ export default {
           'Cancel',
           {
             label: 'Add',
-            handler (data) {
-              if (!data.name.length && (!data.url.length || data.url === 'http://')) {
-                Toast.create.warning('Please fill in both name and URL.')
-                return
-              }
+            preventClose: true,
+            handler (data, close) {
               if (!data.name.length) {
-                Toast.create.warning('Please fill in a name for your URL.')
+                Toast.create.warning('Please fill in a name')
                 return
               }
               if (!data.url.length || data.url === 'http://') {
-                Toast.create.warning('Please fill in the URL.')
+                Toast.create.warning('Please fill in a URL')
                 return
               }
 
+              close()
               addURL(data.name, data.url)
             }
           }
@@ -221,15 +222,14 @@ export default {
                       'Cancel',
                       {
                         label: 'Add URL',
-                        handler (data) {
+                        preventClose: true,
+                        handler (data, close) {
                           if (!data.name.length) {
-                            Dialog.create({
-                              title: 'Error',
-                              message: 'Please fill in a name'
-                            })
+                            Toast.create('Please fill in a name')
                             return
                           }
 
+                          close()
                           addURL(data.name, result.text)
                         }
                       }

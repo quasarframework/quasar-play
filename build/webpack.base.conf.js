@@ -100,5 +100,8 @@ module.exports = {
     new ProgressBarPlugin({
       format: config.progressFormat
     })
-  ]
+  ],
+  performance: {
+    hints: false
+  }
 }

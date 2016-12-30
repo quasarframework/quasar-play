@@ -290,6 +290,12 @@ export default [
             label: 'Inline',
             icon: 'access_time',
             hash: 'inline'
+          },
+          {
+            title: 'DateTime Range',
+            label: 'Range',
+            icon: 'date_range',
+            hash: 'range'
           }
         ]
       },
@@ -396,6 +402,11 @@ export default [
         title: 'Ajax Bar',
         icon: 'trending_flat',
         hash: 'ajax-bar'
+      },
+      {
+        title: 'Back to Top',
+        icon: 'vertical_align_top',
+        hash: 'back-to-top'
       },
       {
         title: 'Collapsible',
