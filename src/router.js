@@ -30,6 +30,7 @@ let routes = [
     component: load('showcase/layout/layout'),
     children: [
       {path: '', component: load('showcase/layout/about')},
+      {path: 'about', component: load('showcase/layout/about')},
       {path: 'toolbar', component: load('showcase/layout/toolbar')},
       {path: 'tabs', component: load('showcase/layout/tabs')},
       {path: 'drawer', component: load('showcase/layout/drawer')}
