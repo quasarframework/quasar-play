@@ -1,6 +1,6 @@
 {
   "name": "quasar-play",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Quasar Play for Quasar Framework",
   "author": "Razvan Stoenescu <razvan.stoenescu@gmail.com>",
   "scripts": {
