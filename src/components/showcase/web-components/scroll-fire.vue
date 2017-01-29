@@ -22,9 +22,13 @@ export default {
     }
   },
   methods: {
-    bounceImage (element) {
-      Velocity(element, 'fadeOut', {duration: 1000})
-      Velocity(element, 'fadeIn', {delay: 300, duration: 1000})
+    bounceImage (el) {
+      el.classList.add('animate-bounce')
+      setTimeout(() => {
+        if (document.body.contains(el)) {
+          el.classList.remove('animate-bounce')
+        }
+      }, 2050)
     }
   }
 }

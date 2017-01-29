@@ -31,7 +31,7 @@
       </div>
 
       <div class="list no-border platform-delimiter">
-        <q-drawer-link icon="view_quilt" to="/showcase/layout/about">
+        <q-drawer-link icon="view_quilt" to="/showcase/layout" exact>
           About Layout
         </q-drawer-link>
         <hr>

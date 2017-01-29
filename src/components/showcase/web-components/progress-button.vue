@@ -47,13 +47,13 @@
         <button class="secondary clear" @click="stopWorkButton()">
           Stop
         </button>
-        <button class="secondary clear" @click="progressBtn = -1">
+        <button class="secondary clear" @click="stopWorkButton(-1)">
           Error
         </button>
-        <button class="secondary clear" @click="progressBtn = 100">
+        <button class="secondary clear" @click="stopWorkButton(100)">
           Success
         </button>
-        <button class="secondary clear" @click="progressBtn = 0">
+        <button class="secondary clear" @click="stopWorkButton(0)">
           Reset
         </button>
         <div class="label tag bg-light">{{ progressBtn }}</div>
@@ -81,10 +81,13 @@ export default {
         }
       }, 500)
     },
-    stopWorkButton () {
+    stopWorkButton (index) {
       if (this.workingButton) {
         clearInterval(this.workingButton)
         this.workingButton = null
+      }
+      if (typeof index !== 'undefined') {
+        this.progressBtn = index
       }
     }
   },

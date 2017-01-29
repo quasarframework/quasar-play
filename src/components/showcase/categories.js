@@ -489,11 +489,6 @@ export default [
         hash: 'spinner'
       },
       {
-        title: 'State',
-        icon: 'shuffle',
-        hash: 'state'
-      },
-      {
         title: 'Stepper',
         icon: 'directions_run',
         hash: 'stepper'
