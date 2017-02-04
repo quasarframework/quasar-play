@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.quasarframework.quasarplay" version="0.13.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.quasarframework.quasarplay" version="0.13.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Quasar Play</name>
   <description>
       Quasar Play for Quasar Framework
@@ -28,11 +27,7 @@
     <allow-intent href="market:*" />
   </platform>
   <platform name="ios">
-      <allow-intent href="itms:*" />
-      <allow-intent href="itms-apps:*" />
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
   </platform>
-  <preference name="xwalkVersion" value="19+" />
-  <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
-  <preference name="xwalkMode" value="embedded" />
-  <preference name="xwalkMultipleApk" value="true" />
 </widget>
