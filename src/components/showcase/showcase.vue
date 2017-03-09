@@ -8,6 +8,7 @@
           </div>
           <router-link
             v-for="feature in category.features"
+            :key="feature"
             tag="div"
             class="item item-link item-inset-delimiter"
             :to="'/showcase/' + category.hash + '/' + feature.hash"

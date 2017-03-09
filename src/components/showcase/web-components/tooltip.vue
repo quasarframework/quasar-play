@@ -57,7 +57,7 @@
 
             <q-tooltip :anchor="anchor" :self="self">
               Quasar
-            </q-popover>
+            </q-tooltip>
           </button>
         </div>
 

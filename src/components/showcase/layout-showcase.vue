@@ -15,9 +15,14 @@
       </q-toolbar-title>
     </div>
 
-    <q-tabs slot="navigation" v-if="store.tabs.length > 0" class="within-iframe-hide">
+    <q-tabs
+      slot="navigation"
+      v-if="store.tabs.length > 0"
+      class="within-iframe-hide"
+    >
       <q-tab
         v-for="tab in store.tabs"
+        :key="tab"
         :icon="tab.icon"
         :route="'/showcase' + store.hash + '/' + tab.hash" exact replace
       >

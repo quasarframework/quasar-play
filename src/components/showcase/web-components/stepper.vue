@@ -26,7 +26,7 @@
           <span>Finished. Well done!</span>
         </p>
         <button class="primary" @click="reset()">Reset</button>
-      </p>
+      </div>
     </div>
   </div>
 </template>
