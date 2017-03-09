@@ -1,6 +1,4 @@
-if (!process.env.NODE_ENV) {
-  process.env.NODE_ENV = 'development'
-}
+process.env.NODE_ENV = 'development'
 
 require('colors')
 
@@ -17,7 +15,7 @@ var
   port = process.env.PORT || config.dev.port,
   uri = 'http://localhost:' + port
 
-console.log(' Starting dev server with "' + (process.argv[2] || 'mat').bold + '" theme...')
+console.log(' Starting dev server with "' + (process.argv[2] || env.platform.theme).bold + '" theme...')
 console.log(' Will listen at ' + uri.bold)
 if (config.dev.openBrowser) {
   console.log(' Browser will open when build is ready.\n')
@@ -31,13 +29,13 @@ var proxyTable = config.dev.proxyTable
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  stats: {
-    colors: true,
-    chunks: false
-  }
+  quiet: true
 })
 
-var hotMiddleware = require('webpack-hot-middleware')(compiler)
+var hotMiddleware = require('webpack-hot-middleware')(compiler, {
+  log: function () {}
+})
+
 // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function (compilation) {
   compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
