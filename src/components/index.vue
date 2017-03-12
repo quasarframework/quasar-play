@@ -16,10 +16,22 @@
           <i class="on-left">layers</i>
           Quasar Showcase
         </router-link>
-        <button class="grey clear" @click="launch()">
+
+        <button class="full-width secondary push" @click="launch">
           <i class="on-left">launch</i>
-          Quasar Documentation
+          Quasar Docs
         </button>
+
+        <a
+          class="row items-center justify-center text-secondary"
+          @click="viewPrivacyPolicy"
+          style="margin-top: 15px; font-size: .75rem"
+        >
+          <i class="on-left" style="font-size: 150%">info_outline</i>
+          <div>Read Privacy Policy</div>
+        </a>
+
+        <privacy-policy ref="privacy" />
       </div>
     </div>
     <a class="ribbon" :title="'Built with Quasar v' + version"></a>
@@ -28,6 +40,7 @@
 
 <script>
 import Quasar, { Utils } from 'quasar'
+import PrivacyPolicy from './privacy-policy'
 
 export default {
   data () {
@@ -38,7 +51,13 @@ export default {
   methods: {
     launch () {
       Utils.openURL('http://quasar-framework.org')
+    },
+    viewPrivacyPolicy () {
+      this.$refs.privacy.show()
     }
+  },
+  components: {
+    PrivacyPolicy
   }
 }
 </script>
@@ -67,34 +86,30 @@ export default {
   overflow hidden
   top 0
   right 0
-  z-index 9999
+  z-index 39
   pointer-events none
   font-size 15px
   text-decoration none
   text-indent -999999px
+  opacity 0.7
   &.fixed
     position fixed
   &:before
     content ''
     padding .38em 0
-    background-color #3595e9
+    background-color white
     background-image linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .15))
     box-shadow 0 .15em .23em 0 rgba(0, 0, 0, .5)
     pointer-events auto
   &:after
     content attr(title)
-    color white
-    font-weight 700
+    color #027be3
     line-height 1.54em
     text-decoration none
-    text-shadow 0 -.08em rgba(0, 0, 0, .5)
     text-align center
     text-indent 0
     padding .15em 0
     margin .15em 0
-    border-width .08em 0
-    border-style dotted
-    border-color rgba(255, 255, 255, .7)
 
   &:before, &:after
     position absolute
