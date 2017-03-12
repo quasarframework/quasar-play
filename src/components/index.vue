@@ -17,19 +17,21 @@
           Quasar Showcase
         </router-link>
 
-        <button class="full-width secondary push" @click="launch()">
+        <button class="full-width secondary push" @click="launch">
           <i class="on-left">launch</i>
           Quasar Docs
         </button>
 
         <a
           class="row items-center justify-center text-secondary"
-          @click="launch('quasar-play-privacy-policy.html')"
-          style="margin-top: 15px"
+          @click="viewPrivacyPolicy"
+          style="margin-top: 15px; font-size: .75rem"
         >
           <i class="on-left" style="font-size: 150%">info_outline</i>
-          <div>App Privacy Policy</div>
+          <div>Read Privacy Policy</div>
         </a>
+
+        <privacy-policy ref="privacy" />
       </div>
     </div>
     <a class="ribbon" :title="'Built with Quasar v' + version"></a>
@@ -38,6 +40,7 @@
 
 <script>
 import Quasar, { Utils } from 'quasar'
+import PrivacyPolicy from './privacy-policy'
 
 export default {
   data () {
@@ -46,9 +49,15 @@ export default {
     }
   },
   methods: {
-    launch (link = '') {
-      Utils.openURL(`http://quasar-framework.org/${link}`)
+    launch () {
+      Utils.openURL('http://quasar-framework.org')
+    },
+    viewPrivacyPolicy () {
+      this.$refs.privacy.show()
     }
+  },
+  components: {
+    PrivacyPolicy
   }
 }
 </script>
@@ -77,7 +86,7 @@ export default {
   overflow hidden
   top 0
   right 0
-  z-index 9999
+  z-index 39
   pointer-events none
   font-size 15px
   text-decoration none
