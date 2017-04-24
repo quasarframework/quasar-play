@@ -26,24 +26,25 @@
   <platform name="android">
     <allow-intent href="market:*" />
   </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-        <icon height="180" src="res/ios/icon180.png" width="180" />
-        <icon height="167" src="res/ios/icon167.png" width="167" />
-        <icon height="152" src="res/ios/icon152.png" width="152" />
-        <icon height="144" src="res/ios/icon144.png" width="144" />
-        <icon height="120" src="res/ios/icon120.png" width="120" />
-        <icon height="114" src="res/ios/icon114.png" width="114" />
-        <icon height="100" src="res/ios/icon100.png" width="100" />
-        <icon height="80" src="res/ios/icon80.png" width="80" />
-        <icon height="76" src="res/ios/icon76.png" width="76" />
-        <icon height="72" src="res/ios/icon72.png" width="72" />
-        <icon height="60" src="res/ios/icon60.png" width="60" />
-        <icon height="58" src="res/ios/icon58.png" width="58" />
-        <icon height="57" src="res/ios/icon57.png" width="57" />
-        <icon height="50" src="res/ios/icon50.png" width="50" />
-        <icon height="40" src="res/ios/icon40.png" width="40" />
-        <icon height="29" src="res/ios/icon29.png" width="29" />
-    </platform>
+  <platform name="ios">
+      <allow-intent href="itms:*" />
+      <allow-intent href="itms-apps:*" />
+      <icon height="180" src="res/ios/icon180.png" width="180" />
+      <icon height="167" src="res/ios/icon167.png" width="167" />
+      <icon height="152" src="res/ios/icon152.png" width="152" />
+      <icon height="144" src="res/ios/icon144.png" width="144" />
+      <icon height="120" src="res/ios/icon120.png" width="120" />
+      <icon height="114" src="res/ios/icon114.png" width="114" />
+      <icon height="100" src="res/ios/icon100.png" width="100" />
+      <icon height="87" src="res/ios/icon87.png" width="87" />
+      <icon height="80" src="res/ios/icon80.png" width="80" />
+      <icon height="76" src="res/ios/icon76.png" width="76" />
+      <icon height="72" src="res/ios/icon72.png" width="72" />
+      <icon height="60" src="res/ios/icon60.png" width="60" />
+      <icon height="58" src="res/ios/icon58.png" width="58" />
+      <icon height="57" src="res/ios/icon57.png" width="57" />
+      <icon height="50" src="res/ios/icon50.png" width="50" />
+      <icon height="40" src="res/ios/icon40.png" width="40" />
+      <icon height="29" src="res/ios/icon29.png" width="29" />
+  </platform>
 </widget>
