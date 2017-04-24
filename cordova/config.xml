@@ -1,4 +1,4 @@
-<widget id="com.quasarframework.quasarplay" version="0.13.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.quasarframework.quasarplay" ios-CFBundleIdentifier="com.quasarframework.quasar.play" version="0.13.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Quasar Play</name>
   <description>
       Quasar Play for Quasar Framework
@@ -29,21 +29,21 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <icon height="180" src="icon/icon180.png" width="180" />
-        <icon height="167" src="icon/icon167.png" width="167" />
-        <icon height="152" src="icon/icon152.png" width="152" />
-        <icon height="144" src="icon/icon144.png" width="144" />
-        <icon height="120" src="icon/icon120.png" width="120" />
-        <icon height="114" src="icon/icon114.png" width="114" />
-        <icon height="100" src="icon/icon100.png" width="100" />
-        <icon height="80" src="icon/icon80.png" width="80" />
-        <icon height="76" src="icon/icon76.png" width="76" />
-        <icon height="72" src="icon/icon72.png" width="72" />
-        <icon height="60" src="icon/icon60.png" width="60" />
-        <icon height="58" src="icon/icon58.png" width="58" />
-        <icon height="57" src="icon/icon57.png" width="57" />
-        <icon height="50" src="icon/icon50.png" width="50" />
-        <icon height="40" src="icon/icon40.png" width="40" />
-        <icon height="29" src="icon/icon29.png" width="29" />
+        <icon height="180" src="res/ios/icon180.png" width="180" />
+        <icon height="167" src="res/ios/icon167.png" width="167" />
+        <icon height="152" src="res/ios/icon152.png" width="152" />
+        <icon height="144" src="res/ios/icon144.png" width="144" />
+        <icon height="120" src="res/ios/icon120.png" width="120" />
+        <icon height="114" src="res/ios/icon114.png" width="114" />
+        <icon height="100" src="res/ios/icon100.png" width="100" />
+        <icon height="80" src="res/ios/icon80.png" width="80" />
+        <icon height="76" src="res/ios/icon76.png" width="76" />
+        <icon height="72" src="res/ios/icon72.png" width="72" />
+        <icon height="60" src="res/ios/icon60.png" width="60" />
+        <icon height="58" src="res/ios/icon58.png" width="58" />
+        <icon height="57" src="res/ios/icon57.png" width="57" />
+        <icon height="50" src="res/ios/icon50.png" width="50" />
+        <icon height="40" src="res/ios/icon40.png" width="40" />
+        <icon height="29" src="res/ios/icon29.png" width="29" />
     </platform>
 </widget>
