@@ -1,0 +1,16 @@
+{
+    "ios": {
+        "debug": {
+            "codeSignIdentity": "iPhone Development",
+            "provisioningProfile": "9434c1b0-a71b-4f4b-8f74-c1c2c5266b9f",
+            "developmentTeam": "QVTAZ2CRLT",
+            "packageType": "development"
+        },
+        "release": {
+            "codeSignIdentity": "iPhone Distribution",
+            "provisioningProfile": "93eee730-5a19-47e7-9d0b-dcd53c309fe0",
+            "developmentTeam": "QVTAZ2CRLT",
+            "packageType": "app-store"
+        }
+    }
+}
