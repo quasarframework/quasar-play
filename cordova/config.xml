@@ -15,15 +15,15 @@
         <icon density="xxhdpi" src="res/android/xxhdpi.png" />
         <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
 
-        <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
-        <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
-        <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
-        <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+        <splash src="res/android/splash-land-hdpi.png" density="land-hdpi"/>
+        <splash src="res/android/splash-land-ldpi.png" density="land-ldpi"/>
+        <splash src="res/android/splash-land-mdpi.png" density="land-mdpi"/>
+        <splash src="res/android/splash-land-xhdpi.png" density="land-xhdpi"/>
 
-        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
-        <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
-        <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
-        <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+        <splash src="res/android/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/android/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/android/splash-port-mdpi.png" density="port-mdpi"/>
+        <splash src="res/android/splash-port-xhdpi.png" density="port-xhdpi"/>
     </platform>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
