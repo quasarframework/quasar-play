@@ -6,6 +6,7 @@ var
   shell = require('shelljs'),
   path = require('path'),
   env = require('./env-utils'),
+  css = require('./css-utils'),
   webpack = require('webpack'),
   webpackConfig = require('./webpack.prod.conf'),
   targetPath = path.join(__dirname, '../dist')
@@ -30,10 +31,12 @@ webpack(webpackConfig, function (err, stats) {
     chunkModules: false
   }) + '\n')
 
-  console.log((
-    '\n Build complete with "' + env.platform.theme.bold + '" theme in ' +
-    '"/dist"'.bold + ' folder.\n').cyan)
+  css.purify(function () {
+    console.log((
+      '\n Build complete with "' + env.platform.theme.bold + '" theme in ' +
+      '"/dist"'.bold + ' folder.\n').cyan)
 
-  console.log(' Built files are meant to be served over an HTTP server.'.bold)
-  console.log(' Opening index.html over file:// won\'t work.'.bold)
+    console.log(' Built files are meant to be served over an HTTP server.'.bold)
+    console.log(' Opening index.html over file:// won\'t work.'.bold)
+  })
 })
