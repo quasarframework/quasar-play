@@ -1,6 +1,7 @@
 export default [
   {
     title: 'Style & Identity',
+    icon: 'style',
     hash: 'style-and-identity',
     features: [
       {
@@ -17,6 +18,7 @@ export default [
   },
   {
     title: 'CSS Helpers',
+    icon: 'layers',
     hash: 'css-helpers',
     features: [
       {
@@ -33,12 +35,13 @@ export default [
   },
   {
     title: 'Layout',
+    icon: 'dashboard',
     hash: 'layout',
     extract: true,
     features: [
       {
         title: 'Layout',
-        icon: 'web',
+        icon: 'dashboard',
         hash: 'about'
       },
       {
@@ -60,6 +63,7 @@ export default [
   },
   {
     title: 'Navigation',
+    icon: 'rowing',
     hash: 'navigation',
     features: [
       {
@@ -96,6 +100,7 @@ export default [
   },
   {
     title: 'Scrolling',
+    icon: 'format_line_spacing',
     hash: 'scrolling',
     features: [
       {
@@ -250,6 +255,7 @@ export default [
   */
   {
     title: 'Popups',
+    icon: 'aspect_ratio',
     hash: 'popups',
     features: [
       {
@@ -291,6 +297,7 @@ export default [
   },
   {
     title: 'Grouping',
+    icon: 'view_module',
     hash: 'grouping',
     features: [
       {
@@ -415,6 +422,7 @@ export default [
   },
   {
     title: 'Progress',
+    icon: 'hourglass_full',
     hash: 'progress',
     features: [
       {
@@ -446,6 +454,7 @@ export default [
   },
   {
     title: 'Media',
+    icon: 'wallpaper',
     hash: 'media',
     features: [
       {
@@ -467,6 +476,7 @@ export default [
   },
   {
     title: 'Animation',
+    icon: 'directions_bus',
     hash: 'animation',
     features: [
       {
@@ -483,6 +493,7 @@ export default [
   },
   {
     title: 'Other Components',
+    icon: 'widgets',
     hash: 'other-components',
     features: [
       {
@@ -504,6 +515,7 @@ export default [
   },
   {
     title: 'Web API Wrappers',
+    icon: 'web',
     hash: 'web-api-wrappers',
     features: [
       {
@@ -520,6 +532,7 @@ export default [
   },
   {
     title: 'Misc',
+    icon: 'store',
     hash: 'misc',
     features: [
       {
