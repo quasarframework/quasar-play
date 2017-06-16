@@ -39,12 +39,12 @@ export default [
       {
         title: 'Layout',
         icon: 'web',
-        hash: 'layout'
+        hash: 'about'
       },
       {
-        title: 'Drawer / Panels',
+        title: 'Drawer / Panel',
         icon: 'input',
-        hash: 'drawer'
+        hash: 'drawer-panel'
       },
       {
         title: 'Fixed Positioning',

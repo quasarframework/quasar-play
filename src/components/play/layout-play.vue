@@ -1,5 +1,5 @@
 <template>
-  <q-layout>
+  <q-layout view="Hhh lpr fff">
     <q-toolbar slot="header">
       <q-btn flat v-go-back="'/'">
         <q-icon name="arrow_back" />

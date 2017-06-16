@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-padding">
+  <div class="layout-padding play-cards">
     <blockquote v-if="!hasURLs">
       <small>
         Register your first URL by tapping on the FAB button on the lower
@@ -9,40 +9,44 @@
       </small>
     </blockquote>
 
-    <q-list no-border v-else>
-      <q-item delimiter v-for="(item, id) in urls" :key="item">
-        <q-item-side
-          class="cursor-pointer"
-          @click="play(item.url)"
-          icon="ondemand_video"
-        />
-        <q-item-main>
-          <q-item-tile label>{{item.name}}</q-item-tile>
-          <q-item-tile sublabel class="cursor-pointer" @click="play(item.url)">{{item.url}}</q-item-tile>
-        </q-item-main>
-        <q-item-side right icon="more_vert">
-          <q-popover :ref="`popover${id}`">
-            <q-list link>
-              <q-item @click="$refs[`popover${id}`][0].close(), editURL(id)">
-                <q-item-side icon="edit" />
-                <q-item-main label="Edit" />
-              </q-item>
-              <q-item @click="$refs[`popover${id}`][0].close(), deleteURL(id)">
-                <q-item-side icon="delete" />
-                <q-item-main label="Delete" />
-              </q-item>
-            </q-list>
-          </q-popover>
-        </q-item-side>
-      </q-item>
-    </q-list>
+    <div class="row">
+      <div
+        v-for="(item, id) in urls"
+        :key="item"
+        class="col-xs-12 col-sm-6 col-lg-4 col-xl-3"
+      >
+        <q-card>
+          <q-card-title>
+            <div class="ellipsis-2-lines">{{item.name}}</div>
+            <div slot="subtitle" class="ellipsis-3-lines">{{item.url}}</div>
+          </q-card-title>
+          <q-card-separator />
+          <q-card-actions>
+            <q-btn flat color="tertiary" icon="ondemand_video" @click="play(item.url)">Play</q-btn>
+            <div class="col"></div>
+            <q-btn flat color="secondary" @click="editURL(id)">
+              <q-icon name="edit" />
+            </q-btn>
+            <q-btn flat color="secondary" @click="deleteURL(id)">
+              <q-icon name="delete" />
+            </q-btn>
+          </q-card-actions>
+        </q-card>
+      </div>
+    </div>
 
-    <q-fab class="cordova-only absolute-bottom-right" color="primary" direction="up">
+    <q-fab
+      v-if="$q.platform.is.cordova"
+      class="absolute-bottom-right"
+      color="primary"
+      direction="up"
+    >
       <q-fab-action color="secondary" @click.native="scanQR()" icon="phonelink_ring" />
       <q-fab-action color="primary" flat @click.native="addURL()" icon="add" />
     </q-fab>
 
     <q-btn
+      v-if="!$q.platform.is.cordova"
       color="primary"
       round
       glossy
@@ -63,11 +67,10 @@ import {
   QBtn,
   QFab,
   QFabAction,
-  QList,
-  QItem,
-  QItemSide,
-  QItemMain,
-  QItemTile,
+  QCard,
+  QCardTitle,
+  QCardActions,
+  QCardSeparator,
   QIcon,
   QPopover
 } from 'quasar'
@@ -84,11 +87,10 @@ export default {
     QBtn,
     QFab,
     QFabAction,
-    QList,
-    QItem,
-    QItemSide,
-    QItemMain,
-    QItemTile,
+    QCard,
+    QCardTitle,
+    QCardActions,
+    QCardSeparator,
     QIcon,
     QPopover
   },
@@ -278,3 +280,11 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.play-cards
+  .q-card-title
+    font-size 18px
+    line-height 20px
+    margin-bottom 8px
+</style>

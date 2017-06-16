@@ -29,10 +29,10 @@ let routes = [
     path: '/showcase/layout',
     component: load('showcase/layout/layout'),
     children: [
-      {path: '', component: load('showcase/layout/about')},
-      {path: 'toolbar', component: load('showcase/layout/toolbar')},
-      {path: 'tabs', component: load('showcase/layout/tabs')},
-      {path: 'drawer', component: load('showcase/layout/drawer')}
+      {path: 'about', component: load('showcase/layout/about')},
+      {path: 'drawer-panel', component: load('showcase/layout/drawer-panel')},
+      {path: 'fixed-positioning', component: load('showcase/layout/fixed-positioning')},
+      {path: 'floating-action-button', component: load('showcase/layout/floating-action-button')}
     ]
   }
 ]
