@@ -9,57 +9,68 @@
       </small>
     </blockquote>
 
-    <div v-else class="list no-border">
-      <div class="item two-lines item-delimiter" v-for="(item, id) in urls">
-        <i
-          class="item-primary cursor-pointer"
+    <q-list no-border v-else>
+      <q-item delimiter v-for="(item, id) in urls" :key="item">
+        <q-item-side
+          class="cursor-pointer"
           @click="play(item.url)"
-        >
-          ondemand_video
-        </i>
-        <div class="item-content has-secondary">
-          <div>{{item.name}}</div>
-          <div class="text-primary cursor-pointer" @click="play(item.url)">{{item.url}}</div>
-        </div>
-        <div class="item-secondary">
-          <i :ref="'target' + id">
-            more_vert
-          </i>
-
-          <q-popover :ref="'popover' + id">
-            <div class="list">
-              <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
-                <i class="item-primary">edit</i>
-                <div class="item-content">Edit</div>
-              </div>
-              <div class="item item-link" @click="$refs['popover' + id][0].close(), deleteURL(id)">
-                <i class="item-primary">delete</i>
-                <div class="item-content">Delete</div>
-              </div>
-            </div>
+          icon="ondemand_video"
+        />
+        <q-item-main>
+          <q-item-tile label>{{item.name}}</q-item-tile>
+          <q-item-tile sublabel class="cursor-pointer" @click="play(item.url)">{{item.url}}</q-item-tile>
+        </q-item-main>
+        <q-item-side right icon="more_vert">
+          <q-popover :ref="`popover${id}`">
+            <q-list link>
+              <q-item @click="$refs[`popover${id}`][0].close(), editURL(id)">
+                <q-item-side icon="edit" />
+                <q-item-main label="Edit" />
+              </q-item>
+              <q-item @click="$refs[`popover${id}`][0].close(), deleteURL(id)">
+                <q-item-side icon="delete" />
+                <q-item-main label="Delete" />
+              </q-item>
+            </q-list>
           </q-popover>
-        </div>
-      </div>
-    </div>
+        </q-item-side>
+      </q-item>
+    </q-list>
 
-    <q-fab class="cordova-only absolute-bottom-right" classNames="primary" direction="up">
-      <q-small-fab class="secondary" @click.native="scanQR()" icon="phonelink_ring"></q-small-fab>
-      <q-small-fab class="primary clear" @click.native="addURL()" icon="add"></q-small-fab>
+    <q-fab class="cordova-only absolute-bottom-right" color="primary" direction="up">
+      <q-fab-action color="secondary" @click.native="scanQR()" icon="phonelink_ring" />
+      <q-fab-action color="primary" flat @click.native="addURL()" icon="add" />
     </q-fab>
 
-    <button
-      class="cordova-hide circular primary absolute-bottom-right"
+    <q-btn
+      color="primary"
+      round
+      glossy
+      class="cordova-hide absolute-bottom-right shadow-4"
       @click="addURL()"
       style="right: 16px; bottom: 16px;"
     >
-      <i>add</i>
-    </button>
+      <q-icon name="add" />
+    </q-btn>
   </div>
 </template>
 
 <script>
-import { Dialog, Toast } from 'quasar'
 import store from './play-store'
+import {
+  Dialog,
+  Toast,
+  QBtn,
+  QFab,
+  QFabAction,
+  QList,
+  QItem,
+  QItemSide,
+  QItemMain,
+  QItemTile,
+  QIcon,
+  QPopover
+} from 'quasar'
 
 function addURL (name, url) {
   let id = Math.random().toString(36).substr(2, 9)
@@ -69,6 +80,18 @@ function addURL (name, url) {
 }
 
 export default {
+  components: {
+    QBtn,
+    QFab,
+    QFabAction,
+    QList,
+    QItem,
+    QItemSide,
+    QItemMain,
+    QItemTile,
+    QIcon,
+    QPopover
+  },
   data () {
     return {
       urls: store.state
@@ -104,15 +127,14 @@ export default {
 
       Dialog.create({
         title: 'Edit URL',
-        message: '',
         form: {
           name: {
-            type: 'textbox',
+            type: 'text',
             label: 'Name',
             model: item.name
           },
           url: {
-            type: 'textbox',
+            type: 'text',
             label: 'URL',
             model: item.url
           }
@@ -148,12 +170,12 @@ export default {
         message: '',
         form: {
           name: {
-            type: 'textbox',
+            type: 'text',
             label: 'Name',
             model: ''
           },
           url: {
-            type: 'textbox',
+            type: 'text',
             label: 'URL',
             model: 'http://'
           }

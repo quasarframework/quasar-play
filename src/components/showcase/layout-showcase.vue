@@ -1,45 +1,107 @@
 <template>
-  <q-layout>
-    <div slot="header" class="toolbar">
-      <button v-go-back.single="store.backRoute" class="within-iframe-hide">
-        <i>arrow_back</i>
-      </button>
-      <q-toolbar-title :padding="1">
-        <i
+  <q-layout ref="layout" view="Lhh lpr lff" reveal>
+    <q-toolbar slot="header">
+      <q-btn flat v-go-back.single="store.backRoute" class="cordova-only electron-only">
+        <q-icon name="arrow_back" />
+      </q-btn>
+      <q-toolbar-title>
+        <q-icon
           v-show="store.icon"
           style="font-size: 2rem; margin-right: 5px;"
-        >
-          {{ store.icon }}
-        </i>
+          :name="store.icon"
+        />
         {{ store.title }}
       </q-toolbar-title>
-    </div>
+      <q-btn flat @click="$refs.layout.toggleLeft()">
+        <q-icon name="menu" />
+      </q-btn>
+    </q-toolbar>
 
     <q-tabs
       slot="navigation"
       v-if="store.tabs.length > 0"
       class="within-iframe-hide"
     >
-      <q-tab
+      <q-route-tab
         v-for="tab in store.tabs"
         :key="tab"
+        slot="title"
         :icon="tab.icon"
-        :route="'/showcase' + store.hash + '/' + tab.hash" exact replace
-      >
-        {{ tab.label }}
-      </q-tab>
+        :to="`/showcase${store.hash}/${tab.hash}`"
+        :label="tab.label"
+        exact replace
+      />
     </q-tabs>
 
-    <router-view class="layout-view"></router-view>
+    <q-scroll-area
+      slot="left"
+      style="width: 100%; height: 100%;"
+      class="bg-grey-3"
+    >
+      <template v-for="category in categories">
+        <q-list-header>
+          {{ category.title }}
+        </q-list-header>
+        <q-side-link
+          item
+          v-for="feature in category.features"
+          :key="feature"
+          :to="`/showcase/${category.hash}/${feature.hash}`"
+        >
+          <q-item-side :icon="feature.icon" />
+          <q-item-main :label="feature.title" />
+          <q-item-side right icon="chevron_right" />
+        </q-side-link>
+        <q-item-delimiter />
+      </template>
+    </q-scroll-area>
+
+    <router-view />
   </q-layout>
 </template>
 
 <script>
 import store from './showcase-store'
+import categories from './categories'
+import {
+  QScrollArea,
+  QSideLink,
+  QListHeader,
+  QItemSide,
+  QItemMain,
+  QItemDelimiter,
+  QBtn,
+  QLayout,
+  QToolbar,
+  QToolbarTitle,
+  QIcon,
+  QTabs,
+  QRouteTab,
+  GoBack
+} from 'quasar'
 
 export default {
+  components: {
+    QScrollArea,
+    QSideLink,
+    QListHeader,
+    QItemSide,
+    QItemMain,
+    QItemDelimiter,
+    QBtn,
+    QLayout,
+    QToolbar,
+    QToolbarTitle,
+    QIcon,
+    QTabs,
+    QRouteTab
+  },
+  directives: {
+    GoBack
+  },
   data () {
     return {
+      categories,
       store: store.state
     }
   }

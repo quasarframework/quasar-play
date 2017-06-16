@@ -1,19 +1,47 @@
 <template>
   <q-layout>
-    <div slot="header" class="toolbar">
-      <button v-go-back="'/'">
-        <i>arrow_back</i>
-      </button>
-      <q-toolbar-title :padding="1">
+    <q-toolbar slot="header">
+      <q-btn flat v-go-back="'/'">
+        <q-icon name="arrow_back" />
+      </q-btn>
+      <q-toolbar-title>
         Play URL
       </q-toolbar-title>
-    </div>
+    </q-toolbar>
 
     <q-tabs slot="navigation">
-      <q-tab route="/play" exact replace icon="queue_play_next">URL List</q-tab>
-      <q-tab route="/play/how-to" replace icon="info">How To</q-tab>
+      <q-route-tab slot="title" to="/play" exact replace icon="queue_play_next" label="URL List" />
+      <q-route-tab slot="title" to="/play/how-to" replace icon="info" label="How To" />
     </q-tabs>
 
-    <router-view class="layout-view"></router-view>
+    <router-view />
   </q-layout>
 </template>
+
+<script>
+import {
+  QLayout,
+  QBtn,
+  QIcon,
+  QToolbar,
+  QToolbarTitle,
+  QTabs,
+  QRouteTab,
+  GoBack
+} from 'quasar'
+
+export default {
+  components: {
+    QLayout,
+    QIcon,
+    QBtn,
+    QToolbar,
+    QToolbarTitle,
+    QTabs,
+    QRouteTab
+  },
+  directives: {
+    GoBack
+  }
+}
+</script>

@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import categories from './components/showcase/categories'
-import showcaseStore from './components/showcase/showcase-store'
+import categories from '@/showcase/categories'
+import showcaseStore from '@/showcase/showcase-store'
 
 Vue.use(VueRouter)
 
 function load (component) {
-  return () => System.import(`components/${component}.vue`)
+  return () => System.import(`@/${component}.vue`)
 }
 
 let routes = [
@@ -61,7 +61,6 @@ function component (path, config) {
     component: load('showcase/' + path)
   }
 }
-
 categories.forEach(category => {
   if (category.extract) {
     return

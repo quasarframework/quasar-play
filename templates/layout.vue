@@ -1,44 +1,62 @@
 <template>
+  <!-- Configure "view" prop for QLayout -->
   <q-layout>
-    <div slot="header" class="toolbar">
+    <q-toolbar slot="header">
       <!-- opens drawer below
-      <button class="left-drawer-opener">
+      <button class="hide-on-drawer-visible" @click="$refs.drawer.open()">
         <i>menu</i>
       </button>
       -->
-      <q-toolbar-title :padding="1">
+      <q-toolbar-title>
         Title
       </q-toolbar-title>
-    </div>
+    </q-toolbar>
 
     <!-- Navigation Tabs
     <q-tabs slot="navigation">
-      <q-tab icon="mail" route="/layout" exact replace>Mails</q-tab>
-      <q-tab icon="alarm" route="/layout/alarm" exact replace>Alarms</q-tab>
-      <q-tab icon="help" route="/layout/help" exact replace>Help</q-tab>
+      <q-route-tab slot="title" icon="view_quilt" to="/layout/about" replace hide="icon" label="About" />
+      <q-route-tab slot="title" icon="view_day" to="/layout/toolbar" replace hide="icon" label="Toolbar" />
+      <q-route-tab slot="title" icon="view_day" to="/layout/tabs" replace label="Tabs" />
+      <q-route-tab slot="title" icon="input" to="/layout/drawer" replace label="Drawer" />
     </q-tabs>
     -->
 
-    <!-- Drawer
-    <q-drawer>
-      <div class="toolbar">
-        <q-toolbar-title>
-          Drawer Title
-        </q-toolbar-title>
-      </div>
-
-      <div class="list">
-        <q-drawer-link to="/" exact icon="mail">
-          Link
-        </q-drawer-link>
-      </div>
-    </q-drawer>
+    <!-- Left Side Panel
+    <div slot="left">
+      <q-list no-border link inset-delimiter>
+        <q-list-header>Essential Links</q-list-header>
+        <q-item>
+          <q-item-side icon="school" />
+          <q-item-main label="Docs" sublabel="quasar-framework.org" />
+        </q-item>
+        <q-item>
+          <q-item-side icon="record_voice_over" />
+          <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
+        </q-item>
+        <q-item>
+          <q-item-side icon="chat" />
+          <q-item-main label="Gitter Channel" sublabel="Quasar Lobby" />
+        </q-item>
+        <q-item>
+          <q-item-side icon="rss feed" />
+          <q-item-main label="Twitter" sublabel="@quasarframework" />
+        </q-item>
+      </q-list>
+    </div>
     -->
 
-    <router-view class="layout-view"></router-view>
+    <!-- Right Side Panel
+    <div slot="right">
+      ...
+    </div>
+    -->
+
+    <router-view />
 
     <!-- Footer
-    <div slot="footer" class="toolbar"></div>
+    <q-toolbar slot="footer">
+      ...
+    </q-toolbar>
     -->
   </q-layout>
 </template>

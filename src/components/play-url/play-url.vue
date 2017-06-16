@@ -1,32 +1,32 @@
 <template>
   <div class="play-view window-height window-width" style="overflow: hidden">
-    <div
-      class="toolbar primary fixed shadow-1"
+    <q-toolbar
+      class="fixed shadow-1"
       :class="{active: active || !showedToolbar}"
     >
-      <button v-go-back="'/play'">
-        <i>close</i>
-      </button>
-      <q-toolbar-title :padding="1">
+      <q-btn flat small v-go-back="'/play'">
+        <q-icon name="close" />
+      </q-btn>
+      <q-toolbar-title>
         {{url}}
       </q-toolbar-title>
-      <button @click="refresh">
-        <i>refresh</i>
-      </button>
+      <q-btn flat small @click="refresh">
+        <q-icon name="refresh" />
+      </q-btn>
       <div class="toggle absolute-bottom row justify-center">
         <a
           @click="toggle"
           class="bg-white text-primary"
         >
-          <i v-text="active ? 'remove_circle' : 'add_circle'"></i>
+          <q-icon :name="active ? 'remove_circle' : 'add_circle'" />
         </a>
       </div>
-    </div>
+    </q-toolbar>
     <div
       class="window-height window-width row items-center justify-center"
       v-show="!iframeLoaded"
     >
-      <spinner></spinner>
+      <q-spinner />
     </div>
     <iframe
       v-show="iframeLoaded"
@@ -39,7 +39,26 @@
 </template>
 
 <script>
+import {
+  QBtn,
+  QToolbar,
+  QToolbarTitle,
+  QSpinner,
+  QIcon,
+  GoBack
+} from 'quasar'
+
 export default {
+  components: {
+    QBtn,
+    QToolbar,
+    QToolbarTitle,
+    QSpinner,
+    QIcon
+  },
+  directives: {
+    GoBack
+  },
   data () {
     let url = decodeURIComponent(this.$route.params.url)
     return {
