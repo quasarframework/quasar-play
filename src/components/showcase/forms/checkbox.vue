@@ -38,7 +38,6 @@
         icon="vibration"
         helper="Select which notifications you want to receive"
         label="Notifications"
-        error-label="Max 10 characters!"
       >
         <q-option-group
           type="checkbox"
@@ -56,7 +55,7 @@
       <q-list link>
         <q-item tag="label">
           <q-item-side>
-            <q-checkbox v-model="list1"></q-checkbox>
+            <q-checkbox v-model="list1" />
           </q-item-side>
           <q-item-main>
             <q-item-tile title>Notification</q-item-tile>

@@ -38,7 +38,6 @@
         icon="vibration"
         helper="Select which notifications you want to receive"
         label="Notifications"
-        error-label="Max 10 characters!"
       >
         <q-option-group
           type="toggle"
@@ -59,7 +58,7 @@
             <q-item-tile title>Notification</q-item-tile>
           </q-item-main>
           <q-item-side right>
-            <q-toggle v-model="list1"></q-toggle>
+            <q-toggle v-model="list1" />
           </q-item-side>
         </q-item>
         <q-item tag="label">
