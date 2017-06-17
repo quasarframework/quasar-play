@@ -1,23 +1,16 @@
 <template>
   <div class="layout-padding">
     <div class="flex justify-center">
-      <div style="max-width: 428px">
+      <div style="width: 400px; max-width: 90vw">
         <q-card>
           <q-card-title class="text-center">
-            Configure Layout View
+            Layout View
             <q-chip slot="subtitle" tag color="primary" style="margin-top: 15px">
               view: {{ view }}
             </q-chip>
           </q-card-title>
           <q-card-separator />
           <q-card-main>
-            <div style="margin-bottom: 24px" class="row justify-center">
-              <q-checkbox
-                v-model="layoutStore.reveal"
-                label="Hide header when scrolling page down ('reveal' property)"
-              />
-            </div>
-
             <div class="doc-layout-grid row justify-center">
               <div class="doc-row-definition row items-center justify-center no-border">
                 Header
@@ -95,7 +88,7 @@
         </q-card>
       </div>
 
-      <div style="max-width: 428px">
+      <div style="width: 400px; max-width: 90vw">
         <q-card>
           <q-card-title class="text-center">
             More Configuration
@@ -131,6 +124,10 @@
           <q-card-main>
             <div class="group column">
               <q-checkbox v-model="layoutStore.hideTabs" label="Hide Tabs so you can see a resize in action" />
+              <q-checkbox
+                v-model="layoutStore.reveal"
+                label="Hide header when scrolling page down ('reveal' property)"
+              />
             </div>
           </q-card-main>
         </q-card>
@@ -142,6 +139,14 @@
         <em>Page has intended scroll</em>
       </p>
     </div>
+
+    <q-fixed-position corner="top-right" :offset="[18, 18]">
+      <q-btn round small color="secondary" icon="mail_outline" class="animate-pop" />
+    </q-fixed-position>
+
+    <q-fixed-position corner="bottom-right" :offset="[18, 18]">
+      <q-btn round small color="secondary" icon="phone" class="animate-pop" />
+    </q-fixed-position>
   </div>
 </template>
 
@@ -155,7 +160,9 @@ import {
   QCheckbox,
   QChip,
   QField,
-  QInput
+  QInput,
+  QBtn,
+  QFixedPosition
 } from 'quasar'
 
 import layoutStore from './layout-store'
@@ -170,7 +177,9 @@ export default {
     QCheckbox,
     QChip,
     QField,
-    QInput
+    QInput,
+    QBtn,
+    QFixedPosition
   },
   data () {
     const v = layoutStore.view
