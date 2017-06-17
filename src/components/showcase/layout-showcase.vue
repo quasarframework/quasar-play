@@ -39,23 +39,36 @@
       style="width: 100%; height: 100%;"
       class="bg-grey-3"
     >
-      <template v-for="category in categories">
-        <q-list-header>
-          {{ category.title }}
-        </q-list-header>
+      <q-list no-border>
         <q-side-link
           item
-          v-for="feature in category.features"
-          :key="feature"
-          :to="`/showcase/${category.hash}/${feature.hash}`"
+          to="/showcase"
+          exact
           replace
         >
-          <q-item-side :icon="feature.icon" />
-          <q-item-main :label="feature.title" />
+          <q-item-side icon="home" />
+          <q-item-main label="Home" />
           <q-item-side right icon="chevron_right" />
         </q-side-link>
         <q-item-delimiter />
-      </template>
+        <template v-for="category in categories">
+          <q-list-header>
+            {{ category.title }}
+          </q-list-header>
+          <q-side-link
+            item
+            v-for="feature in category.features"
+            :key="feature"
+            :to="`/showcase/${category.hash}/${feature.hash}`"
+            replace
+          >
+            <q-item-side :icon="feature.icon" />
+            <q-item-main :label="feature.title" />
+            <q-item-side right icon="chevron_right" />
+          </q-side-link>
+          <q-item-delimiter />
+        </template>
+      </q-list>
     </q-scroll-area>
 
     <router-view />
@@ -67,6 +80,7 @@ import store from './showcase-store'
 import categories from './categories'
 import {
   QScrollArea,
+  QList,
   QSideLink,
   QListHeader,
   QItemSide,
@@ -85,6 +99,7 @@ import {
 export default {
   components: {
     QScrollArea,
+    QList,
     QSideLink,
     QListHeader,
     QItemSide,

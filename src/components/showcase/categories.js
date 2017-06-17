@@ -136,6 +136,7 @@ export default [
   },
   {
     title: 'Forms',
+    icon: 'assignment',
     hash: 'forms',
     features: [
       {
@@ -482,7 +483,7 @@ export default [
   },
   {
     title: 'Web API Wrappers',
-    icon: 'web',
+    icon: 'extension',
     hash: 'web-api-wrappers',
     features: [
       {
@@ -499,7 +500,7 @@ export default [
   },
   {
     title: 'Misc',
-    icon: 'store',
+    icon: 'work',
     hash: 'misc',
     features: [
       {

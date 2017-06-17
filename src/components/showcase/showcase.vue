@@ -10,27 +10,26 @@
       </p>
     </div>
 
-    <div class="row">
-      <div
-        v-if="category"
-        class="col-xs-6 col-sm-4 col-lg-3 col-xl-2"
-      >
-        <div class="card text-center category-link text-grey-7" @click="category = false">
-          <q-icon name="keyboard_backspace" />
-          <p class="caption">Go back</p>
-        </div>
-      </div>
-      <div
-        v-for="(category, index) in list"
-        :key="category.hash"
-        class="col-xs-6 col-sm-4 col-lg-3 col-xl-2"
-      >
-        <div class="card text-center category-link text-primary" @click="show(category)">
-          <q-icon :name="category.icon" />
-          <p class="caption">{{category.title}}</p>
+    <div class="row justify-center">
+      <div style="width: 850px; max-width: 90vw;" class="row">
+        <div
+          v-for="(category, index) in list"
+          :key="category.hash"
+          class="col-xs-6 col-sm-4 col-lg-3"
+        >
+          <div class="card text-center category-link text-primary" @click="show(category)">
+            <q-icon :name="category.icon" />
+            <p class="caption">{{category.title}}</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <q-fixed-position v-show="category" corner="bottom-right" :offset="[18, 18]">
+      <q-btn round color="secondary" @click="category = false" class="animate-pop">
+        <q-icon name="keyboard_backspace" />
+      </q-btn>
+    </q-fixed-position>
   </div>
 </template>
 
@@ -38,13 +37,17 @@
 import categories from './categories'
 import {
   QAlert,
-  QIcon
+  QIcon,
+  QFixedPosition,
+  QBtn
 } from 'quasar'
 
 export default {
   components: {
     QAlert,
-    QIcon
+    QIcon,
+    QFixedPosition,
+    QBtn
   },
   data () {
     return {
