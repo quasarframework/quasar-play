@@ -1,84 +1,104 @@
 <template>
-  <div class="layout-padding row justify-center">
+  <div class="layout-padding docs-range row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">
         Standalone
-        <q-chip class="float-right" square color="secondary">
-          Model: {{standard.min}} to {{standard.max}} (0 to 50)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{standard.min}} to {{standard.max}} (0 to 50)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="standard" :min="0" :max="50" />
       <q-double-range v-model="standard" :min="0" :max="50" square />
 
       <p class="caption">
         With Floating Point Precision
-        <q-chip class="float-right" square color="secondary">
-          Model: {{precision.min}} to {{precision.max}} (0.1 to 1.0)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{precision.min}} to {{precision.max}} (0.1 to 1.0)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="precision" :min="0.1" :max="1.0" :step="0.1" :decimals="1" color="amber" />
 
        <p class="caption">
         With Label
-        <q-chip class="float-right" square color="secondary">
-          Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="label" :min="-20" :max="20" :step="4" label color="purple" />
 
       <p class="caption">
         With Step
-        <q-chip class="float-right" square color="secondary">
-          Model: {{step.min}} to {{step.max}} (0 to 45, step 5)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{step.min}} to {{step.max}} (0 to 45, step 5)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="step" :min="0" :max="45" :step="5" label color="deep-orange" />
 
       <p class="caption">
         Snap to Step
-        <q-chip class="float-right" square color="secondary">
-          Model: {{snap.min}} to {{snap.max}} (0 to 10, step 2)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{snap.min}} to {{snap.max}} (0 to 10, step 2)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="snap" :min="0" :max="10" :step="2" label snap />
 
       <p class="caption">
         With Markers + Snap to Step
-        <q-chip class="float-right" square color="secondary">
-          Model: {{marker.min}} to {{marker.max}} (-6 to 10, step 2)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{marker.min}} to {{marker.max}} (-6 to 10, step 2)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="marker" :min="-6" :max="10" :step="2" label snap markers color="orange" />
 
       <p class="caption">
         Display Label Always
-        <q-chip class="float-right" square color="secondary">
-          Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="label" :min="-20" :max="20" :step="4" label-always color="brown" />
 
       <p class="caption">
         Drag Range
-        <q-chip class="float-right" square color="secondary">
-          Model: {{range.min}} to {{range.max}} (0 to 100, step 1)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{range.min}} to {{range.max}} (0 to 100, step 1)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="range" :min="0" :max="100" label drag-range />
 
       <p class="caption">
         Drag Range + Snap to Step
-        <q-chip class="float-right" square color="secondary">
-          Model: {{rangeSnap.min}} to {{rangeSnap.max}} (0 to 100, step 5)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{rangeSnap.min}} to {{rangeSnap.max}} (0 to 100, step 5)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="rangeSnap" :min="0" :max="100" :step="5" drag-range label markers snap color="lime" />
 
       <p class="caption">
         Drag Only Range (Fixed Interval)
-        <q-chip class="float-right" square color="secondary">
-          Model: {{onlyRange.min}} to {{onlyRange.max}} (0 to 100, step 5)
-        </q-chip>
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{onlyRange.min}} to {{onlyRange.max}} (0 to 100, step 5)
+          </q-chip>
+        </span>
       </p>
       <q-double-range v-model="onlyRange" :min="0" :max="100" :step="5" drag-only-range label color="info" />
 
@@ -127,6 +147,8 @@ import {
   QItemSide,
   QItemMain
 } from 'quasar'
+
+import './range-style.styl'
 
 export default {
   components: {
