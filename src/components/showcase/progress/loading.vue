@@ -1,29 +1,31 @@
 <template>
-  <div class="layout-padding">
-    <p class="caption">
-      Notify the user something is going on under the covers.
-      There is also the <em>progress</em> Dialog type you can use.
-    </p>
-    <div class="group">
-      <q-btn push color="light" class="text-dark" @click="noMessage()">
-        Show
+  <div class="layout-padding row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
+      <p class="caption">
+        Notify the user something is going on under the covers.
+        There is also the <em>progress</em> Dialog type you can use.
+      </p>
+      <div class="group">
+        <q-btn push color="light" class="text-dark" @click="noMessage()">
+          Show
+        </q-btn>
+        <q-btn push color="primary" @click="withMessage()">
+          Show With Message
+        </q-btn>
+      </div>
+      <p class="caption">
+        ...with a custom colors and spinner size.
+      </p>
+      <q-btn push color="light" class="text-dark" @click="customColorSpinner()">
+        Custom Color and Size Spinner
       </q-btn>
-      <q-btn push color="primary" @click="withMessage()">
-        Show With Message
+      <p class="caption">
+        Change Message while Being Displayed
+      </p>
+      <q-btn push color="secondary" @click="changeMessage()">
+        Show & Change
       </q-btn>
     </div>
-    <p class="caption">
-      ...with a custom colors and spinner size.
-    </p>
-    <q-btn push color="light" class="text-dark" @click="customColorSpinner()">
-      Custom Color and Size Spinner
-    </q-btn>
-    <p class="caption">
-      Change Message while Being Displayed
-    </p>
-    <q-btn push color="secondary" @click="changeMessage()">
-      Show & Change
-    </q-btn>
   </div>
 </template>
 

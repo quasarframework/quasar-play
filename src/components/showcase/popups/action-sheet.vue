@@ -1,24 +1,26 @@
 <template>
-  <div class="layout-padding">
-    <p class="caption">
-      <span class="desktop-only">Click</span>
-      <span class="mobile-only">Tap</span>
-      on each type to see an Action Sheet in action.
-    </p>
+  <div class="layout-padding row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
+      <p class="caption">
+        <span class="desktop-only">Click</span>
+        <span class="mobile-only">Tap</span>
+        on each type to see an Action Sheet in action.
+      </p>
 
-    <q-list style="max-width: 600px;">
-      <q-item
-        link
-        v-for="dialog in types"
-        :key="dialog"
-        @click="dialog.handler()"
-        v-ripple.mat
-      >
-        <q-item-side icon="settings" />
-        <q-item-main :label="dialog.label" />
-        <q-item-side right icon="keyboard_arrow_right" />
-      </q-item>
-    </q-list>
+      <q-list style="max-width: 600px;">
+        <q-item
+          link
+          v-for="dialog in types"
+          :key="dialog"
+          @click="dialog.handler()"
+          v-ripple.mat
+        >
+          <q-item-side icon="settings" />
+          <q-item-main :label="dialog.label" />
+          <q-item-side right icon="keyboard_arrow_right" />
+        </q-item>
+      </q-list>
+    </div>
   </div>
 </template>
 

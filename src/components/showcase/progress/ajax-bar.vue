@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="layout-padding row justify-center">
     <q-ajax-bar ref="bar" :position="position" :reverse="reverse" :size="computedSize" :color="color" />
-    <div class="layout-padding" style="max-width: 600px;">
+    <div style="width: 500px; max-width: 90vw;">
       <p class="caption">Ajax Bar component captures Ajax calls automatically. This page here triggers events manually for demonstrating purposes only.</p>
 
       <q-card style="margin-top: 25px">

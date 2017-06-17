@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="layout-padding">
+  <div class="layout-padding row justify-center">
+    <div style="width: 700px; max-width: 90vw;">
       <p class="caption">Horizontal Stepper</p>
       <q-option-group
         v-model="options"

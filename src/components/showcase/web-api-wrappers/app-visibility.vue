@@ -1,24 +1,26 @@
 <template>
-  <div class="layout-padding">
-    <p class="caption">
-      Switch to another
-      <span class="cordova-hide">
-        tab in your browser
-      </span>
-      <span class="cordova-only">
-        App
-      </span>
-      then come back here to see Visibility in action.
-    </p>
+  <div class="layout-padding row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
+      <p class="caption">
+        Switch to another
+        <span class="cordova-hide">
+          tab in your browser
+        </span>
+        <span class="cordova-only">
+          App
+        </span>
+        then come back here to see Visibility in action.
+      </p>
 
-    <table class="q-table striped" v-if="eventList.length > 0">
-      <tbody>
-        <tr v-for="evt in eventList" :key="evt.timestamp">
-          <td>{{ evt.timestamp }}</td>
-          <td>{{ evt.label }}</td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="q-table striped" v-if="eventList.length > 0">
+        <tbody>
+          <tr v-for="evt in eventList" :key="evt.timestamp">
+            <td>{{ evt.timestamp }}</td>
+            <td>{{ evt.label }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 

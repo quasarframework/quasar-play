@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="layout-padding">
+  <div class="layout-padding row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
       <p class="caption">
         Based on the device you are using to view this, Quasar detects the following:
       </p>

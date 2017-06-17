@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-padding doc-btn row justify-center">
+  <div class="layout-padding docs-btn row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">Standard Button</p>
       <q-btn color="white" class="text-black">Standard</q-btn>
@@ -163,6 +163,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.doc-btn .q-btn
+.docs-btn .q-btn
   margin 5px
 </style>

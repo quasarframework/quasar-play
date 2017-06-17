@@ -1,23 +1,25 @@
 <template>
-  <div class="layout-padding">
-    <p class="caption">
-      <q-chip color="secondary" square>
-        Model: {{page}}
-      </q-chip>
-    </p>
+  <div class="layout-padding row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
+      <p class="caption">
+        <q-chip color="secondary" square>
+          Model: {{page}}
+        </q-chip>
+      </p>
 
-    <p class="caption">
-      You can also
-      <span class="desktop-only">click</span>
-      <span class="mobile-only">tap</span>
-      on the Input box and type out another page number
-      then hit &lt;ENTER&gt;
-    </p>
+      <p class="caption">
+        You can also
+        <span class="desktop-only">click</span>
+        <span class="mobile-only">tap</span>
+        on the Input box and type out another page number
+        then hit &lt;ENTER&gt;
+      </p>
 
-    <q-pagination v-model="page" :max="17" />
+      <q-pagination v-model="page" :max="17" />
 
-    <p class="caption">Disabled State</p>
-    <q-pagination disable v-model="page" :max="17" />
+      <p class="caption">Disabled State</p>
+      <q-pagination disable v-model="page" :max="17" />
+    </div>
   </div>
 </template>
 

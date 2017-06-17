@@ -1,53 +1,55 @@
 <template>
-  <div class="layout-padding" style="max-width: 600px;">
-    <q-card style="margin-top: 25px">
-      <q-card-title class="bg-primary text-center">
-        <q-btn push color="orange" @click="show = !show">Toggle</q-btn>
-      </q-card-title>
-      <q-card-main>
-        <q-select filter v-model="enter" :options="enterSelectOptions" stack-label="CSS Enter Class" />
-        <q-select filter v-model="leave" :options="leaveSelectOptions" stack-label="CSS Leave Class" />
-      </q-card-main>
-    </q-card>
+  <div class="layout-padding row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
+      <q-card style="margin-top: 25px">
+        <q-card-title class="bg-primary text-center">
+          <q-btn push color="orange" @click="show = !show">Toggle</q-btn>
+        </q-card-title>
+        <q-card-main class="row">
+          <q-select class="col-xs-12 col-sm-6" filter v-model="enter" :options="enterSelectOptions" stack-label="CSS Enter Class" />
+          <q-select class="col-xs-12 col-sm-6" filter v-model="leave" :options="leaveSelectOptions" stack-label="CSS Leave Class" />
+        </q-card-main>
+      </q-card>
 
-    <q-card style="margin-top: 25px" class="overflow-hidden">
-      <q-card-title class="text-center">
-        Single
-      </q-card-title>
-      <q-card-main>
-        <q-transition
-          appear
-          :enter="enter"
-          :leave="leave"
-          :disable="disable"
-        >
-          <div v-if="show" v-html="loremipsum"></div>
-        </q-transition>
-      </q-card-main>
-    </q-card>
+      <q-card style="margin-top: 25px" class="overflow-hidden">
+        <q-card-title class="text-center">
+          Single
+        </q-card-title>
+        <q-card-main>
+          <q-transition
+            appear
+            :enter="enter"
+            :leave="leave"
+            :disable="disable"
+          >
+            <div v-if="show" v-html="loremipsum"></div>
+          </q-transition>
+        </q-card-main>
+      </q-card>
 
-    <q-card style="margin-top: 25px" class="overflow-hidden">
-      <q-card-title class="text-center">
-        Group
-      </q-card-title>
-      <q-card-main>
-        <q-transition
-          group
-          appear
-          :enter="enter"
-          :leave="leave"
-          :disable="disable"
-          class="group"
-        >
-          <div
-            v-if="show"
-            v-for="n in 3"
-            :key="n"
-            v-html="loremipsum"
-          ></div>
-        </q-transition>
-      </q-card-main>
-    </q-card>
+      <q-card style="margin-top: 25px" class="overflow-hidden">
+        <q-card-title class="text-center">
+          Group
+        </q-card-title>
+        <q-card-main>
+          <q-transition
+            group
+            appear
+            :enter="enter"
+            :leave="leave"
+            :disable="disable"
+            class="group"
+          >
+            <div
+              v-if="show"
+              v-for="n in 3"
+              :key="n"
+              v-html="loremipsum"
+            ></div>
+          </q-transition>
+        </q-card-main>
+      </q-card>
+    </div>
   </div>
 </template>
 
