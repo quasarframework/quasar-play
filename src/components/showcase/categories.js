@@ -45,12 +45,12 @@ export default [
         hash: 'play-with-layout'
       },
       {
-        title: 'Drawer Panels',
+        title: 'd Drawer Panels',
         icon: 'view_array',
         hash: 'drawer-panels'
       },
       {
-        title: 'Fixed Positioning',
+        title: 'd Fixed Positioning',
         icon: 'pin_drop',
         hash: 'fixed-positioning'
       },

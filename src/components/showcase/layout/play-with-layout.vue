@@ -127,6 +127,12 @@
               <q-checkbox color="secondary" v-model="layoutStore.rightScroll" label="Add right panel content so it's scrollable" />
             </div>
           </q-card-main>
+          <q-card-separator />
+          <q-card-main>
+            <div class="group column">
+              <q-checkbox v-model="layoutStore.hideTabs" label="Hide Tabs so you can see a resize in action" />
+            </div>
+          </q-card-main>
         </q-card>
       </div>
     </div>

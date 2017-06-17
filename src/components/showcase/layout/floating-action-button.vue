@@ -54,6 +54,7 @@
           color="primary"
           active-icon="alarm"
           direction="up"
+          class="animate-pop"
         >
           <q-fab-action color="purple" @click="toast('mail')" icon="mail">
             <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Mail</q-tooltip>

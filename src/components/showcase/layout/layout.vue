@@ -23,7 +23,7 @@
       </q-btn>
     </q-toolbar>
 
-    <q-tabs slot="navigation">
+    <q-tabs slot="navigation" v-if="!layoutStore.hideTabs">
       <q-route-tab slot="title" icon="play_circle_outline" to="/showcase/layout/play-with-layout" replace label="Play with Layout" />
       <q-route-tab slot="title" icon="view_array" to="/showcase/layout/drawer-panels" replace label="Drawer Panels" />
       <q-route-tab slot="title" icon="pin_drop" to="/showcase/layout/fixed-positioning" replace label="Fixed Positioning" />
