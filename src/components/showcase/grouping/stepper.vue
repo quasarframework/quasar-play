@@ -1,90 +1,140 @@
 <template>
   <div>
     <div class="layout-padding">
-      <q-toggle label="Alternative Labels" v-model="alt" />
-      <q-toggle label="Contractable" v-model="contractable" />
-      <br><br>
+      <p class="caption">Horizontal Stepper</p>
+      <q-option-group
+        v-model="options"
+        type="toggle"
+        :options="[
+          {value: 'alt', label: 'Alternative Labels (works on wide windows only)'},
+          {value: 'contractable', label: 'Contractable on narrow window'},
+          {value: 'global_navigation', label: 'Global Stepper navigation'},
+          {value: 'step_error', label: 'Make <strong>Ad Groups</strong> step signal an error'},
+          {value: 'disable_payment', label: 'Disable <strong>Payment</strong> step'},
+          {value: 'progress', label: 'Show a background process is in progress'}
+        ]"
+      />
+      <br>
 
-      <q-stepper :color="color" flat ref="stepper" v-model="step" :alternative-labels="alt" :contractable="contractable">
-        <q-step default name="first" title="Ad style">
-          <div v-for="n in 10">Step 1</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper.next()">Continue</q-btn>
-          </q-stepper-navigation>
-        </q-step>
-        <q-step error title="Custom channels" subtitle="Alert message">
-          <div v-for="n in 10">Step 2</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper.next()">Next</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper.previous()">Back</q-btn>
-          </q-stepper-navigation>
-        </q-step>
-        <q-step title="Get code">
-          <div v-for="n in 3">Step 3</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper.next()">Next</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper.previous()">Back</q-btn>
-          </q-stepper-navigation>
-        </q-step>
-        <q-step name="fifth" disable title="Disabled">
-          <div v-for="n in 3">Step 4</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper.next()">Next</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper.previous()">Back</q-btn>
-          </q-stepper-navigation>
-        </q-step>
-        <q-step name="fourth" title="Editable">
-          <div v-for="n in 3">Step 5</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper.goToStep('first')">Restart</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper.previous()">Back</q-btn>
+      <q-stepper color="secondary" flat ref="stepper" v-model="step" :alternative-labels="alt" :contractable="contractable">
+        <q-step default name="campaign" title="Campaign">
+          <p>
+            For each ad campaign that you create, you can control how much you're willing to
+            spend on clicks and conversions, which networks and geographical locations you want
+            your ads to show on, and more.
+          </p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
 
-        <q-stepper-navigation>
-          <q-btn :color="color" flat @click="$refs.stepper.previous()">Back</q-btn>
-          <q-btn :color="color" @click="$refs.stepper.next()">Next</q-btn>
+        <q-step name="ad_group" :error="stepError" title="Ad Groups" subtitle="Create some">
+          <p>An ad group contains one or more ads which target a shared set of keywords.</p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
+            <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+          </q-stepper-navigation>
+        </q-step>
+
+        <q-step name="disabled_step" :disable="disabledStep" icon="attach_money" title="Payment">
+          <p>
+            Try out different payment schemes for your customers, and learn how
+            to enhance payments using extensions.
+          </p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
+            <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+          </q-stepper-navigation>
+        </q-step>
+
+        <q-step name="create_ad" title="Create an ad">
+          <p>
+            Try out different ad text to see what brings in the most customers, and learn how
+            to enhance your ads using features like ad extensions. If you run into any problems
+            with your ads, find out how to tell if they're running and how to resolve approval
+            issues.
+          </p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper.goToStep('campaign')">Restart</q-btn>
+            <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+          </q-stepper-navigation>
+        </q-step>
+
+        <q-stepper-navigation v-if="globalNavigation">
+          <q-btn
+            v-if="step !== 'campaign'"
+            color="secondary"
+            flat
+            @click="$refs.stepper.previous()"
+          >
+            Back
+          </q-btn>
+
+          <q-btn color="secondary" @click="$refs.stepper.next()">
+            {{ step === 'create_ad' ? 'Finalize' : 'Next' }}
+          </q-btn>
         </q-stepper-navigation>
+
+        <q-inner-loading :visible="progress" />
       </q-stepper>
 
-      <br><br>
+      <p class="caption">Vertical Stepper</p>
 
-      <q-stepper ref="stepper2" :color="color" v-model="step2" :alternative-labels="alt" vertical>
-        <q-step default name="first" title="Ad style">
-          <div v-for="n in 10">Step 1</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper2.next()">Continue</q-btn>
+      <q-stepper ref="stepper2" color="secondary" v-model="step2" :alternative-labels="alt" vertical>
+        <q-step default name="campaign" title="Campaign">
+          <p>
+            For each ad campaign that you create, you can control how much you're willing to
+            spend on clicks and conversions, which networks and geographical locations you want
+            your ads to show on, and more.
+          </p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
-        <q-step error title="Custom channels" subtitle="Alert message">
-          <div v-for="n in 10">Step 2</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper2.next()">Next</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper2.previous()">Back</q-btn>
+
+        <q-step name="ad_group" :error="stepError" title="Ad Groups" subtitle="Create some">
+          <p>An ad group contains one or more ads which target a shared set of keywords.</p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
+            <q-btn color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
-        <q-step title="Get code">
-          <div v-for="n in 3">Step 3</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper2.next()">Next</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper2.previous()">Back</q-btn>
+
+        <q-step name="disabled_step" :disable="disabledStep" icon="attach_money" title="Payment">
+          <p>
+            Try out different payment schemes for your customers, and learn how
+            to enhance payments using extensions.
+          </p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
+            <q-btn color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
-        <q-step name="fifth" disable title="Disabled">
-          <div v-for="n in 3">Step 4</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper2.next()">Next</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper2.previous()">Back</q-btn>
+
+        <q-step name="create_ad" title="Create an ad">
+          <p>
+            Try out different ad text to see what brings in the most customers, and learn how
+            to enhance your ads using features like ad extensions. If you run into any problems
+            with your ads, find out how to tell if they're running and how to resolve approval
+            issues.
+          </p>
+
+          <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="secondary" @click="$refs.stepper2.goToStep('campaign')">Restart</q-btn>
+            <q-btn color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
-        <q-step name="fourth" title="Editable">
-          <div v-for="n in 3">Step 5</div>
-          <q-stepper-navigation>
-            <q-btn :color="color" @click="$refs.stepper2.goToStep('first')">Restart</q-btn>
-            <q-btn :color="color" flat @click="$refs.stepper2.previous()">Back</q-btn>
-          </q-stepper-navigation>
-        </q-step>
+
+        <q-inner-loading :visible="progress" />
       </q-stepper>
+
     </div>
   </div>
 </template>
@@ -95,7 +145,8 @@ import {
   QStep,
   QStepperNavigation,
   QBtn,
-  QToggle
+  QOptionGroup,
+  QInnerLoading
 } from 'quasar'
 
 export default {
@@ -104,16 +155,34 @@ export default {
     QStep,
     QStepperNavigation,
     QBtn,
-    QToggle
+    QOptionGroup,
+    QInnerLoading
   },
   data () {
     return {
       step: 'first',
       step2: 'first',
-      alt: false,
-      contractable: false,
-      color: 'secondary',
-      text: ''
+      options: ['contractable', 'disable_payment', 'step_error']
+    }
+  },
+  computed: {
+    alt () {
+      return this.options.includes('alt')
+    },
+    contractable () {
+      return this.options.includes('contractable')
+    },
+    globalNavigation () {
+      return this.options.includes('global_navigation')
+    },
+    stepError () {
+      return this.options.includes('step_error')
+    },
+    disabledStep () {
+      return this.options.includes('disable_payment')
+    },
+    progress () {
+      return this.options.includes('progress')
     }
   }
 }

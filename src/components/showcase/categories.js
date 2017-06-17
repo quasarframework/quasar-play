@@ -414,7 +414,7 @@ export default [
         hash: 'carousel'
       },
       {
-        title: 'Stepper',
+        title: 'd Stepper',
         icon: 'directions_run',
         hash: 'stepper'
       }
