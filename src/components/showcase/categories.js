@@ -134,7 +134,6 @@ export default [
       }
     ]
   },
-  /*
   {
     title: 'Forms',
     hash: 'forms',
@@ -177,16 +176,16 @@ export default [
         hash: 'range',
         tabs: [
           {
-            title: 'Basic Range',
-            label: 'Basic',
+            title: 'Standard Range',
+            label: 'Standard',
             icon: 'tune',
-            hash: 'basic'
+            hash: 'standard-range'
           },
           {
             title: 'Double Range',
             label: 'Double',
             icon: 'tune',
-            hash: 'double'
+            hash: 'double-range'
           }
         ]
       },
@@ -217,21 +216,21 @@ export default [
         tabs: [
           {
             title: 'DateTime Input',
-            label: 'Basic',
+            label: 'Input',
             icon: 'access_time',
-            hash: 'input'
+            hash: 'input-datetime'
           },
           {
             title: 'Inline DateTime',
             label: 'Inline',
             icon: 'access_time',
-            hash: 'inline'
+            hash: 'inline-datetime'
           },
           {
             title: 'DateTime Range',
             label: 'Range',
             icon: 'date_range',
-            hash: 'range'
+            hash: 'range-datetime'
           }
         ]
       },
@@ -241,16 +240,16 @@ export default [
         hash: 'select',
         tabs: [
           {
-            title: 'Basic Select',
-            label: 'Basic',
+            title: 'Standard Select',
+            label: 'Standard',
             icon: 'chat_bubble',
-            hash: 'basic'
+            hash: 'standard-select'
           },
           {
             title: 'Dialog Select',
             label: 'Dialog',
             icon: 'crop_din',
-            hash: 'dialog'
+            hash: 'dialog-select'
           }
         ]
       },
@@ -266,7 +265,6 @@ export default [
       }
     ]
   },
-  */
   {
     title: 'Popups',
     icon: 'aspect_ratio',
