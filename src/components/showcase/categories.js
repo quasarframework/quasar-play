@@ -334,94 +334,49 @@ export default [
         icon: 'widgets',
         hash: 'html-table'
       },
-      /*
       {
-        title: '~~List',
+        title: 'd List',
         icon: 'list',
         hash: 'list',
         tabs: [
           {
-            title: 'List Basics',
-            label: 'Basics',
-            hash: 'basic',
+            title: 'Email',
+            label: 'Email',
+            hash: 'email',
             icon: 'view_list'
           },
           {
-            title: 'List Items',
-            label: 'Items',
-            hash: 'item',
+            title: 'Chat',
+            label: 'Chat',
+            hash: 'chat',
             icon: 'view_list'
           },
           {
-            title: 'Multi Line Items',
-            label: 'Multilines',
-            hash: 'multiline',
-            icon: 'view_list'
-          },
-
-          {
-            title: 'Textfields List',
-            label: 'Textfields',
-            hash: 'example-textfields',
+            title: 'Folders & Files',
+            label: 'Folders & Files',
+            hash: 'folders',
             icon: 'view_list'
           },
           {
-            title: 'Form Components List',
-            label: 'Form Comps',
-            hash: 'example-form',
+            title: 'Settings',
+            label: 'Settings',
+            hash: 'settings',
             icon: 'view_list'
           },
           {
-            title: 'Simple List',
-            label: 'Simple Example',
-            hash: 'example-simple',
+            title: 'Movies',
+            label: 'Movies',
+            hash: 'movies',
             icon: 'view_list'
           },
           {
-            title: 'Persons List',
-            label: 'Persons Example',
-            hash: 'example-persons',
-            icon: 'view_list'
-          },
-          {
-            title: 'Chat List',
-            label: 'Chat Example',
-            hash: 'example-chat',
-            icon: 'view_list'
-          },
-          {
-            title: 'Movies List',
-            label: 'Movie Example',
-            hash: 'example-movies',
-            icon: 'view_list'
-          },
-          {
-            title: 'Contact List',
-            label: 'Contacts Example',
-            hash: 'example-contacts',
-            icon: 'view_list'
-          },
-          {
-            title: 'Folder List',
-            label: 'Folders Example',
-            hash: 'example-folders',
-            icon: 'view_list'
-          },
-          {
-            title: 'Phone Book List',
-            label: 'Phonebook Example',
-            hash: 'example-phonebook',
-            icon: 'view_list'
-          },
-          {
-            title: 'Messages List',
-            label: 'Messages Example',
-            hash: 'example-messages',
+            title: 'Phonebook',
+            label: 'Phonebook',
+            hash: 'phonebook',
             icon: 'view_list'
           }
         ]
       },
-      */
       {
         title: 'd Carousel',
         icon: 'vibration',
