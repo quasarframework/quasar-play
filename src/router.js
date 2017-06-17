@@ -29,8 +29,8 @@ let routes = [
     path: '/showcase/layout',
     component: load('showcase/layout/layout'),
     children: [
-      {path: 'about', component: load('showcase/layout/about')},
-      {path: 'drawer-panel', component: load('showcase/layout/drawer-panel')},
+      {path: 'play-with-layout', component: load('showcase/layout/play-with-layout')},
+      {path: 'drawer-panels', component: load('showcase/layout/drawer-panels')},
       {path: 'fixed-positioning', component: load('showcase/layout/fixed-positioning')},
       {path: 'floating-action-button', component: load('showcase/layout/floating-action-button')}
     ]

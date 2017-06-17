@@ -14,22 +14,32 @@
     </q-toolbar>
 
     <q-tabs slot="navigation">
-      <q-route-tab slot="title" icon="view_quilt" to="/showcase/layout/about" replace label="About" />
-      <q-route-tab slot="title" icon="view_day" to="/showcase/layout/drawer-panel" replace label="Drawer / Panel" />
-      <q-route-tab slot="title" icon="view_day" to="/showcase/layout/fixed-positioning" replace label="Fixed Positioning" />
-      <q-route-tab slot="title" icon="input" to="/showcase/layout/floating-action-button" replace label="Floating Action Button" />
+      <q-route-tab slot="title" icon="play_circle_outline" to="/showcase/layout/play-with-layout" replace label="Play with Layout" />
+      <q-route-tab slot="title" icon="view_array" to="/showcase/layout/drawer-panels" replace label="Drawer Panels" />
+      <q-route-tab slot="title" icon="pin_drop" to="/showcase/layout/fixed-positioning" replace label="Fixed Positioning" />
+      <q-route-tab slot="title" icon="play_for_work" to="/showcase/layout/floating-action-button" replace label="Floating Action Button" />
     </q-tabs>
 
     <q-scroll-area slot="left" style="width: 100%; height: 100%">
       <q-list-header>Left Panel</q-list-header>
-      <q-side-link item to="/showcase/layout/about">
+      <q-side-link item to="/showcase/layout/play-with-layout">
         <q-item-side icon="account circle" />
-        <q-item-main label="About" sublabel="What about it?" />
-        <q-item-side right stamp="New" />
+        <q-item-main label="Play with Layout" sublabel="Learn more about it" />
+        <q-item-side right icon="thumb_up" />
       </q-side-link>
-      <q-side-link item to="/showcase/layout/drawer-panel">Drawer / Panel</q-side-link>
-      <q-side-link item to="/showcase/layout/fixed-positioning">Fixed Positioning</q-side-link>
-      <q-side-link item to="/showcase/layout/floating-action-button">Floating Action Button</q-side-link>
+      <q-side-link item to="/showcase/layout/drawer-panels">
+        <q-item-side icon="view_array" />
+        <q-item-main label="Drawer Panels" sublabel="Layout left/right sides" />
+      </q-side-link>
+      <q-side-link item to="/showcase/layout/fixed-positioning">
+        <q-item-side icon="pin_drop" />
+        <q-item-main label="Fixed Positioning" sublabel="...on a Layout" />
+      </q-side-link>
+      <q-side-link item to="/showcase/layout/floating-action-button">
+        <q-item-side icon="play_for_work" />
+        <q-item-main label="Floating Action Button" sublabel="For Page actions" />
+      </q-side-link>
+
       <div v-if="layoutStore.leftScroll" style="padding: 25px 16px 16px;">
         <p class="caption" v-for="n in 50">
           <em>Left Panel has intended scroll</em>
@@ -39,7 +49,6 @@
 
     <q-scroll-area slot="right" style="width: 100%; height: 100%">
       <q-list-header>Right Panel</q-list-header>
-      <q-side-link item to="/showcase/layout/about">About</q-side-link>
       <div v-if="layoutStore.rightScroll" style="padding: 25px 16px 16px;">
         <p class="caption" v-for="n in 50">
           <em>Right Panel has intended scroll</em>

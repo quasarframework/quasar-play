@@ -40,18 +40,18 @@ export default [
     extract: true,
     features: [
       {
-        title: 'Layout',
-        icon: 'dashboard',
-        hash: 'about'
+        title: 'Play with Layout',
+        icon: 'play_circle_outline',
+        hash: 'play-with-layout'
       },
       {
-        title: 'Drawer / Panel',
-        icon: 'input',
-        hash: 'drawer-panel'
+        title: 'Drawer Panels',
+        icon: 'view_array',
+        hash: 'drawer-panels'
       },
       {
         title: 'Fixed Positioning',
-        icon: 'input',
+        icon: 'pin_drop',
         hash: 'fixed-positioning'
       },
       {

@@ -14,20 +14,20 @@
             Header
           </div>
           <div class="col column group items-center justify-center">
-            <q-radio v-model="topleft" val="l" label="l" />
-            <q-radio v-model="topleft" val="L" label="L" />
-            <q-radio v-model="topleft" val="h" label="h" />
-            <q-radio v-model="topleft" val="H" label="H" />
+            <q-radio color="orange" v-model="topleft" val="l" label="l" />
+            <q-radio color="orange" v-model="topleft" val="L" label="L" />
+            <q-radio color="orange" v-model="topleft" val="h" label="h" />
+            <q-radio color="orange" v-model="topleft" val="H" label="H" />
           </div>
           <div class="col column group items-center justify-center">
             <q-radio v-model="topcenter" val="h" label="h" />
             <q-radio v-model="topcenter" val="H" label="H" />
           </div>
           <div class="col column group items-center justify-center">
-            <q-radio v-model="topright" val="r" label="r" />
-            <q-radio v-model="topright" val="R" label="R" />
-            <q-radio v-model="topright" val="h" label="h" />
-            <q-radio v-model="topright" val="H" label="H" />
+            <q-radio color="secondary" v-model="topright" val="r" label="r" />
+            <q-radio color="secondary" v-model="topright" val="R" label="R" />
+            <q-radio color="secondary" v-model="topright" val="h" label="h" />
+            <q-radio color="secondary" v-model="topright" val="H" label="H" />
           </div>
         </div>
 
@@ -40,11 +40,11 @@
             <q-radio color="orange" v-model="middleleft" val="L" label="L" />
           </div>
           <div class="col column group items-center justify-center">
-            <q-radio color="orange" v-model="middlecenter" val="p" label="p" />
+            <q-radio v-model="middlecenter" val="p" label="p" />
           </div>
           <div class="col column group items-center justify-center">
-            <q-radio color="orange" v-model="middleright" val="r" label="r" />
-            <q-radio color="orange" v-model="middleright" val="R" label="R" />
+            <q-radio color="secondary" v-model="middleright" val="r" label="r" />
+            <q-radio color="secondary" v-model="middleright" val="R" label="R" />
           </div>
         </div>
 
@@ -53,14 +53,14 @@
             Footer
           </div>
           <div class="col column group items-center justify-center">
-            <q-radio color="secondary" v-model="bottomleft" val="l" label="l" />
-            <q-radio color="secondary" v-model="bottomleft" val="L" label="L" />
-            <q-radio color="secondary" v-model="bottomleft" val="f" label="f" />
-            <q-radio color="secondary" v-model="bottomleft" val="F" label="F" />
+            <q-radio color="orange" v-model="bottomleft" val="l" label="l" />
+            <q-radio color="orange" v-model="bottomleft" val="L" label="L" />
+            <q-radio color="orange" v-model="bottomleft" val="f" label="f" />
+            <q-radio color="orange" v-model="bottomleft" val="F" label="F" />
           </div>
           <div class="col column group items-center justify-center">
-            <q-radio color="secondary" v-model="bottomcenter" val="f" label="f" />
-            <q-radio color="secondary" v-model="bottomcenter" val="F" label="F" />
+            <q-radio v-model="bottomcenter" val="f" label="f" />
+            <q-radio v-model="bottomcenter" val="F" label="F" />
           </div>
           <div class="col column group items-center justify-center">
             <q-radio color="secondary" v-model="bottomright" val="r" label="r" />
@@ -93,8 +93,8 @@
       <q-card-main>
         <div class="group column">
           <q-checkbox v-model="pageScroll" label="Add page content so it's scrollable" />
-          <q-checkbox v-model="leftScroll" label="Add left panel content so it's scrollable" />
-          <q-checkbox v-model="rightScroll" label="Add right panel content so it's scrollable" />
+          <q-checkbox color="orange" v-model="layoutStore.leftScroll" label="Add left panel content so it's scrollable" />
+          <q-checkbox color="secondary" v-model="layoutStore.rightScroll" label="Add right panel content so it's scrollable" />
         </div>
       </q-card-main>
     </q-card>
@@ -144,8 +144,7 @@ export default {
       bottomright: v[10],
 
       pageScroll: true,
-      leftScroll: true,
-      rightScroll: true
+      layoutStore
     }
   },
   computed: {
