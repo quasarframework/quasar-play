@@ -1,5 +1,10 @@
 <template>
-  <q-layout ref="layout" :view="layoutStore.view" :right-breakpoint="900">
+  <q-layout
+    ref="layout"
+    :view="layoutStore.view"
+    :right-breakpoint="900"
+    :reveal="layoutStore.reveal"
+  >
     <q-toolbar slot="header">
       <q-btn flat @click="$refs.layout.toggleLeft()">
         <q-icon name="menu" />

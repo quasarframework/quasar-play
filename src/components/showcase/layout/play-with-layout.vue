@@ -1,6 +1,6 @@
 <template>
-  <div class="column items-center">
-    <q-card style="margin-top: 25px; width: 700px; max-width: 90vw;">
+  <div class="layout-padding">
+    <q-card>
       <q-card-title class="text-center">
         Configure Layout View
         <q-chip slot="subtitle" tag color="primary" style="margin-top: 15px">
@@ -9,6 +9,13 @@
       </q-card-title>
       <q-card-separator />
       <q-card-main>
+        <div style="margin-bottom: 24px" class="row justify-center">
+          <q-checkbox
+            v-model="layoutStore.reveal"
+            label="Hide header when scrolling page down ('reveal' property)"
+          />
+        </div>
+
         <div class="doc-layout-grid row justify-center">
           <div class="doc-row-definition row items-center justify-center no-border">
             Header
@@ -85,7 +92,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card style="margin-top: 25px; width: 700px; max-width: 90vw;">
+    <q-card style="margin-top: 25px;">
       <q-card-title class="text-center">
         Configure Layout Content
       </q-card-title>
