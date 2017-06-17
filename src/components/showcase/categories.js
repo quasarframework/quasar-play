@@ -5,12 +5,12 @@ export default [
     hash: 'style-and-identity',
     features: [
       {
-        title: 'd Color Palette',
+        title: 'Color Palette',
         icon: 'style',
         hash: 'color-palette'
       },
       {
-        title: 'd Typography',
+        title: 'Typography',
         icon: 'format_bold',
         hash: 'typography'
       }
@@ -22,12 +22,12 @@ export default [
     hash: 'css-helpers',
     features: [
       {
-        title: 'd2 Flex CSS',
+        title: '~~ Flex CSS',
         icon: 'web',
         hash: 'flex-css'
       },
       {
-        title: 'd Shadows',
+        title: 'Shadows',
         icon: 'layers',
         hash: 'shadows'
       }
@@ -40,22 +40,22 @@ export default [
     extract: true,
     features: [
       {
-        title: 'd Play with Layout',
+        title: 'Play with Layout',
         icon: 'play_circle_outline',
         hash: 'play-with-layout'
       },
       {
-        title: 'd Drawer Panels',
+        title: 'Drawer Panels',
         icon: 'view_array',
         hash: 'drawer-panels'
       },
       {
-        title: 'd Fixed Positioning',
+        title: 'FixePositioning',
         icon: 'pin_drop',
         hash: 'fixed-positioning'
       },
       {
-        title: 'd Floating Action Button',
+        title: 'Floating Action Button',
         icon: 'play_for_work',
         hash: 'floating-action-button'
       }
@@ -67,12 +67,12 @@ export default [
     hash: 'navigation',
     features: [
       {
-        title: 'd Toolbar',
+        title: 'Toolbar',
         icon: 'view_day',
         hash: 'toolbar'
       },
       {
-        title: 'd Tabs',
+        title: 'Tabs',
         icon: 'tab',
         hash: 'tabs',
         tabs: [
@@ -91,22 +91,22 @@ export default [
         ]
       },
       {
-        title: 'd Pull to Refresh',
+        title: 'Pull to Refresh',
         icon: 'vertical_align_center',
         hash: 'pull-to-refresh'
       },
       {
-        title: 'd Context Menu',
+        title: 'Context Menu',
         icon: 'content_paste',
         hash: 'context-menu'
       },
       {
-        title: 'd Breadcrumb',
+        title: 'Breadcrumb',
         icon: 'skip_next',
         hash: 'breadcrumb'
       },
       {
-        title: 'd Pagination',
+        title: 'Pagination',
         icon: 'linear_scale',
         hash: 'pagination'
       }
@@ -118,17 +118,17 @@ export default [
     hash: 'scrolling',
     features: [
       {
-        title: 'd Infinite Scroll',
+        title: 'Infinite Scroll',
         icon: 'update',
         hash: 'infinite-scroll'
       },
       {
-        title: 'd Scroll Fire',
+        title: 'Scroll Fire',
         icon: 'swap_vert',
         hash: 'scroll-fire'
       },
       {
-        title: 'd Back to Top',
+        title: 'Back to Top',
         icon: 'vertical_align_top',
         hash: 'back-to-top'
       }
@@ -273,37 +273,37 @@ export default [
     hash: 'popups',
     features: [
       {
-        title: 'd Action Sheet',
+        title: 'Action Sheet',
         icon: 'assignment',
         hash: 'action-sheet'
       },
       {
-        title: 'd Alert',
+        title: 'Alert',
         icon: 'assignment',
         hash: 'alert'
       },
       {
-        title: 'd Toast',
+        title: 'Toast',
         icon: 'notifications',
         hash: 'toast'
       },
       {
-        title: 'd Dialog',
+        title: 'Dialog',
         icon: 'question_answer',
         hash: 'dialog'
       },
       {
-        title: 'd Modal',
+        title: 'Modal',
         icon: 'settings_overscan',
         hash: 'modal'
       },
       {
-        title: 'd Popover',
+        title: 'Popover',
         icon: 'content_paste',
         hash: 'popover'
       },
       {
-        title: 'd Tooltip',
+        title: 'Tooltip',
         icon: 'speaker_notes',
         hash: 'tooltip'
       }
@@ -315,27 +315,27 @@ export default [
     hash: 'grouping',
     features: [
       {
-        title: 'd Card',
+        title: 'Card',
         icon: 'contact_mail',
         hash: 'card'
       },
       {
-        title: 'd Collapsible',
+        title: 'Collapsible',
         icon: 'format_line_spacing',
         hash: 'collapsible'
       },
       {
-        title: 'd Data Table',
+        title: 'Data Table',
         icon: 'border_all',
         hash: 'data-table'
       },
       {
-        title: 'd HTML Table',
+        title: 'HTML Table',
         icon: 'widgets',
         hash: 'html-table'
       },
       {
-        title: 'd List',
+        title: 'List',
         icon: 'list',
         hash: 'list',
         tabs: [
@@ -378,12 +378,12 @@ export default [
         ]
       },
       {
-        title: 'd Carousel',
+        title: 'Carousel',
         icon: 'vibration',
         hash: 'carousel'
       },
       {
-        title: 'd Stepper',
+        title: 'Stepper',
         icon: 'directions_run',
         hash: 'stepper'
       }
@@ -395,27 +395,27 @@ export default [
     hash: 'progress',
     features: [
       {
-        title: 'd Ajax Bar',
+        title: 'Ajax Bar',
         icon: 'trending_flat',
         hash: 'ajax-bar'
       },
       {
-        title: 'd Loading',
+        title: 'Loading',
         icon: 'hourglass_full',
         hash: 'loading'
       },
       {
-        title: 'd Inner Loading',
+        title: 'Inner Loading',
         icon: 'hourglass_full',
         hash: 'inner-loading'
       },
       {
-        title: 'd Progress Bar',
+        title: 'Progress Bar',
         icon: 'hourglass_empty',
         hash: 'progress'
       },
       {
-        title: 'd Spinner',
+        title: 'Spinner',
         icon: 'refresh',
         hash: 'spinner'
       }
@@ -427,17 +427,17 @@ export default [
     hash: 'media',
     features: [
       {
-        title: 'd Image Gallery',
+        title: 'Image Gallery',
         icon: 'photo_library',
         hash: 'image-gallery'
       },
       {
-        title: 'd Parallax',
+        title: 'Parallax',
         icon: 'theaters',
         hash: 'parallax'
       },
       {
-        title: 'd Video Embedding',
+        title: 'Video Embedding',
         icon: 'movie',
         hash: 'video'
       }
@@ -449,12 +449,12 @@ export default [
     hash: 'animation',
     features: [
       {
-        title: 'd Transition',
+        title: 'Transition',
         icon: 'directions_bus',
         hash: 'transition'
       },
       {
-        title: 'd Slide Transitions',
+        title: 'Slide Transitions',
         icon: 'directions_bus',
         hash: 'slide-transition'
       }
@@ -466,17 +466,17 @@ export default [
     hash: 'other-components',
     features: [
       {
-        title: 'd Chip',
+        title: 'Chip',
         icon: 'loyalty',
         hash: 'chip'
       },
       {
-        title: 'd Chat',
+        title: 'Chat',
         icon: 'chat',
         hash: 'chat'
       },
       {
-        title: 'd Tree',
+        title: 'Tree',
         icon: 'format_indent_increase',
         hash: 'tree'
       }
@@ -488,12 +488,12 @@ export default [
     hash: 'web-api-wrappers',
     features: [
       {
-        title: 'd App Fullscreen',
+        title: 'App Fullscreen',
         icon: 'fullscreen',
         hash: 'app-fullscreen'
       },
       {
-        title: 'd App Visibility',
+        title: 'App Visibility',
         icon: 'visibility',
         hash: 'app-visibility'
       }
@@ -505,7 +505,7 @@ export default [
     hash: 'misc',
     features: [
       {
-        title: 'd Platform Detection',
+        title: 'Platform Detection',
         icon: 'phonelink',
         hash: 'platform-detection'
       }
