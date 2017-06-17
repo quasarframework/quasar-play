@@ -8,6 +8,10 @@
         Quasar Layout
         <span slot="subtitle">Empowering your app</span>
       </q-toolbar-title>
+      <q-btn flat @click="$router.replace('/showcase')" style="margin-right: 15px">
+        <q-icon name="keyboard_arrow_left" />
+        Go back
+      </q-btn>
       <q-btn flat @click="$refs.layout.toggleRight()">
         <q-icon name="menu" />
       </q-btn>
@@ -59,9 +63,9 @@
     <router-view />
 
     <q-toolbar slot="footer">
-      <q-btn flat @click="$router.replace('/showcase')" icon="keyboard arrow left">
-        Back to Showcase
-      </q-btn>
+      <q-toolbar-title>
+        Footer
+      </q-toolbar-title>
     </q-toolbar>
   </q-layout>
 </template>

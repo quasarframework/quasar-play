@@ -1,6 +1,6 @@
 <template>
   <div class="column items-center">
-    <q-card style="margin-top: 25px; width: 700px; max-width: 100%;">
+    <q-card style="margin-top: 25px; width: 700px; max-width: 90vw;">
       <q-card-title class="text-center">
         Configure Layout View
         <q-chip slot="subtitle" tag color="primary" style="margin-top: 15px">
@@ -85,7 +85,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card style="margin-top: 25px; width: 700px; max-width: 100%;">
+    <q-card style="margin-top: 25px; width: 700px; max-width: 90vw;">
       <q-card-title class="text-center">
         Configure Layout Content
       </q-card-title>
