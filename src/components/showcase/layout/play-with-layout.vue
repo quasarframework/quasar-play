@@ -17,9 +17,7 @@
               </div>
               <div class="col column group items-center justify-center">
                 <q-radio color="orange" v-model="topleft" val="l" label="l" />
-                <q-radio color="orange" v-model="topleft" val="L" label="L" />
                 <q-radio color="orange" v-model="topleft" val="h" label="h" />
-                <q-radio color="orange" v-model="topleft" val="H" label="H" />
               </div>
               <div class="col column group items-center justify-center">
                 <q-radio v-model="topcenter" val="h" label="h" />
@@ -27,9 +25,7 @@
               </div>
               <div class="col column group items-center justify-center">
                 <q-radio color="secondary" v-model="topright" val="r" label="r" />
-                <q-radio color="secondary" v-model="topright" val="R" label="R" />
                 <q-radio color="secondary" v-model="topright" val="h" label="h" />
-                <q-radio color="secondary" v-model="topright" val="H" label="H" />
               </div>
             </div>
 
@@ -56,9 +52,7 @@
               </div>
               <div class="col column group items-center justify-center">
                 <q-radio color="orange" v-model="bottomleft" val="l" label="l" />
-                <q-radio color="orange" v-model="bottomleft" val="L" label="L" />
                 <q-radio color="orange" v-model="bottomleft" val="f" label="f" />
-                <q-radio color="orange" v-model="bottomleft" val="F" label="F" />
               </div>
               <div class="col column group items-center justify-center">
                 <q-radio v-model="bottomcenter" val="f" label="f" />
@@ -66,9 +60,7 @@
               </div>
               <div class="col column group items-center justify-center">
                 <q-radio color="secondary" v-model="bottomright" val="r" label="r" />
-                <q-radio color="secondary" v-model="bottomright" val="R" label="R" />
                 <q-radio color="secondary" v-model="bottomright" val="f" label="f" />
-                <q-radio color="secondary" v-model="bottomright" val="F" label="F" />
               </div>
             </div>
 
