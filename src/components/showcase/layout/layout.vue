@@ -1,5 +1,5 @@
 <template>
-  <q-layout ref="layout" view="hHr LpR lFf" v-model="sides" :right-breakpoint="900">
+  <q-layout ref="layout" :view="layoutStore.view" :right-breakpoint="900">
     <q-toolbar slot="header">
       <q-btn flat @click="$refs.layout.toggleLeft()">
         <q-icon name="menu" />
@@ -14,13 +14,13 @@
     </q-toolbar>
 
     <q-tabs slot="navigation">
-      <q-route-tab slot="title" icon="view_quilt" to="/showcase/layout/about" replace hide="icon" label="About" />
-      <q-route-tab slot="title" icon="view_day" to="/showcase/layout/drawer-panel" replace hide="icon" label="Drawer / Panel" />
+      <q-route-tab slot="title" icon="view_quilt" to="/showcase/layout/about" replace label="About" />
+      <q-route-tab slot="title" icon="view_day" to="/showcase/layout/drawer-panel" replace label="Drawer / Panel" />
       <q-route-tab slot="title" icon="view_day" to="/showcase/layout/fixed-positioning" replace label="Fixed Positioning" />
       <q-route-tab slot="title" icon="input" to="/showcase/layout/floating-action-button" replace label="Floating Action Button" />
     </q-tabs>
 
-    <div slot="left">
+    <q-scroll-area slot="left" style="width: 100%; height: 100%">
       <q-list-header>Left Panel</q-list-header>
       <q-side-link item to="/showcase/layout/about">
         <q-item-side icon="account circle" />
@@ -30,15 +30,22 @@
       <q-side-link item to="/showcase/layout/drawer-panel">Drawer / Panel</q-side-link>
       <q-side-link item to="/showcase/layout/fixed-positioning">Fixed Positioning</q-side-link>
       <q-side-link item to="/showcase/layout/floating-action-button">Floating Action Button</q-side-link>
-      <div v-for="n in 60">left{{n}}</div>
-    </div>
+      <div v-if="layoutStore.leftScroll" style="padding: 25px 16px 16px;">
+        <p class="caption" v-for="n in 50">
+          <em>Left Panel has intended scroll</em>
+        </p>
+      </div>
+    </q-scroll-area>
 
-    <div slot="right">
+    <q-scroll-area slot="right" style="width: 100%; height: 100%">
       <q-list-header>Right Panel</q-list-header>
       <q-side-link item to="/showcase/layout/about">About</q-side-link>
-      <span id="gigi" class="bg-white text-black"></span>
-      <span id="gogu"></span>
-    </div>
+      <div v-if="layoutStore.rightScroll" style="padding: 25px 16px 16px;">
+        <p class="caption" v-for="n in 50">
+          <em>Right Panel has intended scroll</em>
+        </p>
+      </div>
+    </q-scroll-area>
 
     <router-view />
 
@@ -63,8 +70,11 @@ import {
   QItemSide,
   QItemMain,
   QSideLink,
-  QListHeader
+  QListHeader,
+  QScrollArea
 } from 'quasar'
+
+import layoutStore from './layout-store'
 
 export default {
   components: {
@@ -79,23 +89,12 @@ export default {
     QItemSide,
     QItemMain,
     QSideLink,
-    QListHeader
+    QListHeader,
+    QScrollArea
   },
   data () {
     return {
-      search: '',
-      right: true,
-      todo: true,
-      gigi: '',
-      sides: {
-        left: false,
-        right: true
-      }
-    }
-  },
-  methods: {
-    alertMe () {
-      console.log('clicked')
+      layoutStore
     }
   }
 }
