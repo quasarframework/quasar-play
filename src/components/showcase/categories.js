@@ -50,7 +50,7 @@ export default [
         hash: 'drawer-panels'
       },
       {
-        title: 'FixePositioning',
+        title: 'Fixed Positioning',
         icon: 'pin_drop',
         hash: 'fixed-positioning'
       },
