@@ -40,7 +40,7 @@ export default [
     extract: true,
     features: [
       {
-        title: 'Play with Layout',
+        title: 'd Play with Layout',
         icon: 'play_circle_outline',
         hash: 'play-with-layout'
       },
@@ -55,7 +55,7 @@ export default [
         hash: 'fixed-positioning'
       },
       {
-        title: 'Floating Action Button',
+        title: 'd Floating Action Button',
         icon: 'play_for_work',
         hash: 'floating-action-button'
       }
@@ -316,7 +316,7 @@ export default [
         hash: 'data-table'
       },
       {
-        title: 'HTML Table',
+        title: 'd HTML Table',
         icon: 'widgets',
         hash: 'html-table'
       },

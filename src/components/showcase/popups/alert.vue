@@ -88,7 +88,7 @@ export default {
   },
   mounted () {
     Alert.create({
-      html: 'Warning, warning Will Robinson!',
+      html: 'Warning, warning, Will Robinson!',
       enter: 'bounceInRight',
       leave: 'bounceOutRight'
     })

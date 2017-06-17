@@ -2,7 +2,8 @@
   <q-layout
     ref="layout"
     :view="layoutStore.view"
-    :right-breakpoint="900"
+    :left-breakpoint="layoutStore.leftBreakpoint"
+    :right-breakpoint="layoutStore.rightBreakpoint"
     :reveal="layoutStore.reveal"
   >
     <q-toolbar slot="header">

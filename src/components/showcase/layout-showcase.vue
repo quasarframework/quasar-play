@@ -29,7 +29,8 @@
         :icon="tab.icon"
         :to="`/showcase${store.hash}/${tab.hash}`"
         :label="tab.label"
-        exact replace
+        exact
+        replace
       />
     </q-tabs>
 
@@ -47,6 +48,7 @@
           v-for="feature in category.features"
           :key="feature"
           :to="`/showcase/${category.hash}/${feature.hash}`"
+          replace
         >
           <q-item-side :icon="feature.icon" />
           <q-item-main :label="feature.title" />

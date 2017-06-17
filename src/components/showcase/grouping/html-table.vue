@@ -1,39 +1,95 @@
 <template>
-  <div class="layout-padding">
-    <div class="column group">
-      <q-checkbox v-model="bordered" label="Bordered" />
-      <q-checkbox v-model="highlight" label="Highlight" />
+  <div class="layout-padding column items-center">
+    <q-card style="max-width: 500px">
+      <q-card-title>
+        Configure
+        <q-chip slot="subtitle" color="secondary" square style="margin-top: 10px">
+          Classes: {{computedClasses}}
+        </q-chip>
+      </q-card-title>
+      <q-card-separator />
+      <q-card-main>
+        <q-field
+          label="Delimiters"
+          :label-width="4"
+        >
+          <q-option-group
+            v-model="delimiter"
+            inline
+            type="radio"
+            :options="[
+              {value: 'none', label: 'No delimiter'},
+              {value: 'horizontal', label: 'Horizontal delimiter'},
+              {value: 'vertical', label: 'Vertical delimiter'},
+              {value: 'cell', label: 'Cell delimiter'}
+            ]"
+          />
+        </q-field>
 
-      <div class="column gt-md-row">
-        <q-radio v-model="delimiter" val="none" label="No delimiter" />
-        <q-radio v-model="delimiter" val="horizontal" label="Horizontal delimiter" />
-        <q-radio v-model="delimiter" val="vertical" label="Vertical delimiter" />
-        <q-radio v-model="delimiter" val="cell" label="Cell delimiter" />
-      </div>
+        <q-field
+          label="Stripes"
+          :label-width="4"
+        >
+          <q-option-group
+            v-model="stripe"
+            inline
+            type="radio"
+            :options="[
+              {value: 'none', label: 'No Stripe'},
+              {value: 'odd', label: 'Striped Odd'},
+              {value: 'even', label: 'Striped Even'}
+            ]"
+          />
+        </q-field>
 
-      <div class="column gt-md-row">
-        <q-radio v-model="stripe" val="none" label="No Stripe" />
-        <q-radio v-model="stripe" val="odd" label="Striped Odd" />
-        <q-radio v-model="stripe" val="even" label="Striped Even" />
-      </div>
+        <q-field
+          label="Layout Type"
+          :label-width="4"
+        >
+          <q-option-group
+            v-model="type"
+            inline
+            type="radio"
+            :options="[
+              {value: 'none', label: 'Standard'},
+              {value: 'flipped', label: 'Flipped'},
+              {value: 'responsive', label: 'Responsive'}
+            ]"
+          />
+        </q-field>
 
-      <div>
-        <q-radio v-model="type" val="none" label="Normal" />
-        <q-radio v-model="type" val="flipped" label="Flipped" />
-        <q-radio v-model="type" val="responsive" label="Responsive" />
-      </div>
+        <q-field
+          label="Gutter"
+          :label-width="4"
+        >
+          <q-option-group
+            v-model="gutter"
+            inline
+            type="radio"
+            :options="[
+              {value: 'none', label: 'Standard'},
+              {value: 'compact', label: 'Compact'},
+              {value: 'loose', label: 'Loose'}
+            ]"
+          />
+        </q-field>
 
-      <div>
-        <q-radio v-model="gutter" val="none" label="Normal" />
-        <q-radio v-model="gutter" val="compact" label="Compact" />
-        <q-radio v-model="gutter" val="loose" label="Loose" />
-      </div>
-    </div>
-
-    <br>
-    <q-chip color="secondary" square>
-      Classes: {{computedClasses}}
-    </q-chip>
+        <q-field
+          label="Misc"
+          :label-width="4"
+        >
+          <q-option-group
+            v-model="misc"
+            inline
+            type="checkbox"
+            :options="[
+              {value: 'bordered', label: 'Bordered'},
+              {value: 'highlight', label: 'Highlight'}
+            ]"
+          />
+        </q-field>
+      </q-card-main>
+    </q-card>
 
     <table style="margin-top: 30px;" class="q-table" :class="computedClasses">
       <thead>
@@ -68,15 +124,25 @@
 <script>
 import {
   QCheckbox,
-  QRadio,
-  QChip
+  QOptionGroup,
+  QChip,
+  QField,
+  QCard,
+  QCardTitle,
+  QCardMain,
+  QCardSeparator
 } from 'quasar'
 
 export default {
   components: {
     QCheckbox,
-    QRadio,
-    QChip
+    QOptionGroup,
+    QChip,
+    QField,
+    QCard,
+    QCardTitle,
+    QCardMain,
+    QCardSeparator
   },
   data () {
     return {
@@ -93,8 +159,7 @@ export default {
         'loose',
         'flipped'
       ],
-      bordered: false,
-      highlight: false,
+      misc: [],
       delimiter: 'none',
       stripe: 'none',
       type: 'none',
@@ -105,10 +170,10 @@ export default {
     computedClasses () {
       let classes = []
 
-      if (this.bordered) {
+      if (this.misc.includes('bordered')) {
         classes.push('bordered')
       }
-      if (this.highlight) {
+      if (this.misc.includes('highlight')) {
         classes.push('highlight')
       }
       if (this.delimiter !== 'none') {
