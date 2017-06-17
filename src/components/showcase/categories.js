@@ -72,9 +72,23 @@ export default [
         hash: 'toolbar'
       },
       {
-        title: 'Tabs',
+        title: 'd Tabs',
         icon: 'tab',
-        hash: 'tabs'
+        hash: 'tabs',
+        tabs: [
+          {
+            title: 'Basic',
+            label: 'Basic Tabs',
+            icon: 'tab',
+            hash: 'basic-tabs'
+          },
+          {
+            title: 'Tab Panes',
+            label: 'Tab Panes',
+            icon: 'tab',
+            hash: 'tab-panes'
+          }
+        ]
       },
       {
         title: 'd Pull to Refresh',
