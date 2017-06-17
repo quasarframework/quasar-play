@@ -61,6 +61,12 @@
         <q-icon name="card_giftcard" />
       </q-btn>
 
+      <p class="caption">Disabled button</p>
+      <q-btn color="primary" disable>Disabled</q-btn>
+      <q-btn color="primary" round disable>
+        <q-icon name="card_giftcard" />
+      </q-btn>
+
       <p class="caption">Glossy button</p>
       <q-btn color="primary" glossy>Glossy</q-btn>
       <q-btn color="secondary" glossy>Glossy</q-btn>

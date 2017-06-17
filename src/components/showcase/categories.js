@@ -152,13 +152,13 @@ export default [
       {
         title: 'Input Textfield',
         label: 'Textbox',
-        hash: 'textbox',
+        hash: 'input',
         icon: 'text_format'
       },
       {
         title: 'Chips Input',
         label: 'Chips',
-        hash: 'chips',
+        hash: 'chips-input',
         icon: 'folder_special'
       },
       {
@@ -208,7 +208,7 @@ export default [
       {
         title: 'Option Group',
         icon: 'repeat',
-        hash: 'toggle'
+        hash: 'option-group'
       },
       {
         title: 'Date & Time',
