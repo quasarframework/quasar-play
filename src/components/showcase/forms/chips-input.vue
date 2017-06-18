@@ -1,7 +1,6 @@
 <template>
-  <div class="layout-padding row justify-center">
+  <div class="layout-padding docs-input row justify-center">
     <div style="width: 500px; max-width: 90vw;">
-      <!--
       <p class="caption">
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
@@ -10,39 +9,69 @@
         The Backspace key removes previously entered Chip if textfield is empty.
       </p>
       <q-chips-input
-        color="secondary"
-        float-label="Float Label"
         v-model="chips1"
-        placeholder="Some placeholder"
+        placeholder="Type some names"
+      />
+      <q-chips-input
+        color="secondary"
+        v-model="chips2"
+        placeholder="Type some names"
+        float-label="Float label"
       />
       <q-chips-input
         inverted
         color="dark"
         frame-color="amber"
+        v-model="chips3"
+        placeholder="Type some names"
+        stack-label="Stack label & inverted"
+      />
+      <q-chips-input
+        inverted
+        color="orange"
+        frame-color="brown"
         float-label="Float Label"
-        v-model="chips2"
+        v-model="chips4"
         placeholder="Some placeholder"
       />
 
-      <div class="bg-grey-9" style="padding: 15px">
-        <q-chips-input dark color="amber" float-label="Float Label" v-model="model" placeholder="Some placeholder" />
+      <p class="caption">On dark background</p>
+      <div class="dark-example">
+        <q-chips-input
+          dark
+          color="amber"
+          float-label="Float Label"
+          v-model="chips5"
+          placeholder="Some placeholder"
+        />
+
+        <q-field
+          dark
+          icon="supervisor_account"
+          label="Employees"
+          :count="10"
+          helper="Type some names"
+          :label-width="3"
+        >
+          <q-chips-input dark color="secondary" v-model="chips6" />
+        </q-field>
       </div>
 
       <p class="caption">Disabled State</p>
-      <q-chips-input v-model="model" disable/>
+      <q-chips-input v-model="chips6" disable />
 
       <p class="caption">Error State</p>
-      <q-chips-input v-model="model" error/>
+      <q-chips-input v-model="chips6" error float-label="Signaling error" />
 
-      <p class="caption">Inside Field</p>
+      <p class="caption">In a Field</p>
       <q-field
-        icon="account_box"
-        label="Birthday"
+        icon="supervisor_account"
+        label="Employees"
         :count="10"
-        helper="Some helper here"
+        helper="Type some names"
         :label-width="3"
       >
-        <q-chips-input float-label="Float Label" v-model="model" :count="10"/>
+        <q-chips-input v-model="chips6" :count="10"/>
       </q-field>
 
       <p class="caption">Inside of a List</p>
@@ -50,11 +79,10 @@
         <q-item multiline>
           <q-item-side icon="edit" />
           <q-item-main>
-            <q-chips-input v-model="model" class="no-margin" placeholder="Type names"/>
+            <q-chips-input v-model="chips6" class="no-margin" placeholder="Type names"/>
           </q-item-main>
         </q-item>
       </q-list>
-      -->
     </div>
   </div>
 </template>
@@ -69,6 +97,8 @@ import {
   QItemMain
 } from 'quasar'
 
+import './docs-input.styl'
+
 export default {
   components: {
     QChipsInput,
@@ -80,9 +110,12 @@ export default {
   },
   data () {
     return {
-      model: [],
       chips1: ['Joe'],
-      chips2: ['Jack', 'Jim']
+      chips2: ['Jack', 'Jim'],
+      chips3: ['Jim'],
+      chips4: ['Joe'],
+      chips5: ['Jim'],
+      chips6: ['Jack', 'Jim']
     }
   }
 }
