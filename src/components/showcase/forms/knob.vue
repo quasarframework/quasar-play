@@ -83,9 +83,9 @@
 
       <p class="caption">Inside Field</p>
       <q-field
-        label="Your age"
-        helper="Touch to select age"
-        icon="cake"
+        label="Amount to spend"
+        helper="Touch to select an amount (USD)"
+        icon="local_atm"
       >
         <q-knob
           v-model="model"

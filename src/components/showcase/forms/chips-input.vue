@@ -8,6 +8,8 @@
         <br>
         The Backspace key removes previously entered Chip if textfield is empty.
       </p>
+      <br>
+
       <q-chips-input
         v-model="chips1"
         placeholder="Type some names"
@@ -37,7 +39,9 @@
 
       <p class="caption">Disable / Error states</p>
       <q-chips-input v-model="chips6" disable placeholder="Disabled" />
+      <q-chips-input v-model="chips6" disable inverted color="tertiary" frame-color="amber" placeholder="Disabled" />
       <q-chips-input v-model="chips6" error float-label="Signaling error" />
+      <q-chips-input v-model="chips6" error inverted color="tertiary" frame-color="amber" float-label="Signaling error" />
 
       <p class="caption">In a Field</p>
       <q-field
@@ -50,7 +54,7 @@
         <q-chips-input v-model="chips6" :count="10"/>
       </q-field>
 
-      <p class="caption">Inside of a List</p>
+      <p class="caption">In a List</p>
       <q-list>
         <q-item multiline>
           <q-item-side icon="edit" />
