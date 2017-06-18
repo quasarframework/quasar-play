@@ -35,32 +35,8 @@
         placeholder="Some placeholder"
       />
 
-      <p class="caption">On dark background</p>
-      <div class="dark-example">
-        <q-chips-input
-          dark
-          color="amber"
-          float-label="Float Label"
-          v-model="chips5"
-          placeholder="Some placeholder"
-        />
-
-        <q-field
-          dark
-          icon="supervisor_account"
-          label="Employees"
-          :count="10"
-          helper="Type some names"
-          :label-width="3"
-        >
-          <q-chips-input dark color="secondary" v-model="chips6" />
-        </q-field>
-      </div>
-
-      <p class="caption">Disabled State</p>
-      <q-chips-input v-model="chips6" disable />
-
-      <p class="caption">Error State</p>
+      <p class="caption">Disable / Error states</p>
+      <q-chips-input v-model="chips6" disable placeholder="Disabled" />
       <q-chips-input v-model="chips6" error float-label="Signaling error" />
 
       <p class="caption">In a Field</p>
@@ -83,6 +59,28 @@
           </q-item-main>
         </q-item>
       </q-list>
+
+      <p class="caption">On dark background</p>
+      <div class="dark-example">
+        <q-chips-input
+          dark
+          color="amber"
+          float-label="Float Label"
+          v-model="chips5"
+          placeholder="Some placeholder"
+        />
+
+        <q-field
+          dark
+          icon="supervisor_account"
+          label="Employees"
+          :count="10"
+          helper="Type some names"
+          :label-width="3"
+        >
+          <q-chips-input dark color="secondary" v-model="chips6" />
+        </q-field>
+      </div>
     </div>
   </div>
 </template>
