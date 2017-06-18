@@ -128,7 +128,7 @@
       </q-field>
 
       <p class="caption">On a dark background</p>
-      <div class="bg-grey-9" style="padding: 20px 25px 25px;">
+      <div class="dark-example">
         <q-input v-model="num" type="number" float-label="Colored" dark color="yellow" prefix="$" suffix="TSP" />
         <q-input v-model="num" type="number" float-label="Colored" dark color="secondary" prefix="$" suffix="TSP" />
 
@@ -146,6 +146,18 @@
           />
         </q-field>
       </div>
+
+      <p class="caption">With tooltip/popover</p>
+      <q-input v-model="text" float-label="Tooltip">
+        <q-tooltip>Some tooltip</q-tooltip>
+      </q-input>
+      <q-input v-model="text" float-label="Popover">
+        <q-popover fit :offset="[0, 10]">
+          <div class="bg-primary text-white" style="padding: 10px">
+            Some popover content
+          </div>
+        </q-popover>
+      </q-input>
     </div>
   </div>
 </template>
@@ -155,15 +167,21 @@ import {
   QInput,
   QToggle,
   QIcon,
-  QField
+  QField,
+  QTooltip,
+  QPopover
 } from 'quasar'
+
+import './docs-input.styl'
 
 export default {
   components: {
     QInput,
     QToggle,
     QIcon,
-    QField
+    QField,
+    QTooltip,
+    QPopover
   },
   data () {
     return {
@@ -181,9 +199,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-.docs-input
-  .q-input + .caption
-    margin-top 60px
-</style>
