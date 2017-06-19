@@ -34,7 +34,7 @@
           </q-field>
 
           <q-field :label="`Size (<em>${size}px</em>)`">
-            <q-range v-model="size" :min="2" :max="20" label-always />
+            <q-slider v-model="size" :min="2" :max="20" label-always />
           </q-field>
 
           <q-field label="Color">
@@ -54,7 +54,7 @@ import {
   QCheckbox,
   QRadio,
   QField,
-  QRange,
+  QSlider,
   QCard,
   QCardTitle,
   QCardMain
@@ -68,7 +68,7 @@ export default {
     QCheckbox,
     QRadio,
     QField,
-    QRange,
+    QSlider,
     QCard,
     QCardTitle,
     QCardMain

@@ -122,21 +122,21 @@
         <q-item>
           <q-item-side icon="volume_down" />
           <q-item-main>
-            <q-range v-model="range" :min="0" :max="50" label />
+            <q-slider v-model="range" :min="0" :max="50" label />
           </q-item-main>
           <q-item-side right icon="volume_up" />
         </q-item>
         <q-item>
           <q-item-side icon="volume_down" />
           <q-item-main>
-            <q-range v-model="range" :min="0" :max="50" label color="amber" />
+            <q-slider v-model="range" :min="0" :max="50" label color="amber" />
           </q-item-main>
           <q-item-side right icon="volume_up" />
         </q-item>
         <q-item>
           <q-item-side icon="monetization_on" />
           <q-item-main>
-            <q-double-range v-model="doubleRange" :min="0" :max="50" label color="secondary" />
+            <q-range v-model="doubleRange" :min="0" :max="50" label color="secondary" />
           </q-item-main>
         </q-item>
       </q-list>
@@ -156,8 +156,8 @@ import {
   QCheckbox,
   QRadio,
   QToggle,
+  QSlider,
   QRange,
-  QDoubleRange,
   QSelect
 } from 'quasar'
 
@@ -173,8 +173,8 @@ export default {
     QCheckbox,
     QRadio,
     QToggle,
+    QSlider,
     QRange,
-    QDoubleRange,
     QSelect
   },
   data () {

@@ -95,7 +95,12 @@
               :label-width="4"
             >
               <div class="group" style="margin: -5px">
-                <q-chip color="secondary" square v-for="cls in computedClasses">
+                <q-chip
+                  v-for="cls in computedClasses"
+                  :key="cls"
+                  color="secondary"
+                  square
+                >
                   {{cls}}
                 </q-chip>
               </div>

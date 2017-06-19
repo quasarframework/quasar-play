@@ -5,7 +5,7 @@
         icon="format size"
         :label="`Size: ${size}px`"
       >
-        <q-range label v-model="size" :min="20" :max="256" />
+        <q-slider label v-model="size" :min="20" :max="256" />
       </q-field>
 
       <q-field
@@ -76,7 +76,7 @@ import {
   QSpinnerTail,
   QTooltip,
   QField,
-  QRange,
+  QSlider,
   QInput,
   QSelect
 } from 'quasar'
@@ -107,7 +107,7 @@ export default {
     QSpinnerTail,
     QTooltip,
     QField,
-    QRange,
+    QSlider,
     QInput,
     QSelect
   },

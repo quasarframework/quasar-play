@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-padding docs-range row justify-center">
+  <div class="layout-padding docs-slider row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">
         Standard
@@ -9,8 +9,8 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="standard" :min="0" :max="50" />
-      <q-range v-model="standard" :min="0" :max="50" square />
+      <q-slider v-model="standard" :min="0" :max="50" />
+      <q-slider v-model="standard" :min="0" :max="50" square />
 
       <p class="caption">
         With Floating Point Precision
@@ -20,7 +20,7 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="precision" :min="0.1" :max="1" :step="0.1" :decimals="1" color="amber" />
+      <q-slider v-model="precision" :min="0.1" :max="1" :step="0.1" :decimals="1" color="amber" />
 
       <p class="caption">
         With Step
@@ -30,7 +30,7 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="step" :min="0" :max="45" :step="5" color="purple" />
+      <q-slider v-model="step" :min="0" :max="45" :step="5" color="purple" />
 
       <p class="caption">
         With Label
@@ -40,7 +40,7 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="label" :min="-20" :max="20" :step="4" label color="light-green" />
+      <q-slider v-model="label" :min="-20" :max="20" :step="4" label color="light-green" />
 
       <p class="caption">
         Snaps to Steps
@@ -50,7 +50,7 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="snap" :min="0" :max="10" :step="2" label snap color="deep-orange" />
+      <q-slider v-model="snap" :min="0" :max="10" :step="2" label snap color="deep-orange" />
 
       <p class="caption">
         With Markers. Snaps to Steps
@@ -60,7 +60,7 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="marker" :min="0" :max="10" :step="2" label snap markers />
+      <q-slider v-model="marker" :min="0" :max="10" :step="2" label snap markers />
 
       <p class="caption">
         Display Label Always
@@ -70,14 +70,14 @@
           </q-chip>
         </span>
       </p>
-      <q-range v-model="label" :min="-20" :max="20" :step="4" label-always color="orange" />
+      <q-slider v-model="label" :min="-20" :max="20" :step="4" label-always color="orange" />
 
       <p class="caption">Disabled State</p>
-      <q-range v-model="standard" :min="0" :max="50" disable />
+      <q-slider v-model="standard" :min="0" :max="50" disable />
 
       <p class="caption">Error State</p>
-      <q-range error v-model="standard" :min="0" :max="50" />
-      <q-range error color="amber" v-model="standard" :min="0" :max="50" label-always />
+      <q-slider error v-model="standard" :min="0" :max="50" />
+      <q-slider error color="amber" v-model="standard" :min="0" :max="50" label-always />
 
       <p class="caption">In a Field</p>
       <q-field
@@ -85,7 +85,7 @@
         label="Payment"
         helper="Amount you are willing to spend (in USD)"
       >
-        <q-range class="dark" v-model="standard" :min="0" :max="50" label />
+        <q-slider class="dark" v-model="standard" :min="0" :max="50" label />
       </q-field>
 
       <p class="caption">In a List</p>
@@ -93,21 +93,21 @@
         <q-item>
           <q-item-side icon="volume_down" />
           <q-item-main>
-            <q-range color="secondary" v-model="standard" :min="0" :max="50" label />
+            <q-slider color="secondary" v-model="standard" :min="0" :max="50" label />
           </q-item-main>
           <q-item-side right icon="volume_up" />
         </q-item>
         <q-item>
           <q-item-side icon="brightness_low" />
           <q-item-main>
-            <q-range color="orange" v-model="standard" :min="0" :max="50" label />
+            <q-slider color="orange" v-model="standard" :min="0" :max="50" label />
           </q-item-main>
           <q-item-side right icon="brightness_high" />
         </q-item>
         <q-item>
           <q-item-side icon="mic" />
           <q-item-main>
-            <q-range color="black" v-model="standard" :min="0" :max="50" label />
+            <q-slider color="black" v-model="standard" :min="0" :max="50" label />
           </q-item-main>
         </q-item>
       </q-list>
@@ -117,7 +117,7 @@
 
 <script>
 import {
-  QRange,
+  QSlider,
   QChip,
   QField,
   QList,
@@ -126,11 +126,11 @@ import {
   QItemMain
 } from 'quasar'
 
-import './range-style.styl'
+import './slider-style.styl'
 
 export default {
   components: {
-    QRange,
+    QSlider,
     QChip,
     QField,
     QList,

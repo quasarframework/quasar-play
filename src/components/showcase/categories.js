@@ -172,23 +172,14 @@ export default [
         hash: 'search'
       },
       {
-        title: 'Ranges',
+        title: 'Slider',
         icon: 'tune',
-        hash: 'range',
-        tabs: [
-          {
-            title: 'Standard Range',
-            label: 'Standard',
-            icon: 'linear_scale',
-            hash: 'standard-range'
-          },
-          {
-            title: 'Double Range',
-            label: 'Double',
-            icon: 'drag_handle',
-            hash: 'double-range'
-          }
-        ]
+        hash: 'slider'
+      },
+      {
+        title: 'Range',
+        icon: 'linear_scale',
+        hash: 'range'
       },
       {
         title: 'Radio',

@@ -78,7 +78,7 @@
         :label="`Row height (${rowHeight}px)`"
         :label-width="4"
       >
-        <q-range v-model="rowHeight" :min="50" :max="200" label-always />
+        <q-slider v-model="rowHeight" :min="50" :max="200" label-always />
       </q-field>
 
       <q-field
@@ -99,7 +99,7 @@
               ]"
             />
           </div>
-          <q-range class="col" v-model="bodyHeight" :min="100" :max="700" label-always :disable="bodyHeightProp === 'auto'" />
+          <q-slider class="col" v-model="bodyHeight" :min="100" :max="700" label-always :disable="bodyHeightProp === 'auto'" />
         </div>
       </q-field>
     </q-collapsible>
@@ -142,7 +142,7 @@ import {
   QInput,
   QCheckbox,
   QSelect,
-  QRange,
+  QSlider,
   QBtn,
   QIcon,
   QTooltip,
@@ -159,7 +159,7 @@ export default {
     QInput,
     QCheckbox,
     QSelect,
-    QRange,
+    QSlider,
     QBtn,
     QIcon,
     QTooltip,
