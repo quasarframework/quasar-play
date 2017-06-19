@@ -124,7 +124,7 @@ export default [
       },
       {
         title: 'Scroll Fire',
-        icon: 'swap_vert',
+        icon: 'low_priority',
         hash: 'scroll-fire'
       },
       {
@@ -454,7 +454,7 @@ export default [
       },
       {
         title: 'Slide Transitions',
-        icon: 'compare_arrows',
+        icon: 'swap_vert',
         hash: 'slide-transition'
       }
     ]

@@ -8,7 +8,7 @@
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
 
         <q-tab-pane name="mails">Emails tab</q-tab-pane>
-        <q-tab-pane name="alarms">Alarm tab</q-tab-pane>
+        <q-tab-pane name="alarms">Alarms tab</q-tab-pane>
         <q-tab-pane name="movies">Movies tab</q-tab-pane>
       </q-tabs>
 
@@ -19,7 +19,7 @@
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
 
         <q-tab-pane name="mails">Emails tab</q-tab-pane>
-        <q-tab-pane name="alarms">Alarm tab</q-tab-pane>
+        <q-tab-pane name="alarms">Alarms tab</q-tab-pane>
         <q-tab-pane name="movies">Movies tab</q-tab-pane>
       </q-tabs>
 
@@ -30,7 +30,7 @@
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
 
         <q-tab-pane name="mails">Emails tab</q-tab-pane>
-        <q-tab-pane name="alarms">Alarm tab</q-tab-pane>
+        <q-tab-pane name="alarms">Alarms tab</q-tab-pane>
         <q-tab-pane name="movies">Movies tab</q-tab-pane>
       </q-tabs>
 
@@ -41,7 +41,7 @@
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
 
         <q-tab-pane name="mails">Emails tab</q-tab-pane>
-        <q-tab-pane name="alarms">Alarm tab</q-tab-pane>
+        <q-tab-pane name="alarms">Alarms tab</q-tab-pane>
         <q-tab-pane name="movies">Movies tab</q-tab-pane>
       </q-tabs>
     </div>
