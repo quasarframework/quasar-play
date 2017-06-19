@@ -1,12 +1,9 @@
 <template>
   <div class="layout-padding row justify-center">
     <div style="width: 500px; max-width: 90vw;">
-      <q-card class="bigger" style="margin: 0 0 1.5rem">
-        <q-card-separator />
+      <p class="caption">Alerts with Animation</p>
+      <q-card>
         <q-card-main class="group">
-          <q-card-title>
-            Alerts with Animation
-          </q-card-title>
           <q-alert
             color="brown"
             icon="cloud"
@@ -31,35 +28,66 @@
             Lorem ipsum dolor sit amet.
           </q-alert>
         </q-card-main>
-        <q-card-separator v-if="!visible || !visible2"/>
-        <q-card-actions>
-          <q-btn v-if="!visible || !visible2" flat @click="reset">Reset</q-btn>
-        </q-card-actions>
+        <template v-if="!visible || !visible2">
+          <q-card-separator />
+          <q-card-actions>
+            <q-btn flat @click="reset">Reset</q-btn>
+          </q-card-actions>
+        </template>
       </q-card>
 
-      <q-card style="margin: 0 0 1.5rem">
-        <q-card-main class="group">
-          <q-card-title>
-            Alerts as Methods - Static Positioning
-          </q-card-title>
-        </q-card-main>
-        <q-card-separator />
-        <q-card-actions>
-          <q-btn flat color="primary" @click="alertAsMethod('top-right', 'warning', 'You need to know about this!', 'warning')">
-            Top Right
+      <p class="caption">Alerts as Methods</p>
+      <div class="row group">
+        <div>
+          <q-btn round small color="secondary" @click="alertAsMethod('top-left')">
+            <q-icon name="arrow_back" class="rotate-45" />
           </q-btn>
-          <q-btn flat color="primary" @click="alertAsMethod('top-left', 'error', 'Woah! Danger! You are getting good at this!', 'report_problem')">
-            Top Left
-          <br /></q-btn>
-          <q-btn flat color="primary" @click="alertAsMethod('bottom-right', 'primary', 'Wow! Nice job!', 'wifi')">
-            Bottom Right
+        </div>
+        <div>
+          <q-btn round small color="tertiary" @click="alertAsMethod('top')">
+            <q-icon name="arrow_upward" />
           </q-btn>
-          <q-btn flat color="primary" @click="alertAsMethod('bottom-left', 'secondary', 'Quasar is cool! Right?', 'wifi')">
-            Bottom Left
+        </div>
+        <div>
+          <q-btn round small color="secondary" @click="alertAsMethod('top-right')">
+            <q-icon name="arrow_upward" class="rotate-45" />
           </q-btn>
-        </q-card-actions>
-      </q-card>
+        </div>
+      </div>
+      <div class="row group">
+        <div>
+          <q-btn round small color="tertiary" @click="alertAsMethod('left')">
+            <q-icon name="arrow_back" />
+          </q-btn>
+        </div>
+        <div class="invisible">
+          <q-btn round small />
+        </div>
+        <div>
+          <q-btn round small color="tertiary" @click="alertAsMethod('right')">
+            <q-icon name="arrow_forward" />
+          </q-btn>
+        </div>
+      </div>
+      <div class="row group">
+        <div>
+          <q-btn round small color="secondary" @click="alertAsMethod('bottom-left')">
+            <q-icon name="arrow_back" class="rotate-315" />
+          </q-btn>
+        </div>
+        <div>
+          <q-btn round small color="tertiary" @click="alertAsMethod('bottom')">
+            <q-icon name="arrow_downward" />
+          </q-btn>
+        </div>
+        <div>
+          <q-btn round small color="secondary" @click="alertAsMethod('bottom-right')">
+            <q-icon name="arrow_forward" class="rotate-45" />
+          </q-btn>
+        </div>
+      </div>
 
+      <p class="caption">More examples</p>
       <q-alert
         v-for="type in ['positive', 'info', 'negative', 'warning']"
         :key="type"
@@ -87,6 +115,7 @@ import {
   Alert,
   QAlert,
   QBtn,
+  QIcon,
   QCard,
   QCardMain,
   QCardActions,
@@ -94,14 +123,40 @@ import {
 } from 'quasar'
 
 // Don't forget to import the animations you are using
+// Examples:
 // import 'quasar-extras/animate/bounceInLeft.css'
 // import 'quasar-extras/animate/bounceInRight.css'
 // import 'quasar-extras/animate/bounceOutRight.css'
+
+const alerts = [
+  { color: 'error', html: 'Woah! Danger! You are getting good at this!', icon: 'report_problem' },
+  { color: 'warning', html: 'You need to know about this!', icon: 'warning' },
+  { color: 'amber', html: 'Wow! Nice job!', icon: 'thumb_up' },
+  { color: 'secondary', html: 'Quasar is cool! Right?', icon: 'tag_faces' }
+]
+
+const anim = {
+  'top': ['bounceInDown', 'bounceOutUp'],
+  'right': ['bounceInRight', 'bounceOutRight'],
+  'bottom': ['bounceInUp', 'bounceOutDown'],
+  'left': ['bounceInLeft', 'bounceOutLeft']
+}
+
+function getAnimations (pos) {
+  if (pos.indexOf('left') > -1) {
+    return anim.left
+  }
+  if (pos.indexOf('right') > -1) {
+    return anim.right
+  }
+  return anim[pos]
+}
 
 export default {
   components: {
     QAlert,
     QBtn,
+    QIcon,
     QCard,
     QCardMain,
     QCardActions,
@@ -121,28 +176,17 @@ export default {
     })
   },
   methods: {
-    alertAsMethod (position, color, text, icon) {
+    alertAsMethod (position) {
+      const { color, icon, html } = alerts[Math.floor(Math.random(5) * 10) % 4]
+      const [ enter, leave ] = getAnimations(position)
+
       Alert.create({
-        enter: 'bounceInRight',
-        leave: 'bounceOutRight',
-        color: color,
-        icon: icon,
-        html: text,
-        position: position,
-        actions: [
-          {
-            label: 'Snooze',
-            handler () {
-              console.log('acting')
-            }
-          },
-          {
-            label: 'Abort',
-            handler () {
-              console.log('aborting')
-            }
-          }
-        ]
+        enter,
+        leave,
+        color,
+        icon,
+        html,
+        position: position
       })
     },
     reset () {
