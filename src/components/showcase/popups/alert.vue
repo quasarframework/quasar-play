@@ -1,9 +1,12 @@
 <template>
   <div class="layout-padding row justify-center">
     <div style="width: 500px; max-width: 90vw;">
-      <q-card style="margin: 0 0 1.5rem">
+      <q-card class="bigger" style="margin: 0 0 1.5rem">
         <q-card-separator />
         <q-card-main class="group">
+          <q-card-title>
+            Alerts with Animation
+          </q-card-title>
           <q-alert
             color="brown"
             icon="cloud"
@@ -28,10 +31,32 @@
             Lorem ipsum dolor sit amet.
           </q-alert>
         </q-card-main>
+        <q-card-separator v-if="!visible || !visible2"/>
+        <q-card-actions>
+          <q-btn v-if="!visible || !visible2" flat @click="reset">Reset</q-btn>
+        </q-card-actions>
+      </q-card>
+
+      <q-card style="margin: 0 0 1.5rem">
+        <q-card-main class="group">
+          <q-card-title>
+            Alerts as Methods - Static Positioning
+          </q-card-title>
+        </q-card-main>
         <q-card-separator />
         <q-card-actions>
-          <q-btn flat color="primary" @click="alertAsMethod">Show Alert as Method</q-btn>
-          <q-btn v-if="!visible || !visible2" flat @click="reset">Reset</q-btn>
+          <q-btn flat color="primary" @click="alertAsMethod('top-right', 'warning', 'You need to know about this!', 'warning')">
+            Top Right
+          </q-btn>
+          <q-btn flat color="primary" @click="alertAsMethod('top-left', 'error', 'Woah! Danger! You are getting good at this!', 'report_problem')">
+            Top Left
+          <br /></q-btn>
+          <q-btn flat color="primary" @click="alertAsMethod('bottom-right', 'primary', 'Wow! Nice job!', 'wifi')">
+            Bottom Right
+          </q-btn>
+          <q-btn flat color="primary" @click="alertAsMethod('bottom-left', 'secondary', 'Quasar is cool! Right?', 'wifi')">
+            Bottom Left
+          </q-btn>
         </q-card-actions>
       </q-card>
 
@@ -96,14 +121,14 @@ export default {
     })
   },
   methods: {
-    alertAsMethod () {
+    alertAsMethod (position, color, text, icon) {
       Alert.create({
         enter: 'bounceInRight',
         leave: 'bounceOutRight',
-        color: 'warning',
-        icon: 'wifi',
-        html: `A text with your alert's awesome message`,
-        position: 'top-right',
+        color: color,
+        icon: icon,
+        html: text,
+        position: position,
         actions: [
           {
             label: 'Snooze',

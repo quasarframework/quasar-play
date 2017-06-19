@@ -118,7 +118,7 @@
               <q-checkbox v-model="layoutStore.hideTabs" label="Hide Tabs so you can see a resize in action" />
               <q-checkbox
                 v-model="layoutStore.reveal"
-                label="Hide header when scrolling page down ('reveal' property)"
+                label="Hide header and when lower on the page, show header with a short scroll up ('reveal' property)"
               />
             </div>
           </q-card-main>
