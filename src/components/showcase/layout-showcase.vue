@@ -50,7 +50,7 @@
           <q-item-main label="Home" />
           <q-item-side right icon="chevron_right" />
         </q-side-link>
-        <q-item-delimiter />
+        <q-item-separator />
         <template v-for="category in categories">
           <q-list-header>
             {{ category.title }}
@@ -66,7 +66,7 @@
             <q-item-main :label="feature.title" />
             <q-item-side right icon="chevron_right" />
           </q-side-link>
-          <q-item-delimiter />
+          <q-item-separator />
         </template>
       </q-list>
     </q-scroll-area>
@@ -85,7 +85,7 @@ import {
   QListHeader,
   QItemSide,
   QItemMain,
-  QItemDelimiter,
+  QItemSeparator,
   QBtn,
   QLayout,
   QToolbar,
@@ -104,7 +104,7 @@ export default {
     QListHeader,
     QItemSide,
     QItemMain,
-    QItemDelimiter,
+    QItemSeparator,
     QBtn,
     QLayout,
     QToolbar,

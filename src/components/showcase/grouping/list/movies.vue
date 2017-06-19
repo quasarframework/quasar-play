@@ -16,7 +16,7 @@
           </q-item-main>
           <q-item-side right icon="movie" />
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>Movies</q-list-header>
         <q-item multiline>
           <q-item-side image="/statics/parallax1.jpg" />
@@ -54,7 +54,7 @@ import {
   QList,
   QListHeader,
   QItem,
-  QItemDelimiter,
+  QItemSeparator,
   QItemSide,
   QItemMain,
   QItemTile
@@ -65,7 +65,7 @@ export default {
     QList,
     QListHeader,
     QItem,
-    QItemDelimiter,
+    QItemSeparator,
     QItemSide,
     QItemMain,
     QItemTile

@@ -1,7 +1,7 @@
 <template>
   <div class="layout-padding row justify-center">
     <div style="width: 500px; max-width: 90vw;">
-      <q-list highlight inset-delimiter>
+      <q-list highlight inset-separator>
         <q-item>
           <q-item-side avatar="/statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend? Brunch this weekend? Brunch this weekend?" label-lines="1" />
@@ -62,7 +62,7 @@
         </q-item>
       </q-list>
 
-      <q-list inset-delimiter>
+      <q-list inset-separator>
         <q-item>
           <q-item-side avatar="/statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
@@ -109,7 +109,7 @@ import {
   QList,
   QListHeader,
   QItem,
-  QItemDelimiter,
+  QItemSeparator,
   QItemSide,
   QItemMain,
   QItemTile,
@@ -122,7 +122,7 @@ export default {
     QList,
     QListHeader,
     QItem,
-    QItemDelimiter,
+    QItemSeparator,
     QItemSide,
     QItemMain,
     QItemTile,

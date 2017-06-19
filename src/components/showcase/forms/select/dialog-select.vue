@@ -10,7 +10,7 @@
         stack-label="Delimited options"
         inverted
         color="amber"
-        delimiter
+        separator
         v-model="select"
         :options="options"
       />
@@ -40,7 +40,7 @@
         inverted
         color="dark"
         stack-label="Delimited options"
-        delimiter
+        separator
         v-model="multipleSelect"
         :options="options"
       />
@@ -131,7 +131,7 @@
           dark
           stack-label="Delimited options"
           color="amber"
-          delimiter
+          separator
           v-model="select"
           :options="options"
         />

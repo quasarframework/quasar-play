@@ -15,7 +15,7 @@
             <q-item-tile sublabel>Require password for purchase or use password to restrict purchase</q-item-tile>
           </q-item-main>
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>General</q-list-header>
         <q-item tag="label">
           <q-item-side>
@@ -72,7 +72,7 @@
             <q-item-tile sublabel lines="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</q-item-tile>
           </q-item-main>
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>Toggles</q-list-header>
         <q-item link tag="label">
           <q-item-main label="Events and reminders" />
@@ -103,7 +103,7 @@
             <q-toggle v-model="checked_three" color="amber" />
           </q-item-side>
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>Selects</q-list-header>
         <q-item>
           <q-item-side icon="supervisor_account" />
@@ -117,7 +117,7 @@
             <q-select class="full-width" multiple toggle v-model="multipleSelect" :options="selectOptions" />
           </q-item-main>
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>Ranges</q-list-header>
         <q-item>
           <q-item-side icon="volume_down" />
@@ -149,7 +149,7 @@ import {
   QList,
   QListHeader,
   QItem,
-  QItemDelimiter,
+  QItemSeparator,
   QItemSide,
   QItemMain,
   QItemTile,
@@ -166,7 +166,7 @@ export default {
     QList,
     QListHeader,
     QItem,
-    QItemDelimiter,
+    QItemSeparator,
     QItemSide,
     QItemMain,
     QItemTile,

@@ -4,25 +4,22 @@
       <q-card>
         <q-card-title>
           Configure
-          <q-chip slot="subtitle" color="secondary" square style="margin-top: 10px">
-            Classes: {{computedClasses}}
-          </q-chip>
         </q-card-title>
         <q-card-separator />
         <q-card-main>
           <q-field
-            label="Delimiters"
+            label="Separators"
             :label-width="4"
           >
             <q-option-group
-              v-model="delimiter"
+              v-model="separator"
               inline
               type="radio"
               :options="[
-                {value: 'none', label: 'No delimiter'},
-                {value: 'horizontal', label: 'Horizontal delimiter'},
-                {value: 'vertical', label: 'Vertical delimiter'},
-                {value: 'cell', label: 'Cell delimiter'}
+                {value: 'none', label: 'No separator'},
+                {value: 'horizontal', label: 'Horizontal separator'},
+                {value: 'vertical', label: 'Vertical separator'},
+                {value: 'cell', label: 'Cell separator'}
               ]"
             />
           </q-field>
@@ -89,36 +86,53 @@
               ]"
             />
           </q-field>
+
+          <template v-if="computedClasses.length > 0">
+            <q-card-separator style="margin-top: 16px; margin-bottom: 16px;" />
+
+            <q-field
+              label="Applying CSS classes"
+              :label-width="4"
+            >
+              <div class="group" style="margin: -5px">
+                <q-chip color="secondary" square v-for="cls in computedClasses">
+                  {{cls}}
+                </q-chip>
+              </div>
+            </q-field>
+          </template>
         </q-card-main>
       </q-card>
 
-      <table style="margin-top: 30px;" class="q-table" :class="computedClasses">
-        <thead>
-          <tr>
-            <th class="text-left">Name</th>
-            <th class="text-right">Price</th>
-            <th class="text-right">In Stock</th>
-          </tr>
-        </thead>
+      <div class="row justify-center">
+        <table style="margin-top: 30px;" class="q-table" :class="computedClasses">
+          <thead>
+            <tr>
+              <th class="text-left">Name</th>
+              <th class="text-right">Price</th>
+              <th class="text-right">In Stock</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr>
-            <td data-th="Name" class="text-left">Item #1</td>
-            <td data-th="Price" class="text-right">$10.11</td>
-            <td data-th="In Stock" class="text-right">101</td>
-          </tr>
-          <tr>
-            <td data-th="Name" class="text-left">Item #2</td>
-            <td data-th="Price" class="text-right">$8.88</td>
-            <td data-th="In Stock" class="text-right">34</td>
-          </tr>
-          <tr>
-            <td data-th="Name" class="text-left">Item #3</td>
-            <td data-th="Price" class="text-right">$0.15</td>
-            <td data-th="In Stock" class="text-right">1670</td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody>
+            <tr>
+              <td data-th="Name" class="text-left">Item #1</td>
+              <td data-th="Price" class="text-right">$10.11</td>
+              <td data-th="In Stock" class="text-right">101</td>
+            </tr>
+            <tr>
+              <td data-th="Name" class="text-left">Item #2</td>
+              <td data-th="Price" class="text-right">$8.88</td>
+              <td data-th="In Stock" class="text-right">34</td>
+            </tr>
+            <tr>
+              <td data-th="Name" class="text-left">Item #3</td>
+              <td data-th="Price" class="text-right">$0.15</td>
+              <td data-th="In Stock" class="text-right">1670</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -151,9 +165,9 @@ export default {
       styles: [
         '',
         'bordered',
-        'horizontal-delimiter',
-        'vertical-delimiter',
-        'cell-delimiter',
+        'horizontal-separator',
+        'vertical-separator',
+        'cell-separator',
         'striped-odd',
         'striped-even',
         'highlight',
@@ -162,7 +176,7 @@ export default {
         'flipped'
       ],
       misc: [],
-      delimiter: 'none',
+      separator: 'none',
       stripe: 'none',
       type: 'none',
       gutter: 'none'
@@ -178,8 +192,8 @@ export default {
       if (this.misc.includes('highlight')) {
         classes.push('highlight')
       }
-      if (this.delimiter !== 'none') {
-        classes.push(this.delimiter + '-delimiter')
+      if (this.separator !== 'none') {
+        classes.push(this.separator + '-separator')
       }
       if (this.stripe !== 'none') {
         classes.push('striped-' + this.stripe)

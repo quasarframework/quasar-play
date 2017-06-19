@@ -36,7 +36,7 @@
         Target area
 
         <q-context-menu ref="context">
-          <q-list link delimiter no-border style="min-width: 150px; max-height: 300px;">
+          <q-list link separator no-border style="min-width: 150px; max-height: 300px;">
             <q-item
               v-for="n in 10"
               :key="n"

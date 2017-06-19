@@ -28,7 +28,7 @@
           </small>
         </blockquote>
       </q-collapsible>
-      <q-item-delimiter />
+      <q-item-separator />
       <q-collapsible icon="queue_play_next" label="Play URL">
         <p>
           Now that you have your URL, you can play with your App on your mobile phone by
@@ -46,7 +46,7 @@
           </small>
         </blockquote>
       </q-collapsible>
-      <q-item-delimiter />
+      <q-item-separator />
       <q-collapsible icon="bug_report" label="Debugging your App">
         <p>
           There is a way to debug directly on your phone. Use Chrome Developer Tools to
@@ -66,7 +66,7 @@
 import {
   QCollapsible,
   QList,
-  QItemDelimiter,
+  QItemSeparator,
   openURL
 } from 'quasar'
 
@@ -74,7 +74,7 @@ export default {
   components: {
     QCollapsible,
     QList,
-    QItemDelimiter
+    QItemSeparator
   },
   methods: {
     openURL () {

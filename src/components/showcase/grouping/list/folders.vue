@@ -27,7 +27,7 @@
           </q-item-main>
           <q-item-side right icon="info" />
         </q-item>
-        <q-item-delimiter inset />
+        <q-item-separator inset />
         <q-list-header inset>Files</q-list-header>
         <q-item>
           <q-item-side icon="assignment" inverted color="grey-6" />
@@ -71,7 +71,7 @@ import {
   QList,
   QListHeader,
   QItem,
-  QItemDelimiter,
+  QItemSeparator,
   QItemSide,
   QItemMain,
   QItemTile
@@ -82,7 +82,7 @@ export default {
     QList,
     QListHeader,
     QItem,
-    QItemDelimiter,
+    QItemSeparator,
     QItemSide,
     QItemMain,
     QItemTile

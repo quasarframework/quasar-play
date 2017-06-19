@@ -24,7 +24,7 @@
           </q-item-main>
           <q-item-side right icon="chat_bubble" />
         </q-item>
-        <q-item-delimiter inset />
+        <q-item-separator inset />
         <q-item>
           <q-item-side icon="mail" color="primary" />
           <q-item-main>
@@ -48,7 +48,7 @@ import {
   QList,
   QListHeader,
   QItem,
-  QItemDelimiter,
+  QItemSeparator,
   QItemSide,
   QItemMain,
   QItemTile
@@ -59,7 +59,7 @@ export default {
     QList,
     QListHeader,
     QItem,
-    QItemDelimiter,
+    QItemSeparator,
     QItemSide,
     QItemMain,
     QItemTile

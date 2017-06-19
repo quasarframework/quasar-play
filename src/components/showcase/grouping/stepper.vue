@@ -16,7 +16,7 @@
       />
       <br>
 
-      <q-stepper color="secondary" flat ref="stepper" v-model="step" :alternative-labels="alt" :contractable="contractable">
+      <q-stepper flat ref="stepper" v-model="step" color="primary" :alternative-labels="alt" :contractable="contractable">
         <q-step default name="campaign" title="Campaign">
           <p>
             For each ad campaign that you create, you can control how much you're willing to
@@ -25,7 +25,7 @@
           </p>
 
           <q-stepper-navigation v-if="!globalNavigation">
-            <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
+            <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -33,8 +33,8 @@
           <p>An ad group contains one or more ads which target a shared set of keywords.</p>
 
           <q-stepper-navigation v-if="!globalNavigation">
-            <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
-            <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+            <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
+            <q-btn color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -45,8 +45,8 @@
           </p>
 
           <q-stepper-navigation v-if="!globalNavigation">
-            <q-btn color="secondary" @click="$refs.stepper.next()">Continue</q-btn>
-            <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+            <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
+            <q-btn color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -59,22 +59,22 @@
           </p>
 
           <q-stepper-navigation v-if="!globalNavigation">
-            <q-btn color="secondary" @click="$refs.stepper.goToStep('campaign')">Restart</q-btn>
-            <q-btn color="secondary" flat @click="$refs.stepper.previous()">Back</q-btn>
+            <q-btn color="primary" @click="$refs.stepper.goToStep('campaign')">Restart</q-btn>
+            <q-btn color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
         <q-stepper-navigation v-if="globalNavigation">
           <q-btn
             v-if="step !== 'campaign'"
-            color="secondary"
+            color="primary"
             flat
             @click="$refs.stepper.previous()"
           >
             Back
           </q-btn>
 
-          <q-btn color="secondary" @click="$refs.stepper.next()">
+          <q-btn color="primary" @click="$refs.stepper.next()">
             {{ step === 'create_ad' ? 'Finalize' : 'Next' }}
           </q-btn>
         </q-stepper-navigation>

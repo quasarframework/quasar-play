@@ -130,7 +130,7 @@
             <q-datetime class="no-margin" v-model="date2" type="date" />
           </q-item-main>
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>Date & Time</q-list-header>
         <q-item>
           <q-item-side icon="notifications" />
@@ -175,7 +175,7 @@ import {
   QItem,
   QItemSide,
   QItemMain,
-  QItemDelimiter,
+  QItemSeparator,
   QListHeader,
   date
 } from 'quasar'
@@ -193,7 +193,7 @@ export default {
     QItem,
     QItemSide,
     QItemMain,
-    QItemDelimiter,
+    QItemSeparator,
     QListHeader
   },
   data () {

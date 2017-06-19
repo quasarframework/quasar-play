@@ -19,7 +19,7 @@
           <q-item-main label="Jim Doe" />
           <q-item-side right icon="chat_bubble" />
         </q-item>
-        <q-item-delimiter />
+        <q-item-separator />
         <q-list-header>Previous chats</q-list-header>
         <q-item>
           <q-item-side avatar="/statics/guy-avatar.png" />
@@ -35,7 +35,7 @@ import {
   QList,
   QListHeader,
   QItem,
-  QItemDelimiter,
+  QItemSeparator,
   QItemSide,
   QItemMain,
   QItemTile
@@ -46,7 +46,7 @@ export default {
     QList,
     QListHeader,
     QItem,
-    QItemDelimiter,
+    QItemSeparator,
     QItemSide,
     QItemMain,
     QItemTile
