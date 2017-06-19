@@ -179,7 +179,7 @@
         label="Review rating"
         helper="How much do you like the review?"
       >
-        <q-rating size="2rem" v-model="rating" />
+        <q-rating size="2rem" v-model="rating" color="primary" :max="5" />
       </q-field>
 
       <q-field
@@ -234,7 +234,7 @@
           label="Review rating"
           helper="How much do you like the review?"
         >
-          <q-rating size="2rem" v-model="rating" />
+          <q-rating size="2rem" v-model="rating" :max="5" />
         </q-field>
       </div>
 

@@ -85,7 +85,7 @@ export default [
           {
             title: 'Tab Panes',
             label: 'Tab Panes',
-            icon: 'tab',
+            icon: 'chrome_reader_mode',
             hash: 'tab-panes'
           }
         ]
@@ -141,12 +141,12 @@ export default [
     features: [
       {
         title: 'Button',
-        icon: 'indeterminate_check_box',
+        icon: 'radio_button_unchecked',
         hash: 'button'
       },
       {
         title: 'Field',
-        icon: 'indeterminate_check_box',
+        icon: 'text_fields',
         hash: 'field'
       },
       {
@@ -159,7 +159,7 @@ export default [
         title: 'Chips Input',
         label: 'Chips',
         hash: 'chips-input',
-        icon: 'folder_special'
+        icon: 'dns'
       },
       {
         title: 'Autocomplete',
@@ -179,13 +179,13 @@ export default [
           {
             title: 'Standard Range',
             label: 'Standard',
-            icon: 'tune',
+            icon: 'linear_scale',
             hash: 'standard-range'
           },
           {
             title: 'Double Range',
             label: 'Double',
-            icon: 'tune',
+            icon: 'drag_handle',
             hash: 'double-range'
           }
         ]
@@ -207,7 +207,7 @@ export default [
       },
       {
         title: 'Option Group',
-        icon: 'repeat',
+        icon: 'toc',
         hash: 'option-group'
       },
       {
@@ -218,13 +218,13 @@ export default [
           {
             title: 'DateTime Input',
             label: 'Input',
-            icon: 'access_time',
+            icon: 'event',
             hash: 'input-datetime'
           },
           {
             title: 'Inline DateTime',
             label: 'Inline',
-            icon: 'access_time',
+            icon: 'event_note',
             hash: 'inline-datetime'
           },
           {
@@ -278,12 +278,12 @@ export default [
       },
       {
         title: 'Alert',
-        icon: 'assignment',
+        icon: 'warning',
         hash: 'alert'
       },
       {
         title: 'Toast',
-        icon: 'notifications',
+        icon: 'call_to_action',
         hash: 'toast'
       },
       {
@@ -298,7 +298,7 @@ export default [
       },
       {
         title: 'Popover',
-        icon: 'content_paste',
+        icon: 'filter_none',
         hash: 'popover'
       },
       {
@@ -342,37 +342,37 @@ export default [
             title: 'Email',
             label: 'Email',
             hash: 'email',
-            icon: 'view_list'
+            icon: 'email'
           },
           {
             title: 'Chat',
             label: 'Chat',
             hash: 'chat',
-            icon: 'view_list'
+            icon: 'chat'
           },
           {
             title: 'Folders & Files',
             label: 'Folders & Files',
             hash: 'folders',
-            icon: 'view_list'
+            icon: 'folder_open'
           },
           {
             title: 'Settings',
             label: 'Settings',
             hash: 'settings',
-            icon: 'view_list'
+            icon: 'settings'
           },
           {
             title: 'Movies',
             label: 'Movies',
             hash: 'movies',
-            icon: 'view_list'
+            icon: 'movie'
           },
           {
             title: 'Phonebook',
             label: 'Phonebook',
             hash: 'phonebook',
-            icon: 'view_list'
+            icon: 'contact_phone'
           }
         ]
       },
@@ -405,12 +405,12 @@ export default [
       },
       {
         title: 'Inner Loading',
-        icon: 'hourglass_full',
+        icon: 'hourglass_empty',
         hash: 'inner-loading'
       },
       {
         title: 'Progress Bar',
-        icon: 'hourglass_empty',
+        icon: 'sort',
         hash: 'progress'
       },
       {
@@ -444,17 +444,17 @@ export default [
   },
   {
     title: 'Animation',
-    icon: 'directions_bus',
+    icon: 'fast_forward',
     hash: 'animation',
     features: [
       {
         title: 'Transition',
-        icon: 'directions_bus',
+        icon: 'transform',
         hash: 'transition'
       },
       {
         title: 'Slide Transitions',
-        icon: 'directions_bus',
+        icon: 'compare_arrows',
         hash: 'slide-transition'
       }
     ]

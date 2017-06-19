@@ -72,7 +72,7 @@
       <div class="row group">
         <div>
           <q-btn round small color="secondary" @click="alertAsMethod('bottom-left')">
-            <q-icon name="arrow_back" class="rotate-315" />
+            <q-icon name="arrow_forward" class="rotate-135" />
           </q-btn>
         </div>
         <div>
