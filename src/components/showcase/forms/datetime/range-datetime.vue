@@ -73,13 +73,13 @@
         <q-item>
           <q-item-side icon="access_time" />
           <q-item-main>
-            <q-datetime-range class="no-margin full-width" v-model="range7" type="time" />
+            <q-datetime-range class="no-margin" v-model="range7" type="time" />
           </q-item-main>
         </q-item>
         <q-item>
           <q-item-side icon="update" />
           <q-item-main>
-            <q-datetime-range class="no-margin full-width" v-model="range7" type="date" />
+            <q-datetime-range class="no-margin" v-model="range7" type="date" />
           </q-item-main>
         </q-item>
         <q-item-separator />
@@ -87,7 +87,7 @@
         <q-item>
           <q-item-side icon="notifications" />
           <q-item-main>
-            <q-datetime-range class="no-margin full-width" v-model="range7" type="datetime" />
+            <q-datetime-range class="no-margin" v-model="range7" type="datetime" />
           </q-item-main>
         </q-item>
       </q-list>
@@ -99,7 +99,6 @@
           color="amber"
           v-model="range8"
           type="time"
-          class="full-width"
         />
         <q-field
           dark
@@ -112,7 +111,6 @@
             color="secondary"
             v-model="range8"
             type="time"
-            class="full-width"
           />
         </q-field>
       </div>
