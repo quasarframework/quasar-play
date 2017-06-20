@@ -13,6 +13,11 @@ export default [
         title: 'Typography',
         icon: 'format_bold',
         hash: 'typography'
+      },
+      {
+        title: 'Material Ripples',
+        icon: 'blur_on',
+        hash: 'material-ripples'
       }
     ]
   },
@@ -121,6 +126,11 @@ export default [
         title: 'Infinite Scroll',
         icon: 'update',
         hash: 'infinite-scroll'
+      },
+      {
+        title: 'Scroll Area',
+        icon: 'aspect_ratio',
+        hash: 'scroll-area'
       },
       {
         title: 'Scroll Fire',
@@ -444,7 +454,7 @@ export default [
         hash: 'transition'
       },
       {
-        title: 'Slide Transitions',
+        title: 'Slide Transition',
         icon: 'swap_vert',
         hash: 'slide-transition'
       }

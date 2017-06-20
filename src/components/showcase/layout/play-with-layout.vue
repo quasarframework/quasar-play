@@ -1,5 +1,8 @@
 <template>
   <div class="layout-padding">
+    <p class="caption text-center iframe-only cordova-only" style="max-width: 80vw">
+      Play on a desktop to fully understand Layout.
+    </p>
     <div class="flex justify-center">
       <div style="width: 400px; max-width: 90vw">
         <q-card>
