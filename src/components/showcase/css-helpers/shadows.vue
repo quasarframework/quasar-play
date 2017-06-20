@@ -13,8 +13,8 @@
 @import '~variables'
 
 .shadow-box
-  width 110px
-  height 110px
+  width 90px
+  height 90px
   margin 25px
   border-radius 50%
 .doc-inset-shadow

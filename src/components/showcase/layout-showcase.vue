@@ -41,6 +41,7 @@
     >
       <div class="row items-center justify-center bg-white" style="width: 100%; height: 100px;">
         <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;"/>
+        <div style="margin-left: 15px">v0.14 beta</div>
       </div>
       <q-list no-border>
         <q-side-link
