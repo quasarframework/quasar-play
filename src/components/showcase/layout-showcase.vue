@@ -12,7 +12,7 @@
         />
         {{ store.title }}
       </q-toolbar-title>
-      <q-btn flat @click="$refs.layout.toggleLeft()">
+      <q-btn flat class="within-iframe-hide" @click="$refs.layout.toggleLeft()">
         <q-icon name="menu" />
       </q-btn>
     </q-toolbar>
@@ -20,7 +20,7 @@
     <q-tabs
       slot="navigation"
       v-if="store.tabs.length > 0"
-      class="within-iframe-hide"
+      :class="{'within-iframe-hide': !store.showTabs}"
     >
       <q-route-tab
         v-for="tab in store.tabs"

@@ -10,6 +10,7 @@
           <q-field
             label="Separators"
             :label-width="4"
+            style="margin-top: 0"
           >
             <q-option-group
               v-model="separator"

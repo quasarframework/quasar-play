@@ -15,14 +15,14 @@
           </q-item-side>
         </q-item>
         <q-item>
-          <q-item-side avatar="/statics/linux-avatar.png" />
+          <q-item-side avatar="statics/linux-avatar.png" />
           <q-item-main label="Jim Doe" />
           <q-item-side right icon="chat_bubble" />
         </q-item>
         <q-item-separator />
         <q-list-header>Previous chats</q-list-header>
         <q-item>
-          <q-item-side avatar="/statics/guy-avatar.png" />
+          <q-item-side avatar="statics/guy-avatar.png" />
           <q-item-main label="Jack Doe" />
         </q-item>
       </q-list>

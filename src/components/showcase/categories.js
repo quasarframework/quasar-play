@@ -121,6 +121,7 @@ export default [
     title: 'Scrolling',
     icon: 'format_line_spacing',
     hash: 'scrolling',
+    showTabs: true,
     features: [
       {
         title: 'Infinite Scroll',

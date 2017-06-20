@@ -3,12 +3,12 @@
     <div style="width: 500px; max-width: 90vw;">
       <q-list highlight inset-separator>
         <q-item>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend? Brunch this weekend? Brunch this weekend?" label-lines="1" />
           <q-item-side right stamp="1 min" />
         </q-item>
         <q-item multiline>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main
             label="Brunch this weekend? Brunch this weekend? Brunch this weekend?"
             label-lines="1"
@@ -18,7 +18,7 @@
           <q-item-side right stamp="1 week<br>ago" />
         </q-item>
         <q-item multiline>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main
             label="Brunch this weekend? Brunch this weekend? Brunch this weekend?"
             label-lines="2"
@@ -46,7 +46,7 @@
           </q-item-side>
         </q-item>
         <q-item multiline>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main>
             <q-item-tile label lines="1">Brunch this weekend? Yeah, this weekend. Really. This one.</q-item-tile>
             <q-item-tile sublabel lines="2">
@@ -64,7 +64,7 @@
 
       <q-list inset-separator>
         <q-item>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
           <q-item-side right icon="more_vert">
             <q-popover ref="popover">
@@ -83,14 +83,14 @@
           </q-item-side>
         </q-item>
         <q-item>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
           <q-item-side right>
             <q-chip square color="primary" class="shadow-2">10k</q-chip>
           </q-item-side>
         </q-item>
         <q-item>
-          <q-item-side avatar="/statics/boy-avatar.png" />
+          <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
           <q-item-side right>
             <q-item-tile stamp>10 min ago</q-item-tile>

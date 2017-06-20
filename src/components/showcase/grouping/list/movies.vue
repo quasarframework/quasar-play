@@ -4,12 +4,12 @@
       <q-list>
         <q-list-header>Documentaries</q-list-header>
         <q-item>
-          <q-item-side image="/statics/mountains.jpg" />
+          <q-item-side image="statics/mountains.jpg" />
           <q-item-main label="Mountains Documentary" />
           <q-item-side right icon="movie" />
         </q-item>
         <q-item>
-          <q-item-side image="/statics/quasar.jpg" />
+          <q-item-side image="statics/quasar.jpg" />
           <q-item-main>
             <q-item-tile label>Quasars</q-item-tile>
             <q-item-tile sublabel>For passionates only</q-item-tile>
@@ -19,7 +19,7 @@
         <q-item-separator />
         <q-list-header>Movies</q-list-header>
         <q-item multiline>
-          <q-item-side image="/statics/parallax1.jpg" />
+          <q-item-side image="statics/parallax1.jpg" />
           <q-item-main>
             <q-item-tile label>Must-see places</q-item-tile>
             <q-item-tile sublabel lines="3">
@@ -31,7 +31,7 @@
           <q-item-side right icon="movie" />
         </q-item>
         <q-item multiline>
-          <q-item-side image="/statics/parallax2.jpg" />
+          <q-item-side image="statics/parallax2.jpg" />
           <q-item-main>
             <q-item-tile label>Building a Bridge</q-item-tile>
             <q-item-tile sublabel lines="5">

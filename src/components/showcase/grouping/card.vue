@@ -213,7 +213,7 @@
 
     <q-card inline>
       <q-item>
-        <q-item-side avatar="/statics/boy-avatar.png" />
+        <q-item-side avatar="statics/boy-avatar.png" />
         <q-item-main>
           <q-item-tile label>Title</q-item-tile>
           <q-item-tile sublabel>Subhead</q-item-tile>
