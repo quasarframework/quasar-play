@@ -1,32 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.quasarframework.quasarplay-demo" ios-CFBundleIdentifier="com.quasarframework.quasar.play" version="0.13.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.quasarframework.quasarplay_demo" version="0.14.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Quasar Play</name>
     <description>
-      Quasar Play for Quasar Framework
-  </description>
+        Quasar Play for Quasar Framework
+    </description>
     <author email="razvan.stoenescu@gmail.com" href="http://quasar-framework.org">
       Razvan Stoenescu
-  </author>
-    <platform name="android">
-        <icon density="ldpi" src="res/android/ldpi.png" />
-        <icon density="mdpi" src="res/android/mdpi.png" />
-        <icon density="hdpi" src="res/android/hdpi.png" />
-        <icon density="xhdpi" src="res/android/xhdpi.png" />
-        <icon density="xxhdpi" src="res/android/xxhdpi.png" />
-        <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
-
-        <splash src="res/android/splash-land-hdpi.png" density="land-hdpi"/>
-        <splash src="res/android/splash-land-ldpi.png" density="land-ldpi"/>
-        <splash src="res/android/splash-land-mdpi.png" density="land-mdpi"/>
-        <splash src="res/android/splash-land-xhdpi.png" density="land-xhdpi"/>
-
-        <splash src="res/android/splash-port-hdpi.png" density="port-hdpi"/>
-        <splash src="res/android/splash-port-ldpi.png" density="port-ldpi"/>
-        <splash src="res/android/splash-port-mdpi.png" density="port-mdpi"/>
-        <splash src="res/android/splash-port-xhdpi.png" density="port-xhdpi"/>
-    </platform>
+    </author>
     <content src="index.html" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -36,30 +17,46 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon density="ldpi" src="res/android/ldpi.png" />
+        <icon density="mdpi" src="res/android/mdpi.png" />
+        <icon density="hdpi" src="res/android/hdpi.png" />
+        <icon density="xhdpi" src="res/android/xhdpi.png" />
+        <icon density="xxhdpi" src="res/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
+        <splash density="land-hdpi" src="res/android/splash-land-hdpi.png" />
+        <splash density="land-ldpi" src="res/android/splash-land-ldpi.png" />
+        <splash density="land-mdpi" src="res/android/splash-land-mdpi.png" />
+        <splash density="land-xhdpi" src="res/android/splash-land-xhdpi.png" />
+        <splash density="port-hdpi" src="res/android/splash-port-hdpi.png" />
+        <splash density="port-ldpi" src="res/android/splash-port-ldpi.png" />
+        <splash density="port-mdpi" src="res/android/splash-port-mdpi.png" />
+        <splash density="port-xhdpi" src="res/android/splash-port-xhdpi.png" />
     </platform>
     <platform name="ios">
-      <allow-intent href="itms:*" />
-      <allow-intent href="itms-apps:*" />
-      <icon height="180" src="res/ios/icon180.png" width="180" />
-      <icon height="167" src="res/ios/icon167.png" width="167" />
-      <icon height="152" src="res/ios/icon152.png" width="152" />
-      <icon height="144" src="res/ios/icon144.png" width="144" />
-      <icon height="120" src="res/ios/icon120.png" width="120" />
-      <icon height="114" src="res/ios/icon114.png" width="114" />
-      <icon height="100" src="res/ios/icon100.png" width="100" />
-      <icon height="87" src="res/ios/icon87.png" width="87" />
-      <icon height="80" src="res/ios/icon80.png" width="80" />
-      <icon height="76" src="res/ios/icon76.png" width="76" />
-      <icon height="72" src="res/ios/icon72.png" width="72" />
-      <icon height="60" src="res/ios/icon60.png" width="60" />
-      <icon height="58" src="res/ios/icon58.png" width="58" />
-      <icon height="57" src="res/ios/icon57.png" width="57" />
-      <icon height="50" src="res/ios/icon50.png" width="50" />
-      <icon height="40" src="res/ios/icon40.png" width="40" />
-      <icon height="29" src="res/ios/icon29.png" width="29" />
-
-      <splash src="res/ios/Default@2x~universal~anyany.png" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <icon height="180" src="res/ios/icon180.png" width="180" />
+        <icon height="167" src="res/ios/icon167.png" width="167" />
+        <icon height="152" src="res/ios/icon152.png" width="152" />
+        <icon height="144" src="res/ios/icon144.png" width="144" />
+        <icon height="120" src="res/ios/icon120.png" width="120" />
+        <icon height="114" src="res/ios/icon114.png" width="114" />
+        <icon height="100" src="res/ios/icon100.png" width="100" />
+        <icon height="87" src="res/ios/icon87.png" width="87" />
+        <icon height="80" src="res/ios/icon80.png" width="80" />
+        <icon height="76" src="res/ios/icon76.png" width="76" />
+        <icon height="72" src="res/ios/icon72.png" width="72" />
+        <icon height="60" src="res/ios/icon60.png" width="60" />
+        <icon height="58" src="res/ios/icon58.png" width="58" />
+        <icon height="57" src="res/ios/icon57.png" width="57" />
+        <icon height="50" src="res/ios/icon50.png" width="50" />
+        <icon height="40" src="res/ios/icon40.png" width="40" />
+        <icon height="29" src="res/ios/icon29.png" width="29" />
+        <splash src="res/ios/Default@2x~universal~anyany.png" />
     </platform>
     <preference name="ShowSplashScreenSpinner" value="false" />
-    <plugin name="cordova-plugin-splashscreen" spec="~4.0.2" />
+    <engine name="android" spec="^6.2.3" />
+    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="^6.0.6" />
 </widget>
