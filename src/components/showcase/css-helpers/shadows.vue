@@ -17,6 +17,7 @@
   height 90px
   margin 25px
   border-radius 50%
+  font-size 12px
 .doc-inset-shadow
   border 1px solid $grey-3
 </style>
