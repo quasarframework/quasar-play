@@ -35,27 +35,28 @@
       </div>
     </div>
 
-    <q-fab
-      v-if="$q.platform.is.cordova"
-      class="absolute-bottom-right"
-      color="primary"
-      direction="up"
-    >
-      <q-fab-action color="secondary" @click.native="scanQR()" icon="phonelink_ring" />
-      <q-fab-action color="primary" flat @click.native="addURL()" icon="add" />
-    </q-fab>
+    <q-fixed-position corner="bottom-right" :offset="[16, 16]">
+      <q-fab
+        v-if="$q.platform.is.cordova"
+        color="primary"
+        direction="up"
+      >
+        <q-fab-action color="secondary" @click.native="scanQR()" icon="phonelink_ring" />
+        <q-fab-action color="primary" @click.native="addURL()" icon="add" />
+      </q-fab>
 
-    <q-btn
-      v-if="!$q.platform.is.cordova"
-      color="primary"
-      round
-      glossy
-      class="cordova-hide absolute-bottom-right shadow-4"
-      @click="addURL()"
-      style="right: 16px; bottom: 16px;"
-    >
-      <q-icon name="add" />
-    </q-btn>
+      <q-btn
+        v-else
+        color="primary"
+        round
+        glossy
+        class="cordova-hide absolute-bottom-right shadow-4"
+        @click="addURL()"
+        style="right: 16px; bottom: 16px;"
+      >
+        <q-icon name="add" />
+      </q-btn>
+    </q-fixed-position>
   </div>
 </template>
 
@@ -72,7 +73,8 @@ import {
   QCardActions,
   QCardSeparator,
   QIcon,
-  QPopover
+  QPopover,
+  QFixedPosition
 } from 'quasar'
 
 function addURL (name, url) {
@@ -92,7 +94,8 @@ export default {
     QCardActions,
     QCardSeparator,
     QIcon,
-    QPopover
+    QPopover,
+    QFixedPosition
   },
   data () {
     return {
@@ -283,6 +286,7 @@ export default {
 
 <style lang="stylus">
 .play-cards
+  padding-bottom 90px
   .q-card-title
     font-size 18px
     line-height 20px

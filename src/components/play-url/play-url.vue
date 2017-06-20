@@ -26,7 +26,7 @@
       class="window-height window-width row items-center justify-center"
       v-show="!iframeLoaded"
     >
-      <q-spinner />
+      <q-spinner size="80px" />
     </div>
     <iframe
       v-show="iframeLoaded"

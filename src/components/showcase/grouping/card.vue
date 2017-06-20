@@ -400,6 +400,7 @@ export default {
 .card-examples
   .q-card
     width 300px
+    max-width 92vw
   .bigger
     width 450px
   .card-double
