@@ -8,6 +8,7 @@
         <img src="statics/quasar-play-logo-full.svg">
         <br>
         <q-btn
+          v-if="$q.platform.is.cordova"
           color="primary"
           push
           class="full-width"

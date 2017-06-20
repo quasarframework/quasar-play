@@ -39,6 +39,9 @@
       style="width: 100%; height: 100%;"
       class="bg-grey-3"
     >
+      <div class="row items-center justify-center bg-white" style="width: 100%; height: 100px;">
+        <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;"/>
+      </div>
       <q-list no-border>
         <q-side-link
           item
@@ -47,7 +50,7 @@
           replace
         >
           <q-item-side icon="home" />
-          <q-item-main label="Home" />
+          <q-item-main label="Showcase home" />
           <q-item-side right icon="chevron_right" />
         </q-side-link>
         <q-item-separator />

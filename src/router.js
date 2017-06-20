@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { Platform } from 'quasar'
 
 import categories from '@/showcase/categories'
 import showcaseStore from '@/showcase/showcase-store'
@@ -13,19 +14,6 @@ function load (component) {
 let routes = [
   {path: '/', component: load('index')},
   {
-    path: '/play',
-    component: load('play/layout-play'),
-    children: [
-      {path: '', component: load('play/play-url-list')},
-      {path: 'how-to', component: load('play/play-how-to')}
-    ]
-  },
-  {
-    path: '/play-url/:url',
-    name: 'play-url',
-    component: load('play-url/play-url')
-  },
-  {
     path: '/showcase/layout',
     component: load('showcase/layout/layout'),
     children: [
@@ -36,6 +24,22 @@ let routes = [
     ]
   }
 ]
+
+if (Platform.is.cordova) {
+  routes.push({
+    path: '/play',
+    component: load('play/layout-play'),
+    children: [
+      {path: '', component: load('play/play-url-list')},
+      {path: 'how-to', component: load('play/play-how-to')}
+    ]
+  })
+  routes.push({
+    path: '/play-url/:url',
+    name: 'play-url',
+    component: load('play-url/play-url')
+  })
+}
 
 let showcase = {
   path: '/showcase',
