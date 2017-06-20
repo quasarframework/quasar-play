@@ -1,4 +1,4 @@
-![Quasar Framework logo](http://quasar-framework.org/images/logo/xxhdpi.png)
+![Quasar Framework logo](https://cdn.rawgit.com/quasarframework/quasar-art/9127036d/dist/svg/quasar-play-logo-inline.svg)
 
 # Quasar Play
 
