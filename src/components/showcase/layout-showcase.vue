@@ -1,5 +1,5 @@
 <template>
-  <q-layout ref="layout" view="Lhh lpr lff" reveal>
+  <q-layout ref="layout" view="Lhh lpr lFf" reveal>
     <q-toolbar slot="header">
       <q-btn flat v-go-back.single="store.backRoute" class="cordova-only electron-only">
         <q-icon name="arrow_back" />
