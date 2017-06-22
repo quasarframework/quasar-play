@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-padding card-examples">
+  <div class="layout-padding card-examples row items-start">
     <q-card inline class="bigger">
       <q-card-media>
         <img src="~assets/donuts.png">
@@ -397,12 +397,14 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '~variables'
+
 .card-examples
   .q-card
     width 300px
-    max-width 92vw
   .bigger
     width 450px
-  .card-double
-    width 600px
+  @media (max-width $breakpoint-xs-max)
+    .q-card
+      width 100%
 </style>

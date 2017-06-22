@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",
-    "quasar-extras": "0.0.6",
+    "quasar-extras": "0.x",
     "quasar-framework": "git+https://git@github.com/quasarframework/quasar-edge.git",
     "vue": "^2.3.0",
     "vue-router": "^2.0.0"
