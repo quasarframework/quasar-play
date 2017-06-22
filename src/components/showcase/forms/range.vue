@@ -73,6 +73,20 @@
       <q-range v-model="label" :min="-20" :max="20" :step="4" label-always color="brown" />
 
       <p class="caption">
+        Custom Label Values
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
+          </q-chip>
+        </span>
+      </p>
+      <q-range
+        :left-label-value="`${label.min}px`"
+        :right-label-value="`${label.max}px`"
+        v-model="label" :min="-20" :max="20" :step="4" label-always
+      />
+
+      <p class="caption">
         Drag Range
         <span class="chip-container">
           <q-chip square color="secondary">

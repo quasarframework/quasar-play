@@ -72,6 +72,16 @@
       </p>
       <q-slider v-model="label" :min="-20" :max="20" :step="4" label-always color="orange" />
 
+      <p class="caption">
+        Custom Label Value
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{label}} (-20 to 20, step 4)
+          </q-chip>
+        </span>
+      </p>
+      <q-slider :label-value="`${label}px`" v-model="label" :min="-20" :max="20" :step="4" label-always color="brown" />
+
       <p class="caption">Disabled State</p>
       <q-slider v-model="standard" :min="0" :max="50" disable />
 
