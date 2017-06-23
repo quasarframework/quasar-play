@@ -122,6 +122,24 @@
         </span>
       </q-btn>
       <q-btn :disable="!progress" color="negative" @click="stopProgress">Stop</q-btn>
+
+      <p class="caption">Button with determined progress</p>
+      <q-btn loader :percentage="percentage1" color="primary" @click="startComputing1">
+        Compute PI
+        <span slot="loading">
+          <q-spinner-gears class="on-left" />
+          Computing...
+        </span>
+      </q-btn>
+
+      <q-btn
+        loader
+        :percentage="percentage2"
+        round
+        color="secondary"
+        @click="startComputing2"
+        icon="cloud_upload"
+      />
     </div>
   </div>
 </template>
@@ -147,7 +165,9 @@ export default {
   },
   data () {
     return {
-      progress: false
+      progress: false,
+      percentage1: 0,
+      percentage2: 0
     }
   },
   methods: {
@@ -157,7 +177,31 @@ export default {
     },
     stopProgress () {
       this.progress = false
+    },
+    startComputing1 (e, done) {
+      this.percentage1 = 0
+      this.interval1 = setInterval(() => {
+        this.percentage1 += Math.floor(Math.random() * 8 + 10)
+        if (this.percentage1 >= 100) {
+          clearInterval(this.interval1)
+          done()
+        }
+      }, 700)
+    },
+    startComputing2 (e, done) {
+      this.percentage2 = 0
+      this.interval2 = setInterval(() => {
+        this.percentage2 += Math.floor(Math.random() * 8 + 10)
+        if (this.percentage2 >= 100) {
+          clearInterval(this.interval2)
+          done()
+        }
+      }, 700)
     }
+  },
+  beforeDestroy () {
+    clearInterval(this.interval1)
+    clearInterval(this.interval2)
   }
 }
 </script>
