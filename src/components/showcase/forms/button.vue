@@ -123,7 +123,7 @@
       </q-btn>
       <q-btn :disable="!progress" color="negative" @click="stopProgress">Stop</q-btn>
 
-      <p class="caption">Button with determined progress</p>
+      <p class="caption">Button with deterministic progress</p>
       <q-btn loader :percentage="percentage1" color="primary" @click="startComputing1">
         Compute PI
         <span slot="loading">
