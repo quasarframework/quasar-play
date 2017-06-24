@@ -1,6 +1,6 @@
 <template>
   <div class="layout-padding row justify-center">
-    <q-ajax-bar ref="bar" :position="position" :reverse="reverse" :size="computedSize" :color="color" />
+    <q-ajax-bar ref="bar" :position="position" :reverse="reverse" :size="computedSize" />
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">Ajax Bar component captures Ajax calls automatically. This page here triggers events manually for demonstrating purposes only.</p>
 
@@ -9,7 +9,10 @@
           <q-btn push color="orange" @click="trigger()">Trigger Event</q-btn>
         </q-card-title>
 
-        <p class="caption text-center">Try out some combinations for Ajax Bar.</p>
+        <p class="caption text-center">
+          Try out some combinations for Ajax Bar.
+          <br>Color is customizable too through 'color' prop.
+        </p>
         <q-card-main>
           <q-field
             label="Position"
@@ -33,12 +36,8 @@
             <q-checkbox v-model="reverse" label="Reverse Direction" />
           </q-field>
 
-          <q-field :label="`Size (<em>${size}px</em>)`">
-            <q-slider v-model="size" :min="2" :max="20" label-always />
-          </q-field>
-
-          <q-field label="Color">
-            <q-input v-model="color" />
+          <q-field label="Size">
+            <q-slider v-model="size" :min="2" :max="20" label-always :label-value="`${size}px`" />
           </q-field>
         </q-card-main>
       </q-card>
@@ -78,7 +77,6 @@ export default {
       position: 'bottom',
       reverse: false,
       size: 8,
-      color: '#e21b0c',
 
       timeouts: []
     }
