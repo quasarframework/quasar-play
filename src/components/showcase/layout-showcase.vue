@@ -20,7 +20,7 @@
     <q-tabs
       slot="navigation"
       v-if="store.tabs.length > 0"
-      :class="{'within-iframe-hide': !store.showTabs}"
+      :class="{'within-iframe-hide': !store.iframeTabs}"
     >
       <q-route-tab
         v-for="tab in store.tabs"

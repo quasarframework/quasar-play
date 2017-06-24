@@ -77,11 +77,15 @@ categories.forEach(category => {
       return
     }
 
+    if (feature.iframeTabs) {
+      console.log('yes')
+    }
     feature.tabs.forEach(tab => {
       let subpath = path + '/' + tab.hash
       showcase.children.push(component(subpath, {
         title: tab.title,
         hash: '/' + path,
+        iframeTabs: feature.iframeTabs,
         icon: feature.icon,
         tabs: feature.tabs
       }))
@@ -104,6 +108,7 @@ Router.beforeEach((to, from, next) => {
   document.body.scrollTop = 0
 
   if (to.meta) {
+    console.log(to)
     showcaseStore.set(to.meta)
   }
   next()

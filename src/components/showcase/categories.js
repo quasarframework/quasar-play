@@ -80,6 +80,7 @@ export default [
         title: 'Tabs',
         icon: 'tab',
         hash: 'tabs',
+        iframeTabs: true,
         tabs: [
           {
             title: 'Basic',
@@ -121,7 +122,6 @@ export default [
     title: 'Scrolling',
     icon: 'format_line_spacing',
     hash: 'scrolling',
-    showTabs: true,
     features: [
       {
         title: 'Infinite Scroll',
@@ -339,6 +339,7 @@ export default [
         title: 'List',
         icon: 'list',
         hash: 'list',
+        iframeTabs: true,
         tabs: [
           {
             title: 'Email',
