@@ -42,8 +42,11 @@
       <p class="caption">Date & Time</p>
       <q-inline-datetime color="secondary" v-model="model" type="datetime" />
 
-      <p class="caption">Date - Monday as First</p>
+      <p class="caption">Monday as first day of week</p>
       <q-inline-datetime color="purple" v-model="model" monday-first type="date" />
+
+      <p class="caption">Saturday as first day of week</p>
+      <q-inline-datetime color="purple" v-model="model" saturday-first type="date" />
 
       <p class="caption">Disabled state</p>
       <q-inline-datetime disable v-model="model" type="datetime" />
