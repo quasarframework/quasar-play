@@ -75,15 +75,15 @@
 
       <q-field
         icon="format_line_spacing"
-        :label="`Row height (${rowHeight}px)`"
+        label="Row height"
         :label-width="4"
       >
-        <q-slider v-model="rowHeight" :min="50" :max="200" label-always />
+        <q-slider v-model="rowHeight" :min="50" :max="200" label-always :label-value="`${rowHeight}px` "/>
       </q-field>
 
       <q-field
         icon="content_paste"
-        :label="`Table body (${bodyHeight}px)`"
+        label="Table body"
         :label-width="4"
       >
         <div class="row no-wrap items-center">
@@ -99,7 +99,7 @@
               ]"
             />
           </div>
-          <q-slider class="col" v-model="bodyHeight" :min="100" :max="700" label-always :disable="bodyHeightProp === 'auto'" />
+          <q-slider class="col" v-model="bodyHeight" :min="100" :max="700" label-always :disable="bodyHeightProp === 'auto'" :label-value="`${bodyHeight}px`" />
         </div>
       </q-field>
     </q-collapsible>
@@ -116,11 +116,11 @@
         <span class="light-paragraph">{{cell.data}}</span>
       </template>
       <template slot="col-source" scope="cell">
-        <span v-if="cell.data === 'Audit'" class="label text-white bg-primary">
+        <div v-if="cell.data === 'Audit'" class="my-label text-white bg-primary">
           Audit
           <q-tooltip>Some data</q-tooltip>
-        </span>
-        <span v-else class="label text-white bg-negative">{{cell.data}}</span>
+        </div>
+        <div v-else class="my-label text-white bg-negative">{{cell.data}}</div>
       </template>
 
       <template slot="selection" scope="props">
@@ -210,36 +210,20 @@ export default {
           rowsPerPage: 15,
           options: [5, 10, 15, 30, 50, 500]
         },
-        selection: 'multiple',
-        messages: {
-          noData: '<i class="material-icons">warning</i> No data available to show.',
-          noDataAfterFiltering: '<i class="material-icons">warning</i> No results. Please refine your search terms.'
-        },
-        labels: {
-          columns: 'Coluuuuumns',
-          allCols: 'Eeeeeeeeevery Cols',
-          rows: 'Rooows',
-          selected: {
-            singular: 'item selecteeed.',
-            plural: 'items selecteeed.'
-          },
-          clear: 'cleeeear',
-          search: 'Seaaaarch',
-          all: 'AAAll'
-        }
+        selection: 'multiple'
       },
       columns: [
         {
           label: 'Date',
           field: 'isodate',
-          width: '120px',
+          width: '140px',
           classes: 'bg-orange-2',
           filter: true,
           sort (a, b) {
             return (new Date(a)) - (new Date(b))
           },
           format (value) {
-            return (new Date(value).toLocaleString()) + (new Date(value).toLocaleString())
+            return new Date(value).toLocaleString()
           }
         },
         {
@@ -247,17 +231,16 @@ export default {
           field: 'serviceable',
           format (value) {
             if (value === 'Informational') {
-              return '<i class="material-icons text-positive">info</i>'
+              return '<i class="material-icons text-positive" style="font-size: 22px">info</i>'
             }
             return value
           },
-          width: '80px',
-          classes: 'text-center'
+          width: '70px'
         },
         {
           label: 'Time Range',
           field: 'timerange',
-          width: '120px',
+          width: '80px',
           sort: true,
           type: 'number'
         },
@@ -265,9 +248,6 @@ export default {
           label: 'Message',
           field: 'message',
           filter: true,
-          classes (val) {
-            return val.charAt(0) === 'L' ? 'bg-red' : 'bg-yellow'
-          },
           sort: true,
           type: 'string',
           width: '500px'
@@ -281,7 +261,7 @@ export default {
           width: '120px'
         },
         {
-          label: 'Log Number <i>Wow</i>',
+          label: 'Log Number',
           field: 'log_number',
           sort: true,
           type: 'string',
@@ -325,3 +305,10 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.my-label
+  padding 5px
+  border-radius 3px
+  display inline-block
+</style>
