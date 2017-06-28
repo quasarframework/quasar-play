@@ -1,14 +1,16 @@
 <template>
   <div class="layout-padding row justify-center">
     <div style="width: 800px; max-width: 90vw;">
-      <q-alert
-        color="warning"
-        v-if="!($q.platform.is.desktop || $q.platform.within.iframe)"
-        inline
-        style="margin-bottom: 24px"
-      >
-        Best viewed on a desktop.
-      </q-alert>
+      <div class="row justify-center">
+        <q-alert
+          color="warning"
+          v-if="!$q.platform.is.desktop || $q.platform.within.iframe"
+          inline
+          style="margin-bottom: 24px"
+        >
+          Best viewed on a desktop.
+        </q-alert>
+      </div>
 
       <q-alert icon="warning" color="yellow" style="margin-bottom: 16px">
         <p class="caption no-margin text-black">

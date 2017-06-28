@@ -1,14 +1,16 @@
 <template>
   <div class="layout-padding row justify-center">
     <div style="width: 800px; max-width: 90vw;">
-      <q-alert
-        color="warning"
-        v-if="!($q.platform.is.desktop || $q.platform.within.iframe)"
-        inline
-        style="margin-bottom: 24px"
-      >
-        Best viewed on a desktop.
-      </q-alert>
+      <div class="row justify-center">
+        <q-alert
+          color="warning"
+          v-if="!$q.platform.is.desktop || $q.platform.within.iframe"
+          inline
+          style="margin-bottom: 24px"
+        >
+          Best viewed on a desktop.
+        </q-alert>
+      </div>
 
       <div class="flex-row-docs">
         Utilize breakpoint-specific column classes for equal-width columns. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
