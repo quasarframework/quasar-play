@@ -1,10 +1,10 @@
 <template>
   <div class="index-page bg-grey-2 window-height window-width column items-center no-wrap">
-    <div class="banner bg-primary flex items-center justify-center">
+    <div class="banner bg-primary flex flex-center">
       Play
     </div>
     <div class="text-center">
-      <div class="card bg-white shadow-4 column no-wrap items-center justify-center group">
+      <div class="card bg-white shadow-4 column no-wrap flex-center group">
         <img src="statics/quasar-play-logo-full.svg">
         <br>
         <q-btn
@@ -38,7 +38,7 @@
         </q-btn>
 
         <a
-          class="row items-center justify-center text-secondary"
+          class="row flex-center text-secondary"
           @click="viewPrivacyPolicy"
           style="margin-top: 15px; font-size: .75rem"
         >

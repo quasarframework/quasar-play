@@ -2,14 +2,14 @@
   <div class="layout-padding text-center" id="view-colors">
     <p class="caption">Main Colors</p>
     <div
-      class="main-color shadow-1 row inline items-center justify-center text-white"
+      class="main-color shadow-1 row inline flex-center text-white"
       v-for="color in mainColors"
       :class="'bg-' + color"
     >
       {{color}}
     </div>
     <div
-      class="main-color shadow-1 row inline items-center justify-center text-dark"
+      class="main-color shadow-1 row inline flex-center text-dark"
       v-for="color in mainLightColors"
       :class="'bg-' + color"
     >
@@ -18,8 +18,8 @@
 
     <p class="caption">Full Palette</p>
     <div class="detail" v-for="color in colors">
-      <h5 class="detailed-color shadow-1 column items-center justify-center text-white" :class="'bg-' + color">{{color}}</h5>
-      <div class="detailed-color column items-center justify-center" v-for="n in 14" :class="'bg-' + color + '-' + n">{{color}}-{{n}}</div>
+      <h5 class="detailed-color shadow-1 column flex-center text-white" :class="'bg-' + color">{{color}}</h5>
+      <div class="detailed-color column flex-center" v-for="n in 14" :class="'bg-' + color + '-' + n">{{color}}-{{n}}</div>
     </div>
   </div>
 </template>

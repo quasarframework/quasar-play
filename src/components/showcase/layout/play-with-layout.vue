@@ -15,53 +15,53 @@
           <q-card-separator />
           <q-card-main>
             <div class="doc-layout-grid row justify-center">
-              <div class="doc-row-definition row items-center justify-center no-border">
+              <div class="doc-row-definition row flex-center no-border">
                 Header
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio color="orange" v-model="topleft" val="l" label="l" />
                 <q-radio color="orange" v-model="topleft" val="h" label="h" />
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio v-model="topcenter" val="h" label="h" />
                 <q-radio v-model="topcenter" val="H" label="H" />
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio color="secondary" v-model="topright" val="r" label="r" />
                 <q-radio color="secondary" v-model="topright" val="h" label="h" />
               </div>
             </div>
 
             <div class="doc-layout-grid row justify-center">
-              <div class="doc-row-definition row items-center justify-center no-border">
+              <div class="doc-row-definition row flex-center no-border">
                 Middle
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio color="orange" v-model="middleleft" val="l" label="l" />
                 <q-radio color="orange" v-model="middleleft" val="L" label="L" />
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio v-model="middlecenter" val="p" label="p" />
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio color="secondary" v-model="middleright" val="r" label="r" />
                 <q-radio color="secondary" v-model="middleright" val="R" label="R" />
               </div>
             </div>
 
             <div class="doc-layout-grid row justify-center">
-              <div class="doc-row-definition row items-center justify-center no-border">
+              <div class="doc-row-definition row flex-center no-border">
                 Footer
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio color="orange" v-model="bottomleft" val="l" label="l" />
                 <q-radio color="orange" v-model="bottomleft" val="f" label="f" />
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio v-model="bottomcenter" val="f" label="f" />
                 <q-radio v-model="bottomcenter" val="F" label="F" />
               </div>
-              <div class="col column group items-center justify-center">
+              <div class="col column group flex-center">
                 <q-radio color="secondary" v-model="bottomright" val="r" label="r" />
                 <q-radio color="secondary" v-model="bottomright" val="f" label="f" />
               </div>

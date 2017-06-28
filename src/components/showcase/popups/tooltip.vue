@@ -14,7 +14,7 @@
 
       <div
         style="margin-top: 40px;width: 200px; height: 70px;"
-        class="bg-secondary text-white round-borders row items-center justify-center"
+        class="bg-secondary text-white round-borders row flex-center"
       >
         One second delay
         <q-tooltip :delay="1000" :offset="[0, 10]">Quasar Rulz!</q-tooltip>

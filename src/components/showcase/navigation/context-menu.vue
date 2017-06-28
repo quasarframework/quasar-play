@@ -31,7 +31,7 @@
 
       <div
         style="height: 300px; margin-top: 40px;"
-        class="bg-secondary text-white row items-center justify-center"
+        class="bg-secondary text-white row flex-center"
       >
         Target area
 

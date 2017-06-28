@@ -27,9 +27,30 @@ export default [
     hash: 'css-helpers',
     features: [
       {
-        title: '~~ Flex CSS',
+        title: 'Flex CSS',
         icon: 'web',
-        hash: 'flex-css'
+        hash: 'flex-css',
+        iframeTabs: true,
+        tabs: [
+          {
+            title: 'Row',
+            label: 'Row',
+            icon: 'web',
+            hash: 'flex-row'
+          },
+          {
+            title: 'Column',
+            label: 'Column',
+            icon: 'web',
+            hash: 'flex-column'
+          },
+          {
+            title: 'Gutter',
+            label: 'Gutter',
+            icon: 'web',
+            hash: 'flex-gutter'
+          }
+        ]
       },
       {
         title: 'Shadows',

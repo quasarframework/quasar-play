@@ -23,7 +23,7 @@
       </div>
     </q-toolbar>
     <div
-      class="window-height window-width row items-center justify-center"
+      class="window-height window-width row flex-center"
       v-show="!iframeLoaded"
     >
       <q-spinner size="80px" />
