@@ -6,6 +6,10 @@
 require(`quasar/dist/quasar.${__THEME}.css`)
 // ==============================
 
+// Uncomment the following lines if you need IE11/Edge support
+require(`quasar/dist/quasar.ie`)
+require(`quasar/dist/quasar.ie.${__THEME}.css`)
+
 import Vue from 'vue'
 import Quasar from 'quasar'
 import router from './router'
