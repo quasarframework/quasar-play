@@ -44,8 +44,11 @@
           </q-btn>
         </div>
         <div>
-          <q-btn round small color="tertiary" @click="alertAsMethod('top')">
+          <q-btn round small color="tertiary" @click="alertAsMethod('top-center')">
             <q-icon name="arrow_upward" />
+          </q-btn>
+          <q-btn round small color="tertiary" @click="alertAsMethod('top')">
+            <q-icon name="vertical_align_top" />
           </q-btn>
         </div>
         <div>
@@ -60,7 +63,7 @@
             <q-icon name="arrow_back" />
           </q-btn>
         </div>
-        <div class="invisible">
+        <div class="invisible" v-for="n in 2">
           <q-btn round small />
         </div>
         <div>
@@ -76,8 +79,11 @@
           </q-btn>
         </div>
         <div>
-          <q-btn round small color="tertiary" @click="alertAsMethod('bottom')">
+          <q-btn round small color="tertiary" @click="alertAsMethod('bottom-center')">
             <q-icon name="arrow_downward" />
+          </q-btn>
+          <q-btn round small color="tertiary" @click="alertAsMethod('bottom')">
+            <q-icon name="vertical_align_bottom" />
           </q-btn>
         </div>
         <div>
@@ -148,6 +154,9 @@ function getAnimations (pos) {
   }
   if (pos.indexOf('right') > -1) {
     return anim.right
+  }
+  if (pos.indexOf('-center') > -1) {
+    return anim[pos.split('-')[0]]
   }
   return anim[pos]
 }
