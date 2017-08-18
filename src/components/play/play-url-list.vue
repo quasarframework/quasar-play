@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-padding">
+  <div class="layout-padding play-cards">
     <blockquote v-if="!hasURLs">
       <small>
         Register your first URL by tapping on the FAB button on the lower
@@ -9,57 +9,73 @@
       </small>
     </blockquote>
 
-    <div v-else class="list no-border">
-      <div class="item two-lines item-delimiter" v-for="(item, id) in urls">
-        <i
-          class="item-primary cursor-pointer"
-          @click="play(item.url)"
-        >
-          ondemand_video
-        </i>
-        <div class="item-content has-secondary">
-          <div>{{item.name}}</div>
-          <div class="text-primary cursor-pointer" @click="play(item.url)">{{item.url}}</div>
-        </div>
-        <div class="item-secondary">
-          <i :ref="'target' + id">
-            more_vert
-          </i>
-
-          <q-popover :ref="'popover' + id">
-            <div class="list">
-              <div class="item item-link" @click="$refs['popover' + id][0].close(), editURL(id)">
-                <i class="item-primary">edit</i>
-                <div class="item-content">Edit</div>
-              </div>
-              <div class="item item-link" @click="$refs['popover' + id][0].close(), deleteURL(id)">
-                <i class="item-primary">delete</i>
-                <div class="item-content">Delete</div>
-              </div>
-            </div>
-          </q-popover>
-        </div>
+    <div class="row">
+      <div
+        v-for="(item, id) in urls"
+        :key="item"
+        class="col-xs-12 col-sm-6 col-lg-4 col-xl-3"
+      >
+        <q-card>
+          <q-card-title>
+            <div class="ellipsis-2-lines">{{item.name}}</div>
+            <div slot="subtitle" class="ellipsis-3-lines">{{item.url}}</div>
+          </q-card-title>
+          <q-card-separator />
+          <q-card-actions>
+            <q-btn flat color="tertiary" icon="ondemand_video" @click="play(item.url)">Play</q-btn>
+            <div class="col"></div>
+            <q-btn flat color="secondary" @click="editURL(id)">
+              <q-icon name="edit" />
+            </q-btn>
+            <q-btn flat color="secondary" @click="deleteURL(id)">
+              <q-icon name="delete" />
+            </q-btn>
+          </q-card-actions>
+        </q-card>
       </div>
     </div>
 
-    <q-fab class="cordova-only absolute-bottom-right" classNames="primary" direction="up">
-      <q-small-fab class="secondary" @click.native="scanQR()" icon="phonelink_ring"></q-small-fab>
-      <q-small-fab class="primary clear" @click.native="addURL()" icon="add"></q-small-fab>
-    </q-fab>
+    <q-fixed-position corner="bottom-right" :offset="[16, 16]">
+      <q-fab
+        v-if="$q.platform.is.cordova"
+        color="primary"
+        direction="up"
+      >
+        <q-fab-action color="secondary" @click.native="scanQR()" icon="phonelink_ring" />
+        <q-fab-action color="primary" @click.native="addURL()" icon="add" />
+      </q-fab>
 
-    <button
-      class="cordova-hide circular primary absolute-bottom-right"
-      @click="addURL()"
-      style="right: 16px; bottom: 16px;"
-    >
-      <i>add</i>
-    </button>
+      <q-btn
+        v-else
+        color="primary"
+        round
+        glossy
+        class="cordova-hide absolute-bottom-right shadow-4"
+        @click="addURL()"
+        style="right: 16px; bottom: 16px;"
+      >
+        <q-icon name="add" />
+      </q-btn>
+    </q-fixed-position>
   </div>
 </template>
 
 <script>
-import { Dialog, Toast } from 'quasar'
 import store from './play-store'
+import {
+  Dialog,
+  Toast,
+  QBtn,
+  QFab,
+  QFabAction,
+  QCard,
+  QCardTitle,
+  QCardActions,
+  QCardSeparator,
+  QIcon,
+  QPopover,
+  QFixedPosition
+} from 'quasar'
 
 function addURL (name, url) {
   let id = Math.random().toString(36).substr(2, 9)
@@ -69,6 +85,18 @@ function addURL (name, url) {
 }
 
 export default {
+  components: {
+    QBtn,
+    QFab,
+    QFabAction,
+    QCard,
+    QCardTitle,
+    QCardActions,
+    QCardSeparator,
+    QIcon,
+    QPopover,
+    QFixedPosition
+  },
   data () {
     return {
       urls: store.state
@@ -104,15 +132,14 @@ export default {
 
       Dialog.create({
         title: 'Edit URL',
-        message: '',
         form: {
           name: {
-            type: 'textbox',
+            type: 'text',
             label: 'Name',
             model: item.name
           },
           url: {
-            type: 'textbox',
+            type: 'text',
             label: 'URL',
             model: item.url
           }
@@ -148,12 +175,12 @@ export default {
         message: '',
         form: {
           name: {
-            type: 'textbox',
+            type: 'text',
             label: 'Name',
             model: ''
           },
           url: {
-            type: 'textbox',
+            type: 'text',
             label: 'URL',
             model: 'http://'
           }
@@ -256,3 +283,12 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.play-cards
+  padding-bottom 90px
+  .q-card-title
+    font-size 18px
+    line-height 20px
+    margin-bottom 8px
+</style>

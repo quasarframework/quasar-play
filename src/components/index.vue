@@ -1,63 +1,73 @@
 <template>
-  <div class="index-page bg-white window-height window-width column items-center">
-    <div class="banner bg-primary flex items-center justify-center">
+  <div class="index-page bg-grey-2 window-height window-width column items-center no-wrap">
+    <div class="banner bg-primary flex flex-center">
       Play
     </div>
     <div class="text-center">
-      <div class="card bg-grey-2 shadow-3 column items-center justify-center group">
-        <h1 class="text-primary">Quasar</h1>
-        <img :src="'statics/logo.png'">
+      <div class="card bg-white shadow-4 column no-wrap flex-center group">
+        <img src="statics/quasar-play-logo-full.svg">
         <br>
-        <router-link to="/play" tag="button" class="full-width primary push">
-          <i class="on-left">play_circle_outline</i>
+        <q-btn
+          v-if="$q.platform.is.cordova"
+          color="primary"
+          push
+          class="full-width"
+          @click="$router.push('/play')"
+          icon="play_circle_outline"
+        >
           Play URL
-        </router-link>
-        <router-link to="/showcase" tag="button" class="full-width primary push">
-          <i class="on-left">layers</i>
+        </q-btn>
+        <q-btn
+          color="primary"
+          push
+          @click="$router.push('/showcase')"
+          class="full-width"
+          icon="layers"
+        >
           Quasar Showcase
-        </router-link>
+        </q-btn>
 
-        <button class="full-width secondary push" @click="launch">
-          <i class="on-left">launch</i>
+        <q-btn
+          color="secondary"
+          push
+          class="full-width"
+          @click="launch"
+          icon="launch"
+        >
           Quasar Docs
-        </button>
+        </q-btn>
 
         <a
-          class="row items-center justify-center text-secondary"
+          class="row flex-center text-secondary"
           @click="viewPrivacyPolicy"
           style="margin-top: 15px; font-size: .75rem"
         >
-          <i class="on-left" style="font-size: 150%">info_outline</i>
           <div>Read Privacy Policy</div>
         </a>
 
         <privacy-policy ref="privacy" />
       </div>
     </div>
-    <a class="ribbon" :title="'Built with Quasar v' + version"></a>
+    <a class="ribbon" :title="`Built with Quasar v${$q.version}`"></a>
   </div>
 </template>
 
 <script>
-import Quasar, { Utils } from 'quasar'
+import { QBtn, openURL } from 'quasar'
 import PrivacyPolicy from './privacy-policy'
 
 export default {
-  data () {
-    return {
-      version: Quasar.version
-    }
+  components: {
+    QBtn,
+    PrivacyPolicy
   },
   methods: {
     launch () {
-      Utils.openURL('http://quasar-framework.org')
+      openURL('http://beta.quasar-framework.org')
     },
     viewPrivacyPolicy () {
       this.$refs.privacy.show()
     }
-  },
-  components: {
-    PrivacyPolicy
   }
 }
 </script>
@@ -73,11 +83,12 @@ export default {
   .card
     width 80vw
     max-width 500px
-    padding 25px
-    margin-top -35px
+    padding 10px 25px
+    margin-top -90px
+    border-radius 2px
     img
-      height 62px
-      width 62px
+      height 140px
+      width 140px
 
 .ribbon
   width 12.1em

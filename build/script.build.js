@@ -6,6 +6,8 @@ var
   shell = require('shelljs'),
   path = require('path'),
   env = require('./env-utils'),
+  css = require('./css-utils'),
+  config = require('../config'),
   webpack = require('webpack'),
   webpackConfig = require('./webpack.prod.conf'),
   targetPath = path.join(__dirname, '../dist')
@@ -20,8 +22,18 @@ console.log((' Building Quasar App with "' + env.platform.theme + '" theme...\n'
 shell.mkdir('-p', targetPath)
 shell.cp('-R', 'src/statics', targetPath)
 
+function finalize () {
+  console.log((
+    '\n Build complete with "' + env.platform.theme.bold + '" theme in ' +
+    '"/dist"'.bold + ' folder.\n').cyan)
+
+  console.log(' Built files are meant to be served over an HTTP server.'.bold)
+  console.log(' Opening index.html over file:// won\'t work.'.bold)
+}
+
 webpack(webpackConfig, function (err, stats) {
   if (err) throw err
+
   process.stdout.write(stats.toString({
     colors: true,
     modules: false,
@@ -30,10 +42,14 @@ webpack(webpackConfig, function (err, stats) {
     chunkModules: false
   }) + '\n')
 
-  console.log((
-    '\n Build complete with "' + env.platform.theme.bold + '" theme in ' +
-    '"/dist"'.bold + ' folder.\n').cyan)
+  if (stats.hasErrors()) {
+    process.exit(1)
+  }
 
-  console.log(' Built files are meant to be served over an HTTP server.'.bold)
-  console.log(' Opening index.html over file:// won\'t work.'.bold)
+  if (config.build.purifyCSS) {
+    css.purify(finalize)
+  }
+  else {
+    finalize()
+  }
 })

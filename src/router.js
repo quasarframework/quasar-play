@@ -1,41 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { Platform } from 'quasar'
 
-import categories from './components/showcase/categories'
-import showcaseStore from './components/showcase/showcase-store'
+import categories from '@/showcase/categories'
+import showcaseStore from '@/showcase/showcase-store'
 
 Vue.use(VueRouter)
 
 function load (component) {
-  return () => System.import(`components/${component}.vue`)
+  return () => import(`@/${component}.vue`)
 }
 
 let routes = [
   {path: '/', component: load('index')},
   {
+    path: '/showcase/layout',
+    component: load('showcase/layout/layout'),
+    children: [
+      {path: 'play-with-layout', component: load('showcase/layout/play-with-layout')},
+      {path: 'drawer-panels', component: load('showcase/layout/drawer-panels')},
+      {path: 'fixed-positioning', component: load('showcase/layout/fixed-positioning')},
+      {path: 'floating-action-button', component: load('showcase/layout/floating-action-button')}
+    ]
+  }
+]
+
+if (Platform.is.cordova) {
+  routes.push({
     path: '/play',
     component: load('play/layout-play'),
     children: [
       {path: '', component: load('play/play-url-list')},
       {path: 'how-to', component: load('play/play-how-to')}
     ]
-  },
-  {
+  })
+  routes.push({
     path: '/play-url/:url',
     name: 'play-url',
     component: load('play-url/play-url')
-  },
-  {
-    path: '/showcase/layout',
-    component: load('showcase/layout/layout'),
-    children: [
-      {path: '', component: load('showcase/layout/about')},
-      {path: 'toolbar', component: load('showcase/layout/toolbar')},
-      {path: 'tabs', component: load('showcase/layout/tabs')},
-      {path: 'drawer', component: load('showcase/layout/drawer')}
-    ]
-  }
-]
+  })
+}
 
 let showcase = {
   path: '/showcase',
@@ -61,7 +65,6 @@ function component (path, config) {
     component: load('showcase/' + path)
   }
 }
-
 categories.forEach(category => {
   if (category.extract) {
     return
@@ -79,6 +82,7 @@ categories.forEach(category => {
       showcase.children.push(component(subpath, {
         title: tab.title,
         hash: '/' + path,
+        iframeTabs: feature.iframeTabs,
         icon: feature.icon,
         tabs: feature.tabs
       }))
@@ -97,6 +101,9 @@ routes.push({path: '*', component: load('error404')})
 const Router = new VueRouter({routes})
 
 Router.beforeEach((to, from, next) => {
+  document.documentElement.scrollTop = 0
+  document.body.scrollTop = 0
+
   if (to.meta) {
     showcaseStore.set(to.meta)
   }

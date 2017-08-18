@@ -1,9 +1,7 @@
 .DS_Store
+.thumbs.db
 node_modules/
 dist/
-npm-debug.log
-selenium-debug.log
-test/unit/coverage
-test/e2e/reports
+npm-debug.log*
 cordova/platforms
 cordova/plugins
