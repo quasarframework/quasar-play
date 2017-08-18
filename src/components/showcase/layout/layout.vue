@@ -1,89 +1,119 @@
 <template>
-  <q-layout>
-    <div slot="header" class="toolbar">
-      <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-        <i>menu</i>
-      </button>
-      <q-toolbar-title :padding="1">
+  <q-layout
+    ref="layout"
+    :view="layoutStore.view"
+    :left-breakpoint="layoutStore.leftBreakpoint"
+    :right-breakpoint="layoutStore.rightBreakpoint"
+    :reveal="layoutStore.reveal"
+  >
+    <q-toolbar slot="header">
+      <q-btn flat @click="$refs.layout.toggleLeft()">
+        <q-icon name="menu" />
+      </q-btn>
+      <q-toolbar-title>
         Quasar Layout
+        <span slot="subtitle">Empowering your app</span>
       </q-toolbar-title>
-      <button @click="$refs.rightDrawer.open()">
-        <i>assignment</i>
-      </button>
-    </div>
+      <q-btn class="within-iframe-hide" flat @click="$router.replace('/showcase')" style="margin-right: 15px">
+        <q-icon name="keyboard_arrow_left" />
+        Go back
+      </q-btn>
+      <q-btn flat @click="$refs.layout.toggleRight()">
+        <q-icon name="menu" />
+      </q-btn>
+    </q-toolbar>
 
-    <div slot="header" class="toolbar primary">
-      <q-search :model.sync="search" class="primary"></q-search>
-    </div>
-
-    <q-tabs slot="navigation">
-      <q-tab icon="view_quilt" route="/showcase/layout" exact replace>About</q-tab>
-      <q-tab icon="view_day" route="/showcase/layout/toolbar" replace>Toolbar</q-tab>
-      <q-tab icon="view_day" route="/showcase/layout/tabs" replace>Tabs</q-tab>
-      <q-tab icon="input" route="/showcase/layout/drawer" replace>Drawer</q-tab>
+    <q-tabs slot="navigation" v-if="!layoutStore.hideTabs">
+      <q-route-tab slot="title" icon="play_circle_outline" to="/showcase/layout/play-with-layout" replace label="Play with Layout" />
+      <q-route-tab slot="title" icon="view_array" to="/showcase/layout/drawer-panels" replace label="Drawer Panels" />
+      <q-route-tab slot="title" icon="pin_drop" to="/showcase/layout/fixed-positioning" replace label="Fixed Positioning" />
+      <q-route-tab slot="title" icon="play_for_work" to="/showcase/layout/floating-action-button" replace label="Floating Action Button" />
     </q-tabs>
 
-    <q-drawer ref="leftDrawer">
-      <div class="toolbar light">
-        <q-toolbar-title :padding="1">
-            Drawer
-        </q-toolbar-title>
+    <q-scroll-area slot="left" style="width: 100%; height: 100%">
+      <q-list-header>Left Panel</q-list-header>
+      <q-side-link item to="/showcase/layout/play-with-layout">
+        <q-item-side icon="account circle" />
+        <q-item-main label="Play with Layout" sublabel="Learn more about it" />
+        <q-item-side right icon="thumb_up" />
+      </q-side-link>
+      <q-side-link item to="/showcase/layout/drawer-panels">
+        <q-item-side icon="view_array" />
+        <q-item-main label="Drawer Panels" sublabel="Layout left/right sides" />
+      </q-side-link>
+      <q-side-link item to="/showcase/layout/fixed-positioning">
+        <q-item-side icon="pin_drop" />
+        <q-item-main label="Fixed Positioning" sublabel="...on a Layout" />
+      </q-side-link>
+      <q-side-link item to="/showcase/layout/floating-action-button">
+        <q-item-side icon="play_for_work" />
+        <q-item-main label="Floating Action Button" sublabel="For Page actions" />
+      </q-side-link>
+
+      <div v-if="layoutStore.leftScroll" style="padding: 25px 16px 16px;">
+        <p class="caption" v-for="n in 50">
+          <em>Left Panel has intended scroll</em>
+        </p>
       </div>
+    </q-scroll-area>
 
-      <div class="list no-border platform-delimiter">
-        <q-drawer-link icon="view_quilt" to="/showcase/layout" exact>
-          About Layout
-        </q-drawer-link>
-        <hr>
-        <div class="list-label">Layout Components</div>
-        <q-drawer-link icon="build" to="/showcase/layout/toolbar">
-          Toolbar
-        </q-drawer-link>
-        <q-drawer-link icon="tab" to="/showcase/layout/tabs">
-          Tabs
-        </q-drawer-link>
-        <q-drawer-link icon="compare_arrows" to="/showcase/layout/drawer">
-          Layout Drawer
-        </q-drawer-link>
+    <q-scroll-area slot="right" style="width: 100%; height: 100%">
+      <q-list-header>Right Panel</q-list-header>
+      <div v-if="layoutStore.rightScroll" style="padding: 25px 16px 16px;">
+        <p class="caption" v-for="n in 50">
+          <em>Right Panel has intended scroll</em>
+        </p>
       </div>
-    </q-drawer>
+    </q-scroll-area>
 
-    <router-view class="layout-view"></router-view>
+    <router-view />
 
-    <q-drawer right-side swipe-only ref="rightDrawer">
-      <div class="toolbar light">
-        <q-toolbar-title :padding="1">
-            Right-side Drawer
-        </q-toolbar-title>
-      </div>
-
-      <p style="padding: 25px;" class="text-grey-7">
-        This is yet another Drawer that does not gets displayed alongside content on
-        bigger screens.
-      </p>
-    </q-drawer>
-
-    <div slot="footer" class="toolbar">
-      <div class="auto flex justify-center within-iframe-hide">
-        <button v-go-back="'/showcase'">
-          <i class="on-left animate-blink">
-            replay
-          </i>
-          Back to Showcase
-        </button>
-      </div>
-      <q-toolbar-title :padding="0" class="within-iframe-only">
+    <q-toolbar slot="footer">
+      <q-toolbar-title>
         Footer
       </q-toolbar-title>
-    </div>
+    </q-toolbar>
   </q-layout>
 </template>
 
 <script>
+import {
+  QLayout,
+  QToolbar,
+  QToolbarTitle,
+  QSearch,
+  QTabs,
+  QRouteTab,
+  QBtn,
+  QIcon,
+  QItemSide,
+  QItemMain,
+  QSideLink,
+  QListHeader,
+  QScrollArea
+} from 'quasar'
+
+import layoutStore from './layout-store'
+
 export default {
+  components: {
+    QLayout,
+    QToolbar,
+    QToolbarTitle,
+    QSearch,
+    QTabs,
+    QRouteTab,
+    QBtn,
+    QIcon,
+    QItemSide,
+    QItemMain,
+    QSideLink,
+    QListHeader,
+    QScrollArea
+  },
   data () {
     return {
-      search: ''
+      layoutStore
     }
   }
 }

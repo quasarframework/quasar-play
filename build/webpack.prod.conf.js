@@ -26,10 +26,6 @@ module.exports = merge(baseWebpackConfig, {
         warnings: false
       }
     }),
-    // extract css into its own file
-    new ExtractTextPlugin({
-      filename: '[name].[contenthash].css'
-    }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
@@ -37,8 +33,12 @@ module.exports = merge(baseWebpackConfig, {
         safe: true
       }
     }),
+    // extract css into its own file
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash].css'
+    }),
     new HtmlWebpackPlugin({
-      filename: config.build.index,
+      filename: path.resolve(__dirname, '../dist/index.html'),
       template: 'src/index.html',
       inject: true,
       minify: {
@@ -59,9 +59,12 @@ module.exports = merge(baseWebpackConfig, {
         return (
           module.resource &&
           /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, '../node_modules')
-          ) === 0
+          (
+            module.resource.indexOf('quasar') > -1 ||
+            module.resource.indexOf(
+              path.join(__dirname, '../node_modules')
+            ) === 0
+          )
         )
       }
     }),

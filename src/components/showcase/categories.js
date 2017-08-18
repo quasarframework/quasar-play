@@ -1,45 +1,97 @@
 export default [
   {
-    title: 'Global',
-    hash: 'global',
+    title: 'Style & Identity',
+    icon: 'style',
+    hash: 'style-and-identity',
     features: [
       {
-        title: 'Action Sheet',
-        icon: 'assignment',
-        hash: 'action-sheet'
+        title: 'Color Palette',
+        icon: 'style',
+        hash: 'color-palette'
       },
       {
-        title: 'Dialog',
-        icon: 'question_answer',
-        hash: 'dialog'
+        title: 'Typography',
+        icon: 'format_bold',
+        hash: 'typography'
       },
       {
-        title: 'Loading',
-        icon: 'hourglass_full',
-        hash: 'loading'
+        title: 'Material Ripples',
+        icon: 'blur_on',
+        hash: 'material-ripples'
+      }
+    ]
+  },
+  {
+    title: 'CSS Helpers',
+    icon: 'layers',
+    hash: 'css-helpers',
+    features: [
+      {
+        title: 'Flex CSS',
+        icon: 'web',
+        hash: 'flex-css',
+        iframeTabs: true,
+        tabs: [
+          {
+            title: 'Row',
+            label: 'Row',
+            icon: 'web',
+            hash: 'flex-row'
+          },
+          {
+            title: 'Column',
+            label: 'Column',
+            icon: 'web',
+            hash: 'flex-column'
+          },
+          {
+            title: 'Gutter',
+            label: 'Gutter',
+            icon: 'web',
+            hash: 'flex-gutter'
+          }
+        ]
       },
       {
-        title: 'Toast',
-        icon: 'notifications',
-        hash: 'toast'
+        title: 'Shadows',
+        icon: 'layers',
+        hash: 'shadows'
       }
     ]
   },
   {
     title: 'Layout',
+    icon: 'dashboard',
     hash: 'layout',
     extract: true,
     features: [
       {
-        title: 'Layout',
-        icon: 'web',
-        hash: ''
+        title: 'Play with Layout',
+        icon: 'play_circle_outline',
+        hash: 'play-with-layout'
       },
       {
-        title: 'Drawer',
-        icon: 'input',
-        hash: 'drawer'
+        title: 'Drawer Panels',
+        icon: 'view_array',
+        hash: 'drawer-panels'
       },
+      {
+        title: 'Fixed Positioning',
+        icon: 'pin_drop',
+        hash: 'fixed-positioning'
+      },
+      {
+        title: 'Floating Action Button',
+        icon: 'play_for_work',
+        hash: 'floating-action-button'
+      }
+    ]
+  },
+  {
+    title: 'Navigation',
+    icon: 'rowing',
+    hash: 'navigation',
+    features: [
       {
         title: 'Toolbar',
         icon: 'view_day',
@@ -48,231 +100,138 @@ export default [
       {
         title: 'Tabs',
         icon: 'tab',
-        hash: 'tabs'
-      }
-    ]
-  },
-  {
-    title: 'CSS',
-    hash: 'css',
-    features: [
+        hash: 'tabs',
+        iframeTabs: true,
+        tabs: [
+          {
+            title: 'Basic',
+            label: 'Basic Tabs',
+            icon: 'tab',
+            hash: 'basic-tabs'
+          },
+          {
+            title: 'Tab Panes',
+            label: 'Tab Panes',
+            icon: 'chrome_reader_mode',
+            hash: 'tab-panes'
+          }
+        ]
+      },
+      {
+        title: 'Pull to Refresh',
+        icon: 'vertical_align_center',
+        hash: 'pull-to-refresh'
+      },
+      {
+        title: 'Context Menu',
+        icon: 'content_paste',
+        hash: 'context-menu'
+      },
       {
         title: 'Breadcrumb',
         icon: 'skip_next',
         hash: 'breadcrumb'
       },
       {
-        title: 'Button',
-        icon: 'indeterminate_check_box',
-        hash: 'button'
-      },
-      {
-        title: 'Card',
-        icon: 'contact_mail',
-        hash: 'card',
-        tabs: [
-          {
-            title: 'Basic Card',
-            label: 'Basic',
-            hash: 'basic',
-            icon: 'account_box'
-          },
-          {
-            title: 'Coloring Cards',
-            label: 'Coloring',
-            hash: 'coloring',
-            icon: 'style'
-          },
-          {
-            title: 'Card with List',
-            label: 'With List',
-            hash: 'with-list',
-            icon: 'list'
-          },
-          {
-            title: 'Card with Images',
-            label: 'With Images',
-            hash: 'with-images',
-            icon: 'insert_photo'
-          },
-          {
-            title: 'Card with Videos',
-            label: 'With Videos',
-            hash: 'with-videos',
-            icon: 'subscriptions'
-          },
-          {
-            title: 'Social Card',
-            label: 'Social',
-            hash: 'social',
-            icon: 'person_add'
-          },
-          {
-            title: 'Card with Map',
-            label: 'With Map',
-            hash: 'map',
-            icon: 'map'
-          },
-          {
-            title: 'Card with Collapsible',
-            label: 'With Collapsible',
-            hash: 'with-collapsible',
-            icon: 'format_line_spacing'
-          },
-          {
-            title: 'Card with FAB',
-            label: 'With FAB',
-            hash: 'with-fab',
-            icon: 'play_for_work'
-          }
-        ]
-      },
-      {
-        title: 'Chat',
-        icon: 'chat',
-        hash: 'chat'
-      },
-      {
-        title: 'Color Palette',
-        icon: 'style',
-        hash: 'colors'
-      },
-      {
-        title: 'Grid Layout',
-        icon: 'web',
-        hash: 'grid-layout'
-      },
-      {
-        title: 'HTML Table',
-        icon: 'widgets',
-        hash: 'html-table'
-      },
-      {
-        title: 'Label',
-        icon: 'loyalty',
-        hash: 'label'
-      },
-      {
-        title: 'List',
-        icon: 'list',
-        hash: 'list',
-        tabs: [
-          {
-            title: 'List Basics',
-            label: 'Basics',
-            hash: 'basic',
-            icon: 'view_list'
-          },
-          {
-            title: 'List Items',
-            label: 'Items',
-            hash: 'item',
-            icon: 'view_list'
-          },
-          {
-            title: 'Multi Line Items',
-            label: 'Multilines',
-            hash: 'multiline',
-            icon: 'view_list'
-          },
-          {
-            title: 'Collapsible Items',
-            label: 'Collapsible',
-            hash: 'collapsible',
-            icon: 'view_list'
-          },
-          {
-            title: 'Textfields List',
-            label: 'Textfields',
-            hash: 'example-textfields',
-            icon: 'view_list'
-          },
-          {
-            title: 'Form Components List',
-            label: 'Form Comps',
-            hash: 'example-form',
-            icon: 'view_list'
-          },
-          {
-            title: 'Simple List',
-            label: 'Simple Example',
-            hash: 'example-simple',
-            icon: 'view_list'
-          },
-          {
-            title: 'Persons List',
-            label: 'Persons Example',
-            hash: 'example-persons',
-            icon: 'view_list'
-          },
-          {
-            title: 'Chat List',
-            label: 'Chat Example',
-            hash: 'example-chat',
-            icon: 'view_list'
-          },
-          {
-            title: 'Movies List',
-            label: 'Movie Example',
-            hash: 'example-movies',
-            icon: 'view_list'
-          },
-          {
-            title: 'Contact List',
-            label: 'Contacts Example',
-            hash: 'example-contacts',
-            icon: 'view_list'
-          },
-          {
-            title: 'Folder List',
-            label: 'Folders Example',
-            hash: 'example-folders',
-            icon: 'view_list'
-          },
-          {
-            title: 'Phone Book List',
-            label: 'Phonebook Example',
-            hash: 'example-phonebook',
-            icon: 'view_list'
-          },
-          {
-            title: 'Messages List',
-            label: 'Messages Example',
-            hash: 'example-messages',
-            icon: 'view_list'
-          }
-        ]
-      },
-      {
-        title: 'Shadows',
-        icon: 'layers',
-        hash: 'shadows'
-      },
-      {
-        title: 'Timeline',
-        icon: 'timeline',
-        hash: 'timeline'
-      },
-      {
-        title: 'Typography',
-        icon: 'format_bold',
-        hash: 'typography'
+        title: 'Pagination',
+        icon: 'linear_scale',
+        hash: 'pagination'
       }
     ]
   },
   {
-    title: 'Form',
-    hash: 'form',
+    title: 'Scrolling',
+    icon: 'format_line_spacing',
+    hash: 'scrolling',
     features: [
+      {
+        title: 'Infinite Scroll',
+        icon: 'update',
+        hash: 'infinite-scroll'
+      },
+      {
+        title: 'Scroll Area',
+        icon: 'aspect_ratio',
+        hash: 'scroll-area'
+      },
+      {
+        title: 'Scroll Fire',
+        icon: 'low_priority',
+        hash: 'scroll-fire'
+      },
+      {
+        title: 'Back to Top',
+        icon: 'vertical_align_top',
+        hash: 'back-to-top'
+      }
+    ]
+  },
+  {
+    title: 'Forms',
+    icon: 'assignment',
+    hash: 'forms',
+    features: [
+      {
+        title: 'Button',
+        icon: 'radio_button_unchecked',
+        hash: 'button'
+      },
+      {
+        title: 'Field',
+        icon: 'text_fields',
+        hash: 'field'
+      },
+      {
+        title: 'Input Textfield',
+        label: 'Textbox',
+        hash: 'input',
+        icon: 'text_format'
+      },
+      {
+        title: 'Chips Input',
+        label: 'Chips',
+        hash: 'chips-input',
+        icon: 'dns'
+      },
       {
         title: 'Autocomplete',
         icon: 'more_horiz',
         hash: 'autocomplete'
       },
       {
+        title: 'Search',
+        icon: 'search',
+        hash: 'search'
+      },
+      {
+        title: 'Slider',
+        icon: 'tune',
+        hash: 'slider'
+      },
+      {
+        title: 'Range',
+        icon: 'linear_scale',
+        hash: 'range'
+      },
+      {
+        title: 'Radio',
+        icon: 'radio_button_checked',
+        hash: 'radio'
+      },
+      {
         title: 'Checkbox',
         icon: 'check_box',
         hash: 'checkbox'
+      },
+      {
+        title: 'Toggle',
+        icon: 'repeat',
+        hash: 'toggle'
+      },
+      {
+        title: 'Option Group',
+        icon: 'toc',
+        hash: 'option-group'
       },
       {
         title: 'Date & Time',
@@ -281,80 +240,40 @@ export default [
         tabs: [
           {
             title: 'DateTime Input',
-            label: 'Basic',
-            icon: 'access_time',
-            hash: 'input'
+            label: 'Input',
+            icon: 'event',
+            hash: 'input-datetime'
           },
           {
             title: 'Inline DateTime',
             label: 'Inline',
-            icon: 'access_time',
-            hash: 'inline'
+            icon: 'event_note',
+            hash: 'inline-datetime'
           },
           {
             title: 'DateTime Range',
             label: 'Range',
             icon: 'date_range',
-            hash: 'range'
+            hash: 'range-datetime'
           }
         ]
       },
       {
-        title: 'Knob',
-        icon: 'timelapse',
-        hash: 'knob'
-      },
-      {
-        title: 'Text Inputs',
-        icon: 'border_color',
-        hash: 'text-input',
+        title: 'Select',
+        icon: 'event_note',
+        hash: 'select',
         tabs: [
           {
-            title: 'Input Textbox',
-            label: 'Textbox',
-            hash: 'textbox',
-            icon: 'text_format'
+            title: 'Standard Select',
+            label: 'Standard',
+            icon: 'chat_bubble',
+            hash: 'standard-select'
           },
           {
-            title: 'Input Textarea',
-            label: 'Textarea',
-            hash: 'textarea',
-            icon: 'content_paste'
-          },
-          {
-            title: 'Chips Textbox',
-            label: 'Chips',
-            hash: 'chips',
-            icon: 'folder_special'
-          }
-        ]
-      },
-      {
-        title: 'Numeric',
-        icon: 'looks_one',
-        hash: 'numeric'
-      },
-      {
-        title: 'Radio',
-        icon: 'radio_button_checked',
-        hash: 'radio'
-      },
-      {
-        title: 'Ranges',
-        icon: 'tune',
-        hash: 'range',
-        tabs: [
-          {
-            title: 'Basic Range',
-            label: 'Basic',
-            icon: 'tune',
-            hash: 'basic'
-          },
-          {
-            title: 'Double Range',
-            label: 'Double',
-            icon: 'tune',
-            hash: 'double'
+            title: 'Dialog Select',
+            label: 'Dialog',
+            icon: 'crop_din',
+            hash: 'dialog-select'
           }
         ]
       },
@@ -364,74 +283,36 @@ export default [
         hash: 'rating'
       },
       {
-        title: 'Search',
-        icon: 'search',
-        hash: 'search'
-      },
-      {
-        title: 'Select',
-        icon: 'event_note',
-        hash: 'select',
-        tabs: [
-          {
-            title: 'Basic Select',
-            label: 'Basic',
-            icon: 'chat_bubble',
-            hash: 'basic'
-          },
-          {
-            title: 'Dialog Select',
-            label: 'Dialog',
-            icon: 'crop_din',
-            hash: 'dialog'
-          }
-        ]
-      },
-      {
-        title: 'Toggle',
-        icon: 'repeat',
-        hash: 'toggle'
+        title: 'Knob',
+        icon: 'timelapse',
+        hash: 'knob'
       }
     ]
   },
   {
-    title: 'Web Components',
-    hash: 'web-components',
+    title: 'Popups',
+    icon: 'aspect_ratio',
+    hash: 'popups',
     features: [
       {
-        title: 'Ajax Bar',
-        icon: 'trending_flat',
-        hash: 'ajax-bar'
+        title: 'Action Sheet',
+        icon: 'assignment',
+        hash: 'action-sheet'
       },
       {
-        title: 'Back to Top',
-        icon: 'vertical_align_top',
-        hash: 'back-to-top'
+        title: 'Alert',
+        icon: 'warning',
+        hash: 'alert'
       },
       {
-        title: 'Collapsible',
-        icon: 'format_line_spacing',
-        hash: 'collapsible'
+        title: 'Toast',
+        icon: 'call_to_action',
+        hash: 'toast'
       },
       {
-        title: 'Context Menu',
-        icon: 'content_paste',
-        hash: 'context-menu'
-      },
-      {
-        title: 'Data Table',
-        icon: 'border_all',
-        hash: 'data-table'
-      },
-      {
-        title: 'Floating Action Button',
-        icon: 'play_for_work',
-        hash: 'fab'
-      },
-      {
-        title: 'Infinite Scroll',
-        icon: 'update',
-        hash: 'infinite-scroll'
+        title: 'Dialog',
+        icon: 'question_answer',
+        hash: 'dialog'
       },
       {
         title: 'Modal',
@@ -439,14 +320,139 @@ export default [
         hash: 'modal'
       },
       {
+        title: 'Popover',
+        icon: 'filter_none',
+        hash: 'popover'
+      },
+      {
+        title: 'Tooltip',
+        icon: 'speaker_notes',
+        hash: 'tooltip'
+      }
+    ]
+  },
+  {
+    title: 'Grouping',
+    icon: 'view_module',
+    hash: 'grouping',
+    features: [
+      {
+        title: 'Card',
+        icon: 'contact_mail',
+        hash: 'card'
+      },
+      {
+        title: 'Collapsible',
+        icon: 'format_line_spacing',
+        hash: 'collapsible'
+      },
+      {
+        title: 'Data Table',
+        icon: 'border_all',
+        hash: 'data-table'
+      },
+      {
+        title: 'HTML Table',
+        icon: 'widgets',
+        hash: 'html-table'
+      },
+      {
+        title: 'List',
+        icon: 'list',
+        hash: 'list',
+        iframeTabs: true,
+        tabs: [
+          {
+            title: 'Email',
+            label: 'Email',
+            hash: 'email',
+            icon: 'email'
+          },
+          {
+            title: 'Chat',
+            label: 'Chat',
+            hash: 'chat',
+            icon: 'chat'
+          },
+          {
+            title: 'Folders & Files',
+            label: 'Folders & Files',
+            hash: 'folders',
+            icon: 'folder_open'
+          },
+          {
+            title: 'Settings',
+            label: 'Settings',
+            hash: 'settings',
+            icon: 'settings'
+          },
+          {
+            title: 'Movies',
+            label: 'Movies',
+            hash: 'movies',
+            icon: 'movie'
+          },
+          {
+            title: 'Phonebook',
+            label: 'Phonebook',
+            hash: 'phonebook',
+            icon: 'contact_phone'
+          }
+        ]
+      },
+      {
+        title: 'Carousel',
+        icon: 'vibration',
+        hash: 'carousel'
+      },
+      {
+        title: 'Stepper',
+        icon: 'directions_run',
+        hash: 'stepper'
+      }
+    ]
+  },
+  {
+    title: 'Progress',
+    icon: 'hourglass_full',
+    hash: 'progress',
+    features: [
+      {
+        title: 'Ajax Bar',
+        icon: 'trending_flat',
+        hash: 'ajax-bar'
+      },
+      {
+        title: 'Loading',
+        icon: 'hourglass_full',
+        hash: 'loading'
+      },
+      {
+        title: 'Inner Loading',
+        icon: 'hourglass_empty',
+        hash: 'inner-loading'
+      },
+      {
+        title: 'Progress Bar',
+        icon: 'sort',
+        hash: 'progress'
+      },
+      {
+        title: 'Spinner',
+        icon: 'refresh',
+        hash: 'spinner'
+      }
+    ]
+  },
+  {
+    title: 'Media',
+    icon: 'wallpaper',
+    hash: 'media',
+    features: [
+      {
         title: 'Image Gallery',
         icon: 'photo_library',
         hash: 'image-gallery'
-      },
-      {
-        title: 'Pagination',
-        icon: 'linear_scale',
-        hash: 'pagination'
       },
       {
         title: 'Parallax',
@@ -454,65 +460,55 @@ export default [
         hash: 'parallax'
       },
       {
-        title: 'Popover',
-        icon: 'content_paste',
-        hash: 'popover'
+        title: 'Video Embedding',
+        icon: 'movie',
+        hash: 'video'
+      }
+    ]
+  },
+  {
+    title: 'Animation',
+    icon: 'fast_forward',
+    hash: 'animation',
+    features: [
+      {
+        title: 'Transition',
+        icon: 'transform',
+        hash: 'transition'
       },
       {
-        title: 'Progress Bar',
-        icon: 'hourglass_empty',
-        hash: 'progress'
-      },
-      {
-        title: 'Progress Buttons',
-        icon: 'directions_walk',
-        hash: 'progress-button'
-      },
-      {
-        title: 'Pull to Refresh',
-        icon: 'vertical_align_center',
-        hash: 'pull-to-refresh'
-      },
-      {
-        title: 'Scroll-fire',
+        title: 'Slide Transition',
         icon: 'swap_vert',
-        hash: 'scroll-fire'
+        hash: 'slide-transition'
+      }
+    ]
+  },
+  {
+    title: 'Other Components',
+    icon: 'widgets',
+    hash: 'other-components',
+    features: [
+      {
+        title: 'Chip',
+        icon: 'loyalty',
+        hash: 'chip'
       },
       {
-        title: 'Slider',
-        icon: 'vibration',
-        hash: 'slider'
-      },
-      {
-        title: 'Spinner',
-        icon: 'refresh',
-        hash: 'spinner'
-      },
-      {
-        title: 'Stepper',
-        icon: 'directions_run',
-        hash: 'stepper'
-      },
-      {
-        title: 'Tooltip',
-        icon: 'speaker_notes',
-        hash: 'tooltip'
+        title: 'Chat',
+        icon: 'chat',
+        hash: 'chat'
       },
       {
         title: 'Tree',
         icon: 'format_indent_increase',
         hash: 'tree'
-      },
-      {
-        title: 'Video Embedding',
-        icon: 'movie',
-        hash: 'video-embedding'
       }
     ]
   },
   {
-    title: 'Other',
-    hash: 'other',
+    title: 'Web API Wrappers',
+    icon: 'extension',
+    hash: 'web-api-wrappers',
     features: [
       {
         title: 'App Fullscreen',
@@ -523,16 +519,18 @@ export default [
         title: 'App Visibility',
         icon: 'visibility',
         hash: 'app-visibility'
-      },
+      }
+    ]
+  },
+  {
+    title: 'Misc',
+    icon: 'work',
+    hash: 'misc',
+    features: [
       {
         title: 'Platform Detection',
         icon: 'phonelink',
         hash: 'platform-detection'
-      },
-      {
-        title: 'Vue Transitions',
-        icon: 'directions_bus',
-        hash: 'vue-transitions'
       }
     ]
   }
