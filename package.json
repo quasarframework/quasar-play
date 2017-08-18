@@ -1,6 +1,6 @@
 {
   "name": "quasar-play",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Quasar Play for Quasar Framework",
   "author": "Razvan Stoenescu <razvan.stoenescu@gmail.com>",
   "scripts": {
@@ -13,7 +13,7 @@
     "babel-runtime": "^6.0.0",
     "es6-promise": "^4.1.1",
     "quasar-extras": "0.x",
-    "quasar-framework": "git+https://git@github.com/quasarframework/quasar-edge.git",
+    "quasar-framework": "^0.14.1",
     "vue": "~2.3.4",
     "vue-router": "^2.7.0"
   },
