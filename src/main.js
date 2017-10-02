@@ -30,6 +30,6 @@ Quasar.start(() => {
   new Vue({
     el: '#q-app',
     router,
-    render: h => h(require('./App'))
+    render: h => h(require('./App').default)
   })
 })
