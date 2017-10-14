@@ -24,7 +24,7 @@
     >
       <q-route-tab
         v-for="tab in store.tabs"
-        :key="tab"
+        :key="tab.hash"
         slot="title"
         :icon="tab.icon"
         :to="`/showcase${store.hash}/${tab.hash}`"
@@ -64,7 +64,7 @@
           <q-side-link
             item
             v-for="feature in category.features"
-            :key="feature"
+            :key="feature.hash"
             :to="`/showcase/${category.hash}/${feature.hash}`"
             replace
           >

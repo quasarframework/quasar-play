@@ -98,12 +98,12 @@ categories.forEach(category => {
 routes.push(showcase)
 routes.push({path: '*', component: load('error404')})
 
-const Router = new VueRouter({routes})
+const Router = new VueRouter({
+  scrollBehavior: () => ({ y: 0 }),
+  routes
+})
 
 Router.beforeEach((to, from, next) => {
-  document.documentElement.scrollTop = 0
-  document.body.scrollTop = 0
-
   if (to.meta) {
     showcaseStore.set(to.meta)
   }
