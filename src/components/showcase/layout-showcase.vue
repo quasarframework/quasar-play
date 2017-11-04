@@ -77,7 +77,9 @@
       </q-list>
     </q-scroll-area>
 
-    <router-view />
+    <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300">
+      <router-view />
+    </q-transition>
   </q-layout>
 </template>
 
@@ -85,6 +87,7 @@
 import store from './showcase-store'
 import categories from './categories'
 import {
+  QTransition,
   QScrollArea,
   QList,
   QSideLink,
@@ -104,6 +107,7 @@ import {
 
 export default {
   components: {
+    QTransition,
     QScrollArea,
     QList,
     QSideLink,

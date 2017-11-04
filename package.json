@@ -1,6 +1,6 @@
 {
   "name": "quasar-play",
-  "version": "0.14.6",
+  "version": "0.14.7",
   "description": "Quasar Play for Quasar Framework",
   "author": "Razvan Stoenescu <razvan.stoenescu@gmail.com>",
   "scripts": {
@@ -13,7 +13,7 @@
     "babel-runtime": "^6.0.0",
     "es6-promise": "^4.1.1",
     "quasar-extras": "0.0.8",
-    "quasar-framework": "0.14.6",
+    "quasar-framework": "0.14.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
