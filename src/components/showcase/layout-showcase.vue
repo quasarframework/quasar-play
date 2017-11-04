@@ -24,7 +24,7 @@
     >
       <q-route-tab
         v-for="tab in store.tabs"
-        :key="tab"
+        :key="tab.hash"
         slot="title"
         :icon="tab.icon"
         :to="`/showcase${store.hash}/${tab.hash}`"
@@ -41,7 +41,9 @@
     >
       <div class="row flex-center bg-white" style="width: 100%; height: 100px;">
         <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;"/>
-        <div style="margin-left: 15px">v0.14 beta</div>
+        <div style="margin-left: 15px">
+          Quasar v{{ $q.version }}
+        </div>
       </div>
       <q-list no-border>
         <q-side-link
@@ -62,7 +64,7 @@
           <q-side-link
             item
             v-for="feature in category.features"
-            :key="feature"
+            :key="feature.hash"
             :to="`/showcase/${category.hash}/${feature.hash}`"
             replace
           >
@@ -75,7 +77,9 @@
       </q-list>
     </q-scroll-area>
 
-    <router-view />
+    <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300">
+      <router-view />
+    </q-transition>
   </q-layout>
 </template>
 
@@ -83,6 +87,7 @@
 import store from './showcase-store'
 import categories from './categories'
 import {
+  QTransition,
   QScrollArea,
   QList,
   QSideLink,
@@ -102,6 +107,7 @@ import {
 
 export default {
   components: {
+    QTransition,
     QScrollArea,
     QList,
     QSideLink,

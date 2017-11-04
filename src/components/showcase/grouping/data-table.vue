@@ -112,10 +112,10 @@
       @selection="selection"
       @rowclick="rowClick"
     >
-      <template slot="col-message" scope="cell">
+      <template slot="col-message" slot-scope="cell">
         <span class="light-paragraph">{{cell.data}}</span>
       </template>
-      <template slot="col-source" scope="cell">
+      <template slot="col-source" slot-scope="cell">
         <div v-if="cell.data === 'Audit'" class="my-label text-white bg-primary">
           Audit
           <q-tooltip>Some data</q-tooltip>
@@ -123,7 +123,7 @@
         <div v-else class="my-label text-white bg-negative">{{cell.data}}</div>
       </template>
 
-      <template slot="selection" scope="props">
+      <template slot="selection" slot-scope="props">
         <q-btn flat color="primary" @click="changeMessage(props)">
           <q-icon name="edit" />
         </q-btn>
