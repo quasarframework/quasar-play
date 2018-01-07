@@ -1,19 +1,20 @@
 <template>
-  <!-- Don't drop "q-app" class -->
-  <div id="q-app" class="demo-site">
-    <q-transition enter="fadeIn" leave="fadeOut" mode="out-in" :duration="300" @leave="resetScroll">
+  <q-app>
+    <transition
+      enterActiveClass="animated fadeIn"
+      leaveActiveClass="animated fadeOut"
+      mode="out-in"
+      :duration="300"
+      @leave="resetScroll"
+    >
       <router-view />
-    </q-transition>
-  </div>
+    </transition>
+  </q-app>
 </template>
 
 <script>
-import { QTransition } from 'quasar'
-
 export default {
-  components: {
-    QTransition
-  },
+  name: 'app',
   methods: {
     resetScroll (el, done) {
       document.documentElement.scrollTop = 0
@@ -23,3 +24,6 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>
