@@ -15,7 +15,7 @@
     "not ie <= 10"
   ],
   "dependencies": {
-    "quasar-cli": "^0.15.0-beta.9"
+    "quasar-cli": "^0.15.0-beta.11"
   },
   "engines": {
     "node": ">= 8.0.0",
