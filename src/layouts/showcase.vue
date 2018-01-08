@@ -13,6 +13,7 @@
           />
           {{ pageMeta.title }}
         </q-toolbar-title>
+        <app-options />
         <q-btn
           flat
           round
@@ -99,11 +100,22 @@
 <script>
 import { mapState } from 'vuex'
 import categories from 'assets/categories'
+import AppOptions from '@/app-options'
 
 export default {
+  components: {
+    AppOptions
+  },
   data () {
     return {
       categories
+    }
+  },
+  watch: {
+    lang (lang) {
+      import(`quasar-framework/i18n/${lang}`).then(lang => {
+        this.$q.i18n.set(lang.default)
+      })
     }
   },
   computed: {

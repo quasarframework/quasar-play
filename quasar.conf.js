@@ -2,9 +2,15 @@
 
 module.exports = function (ctx) {
   return {
+    css: [
+      'app.styl'
+    ],
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
-      'material-icons'
+      'material-icons',
+      'mdi',
+      'ionicons',
+      'fontawesome'
     ],
     supportIE: true,
     build: {

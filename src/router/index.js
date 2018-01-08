@@ -27,11 +27,13 @@ Router.beforeEach((to, from, next) => {
     store.commit('showcase/updatePageMeta', to.meta)
   }
 
+  /*
   // Inform Google Analytics
   if (typeof ga !== 'undefined') {
     ga('set', 'page', to.path)
     ga('send', 'pageview')
   }
+  */
 
   next()
 })
