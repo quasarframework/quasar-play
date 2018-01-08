@@ -350,7 +350,28 @@ export default [
       {
         title: 'Data Table',
         icon: 'border_all',
-        hash: 'data-table'
+        hash: 'table',
+        iframeTabs: true,
+        tabs: [
+          {
+            title: 'Features',
+            label: 'Features',
+            icon: 'view_module',
+            hash: 'table-features'
+          },
+          {
+            title: 'Server Pagination',
+            label: 'Server Pagination',
+            icon: 'update',
+            hash: 'table-server-pagination'
+          },
+          {
+            title: 'Customize',
+            label: 'Customize',
+            icon: 'color_lens',
+            hash: 'table-customize'
+          }
+        ]
       },
       {
         title: 'HTML Table',
