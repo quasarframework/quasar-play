@@ -108,6 +108,29 @@
       </div>
     </q-table>
 
+    <p class="caption">Controlling pagination, custom controls & watching for page navigation</p>
+    <q-table
+      :data="tableData"
+      :columns="columns"
+      :pagination.sync="paginationControl"
+      row-key="name"
+      color="primary"
+    >
+      <div slot="pagination" slot-scope="props" class="row flex-center q-py-sm">
+        <q-btn
+          round dense size="sm" icon="undo" color="secondary" class="q-mr-sm"
+          :disable="props.isFirstPage"
+          @click="props.prevPage"
+        />
+        <div class="q-mr-sm" style="font-size: small">Page {{props.pagination.page}} / {{props.pagesNumber}}</div>
+        <q-btn
+          round dense size="sm" icon="redo" color="secondary"
+          :disable="props.isLastPage"
+          @click="props.nextPage"
+        />
+      </div>
+    </q-table>
+
     <p class="caption">Row selection actions</p>
     <q-table
       :data="tableData"
@@ -126,14 +149,14 @@
       </template>
     </q-table>
 
-    <p class="caption">Hide header & pagination</p>
+    <p class="caption">Hide header & bottom</p>
     <q-table
       :data="tableData"
       :columns="columns"
       row-key="name"
       color="primary"
       hide-header
-      hide-pagination
+      hide-bottom
     />
   </q-page>
 </template>
@@ -171,11 +194,31 @@ export default {
         // initial selection
         { name: 'Ice cream sandwich' }
       ],
+      pagination: {
+        page: 2
+      },
+      paginationControl: { rowsPerPage: 3, page: 1 },
       loader: false,
       dark: true,
       selectedSecond: [
         { name: 'Eclair' }
       ]
+    }
+  },
+  watch: {
+    'paginationControl.page' (page) {
+      this.$q.notify({
+        color: 'secondary',
+        message: `Navigated to page ${page}`,
+        actions: page < 4
+          ? [{
+            label: 'Go to last page',
+            handler: () => {
+              this.paginationControl.page = 4
+            }
+          }]
+          : null
+      })
     }
   },
   computed: {

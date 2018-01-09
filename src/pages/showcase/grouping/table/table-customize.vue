@@ -1,5 +1,29 @@
 <template>
   <q-page padding class="docs-table">
+    <p class="caption">Custom table top & bottom</p>
+    <q-table
+      :data="tableData"
+      :columns="columns"
+      row-key="name"
+      color="primary"
+    >
+      <div slot="top" slot-scope="props" class="row flex-center fit">
+        <img src="~assets/quasar-logo-full.svg" />
+      </div>
+      <div slot="bottom" slot-scope="props" class="row flex-center fit">
+        <q-btn
+          round dense icon="chevron_left" color="primary" class="q-mr-md"
+          :disable="props.isFirstPage"
+          @click="props.prevPage"
+        />
+        <q-btn
+          round dense icon="chevron_right" color="primary"
+          :disable="props.isLastPage"
+          @click="props.nextPage"
+        />
+      </div>
+    </q-table>
+
     <p class="caption">Custom column cell</p>
     <q-table
       :data="tableData"
@@ -61,7 +85,7 @@
       </q-tr>
     </q-table>
 
-    <p class="caption">Custom header</p>
+    <p class="caption">Custom header (has tooltips)</p>
     <q-table
       :data="tableData"
       :columns="columns"
@@ -140,10 +164,10 @@
       <template slot="body" slot-scope="props">
         <q-tr :props="props">
           <q-td auto-width>
-            <q-checkbox :color="color" v-model="props.selected" />
+            <q-checkbox color="primary" v-model="props.selected" />
           </q-td>
           <q-td key="desc" :props="props">
-            <q-checkbox :color="color" v-model="props.expand" checked-icon="remove" unchecked-icon="add" class="q-mr-md" />
+            <q-checkbox color="primary" v-model="props.expand" checked-icon="remove" unchecked-icon="add" class="q-mr-md" />
             {{ props.row.name }}
           </q-td>
           <q-td key="calories" :props="props">{{ props.row.calories }}</q-td>

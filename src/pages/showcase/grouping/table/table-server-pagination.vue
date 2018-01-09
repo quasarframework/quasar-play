@@ -1,5 +1,6 @@
 <template>
   <q-page padding class="docs-table">
+    <p class="caption">Pagination, sorting & filtering happens on the server</p>
     <q-table
       ref="table"
       color="primary"
@@ -30,7 +31,7 @@ export default {
       serverData: [],
       serverPagination: {
         page: 1,
-        rowsNumber: 10
+        rowsNumber: 10 // specifying this determines pagination is server-side
       },
       columns: [
         {
