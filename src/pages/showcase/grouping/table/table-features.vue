@@ -8,7 +8,7 @@
       row-key="name"
     />
 
-    <p class="caption">Filter, Column selection, Separators</p>
+    <p class="caption">Filter, Column selection, Separators, Toggle fullscreen</p>
     <q-table
       :data="tableData"
       :columns="columns"
@@ -44,6 +44,11 @@
           ]"
           hide-underline
         />
+        <q-btn
+          flat round dense
+          :icon="props.inFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+          @click="props.toggleFullscreen"
+        />
       </template>
     </q-table>
 
@@ -59,13 +64,13 @@
       color="secondary"
       :class="tableClass"
     >
-      <q-tr slot="top-row" slot-scope="props" :props="props">
+      <q-tr slot="top-row" slot-scope="props">
         <q-td colspan="100%">
           <strong>Extra top row</strong>
         </q-td>
       </q-tr>
 
-      <q-tr slot="bottom-row" slot-scope="props" :props="props">
+      <q-tr slot="bottom-row" slot-scope="props">
         <q-td colspan="100%">
           <strong>Extra bottom row</strong>
         </q-td>
@@ -120,6 +125,16 @@
         <q-btn color="negative" flat round delete icon="delete" @click="deleteRow" />
       </template>
     </q-table>
+
+    <p class="caption">Hide header & pagination</p>
+    <q-table
+      :data="tableData"
+      :columns="columns"
+      row-key="name"
+      color="primary"
+      hide-header
+      hide-pagination
+    />
   </q-page>
 </template>
 

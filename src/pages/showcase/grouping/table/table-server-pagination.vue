@@ -1,9 +1,9 @@
 <template>
   <q-page padding class="docs-table">
-    <p class="caption">When pagination is handled by server</p>
     <q-table
       ref="table"
       color="primary"
+      title="Server-side Pagination"
       :data="serverData"
       :columns="columns"
       :filter="filter"
