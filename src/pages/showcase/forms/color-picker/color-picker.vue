@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <h4>Inside Field</h4>
+    <p class="caption">Inside Field</p>
     <q-field
       label="Car color"
       helper="Touch to select a color"
@@ -29,7 +29,7 @@
       <q-color-picker v-model="modelRgba" />
     </q-field>
 
-    <h4>Readonly</h4>
+    <p class="caption">Readonly</p>
     <div class="row md-gutter" style="width: 550px">
       <div class="col-12 col-sm-6 column items-center">
         <q-color-picker v-model="modelHexa" readonly />
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <h4>Disable</h4>
+    <p class="caption">Disable</p>
     <div class="row md-gutter" style="width: 550px">
       <div class="col-12 col-sm-6 column items-center">
         <q-color-picker v-model="modelHex" disable />

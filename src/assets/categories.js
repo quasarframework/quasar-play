@@ -62,7 +62,7 @@ export default [
   {
     title: 'Layout',
     icon: 'dashboard',
-    hash: 'layout',
+    hash: 'layout-demo',
     extract: true,
     features: [
       {
@@ -76,9 +76,9 @@ export default [
         hash: 'drawer-panels'
       },
       {
-        title: 'Fixed Positioning',
+        title: 'Sticky Position',
         icon: 'pin_drop',
-        hash: 'fixed-positioning'
+        hash: 'sticky-position'
       },
       {
         title: 'Floating Action Button',

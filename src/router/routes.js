@@ -64,6 +64,16 @@ categories.forEach(category => {
 })
 
 routes.push(showcase)
+routes.push({
+  path: '/showcase/layout-demo',
+  component: () => import('layouts/layout-demo'),
+  children: [
+    {path: 'play-with-layout', component: () => import('pages/layout-demo/play-with-layout')},
+    {path: 'drawer-panels', component: () => import('pages/layout-demo/drawer-panels')},
+    {path: 'sticky-position', component: () => import('pages/layout-demo/sticky-position')},
+    {path: 'floating-action-button', component: () => import('pages/layout-demo/floating-action-button')}
+  ]
+})
 routes.push({ path: '*', component: () => import('pages/error404.vue') })
 
 export default routes
