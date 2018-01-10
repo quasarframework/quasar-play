@@ -2,7 +2,7 @@
   <q-page padding>
     <q-btn color="primary" label="Set to yellow" @click="setToYellow"/>
 
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-6">
         <q-color-picker v-model="modelHex" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: this.modelHex }">
@@ -30,7 +30,7 @@
     </div>
 
     <h4>Lazy</h4>
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-6">
         <q-color-picker :value="modelHex" @change="model => { modelHex = model }" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: this.modelHex }">
@@ -56,7 +56,7 @@
     <q-color :value="inputModelRgb" @change="val => inputModelRgb = val" clearable />
 
     <h4>Readonly</h4>
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-6">
         <q-color-picker v-model="modelHex" readonly />
       </div>
@@ -72,7 +72,7 @@
     </div>
 
     <h4>Disable</h4>
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-6">
         <q-color-picker v-model="modelHex" disable />
       </div>

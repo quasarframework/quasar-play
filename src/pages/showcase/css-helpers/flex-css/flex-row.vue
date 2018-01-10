@@ -88,7 +88,7 @@
               .col
             </div>
             <div class="col-12 col-md-auto">
-              .col-12 .col-md-auto Variable width content
+              .col-12 .col-md-auto (Variable width content)
             </div>
             <div class="col">
               .col
