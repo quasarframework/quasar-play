@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-12 col-sm-6 column items-center">
         <p class="caption text-center q-my-xs">Hex model</p>
         <q-color-picker v-model="modelHex" />
@@ -30,7 +30,7 @@
     </q-field>
 
     <h4>Readonly</h4>
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-12 col-sm-6 column items-center">
         <q-color-picker v-model="modelHexa" readonly />
       </div>
@@ -40,7 +40,7 @@
     </div>
 
     <h4>Disable</h4>
-    <div class="row md-gutter" style="width: 550px">
+    <div class="row gutter-md" style="width: 550px">
       <div class="col-12 col-sm-6 column items-center">
         <q-color-picker v-model="modelHex" disable />
       </div>

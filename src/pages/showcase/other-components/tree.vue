@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <div>
-      <div class="row sm-gutter items-center">
+      <div class="row gutter-sm items-center">
         <div class="col-xs-12 col-md-4">
           <q-select v-model="tickStrategy" :options="[
             {label: 'None', value: 'none'},

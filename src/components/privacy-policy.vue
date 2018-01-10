@@ -13,7 +13,7 @@
         </q-btn>
       </q-toolbar>
 
-      <div class="privacy-policy">
+      <div class="layout-padding privacy-policy">
         <p>
           We value your privacy, and our Privacy Policy aims to explain how your privacy is
           protected while using the Quasar Play app.

@@ -1,40 +1,33 @@
 <template>
   <q-page padding class="row justify-center flex-gutter-docs">
     <div style="width: 800px; max-width: 90vw;">
-      <p class="caption">Prefixes (xs, sm, md, lg, xl) do not refer to device screen size, but to the size of gutter between elements.</p>
+      <p class="caption">Suffixes (none, xs, sm, md, lg, xl) do not refer to device screen size, but to the size of gutter between elements.</p>
 
-      <template v-for="type in ['xs', 'sm', 'md', 'lg', 'xl']">
-        <p class="caption">{{type}}-gutter</p>
-        <div class="doc-container with-bg">
-          <div class="row" :class="`${type}-gutter`">
-            <div class="col-4" v-for="n in 5">
+      <div v-for="size in ['none', 'xs', 'sm', 'md', 'lg', 'xl']" :key="`gutter_${size}`">
+        <p class="caption">gutter-{{size}}</p>
+        <div class="doc-container with-bg q-mb-lg">
+          <div class="row" :class="`gutter-${size}`">
+            <div class="col-4" v-for="n in 5" :key="n">
               <div class="my-content">&nbsp;</div>
             </div>
           </div>
         </div>
-      </template>
 
-      <p class="caption">No vertical gutter</p>
-      <div class="doc-container with-bg">
-        <div class="row xs-gutter no-vert-gutter">
-          <div class="col-4" v-for="n in 5">
-            <div class="my-content">&nbsp;</div>
-          </div>
-        </div>
-      </div>
-
-      <p class="caption">No horizontal gutter</p>
-      <div class="doc-container with-bg">
-        <div class="row xs-gutter no-horiz-gutter">
-          <div class="col-4" v-for="n in 5">
-            <div class="my-content">&nbsp;</div>
+        <div v-for="sizeY in ['none', 'xs', 'sm', 'md', 'lg', 'xl']" :key="`gutter_${size}_${sizeY}`" v-if="size !== sizeY">
+          <p class="caption">gutter-x-{{size}} gutter-y-{{sizeY}}</p>
+          <div class="doc-container with-bg q-mb-lg">
+            <div class="row" :class="`gutter-x-${size} gutter-y-${sizeY}`">
+              <div class="col-4" v-for="n in 5" :key="n">
+                <div class="my-content">&nbsp;</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <p class="caption">QInput example (6 rows on xs screens and 4 rows on sm+)</p>
       <div>
-        <div class="row sm-gutter">
+        <div class="row gutter-sm">
           <div class="col-12">
             <q-input inverted v-model="model" class="no-margin" float-label="col-12" />
           </div>
