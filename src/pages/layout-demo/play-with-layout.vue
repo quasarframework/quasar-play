@@ -134,6 +134,10 @@
         <em>Page has intended scroll</em>
       </p>
     </div>
+
+    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+      <q-btn fab color="secondary" icon="phone" class="animate-pop" />
+    </q-page-sticky>
   </q-page>
 </template>
 
