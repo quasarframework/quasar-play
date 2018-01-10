@@ -5,8 +5,9 @@
         <q-btn flat round dense icon="menu" @click="left = !left" />
         <q-toolbar-title>
           Header
-          <span slot="subtitle">The Subtiiiitleeee</span>
+          <span slot="subtitle">Header Subtitle</span>
         </q-toolbar-title>
+        <q-btn flat dense label="Go to Showcase" @click="$router.replace('/showcase')" />
         <q-btn flat round dense icon="menu" @click="right = !right" />
       </q-toolbar>
       <q-tabs>
