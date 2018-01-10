@@ -219,6 +219,11 @@ export default [
         hash: 'autocomplete'
       },
       {
+        title: 'Editor (WYSIWYG)',
+        icon: 'mode_edit',
+        hash: 'editor'
+      },
+      {
         title: 'Search',
         icon: 'search',
         hash: 'search'

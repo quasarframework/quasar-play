@@ -7,21 +7,21 @@ export default {
   headerReveal: false,
   footerReveal: false,
   leftOverlay: false,
-  rightOverlay: true,
+  rightOverlay: false,
   leftBehavior: 'default',
   rightBehavior: 'default',
   leftBreakpoint: 992,
   rightBreakpoint: 992,
 
-  topleft: 'l',
+  topleft: 'h',
   topcenter: 'H',
-  topright: 'h',
+  topright: 'r',
   middleleft: 'L',
   middlecenter: 'p',
   middleright: 'r',
   bottomleft: 'f',
   bottomcenter: 'F',
-  bottomright: 'f',
+  bottomright: 'r',
 
   scrolling: true
 }
