@@ -88,13 +88,6 @@ export default {
     }
   },
   data () {
-    let children = []
-    for (let i = 0; i < 500; i += 1) {
-      children.push({
-        label: 'Node 1.1.1.1.' + (i + 1)
-      })
-    }
-
     return {
       selected: null,
       tickStrategy: 'leaf',
@@ -119,8 +112,7 @@ export default {
                   tickStrategy: 'leaf-filtered',
                   children: [
                     {
-                      label: 'Node 1.1.1.1 - lots of leafs',
-                      children
+                      label: 'Node 1.1.1.1'
                     }
                   ]
                 },
@@ -254,11 +246,24 @@ export default {
               label: 'Node 2.2'
             },
             {
-              label: 'Node 2.3 - Lazy load',
+              label: 'Node 2.3',
+              children: [
+                {
+                  label: 'Node 2.3.1',
+                  body: '2-1-2-1'
+                },
+                {
+                  label: 'Node 2.3.2',
+                  body: '2-1-2-1'
+                }
+              ]
+            },
+            {
+              label: 'Node 2.4 - Lazy load',
               lazy: true
             },
             {
-              label: 'Node 2.4 - Lazy load empty',
+              label: 'Node 2.5 - Lazy load empty',
               lazy: true
             }
           ]

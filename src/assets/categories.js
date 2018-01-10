@@ -431,6 +431,11 @@ export default [
         title: 'Stepper',
         icon: 'directions_run',
         hash: 'stepper'
+      },
+      {
+        title: 'Tree',
+        icon: 'format_indent_increase',
+        hash: 'tree'
       }
     ]
   },
@@ -529,11 +534,6 @@ export default [
         title: 'Timeline',
         icon: 'date_range',
         hash: 'timeline'
-      },
-      {
-        title: 'Tree',
-        icon: 'format_indent_increase',
-        hash: 'tree'
       }
     ]
   },
