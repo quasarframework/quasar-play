@@ -1,5 +1,5 @@
 <template>
-  <q-app>
+  <div class="q-app">
     <transition
       enterActiveClass="animated fadeIn"
       leaveActiveClass="animated fadeOut"
@@ -9,7 +9,7 @@
     >
       <router-view />
     </transition>
-  </q-app>
+  <div>
 </template>
 
 <script>
