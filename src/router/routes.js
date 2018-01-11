@@ -1,5 +1,4 @@
-
-import categories from '~/assets/categories'
+import categories from 'assets/categories'
 
 const routes = [
   {

@@ -100,7 +100,7 @@
 <script>
 import { mapState } from 'vuex'
 import categories from 'assets/categories'
-import AppOptions from '@/app-options'
+import AppOptions from 'components/app-options'
 
 export default {
   components: {

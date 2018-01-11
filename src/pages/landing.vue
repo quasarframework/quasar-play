@@ -42,7 +42,7 @@
 
 <script>
 import { openURL } from 'quasar'
-import PrivacyPolicy from '@/privacy-policy'
+import PrivacyPolicy from 'components/privacy-policy'
 
 export default {
   components: {
