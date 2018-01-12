@@ -9,7 +9,7 @@
     >
       <router-view />
     </transition>
-  <div>
+  </div>
 </template>
 
 <script>

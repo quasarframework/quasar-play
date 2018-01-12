@@ -11,7 +11,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "quasar-cli": "^0.15.0-beta.19"
+    "quasar-cli": "^0.15.0-beta.21"
   },
   "engines": {
     "node": ">= 8.9.0",
