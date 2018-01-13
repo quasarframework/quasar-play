@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import showcase from './modules/showcase'
-import layoutDemo from './modules/layoutDemo'
+import showcase from './showcase'
+import layoutDemo from './layoutDemo'
 
 Vue.use(Vuex)
 
@@ -14,21 +14,13 @@ const store = new Vuex.Store({
 })
 
 if (process.env.DEV && module.hot) {
-  module.hot.accept(['./modules/showcase'], () => {
-    const newShowcase = require('./modules/showcase').default
-    store.hotUpdate({
-      modules: {
-        showcase: newShowcase
-      }
-    })
+  module.hot.accept(['./showcase'], () => {
+    const newShowcase = require('./showcase').default
+    store.hotUpdate({ modules: { showcase: newShowcase } })
   })
-  module.hot.accept(['./modules/layoutDemo'], () => {
-    const newLayoutDemo = require('./modules/layoutDemo').default
-    store.hotUpdate({
-      modules: {
-        layoutDemo: newLayoutDemo
-      }
-    })
+  module.hot.accept(['./layoutDemo'], () => {
+    const newLayoutDemo = require('./layoutDemo').default
+    store.hotUpdate({ modules: { layoutDemo: newLayoutDemo } })
   })
 }
 
