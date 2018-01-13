@@ -36,7 +36,7 @@ export default {
           }
         },
         {
-          label: 'Gallery with Icons',
+          label: 'Grid with Icons',
           handler: () => {
             this.showActionSheetWithIcons(true)
           }
@@ -48,7 +48,7 @@ export default {
           }
         },
         {
-          label: 'Gallery with Avatars',
+          label: 'Grid with Avatars',
           handler: () => {
             this.showActionSheetWithAvatar(true)
           }
@@ -57,10 +57,10 @@ export default {
     }
   },
   methods: {
-    showActionSheetWithIcons (gallery) {
+    showActionSheetWithIcons (grid) {
       this.$q.actionSheet({
         title: 'Article Actions',
-        gallery: gallery,
+        grid: grid,
         actions: [
           {
             label: 'Delete',
@@ -100,10 +100,10 @@ export default {
       })
     },
 
-    showActionSheetWithAvatar (gallery) {
+    showActionSheetWithAvatar (grid) {
       this.$q.actionSheet({
         title: 'Share to',
-        gallery: gallery,
+        grid: grid,
         actions: [
           {
             label: 'Joe',

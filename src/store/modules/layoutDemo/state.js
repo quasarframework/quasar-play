@@ -19,7 +19,7 @@ export default {
   middleleft: 'L',
   middlecenter: 'p',
   middleright: 'r',
-  bottomleft: 'f',
+  bottomleft: 'l',
   bottomcenter: 'F',
   bottomright: 'r',
 
