@@ -1,8 +1,10 @@
 <template>
   <q-page padding>
+    <p class="caption">
+      QEditor toolbar is configurable. Add only what functionality you need to it.
+      <br>The following is an example with most of toolbar buttons provided by default.
+    </p>
     <q-editor
-      style="margin-right: 8em"
-      ref="editor"
       v-model="model"
       :toolbar="[
         ['bold', 'italic', 'strike', 'underline', 'subscript', 'superscript'],
@@ -48,12 +50,7 @@
             options: ['left', 'center', 'right', 'justify']
           }
         ],
-        ['undo', 'redo'],
-        [{
-          label: 'Dropdown Test',
-          highlight: true,
-          options: ['gogu', 'outdent', 'indent', 'gigi']
-        }]
+        ['undo', 'redo']
       ]"
       :fonts="{
         arial: 'Arial',
@@ -65,33 +62,159 @@
         times_new_roman: 'Times New Roman',
         verdana: 'Verdana'
       }"
+    />
+
+    <h4 class="q-mt-lg">Let's customize</h4>
+    <p class="caption">
+      Overriding & extending default toolbar buttons definitions.
+      <br>This particular case:
+      <ul>
+        <li>overrides bold & italic default definitions (label, icon, their tooltips)</li>
+        <li>adds a new custom command which basically is same as "italic"</li>
+        <li>adds "save", "upload" & "spellcheck" commands</li>
+        <li>adds a disabled button</li>
+        <li>adds a custom "Import" button</li>
+      </ul>
+    </p>
+    <q-editor
+      v-model="model"
+      :toolbar="[
+        ['bold', 'italic'],
+        ['customItalic'],
+        ['save', 'upload'],
+        ['spellcheck'],
+        ['disabledButton'],
+        ['custom_btn']
+      ]"
       :definitions="{
-        gigi: {cmd: 'bold', icon: 'map', tip: 'Gigi bold'},
-        bold: {icon: 'content_paste'},
-        gogu: {tip: 'Custom', icon: 'account_balance', handler: vm => vm.runCmd('print')}
+        bold: {cmd: 'bold', label: 'Bold', icon: null, tip: 'My bold tooltip'},
+        italic: {cmd: 'italic', icon: 'border_color', tip: 'My italic tooltip'},
+        customItalic: {cmd: 'italic', icon: 'camera_enhance', tip: 'Italic'},
+        save: {tip: 'Save your work', icon: 'save', label: 'Save', handler: saveWork},
+        upload: {tip: 'Upload to cloud', icon: 'cloud_upload', label: 'Upload', handler: upload},
+        spellcheck: {tip: 'Run spell-check', icon: 'spellcheck', handler: spellCheck},
+        disabledButton: {tip: 'I am disabled...', disable: true, icon: 'cloud_off'}
       }"
     >
-      <q-btn dense size="sm" color="yellow" slot="custom_btn">Wow</q-btn>
-      <q-btn-dropdown size="sm" dense no-caps ref="token" no-wrap slot="token" color="green" label="Token">
-        <q-list link separator>
-          <q-item tag="label" @click.native="add('email')">
-            <q-item-side icon="mail" />
-            <q-item-main label="Email" />
-          </q-item>
-          <q-item tag="label" @click.native="add('title')">
-            <q-item-side icon="title" />
-            <q-item-main label="Title" />
-          </q-item>
-        </q-list>
-      </q-btn-dropdown>
+      <q-btn
+        slot="custom_btn"
+        dense
+        color="secondary"
+        icon="import_contacts"
+        label="Import"
+        @click="importSomething"
+      />
     </q-editor>
+
+    <p class="caption">Types of dropdowns</p>
+    <q-editor
+      v-model="model"
+      :toolbar="[
+        [
+          {
+            label: 'Icons & Label',
+            icon: 'filter_1',
+            fixedLabel: true,
+            fixedIcon: true,
+            options: ['bold', 'italic', 'strike', 'underline']
+          }
+        ],
+        [
+          {
+            label: 'Only label',
+            icon: 'filter_2',
+            fixedLabel: true,
+            fixedIcon: true,
+            list: 'no-icons',
+            options: ['bold', 'italic', 'strike', 'underline']
+          }
+        ],
+        [
+          {
+            label: 'Only icons',
+            icon: 'filter_3',
+            fixedLabel: true,
+            fixedIcon: true,
+            list: 'only-icons',
+            options: ['bold', 'italic', 'strike', 'underline']
+          }
+        ]
+      ]"
+    />
+
+    <p class="caption"></p>
+    <p class="caption">
+      Dropdowns with exclusive options (user can pick only one option)
+      <ul>
+        <li>First has icon and label changing based on current selection</li>
+        <li>Second has fixed label but dynamic icon</li>
+        <li>Third has fixed icon but dynamic label</li>
+      </ul>
+    </p>
+    <q-editor
+      v-model="model"
+      :toolbar="[
+        [
+          {
+            label: 'Dynamic label',
+            icon: 'help_outline',
+            options: ['left', 'center', 'right', 'justify']
+          }
+        ],
+        [
+          {
+            label: 'Static label',
+            fixedLabel: true,
+            options: ['left', 'center', 'right', 'justify']
+          }
+        ],
+        [
+          {
+            label: 'Some label',
+            icon: 'account_balance',
+            fixedIcon: true,
+            options: ['left', 'center', 'right', 'justify']
+          }
+        ]
+      ]"
+    />
   </q-page>
 </template>
 
 <script>
 export default {
-  data: () => ({ model: '' }),
+  data: () => ({
+    model:
+      '<h3>Header 3</h3><div>Normal text; <b>bold</b>; <i>italic</i>; <strike>strike-trough</strike>; <u style="font-weight: bold; font-style: italic;">bold, italic and underline</u>;</div><div><u>A <i style="font-weight: bold;">mo</i>re <i style="font-weight: bold;">com</i>plica</u>ted example.</div><div><br></div><div>Link to <a href="http://quasar-framework.org">Quasar Documentation</a></div><div><font face="Courier New">Using "Courier New" font.</font></div><div><ul><li>Vue</li><li>Webpack</li></ul><ol><li>Website</li><li>App</li><ol><li>Mobile (Cordova)</li><li>Electron</li></ol></ol><div style="text-align: center;">Center aligned text</div></div><div style="text-align: right;">Right aligned</div>'
+  }),
   methods: {
+    saveWork () {
+      this.$q.notify({
+        icon: 'done',
+        color: 'positive',
+        message: 'I guess something got saved.'
+      })
+    },
+    upload () {
+      this.$q.notify({
+        icon: 'cloud_upload',
+        color: 'secondary',
+        message: 'Hmm, will upload at another time, ok?'
+      })
+    },
+    spellCheck () {
+      this.$q.notify({
+        icon: 'spellcheck',
+        color: 'secondary',
+        message: `I'll sure run the spellcheck. Later.`
+      })
+    },
+    importSomething () {
+      this.$q.notify({
+        color: 'tertiary',
+        message: `Importing... or not`
+      })
+    },
     add () {}
   }
 }
