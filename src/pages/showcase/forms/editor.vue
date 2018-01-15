@@ -4,8 +4,14 @@
       QEditor toolbar is configurable. Add only what functionality you need to it.
       <br>The following is an example with most of toolbar buttons provided by default.
     </p>
+    <p>
+      <q-toggle v-model="readonly" label="Read only" class="q-mr-sm" />
+      <q-toggle v-model="disable" label="Disable" />
+    </p>
     <q-editor
       v-model="model"
+      :readonly="readonly"
+      :disable="disable"
       :toolbar="[
         ['bold', 'italic', 'strike', 'underline', 'subscript', 'superscript'],
         ['token', 'hr', 'link', 'custom_btn'],
@@ -106,6 +112,24 @@
       />
     </q-editor>
 
+    <h4 class="q-mt-lg">Custom style</h4>
+    <q-editor
+      v-model="model"
+      toolbar-text-color="white"
+      toolbar-toggle-color="yellow-8"
+      toolbar-flat
+      toolbar-bg="primary"
+      :toolbar="[
+        ['bold', 'italic', 'underline'],
+        [{
+          label: $q.i18n.editor.formatting,
+          icon: $q.icon.editor.formatting,
+          list: 'no-icons',
+          options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'code']
+        }]
+      ]"
+    />
+
     <p class="caption">Types of dropdowns</p>
     <q-editor
       v-model="model"
@@ -184,6 +208,8 @@
 <script>
 export default {
   data: () => ({
+    readonly: false,
+    disable: false,
     model:
       '<h3>Header 3</h3><div>Normal text; <b>bold</b>; <i>italic</i>; <strike>strike-trough</strike>; <u style="font-weight: bold; font-style: italic;">bold, italic and underline</u>;</div><div><u>A <i style="font-weight: bold;">mo</i>re <i style="font-weight: bold;">com</i>plica</u>ted example.</div><div><br></div><div>Link to <a href="http://quasar-framework.org">Quasar Documentation</a></div><div><font face="Courier New">Using "Courier New" font.</font></div><div><ul><li>Vue</li><li>Webpack</li></ul><ol><li>Website</li><li>App</li><ol><li>Mobile (Cordova)</li><li>Electron</li></ol></ol><div style="text-align: center;">Center aligned text</div></div><div style="text-align: right;">Right aligned</div>'
   }),
