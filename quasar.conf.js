@@ -26,7 +26,8 @@ module.exports = function (ctx) {
       }
     },
     devServer: {
-      open: false
+      open: false,
+      port: 9090
     },
     framework: 'all',
     animations: 'all',
