@@ -36,7 +36,7 @@
         <privacy-policy ref="privacy" />
       </div>
     </div>
-    <a class="ribbon" :title="`Built with Quasar v${$q.version}`"></a>
+    <a class="ribbon" :title="`Built with Quasar v${$q.version}`">&nbsp;</a>
   </div>
 </template>
 

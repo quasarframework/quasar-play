@@ -8,7 +8,7 @@
       color="primary"
     >
       <div slot="top" slot-scope="props" class="row flex-center fit">
-        <img src="~assets/quasar-logo-full.svg" />
+        <img src="~assets/quasar-logo-full.svg">
       </div>
       <div slot="bottom" slot-scope="props" class="row flex-center fit">
         <q-btn
@@ -135,7 +135,7 @@
     >
       <q-tr slot="header" slot-scope="props" :props="props">
         <q-th v-for="col in props.cols" :key="col.name" :props="props">
-          # {{col.label}} #
+          # {{ col.label }} #
         </q-th>
       </q-tr>
     </q-table>
@@ -157,7 +157,7 @@
           />
         </q-th>
         <q-th v-for="col in props.cols" :key="col.name" :props="props">
-          {{col.label}}
+          {{ col.label }}
         </q-th>
       </q-tr>
 
@@ -182,7 +182,7 @@
         </q-tr>
         <q-tr v-show="props.expand" :props="props">
           <q-td colspan="100%">
-            <div class="text-left">This is expand slot for row above: {{props.row.name}}.</div>
+            <div class="text-left">This is expand slot for row above: {{ props.row.name }}.</div>
           </q-td>
         </q-tr>
       </template>

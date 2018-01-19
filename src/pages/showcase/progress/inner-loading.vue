@@ -26,7 +26,7 @@
             </transition>
           </q-card-main>
           <q-inner-loading :visible="visible">
-            <q-spinner-gears size="50px" color="primary"></q-spinner-gears>
+            <q-spinner-gears size="50px" color="primary" />
           </q-inner-loading>
         </q-card>
       </div>

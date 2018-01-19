@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="page-showcase">
     <div class="showcase-top text-center">
-      <img src="~assets/quasar-logo.svg" />
+      <img src="~assets/quasar-logo.svg">
 
       <p class="caption">
         Use sidebar to browse through demos, which showcase only a few of the Quasar components and features.
@@ -13,13 +13,13 @@
     <div class="row justify-center">
       <div style="width: 850px; max-width: 90vw;" class="row">
         <div
-          v-for="(category, index) in list"
+          v-for="category in list"
           :key="category.hash"
           class="col-xs-6 col-sm-4 col-lg-3"
         >
           <div class="card text-center category-link text-primary" @click="show(category)">
             <q-icon :name="category.icon" />
-            <p class="caption">{{category.title}}</p>
+            <p class="caption">{{ category.title }}</p>
           </div>
         </div>
       </div>

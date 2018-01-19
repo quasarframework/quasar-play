@@ -27,12 +27,12 @@
       <q-carousel-slide img-src="/statics/parallax2.jpg" />
 
       <q-carousel-slide>
-        <div v-for="n in 50">
+        <div v-for="n in 50" :key="`a-${n}`">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
       </q-carousel-slide>
       <q-carousel-slide v-for="n in 7" :key="n" class="flex flex-center" :class="`bg-${colors[n % 5]}`">
-        Slide 3-{{n}}
+        Slide 3-{{ n }}
       </q-carousel-slide>
 
       <q-carousel-control slot="control" position="top-right" :offset="[18, 18]" class="text-white" style="background: rgba(0, 0, 0, .3); padding: 4px; border-radius: 4px">
@@ -64,12 +64,12 @@
       quick-nav
     >
       <q-carousel-slide img-src="/statics/mountains.jpg" class="text-white">
-        <div v-for="n in 50">
+        <div v-for="n in 50" :key="`b-${n}`">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
       </q-carousel-slide>
-      <q-carousel-slide v-for="n in 7" :key="n" class="flex flex-center" :class="`bg-${colors[n % 5]}`">
-        Slide 3-{{n}}
+      <q-carousel-slide v-for="n in 7" :key="`c-${n}`" class="flex flex-center" :class="`bg-${colors[n % 5]}`">
+        Slide 3-{{ n }}
       </q-carousel-slide>
 
       <q-btn

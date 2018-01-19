@@ -15,7 +15,7 @@
             <q-list link separator class="scroll" style="min-width: 100px">
               <q-item
                 v-for="n in 20"
-                :key="n"
+                :key="`a-${n}`"
                 @click.native="notify(), $refs.popover1.hide()"
               >
                 <q-item-main label="Label" sublabel="Click me" />
@@ -45,7 +45,7 @@
                 <q-list link style="min-width: 100px">
                   <q-item
                     v-for="n in 3"
-                    :key="n"
+                    :key="`b-${n}`"
                     @click.native="notify(), popover2 = false"
                   >
                     <q-item-main label="Label" />
@@ -57,8 +57,8 @@
 
           <p class="caption text-center">Configure the Popover for button above.</p>
           <p class="text-center">
-            <q-chip tag color="primary">anchor="{{anchor}}"</q-chip>
-            <q-chip tag color="primary">self="{{self}}"</q-chip>
+            <q-chip tag color="primary">anchor="{{ anchor }}"</q-chip>
+            <q-chip tag color="primary">self="{{ self }}"</q-chip>
           </p>
           <q-card-main class="row">
             <div class="column items-center col-6">
@@ -99,7 +99,7 @@
           </q-card-main>
         </q-card>
 
-        <div style="margin-bottom: 700px;"></div>
+        <div style="margin-bottom: 700px;" />
 
         <q-page-sticky position="top-right" :offset="[16, 16]">
           <q-btn color="secondary">
@@ -144,7 +144,7 @@
             <q-list link separator class="scroll" style="min-width: 200px">
               <q-item
                 v-for="n in 20"
-                :key="n"
+                :key="`c-${n}`"
                 @click.native="notify(), popover5 = false"
               >
                 <q-item-main label="Label" sublabel="Click me" />

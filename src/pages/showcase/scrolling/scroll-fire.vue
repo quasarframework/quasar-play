@@ -5,14 +5,14 @@
         Please scroll down to see the image have a short bounce effect when being visible for first time.
         This effect is just for demoing that something happens when target comes into view.
       </p>
-      <p v-for="n in 6">{{loremipsum}}</p>
+      <p v-for="n in 6" :key="`a-${n}`">{{ loremipsum }}</p>
 
       <p class="caption">Scroll Fire below. Reload page to see the bounce effect again.</p>
       <p class="text-center">
         <img v-scroll-fire="bounceImage" src="~assets/quasar-logo.svg" style="width: 200px">
       </p>
 
-      <p v-for="n in 3">{{loremipsum}}</p>
+      <p v-for="n in 3" :key="`b-${n}`">{{ loremipsum }}</p>
     </div>
   </q-page>
 </template>

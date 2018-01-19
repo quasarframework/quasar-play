@@ -24,7 +24,7 @@
       />
 
       <p class="caption">With Array as model</p>
-      <q-chip square color="secondary">Model: {{checkArray}}</q-chip>
+      <q-chip square color="secondary">Model: {{ checkArray }}</q-chip>
       <br><br>
       <q-checkbox v-model="checkArray" label="One" color="yellow" val="one" />
       <q-checkbox v-model="checkArray" label="Two" val="two" color="secondary" style="margin-left: 10px" />

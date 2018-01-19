@@ -11,7 +11,7 @@
       </q-search>
 
       <q-search inverted v-model="terms" placeholder="Start typing a country name">
-        <q-autocomplete @search="search" @selected="selected"  />
+        <q-autocomplete @search="search" @selected="selected" />
       </q-search>
 
       <p class="caption">Maximum of 2 results at a time</p>

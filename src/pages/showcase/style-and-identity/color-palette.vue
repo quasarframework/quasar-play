@@ -4,22 +4,24 @@
     <div
       class="main-color shadow-1 row inline flex-center text-white"
       v-for="color in mainColors"
-      :class="'bg-' + color"
+      :key="color"
+      :class="`bg-${color}`"
     >
-      {{color}}
+      {{ color }}
     </div>
     <div
       class="main-color shadow-1 row inline flex-center text-dark"
       v-for="color in mainLightColors"
-      :class="'bg-' + color"
+      :key="color"
+      :class="`bg-${color}`"
     >
-      {{color}}
+      {{ color }}
     </div>
 
     <p class="caption">Full Palette</p>
-    <div class="detail" v-for="color in colors">
-      <h5 class="detailed-color shadow-1 column flex-center text-white" :class="'bg-' + color">{{color}}</h5>
-      <div class="detailed-color column flex-center" v-for="n in 14" :class="'bg-' + color + '-' + n">{{color}}-{{n}}</div>
+    <div class="detail" v-for="color in colors" :key="color">
+      <h5 class="detailed-color shadow-1 column flex-center text-white" :class="`bg-${color}`">{{ color }}</h5>
+      <div class="detailed-color column flex-center" v-for="n in 14" :key="n" :class="`bg-${color}-${n}`">{{ color }}-{{ n }}</div>
     </div>
   </q-page>
 </template>

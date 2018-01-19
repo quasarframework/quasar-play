@@ -35,7 +35,7 @@
         <q-color-picker v-model="modelHexa" readonly />
       </div>
       <div class="col-12 col-sm-6 column items-center">
-        <q-color-picker v-model="modelRgb"  readonly />
+        <q-color-picker v-model="modelRgb" readonly />
       </div>
     </div>
 

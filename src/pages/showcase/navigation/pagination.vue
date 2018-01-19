@@ -1,33 +1,35 @@
 <template>
   <q-page padding>
     <div class="label bg-secondary text-white">
-      Model <span class="right-detail"><em>{{page}}</em></span>
+      Model <span class="right-detail"><em>{{ page }}</em></span>
     </div>
 
     <p class="caption">Page buttons</p>
-    <q-pagination v-model="page" color="red"
+    <q-pagination
+      v-model="page" color="red"
       :min="min"
       :max="max"
-      :boundaryLinks="boundaryLinks"
-      :boundaryNumbers="boundaryNumbers"
-      :directionLinks="directionLinks"
+      :boundary-links="boundaryLinks"
+      :boundary-numbers="boundaryNumbers"
+      :direction-links="directionLinks"
       :ellipses="ellipses"
-      :maxPages="maxPages"
+      :max-pages="maxPages"
     />
 
     <p class="caption">Page buttons - disabled</p>
-    <q-pagination v-model="page" color="red" disable
+    <q-pagination
+      v-model="page" color="red" disable
       :min="min"
       :max="max"
-      :boundaryLinks="boundaryLinks"
-      :boundaryNumbers="boundaryNumbers"
-      :directionLinks="directionLinks"
+      :boundary-links="boundaryLinks"
+      :boundary-numbers="boundaryNumbers"
+      :direction-links="directionLinks"
       :ellipses="ellipses"
-      :maxPages="maxPages"
+      :max-pages="maxPages"
     />
 
     <p class="caption">
-      Input field<br/>
+      Input field<br>
       <small>
         You can also
         <span class="desktop-only">click</span>
@@ -37,23 +39,25 @@
       </small>
     </p>
 
-    <q-pagination v-model="page" input
+    <q-pagination
+      v-model="page" input
       :min="min"
       :max="max"
-      :boundaryLinks="boundaryLinks"
-      :directionLinks="directionLinks"
+      :boundary-links="boundaryLinks"
+      :direction-links="directionLinks"
       :ellipses="ellipses"
-      :maxPages="maxPages"
+      :max-pages="maxPages"
     />
 
     <p class="caption">Input field - disabled</p>
-    <q-pagination v-model="page" input disable
+    <q-pagination
+      v-model="page" input disable
       :min="min"
       :max="max"
-      :boundaryLinks="boundaryLinks"
-      :directionLinks="directionLinks"
+      :boundary-links="boundaryLinks"
+      :direction-links="directionLinks"
       :ellipses="ellipses"
-      :maxPages="maxPages"
+      :max-pages="maxPages"
     />
 
     <p class="caption">Configuration</p>
@@ -68,16 +72,16 @@
         <q-input type="number" v-model="maxPages" stack-label="Maximum number of page buttons" />
       </div>
       <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="boundaryLinks" toggleIndeterminate label="Show boundary buttons" />
+        <q-checkbox v-model="boundaryLinks" toggle-indeterminate label="Show boundary buttons" />
       </div>
       <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="directionLinks" toggleIndeterminate label="Show direction buttons" />
+        <q-checkbox v-model="directionLinks" toggle-indeterminate label="Show direction buttons" />
       </div>
       <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="boundaryNumbers" toggleIndeterminate label="Always show first and last page" />
+        <q-checkbox v-model="boundaryNumbers" toggle-indeterminate label="Always show first and last page" />
       </div>
       <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="ellipses" toggleIndeterminate label="Show ellipses" />
+        <q-checkbox v-model="ellipses" toggle-indeterminate label="Show ellipses" />
       </div>
     </div>
   </q-page>

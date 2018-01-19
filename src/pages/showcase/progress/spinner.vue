@@ -32,13 +32,13 @@
       </p>
 
       <div style="margin-top: 20px">
-        <div v-for="spinner in spinners" class="inline-block q-ma-sm">
+        <div v-for="spinner in spinners" :key="spinner" class="inline-block q-ma-sm">
           <component
             :is="`q-spinner-${spinner}`"
             :size="size"
             :color="color"
-          ></component>
-          <q-tooltip :offset="[0, 8]">{{spinner}}</q-tooltip>
+          />
+          <q-tooltip :offset="[0, 8]">{{ spinner }}</q-tooltip>
         </div>
       </div>
 

@@ -5,7 +5,7 @@
         Standalone
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{standard.min}} to {{standard.max}} (0 to 50)
+            Model: {{ standard.min }} to {{ standard.max }} (0 to 50)
           </q-chip>
         </span>
       </p>
@@ -16,17 +16,17 @@
         With Floating Point Precision
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{precision.min}} to {{precision.max}} (0.1 to 1.0)
+            Model: {{ precision.min }} to {{ precision.max }} (0.1 to 1.0)
           </q-chip>
         </span>
       </p>
       <q-range v-model="precision" :min="0.1" :max="1.0" :step="0.1" :decimals="1" color="amber" />
 
-       <p class="caption">
+      <p class="caption">
         With Label
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
+            Model: {{ label.min }} to {{ label.max }} (-20 to 20, step 4)
           </q-chip>
         </span>
       </p>
@@ -36,7 +36,7 @@
         With Step
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{step.min}} to {{step.max}} (0 to 45, step 5)
+            Model: {{ step.min }} to {{ step.max }} (0 to 45, step 5)
           </q-chip>
         </span>
       </p>
@@ -46,7 +46,7 @@
         Snap to Step
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{snap.min}} to {{snap.max}} (0 to 10, step 2)
+            Model: {{ snap.min }} to {{ snap.max }} (0 to 10, step 2)
           </q-chip>
         </span>
       </p>
@@ -56,7 +56,7 @@
         With Markers + Snap to Step
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{marker.min}} to {{marker.max}} (-6 to 10, step 2)
+            Model: {{ marker.min }} to {{ marker.max }} (-6 to 10, step 2)
           </q-chip>
         </span>
       </p>
@@ -66,7 +66,7 @@
         Display Label Always
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
+            Model: {{ label.min }} to {{ label.max }} (-20 to 20, step 4)
           </q-chip>
         </span>
       </p>
@@ -76,7 +76,7 @@
         Custom Label Values
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{label.min}} to {{label.max}} (-20 to 20, step 4)
+            Model: {{ label.min }} to {{ label.max }} (-20 to 20, step 4)
           </q-chip>
         </span>
       </p>
@@ -90,7 +90,7 @@
         Drag Range
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{range.min}} to {{range.max}} (0 to 100, step 1)
+            Model: {{ range.min }} to {{ range.max }} (0 to 100, step 1)
           </q-chip>
         </span>
       </p>
@@ -100,7 +100,7 @@
         Drag Range + Snap to Step
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{rangeSnap.min}} to {{rangeSnap.max}} (0 to 100, step 5)
+            Model: {{ rangeSnap.min }} to {{ rangeSnap.max }} (0 to 100, step 5)
           </q-chip>
         </span>
       </p>
@@ -110,7 +110,7 @@
         Drag Only Range (Fixed Interval)
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{onlyRange.min}} to {{onlyRange.max}} (0 to 100, step 5)
+            Model: {{ onlyRange.min }} to {{ onlyRange.max }} (0 to 100, step 5)
           </q-chip>
         </span>
       </p>

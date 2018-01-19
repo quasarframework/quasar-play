@@ -33,7 +33,7 @@
           :min="min"
           :max="max"
         >
-          $ {{model}}
+          $ {{ model }}
         </q-knob>
 
         <q-knob
@@ -43,7 +43,7 @@
           :min="min"
           :max="max"
           :step="5"
-        ></q-knob>
+        />
 
         <q-knob
           v-model="model"
@@ -56,7 +56,7 @@
           :max="max"
           :step="5"
         >
-          <q-icon class="on-left" name="euro_symbol" /> {{model}}
+          <q-icon class="on-left" name="euro_symbol" /> {{ model }}
         </q-knob>
       </div>
 
@@ -68,7 +68,7 @@
         color="primary"
         readonly
       >
-        <q-icon class="on-left" name="volume_up" /> {{model}}
+        <q-icon class="on-left" name="volume_up" /> {{ model }}
       </q-knob>
 
       <p class="caption">Disabled state</p>
@@ -78,7 +78,7 @@
         :max="max"
         disable
       >
-        <q-icon class="on-left" name="volume_up" /> {{model}}
+        <q-icon class="on-left" name="volume_up" /> {{ model }}
       </q-knob>
 
       <p class="caption">Inside Field</p>

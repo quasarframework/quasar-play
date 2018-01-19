@@ -122,7 +122,7 @@
           :disable="props.isFirstPage"
           @click="props.prevPage"
         />
-        <div class="q-mr-sm" style="font-size: small">Page {{props.pagination.page}} / {{props.pagesNumber}}</div>
+        <div class="q-mr-sm" style="font-size: small">Page {{ props.pagination.page }} / {{ props.pagesNumber }}</div>
         <q-btn
           round dense size="sm" icon="redo" color="secondary"
           :disable="props.isLastPage"
@@ -144,7 +144,7 @@
       <template slot="top-selection" slot-scope="props">
         <q-btn color="secondary" flat label="Action 1" class="q-mr-sm" />
         <q-btn color="secondary" flat label="Action 2" />
-        <div class="col"></div>
+        <div class="col" />
         <q-btn color="negative" flat round delete icon="delete" @click="deleteRow" />
       </template>
     </q-table>

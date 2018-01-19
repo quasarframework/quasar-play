@@ -130,7 +130,7 @@
     </div>
 
     <div v-if="scrolling" class="text-center" style="margin-top: 25px;">
-      <p class="caption" v-for="n in 50">
+      <p class="caption" v-for="n in 50" :key="n">
         <em>Page has intended scroll</em>
       </p>
     </div>

@@ -31,7 +31,7 @@
         </a>
       </q-page-sticky>
 
-      <p class="caption" v-for="n in 50">Keep scrolling...</p>
+      <p class="caption" v-for="n in 50" :key="n">Keep scrolling...</p>
     </div>
   </q-page>
 </template>

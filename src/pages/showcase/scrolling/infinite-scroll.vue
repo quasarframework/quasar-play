@@ -5,7 +5,7 @@
 
       <br>
       <q-infinite-scroll :handler="refresher">
-        <p v-for="(item, index) in items" class="caption">
+        <p v-for="(item, index) in items" :key="index" class="caption">
           <q-chip square color="secondary" class="shadow-1">
             {{ index + 1 }}
           </q-chip>

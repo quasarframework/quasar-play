@@ -7,7 +7,7 @@
         on the area below to see it in action.
       </p>
 
-      <div v-ripple class="relative-position" :class="classes">&nbsp;</div>
+      <div v-ripple class="relative-position" :class="classes" />
     </div>
   </q-page>
 </template>

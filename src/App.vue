@@ -1,8 +1,8 @@
 <template>
   <div class="q-app">
     <transition
-      enterActiveClass="animated fadeIn"
-      leaveActiveClass="animated fadeOut"
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
       mode="out-in"
       :duration="300"
       @leave="resetScroll"
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'app',
+  name: 'App',
   methods: {
     resetScroll (el, done) {
       document.documentElement.scrollTop = 0

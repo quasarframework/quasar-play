@@ -7,7 +7,7 @@ const routes = [
   }
 ]
 
-function component (path, meta) {
+function lazyLoad (path, meta) {
   return {
     path,
     meta,
@@ -40,13 +40,13 @@ categories.forEach(category => {
     let path = category.hash + '/' + feature.hash
 
     if (!feature.tabs) {
-      showcase.children.push(component(path, feature))
+      showcase.children.push(lazyLoad(path, feature))
       return
     }
 
     feature.tabs.forEach(tab => {
       let subpath = path + '/' + tab.hash
-      showcase.children.push(component(subpath, {
+      showcase.children.push(lazyLoad(subpath, {
         title: tab.title,
         hash: '/' + path,
         iframeTabs: feature.iframeTabs,

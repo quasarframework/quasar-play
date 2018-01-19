@@ -4,7 +4,7 @@
       <p class="caption">Suffixes (none, xs, sm, md, lg, xl) do not refer to device screen size, but to the size of gutter between elements.</p>
 
       <div v-for="size in ['none', 'xs', 'sm', 'md', 'lg', 'xl']" :key="`gutter_${size}`">
-        <p class="caption">gutter-{{size}}</p>
+        <p class="caption">gutter-{{ size }}</p>
         <div class="doc-container with-bg q-mb-lg">
           <div class="row" :class="`gutter-${size}`">
             <div class="col-4" v-for="n in 5" :key="n">
@@ -14,10 +14,10 @@
         </div>
 
         <div v-for="sizeY in ['none', 'xs', 'sm', 'md', 'lg', 'xl']" :key="`gutter_${size}_${sizeY}`" v-if="size !== sizeY">
-          <p class="caption">gutter-x-{{size}} gutter-y-{{sizeY}}</p>
+          <p class="caption">gutter-x-{{ size }} gutter-y-{{ sizeY }}</p>
           <div class="doc-container with-bg q-mb-lg">
             <div class="row" :class="`gutter-x-${size} gutter-y-${sizeY}`">
-              <div class="col-4" v-for="n in 5" :key="n">
+              <div class="col-4" v-for="n in 5" :key="`col-${n}`">
                 <div class="my-content">&nbsp;</div>
               </div>
             </div>

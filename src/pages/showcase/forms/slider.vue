@@ -5,7 +5,7 @@
         Standard
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{standard}} (0 to 50)
+            Model: {{ standard }} (0 to 50)
           </q-chip>
         </span>
       </p>
@@ -16,7 +16,7 @@
         With Floating Point Precision
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{precision}} (0.1 to 1.0)
+            Model: {{ precision }} (0.1 to 1.0)
           </q-chip>
         </span>
       </p>
@@ -26,7 +26,7 @@
         With Step
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{step}} (0 to 45, step 5)
+            Model: {{ step }} (0 to 45, step 5)
           </q-chip>
         </span>
       </p>
@@ -36,7 +36,7 @@
         With Label
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{label}} (-20 to 20, step 4)
+            Model: {{ label }} (-20 to 20, step 4)
           </q-chip>
         </span>
       </p>
@@ -46,7 +46,7 @@
         Snaps to Steps
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{snap}} (0 to 10, step 2)
+            Model: {{ snap }} (0 to 10, step 2)
           </q-chip>
         </span>
       </p>
@@ -56,7 +56,7 @@
         With Markers. Snaps to Steps
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{marker}} (0 to 10, step 2)
+            Model: {{ marker }} (0 to 10, step 2)
           </q-chip>
         </span>
       </p>
@@ -66,7 +66,7 @@
         Display Label Always
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{label}} (-20 to 20, step 4)
+            Model: {{ label }} (-20 to 20, step 4)
           </q-chip>
         </span>
       </p>
@@ -76,7 +76,7 @@
         Custom Label Value
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{label}} (-20 to 20, step 4)
+            Model: {{ label }} (-20 to 20, step 4)
           </q-chip>
         </span>
       </p>

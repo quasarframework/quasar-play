@@ -21,7 +21,7 @@
             :enter-active-class="enterClass"
             :leave-active-class="leaveClass"
           >
-            <div v-if="show" v-html="loremipsum"></div>
+            <div v-if="show" v-html="loremipsum" />
           </transition>
         </q-card-main>
       </q-card>
@@ -42,7 +42,7 @@
               v-for="n in 3"
               :key="n"
               v-html="loremipsum"
-            ></div>
+            />
           </transition-group>
         </q-card-main>
       </q-card>

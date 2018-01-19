@@ -57,7 +57,7 @@
         </q-item>
 
         <div v-if="scrolling" style="padding: 25px 16px 16px;">
-          <p class="caption" v-for="n in 50">
+          <p class="caption" v-for="n in 50" :key="`left-${n}`">
             <em>Left Panel has intended scroll</em>
           </p>
         </div>
@@ -75,7 +75,7 @@
     >
       <q-list-header>Right Panel</q-list-header>
       <div v-if="scrolling" style="padding: 25px 16px 16px;">
-        <p class="caption" v-for="n in 50">
+        <p class="caption" v-for="n in 50" :key="`right-${n}`">
           <em>Right Panel has intended scroll</em>
         </p>
       </div>

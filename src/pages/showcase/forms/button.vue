@@ -31,36 +31,41 @@
       <q-btn round color="purple" icon="local_grocery_store" />
       <q-btn round color="black" icon="my_location" />
 
-      <p class="caption">Button sizes ({{sizes.join(', ')}})</p>
-      <q-btn v-for="size in sizes" :key="`btn_size_sq_${size}`"
+      <p class="caption">Button sizes ({{ sizes.join(', ') }})</p>
+      <q-btn
+        v-for="size in sizes" :key="`btn_size_sq_${size}`"
         color="primary"
         :size="size"
         :label="`Size ${size}`"
       />
       <br>
-      <q-btn v-for="size in sizes" :key="`btn_size_rd_${size}`"
+      <q-btn
+        v-for="size in sizes" :key="`btn_size_rd_${size}`"
         rounded
         color="primary"
         :size="size"
         :label="`Size ${size}`"
       />
       <br>
-      <q-btn v-for="(size, i) in sizes" :key="`btn_size_round_${size}`"
+      <q-btn
+        v-for="(size, i) in sizes" :key="`btn_size_round_${size}`"
         round
         color="primary"
         :size="size"
         :icon="icons[i]"
       />
 
-      <p class="caption">Button sizes (dense) ({{sizes.join(', ')}})</p>
-      <q-btn v-for="size in sizes" :key="`btn_size_dense_sq_${size}`"
+      <p class="caption">Button sizes (dense) ({{ sizes.join(', ') }})</p>
+      <q-btn
+        v-for="size in sizes" :key="`btn_size_dense_sq_${size}`"
         dense
         color="primary"
         :size="size"
         :label="`Size ${size}`"
       />
       <br>
-      <q-btn v-for="size in sizes" :key="`btn_size_dense_rd_${size}`"
+      <q-btn
+        v-for="size in sizes" :key="`btn_size_dense_rd_${size}`"
         rounded
         dense
         color="primary"
@@ -68,7 +73,8 @@
         :label="`Size ${size}`"
       />
       <br>
-      <q-btn v-for="(size, i) in sizes" :key="`btn_size_dense_round_${size}`"
+      <q-btn
+        v-for="(size, i) in sizes" :key="`btn_size_dense_round_${size}`"
         round
         dense
         color="primary"

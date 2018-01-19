@@ -53,7 +53,7 @@
       </q-fab>
     </q-page-sticky>
 
-    <div style="height: 1000px">&nbsp;</div>
+    <div style="height: 1000px" />
   </q-page>
 </template>
 

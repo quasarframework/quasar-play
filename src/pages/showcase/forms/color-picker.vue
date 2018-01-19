@@ -6,25 +6,25 @@
       <div class="col-6">
         <q-color-picker v-model="modelHex" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: this.modelHex }">
-          <pre>Hex: {{modelHex}}</pre>
+          <pre>Hex: {{ modelHex }}</pre>
         </div>
       </div>
       <div class="col-6">
         <q-color-picker v-model="modelHexa" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: this.modelHexa }">
-          <pre>Hexa: {{modelHexa}}</pre>
+          <pre>Hexa: {{ modelHexa }}</pre>
         </div>
       </div>
       <div class="col-6">
         <q-color-picker v-model="modelRgb" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: rgb(this.modelRgb) }">
-          <pre>RGB: {{modelRgb}}</pre>
+          <pre>RGB: {{ modelRgb }}</pre>
         </div>
       </div>
       <div class="col-6">
         <q-color-picker v-model="modelRgba" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: rgb(this.modelRgba) }">
-          <pre>RGBA: {{modelRgba}}</pre>
+          <pre>RGBA: {{ modelRgba }}</pre>
         </div>
       </div>
     </div>
@@ -34,13 +34,13 @@
       <div class="col-6">
         <q-color-picker :value="modelHex" @change="model => { modelHex = model }" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: this.modelHex }">
-          <pre>Hex: {{modelHex}}</pre>
+          <pre>Hex: {{ modelHex }}</pre>
         </div>
       </div>
       <div class="col-6">
         <q-color-picker :value="modelHexa" @change="model => { modelHexa = model }" />
         <div class="inline-block text-white" style="text-shadow: black 0px 0px 7px; padding: 10px" :style="{ backgroundColor: this.modelHexa }">
-          <pre>Hexa: {{modelHexa}}</pre>
+          <pre>Hexa: {{ modelHexa }}</pre>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
         <q-color-picker v-model="modelHexa" readonly />
       </div>
       <div class="col-6">
-        <q-color-picker v-model="modelRgb"  readonly />
+        <q-color-picker v-model="modelRgb" readonly />
       </div>
       <div class="col-6">
         <q-color-picker v-model="modelRgba" readonly />
@@ -80,7 +80,7 @@
         <q-color-picker v-model="modelHexa" disable />
       </div>
       <div class="col-6">
-        <q-color-picker v-model="modelRgb"  disable />
+        <q-color-picker v-model="modelRgb" disable />
       </div>
       <div class="col-6">
         <q-color-picker v-model="modelRgba" disable />

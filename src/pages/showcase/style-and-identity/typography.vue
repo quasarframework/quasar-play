@@ -6,7 +6,7 @@
       </q-card-title>
       <q-card-separator />
       <q-card-main>
-        <div v-for="heading in headings" class="row items-center q-mb-lg">
+        <div v-for="heading in headings" :key="heading" class="row items-center q-mb-lg">
           <div class="col-sm-3 col-12">
             <q-chip color="primary" square>.{{ heading.class }}</q-chip>
             <q-chip color="secondary" square v-if="heading.equivalent">{{ heading.equivalent }}</q-chip>
@@ -27,7 +27,7 @@
       </q-card-title>
       <q-card-separator />
       <q-card-main>
-        <div v-for="weight in weights" class="row items-center q-mb-md">
+        <div v-for="weight in weights" :key="weight" class="row items-center q-mb-md">
           <div class="col-sm-3 col-12">
             <q-chip color="primary" square>.text-weight-{{ weight }}</q-chip>
           </div>

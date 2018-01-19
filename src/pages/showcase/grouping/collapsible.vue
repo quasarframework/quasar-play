@@ -143,7 +143,7 @@
     <q-list>
       <q-collapsible group="somegroup" icon="explore" label="Counter" @show="counter_start" @hide="counter_stop">
         <div>Will only count when opened, using the open and close event to control count timer</div>
-        <label>Counter: {{counter}}</label>
+        <label>Counter: {{ counter }}</label>
       </q-collapsible>
     </q-list>
 
@@ -204,7 +204,7 @@
             <div>
               (1 mile)
             </div>
-            <div class="col"></div>
+            <div class="col" />
             <q-btn flat color="primary" size="sm" icon="directions" label="Start" />
           </q-card-actions>
         </q-card>

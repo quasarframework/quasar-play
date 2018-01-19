@@ -29,7 +29,7 @@
         <q-item multiline>
           <q-item-side>
             <q-item-tile avatar>
-              <img src="statics/boy-avatar.png" />
+              <img src="statics/boy-avatar.png">
             </q-item-tile>
           </q-item-side>
           <q-item-main>

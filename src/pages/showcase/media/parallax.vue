@@ -6,7 +6,7 @@
         if on desktop) to see Parallax in action.
       </p>
 
-      <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+      <p v-for="n in 7" :key="`a-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
 
     <q-parallax src="statics/parallax1.jpg" :height="200">
@@ -15,7 +15,7 @@
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+      <p v-for="n in 7" :key="`b-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
 
     <q-parallax src="statics/parallax2.jpg">
@@ -24,7 +24,7 @@
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+      <p v-for="n in 7" :key="`c-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
 
     <q-parallax src="statics/parallax1.jpg">
@@ -33,7 +33,7 @@
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+      <p v-for="n in 7" :key="`d-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
 
     <q-parallax src="statics/mountains.jpg" :height="200">
@@ -42,7 +42,7 @@
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" class="par-text">{{loremipsum}}</p>
+      <p v-for="n in 7" :key="`e-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
   </q-page>
 </template>

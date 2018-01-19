@@ -166,7 +166,6 @@
       ]"
     />
 
-    <p class="caption"></p>
     <p class="caption">
       Dropdowns with exclusive options (user can pick only one option)
       <ul>

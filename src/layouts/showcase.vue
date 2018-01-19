@@ -47,7 +47,7 @@
         class="bg-grey-3"
       >
         <div class="row flex-center bg-white" style="width: 100%; height: 100px;">
-          <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;"/>
+          <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;">
           <div style="margin-left: 15px">
             Quasar v{{ $q.version }}
           </div>
@@ -85,8 +85,8 @@
 
     <q-page-container>
       <transition
-        enterActiveClass="animated fadeIn"
-        leaveActiveClass="animated fadeOut"
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
         mode="out-in"
         :duration="300"
         @leave="resetScroll"
