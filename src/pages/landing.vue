@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style lang="styl">
+<style lang="stylus">
 .index-page
   .banner
     height 50vh

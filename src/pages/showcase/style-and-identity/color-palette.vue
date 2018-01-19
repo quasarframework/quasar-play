@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style lang="styl">
+<style lang="stylus">
 #view-colors
   div.main-color
     width 110px

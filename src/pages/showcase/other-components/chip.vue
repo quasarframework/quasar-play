@@ -122,7 +122,7 @@
   </q-page>
 </template>
 
-<style lang="styl">
+<style lang="stylus">
 .docs-chip .q-chip
   margin 5px
 </style>

@@ -36,7 +36,7 @@
   </q-page>
 </template>
 
-<style lang="styl">
+<style lang="stylus">
 @import '~variables'
 
 .play-backtotop

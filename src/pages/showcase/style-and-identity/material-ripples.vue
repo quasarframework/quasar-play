@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="styl">
+<style lang="stylus">
 @import '~variables'
 
 .docs-ripple > div > .relative-position

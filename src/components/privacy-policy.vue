@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style lang="styl">
+<style lang="stylus">
 .privacy-policy
   h6
     margin-top 25px
