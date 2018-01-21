@@ -19,7 +19,44 @@
           <q-item-main :label="dialog.label" />
           <q-item-side right icon="keyboard_arrow_right" />
         </q-item>
+
+        <q-item-separator />
       </q-list>
+
+      <p class="caption">Action Sheet as a component defined in template</p>
+      <q-btn
+        color="secondary"
+        @click="actionSheet = true"
+        label="Show me"
+      />
+
+      <q-action-sheet
+        v-model="actionSheet"
+        title="Action Sheet"
+        @ok="showNotification"
+        @cancel="showCancel"
+        :actions="[
+          {
+            label: 'Delete',
+            icon: 'delete',
+            color: 'red',
+            handler: deleteAction
+          },
+          {
+            label: 'Share',
+            icon: 'share',
+            color: 'primary'
+          },
+          {
+            label: 'Play',
+            icon: 'gamepad'
+          },
+          {
+            label: 'Favorite',
+            icon: 'favorite'
+          }
+        ]"
+      />
     </div>
   </q-page>
 </template>
@@ -28,6 +65,7 @@
 export default {
   data () {
     return {
+      actionSheet: false,
       types: [
         {
           label: 'List with Icons',
@@ -65,6 +103,7 @@ export default {
           {
             label: 'Delete',
             icon: 'delete',
+            color: 'negative',
             handler: () => {
               this.$q.notify('Deleted Article')
             }
@@ -72,6 +111,7 @@ export default {
           {
             label: 'Share',
             icon: 'share',
+            color: 'blue',
             handler: () => {
               this.$q.notify('Shared!')
             }
@@ -83,9 +123,11 @@ export default {
               this.$q.notify('Launched Game')
             }
           },
+          {}, // separator
           {
             label: 'Favorite',
             icon: 'favorite',
+            color: 'secondary',
             handler: () => {
               this.$q.notify('Added to favorites')
             }
@@ -112,6 +154,7 @@ export default {
               this.$q.notify('Shared to Joe!')
             }
           },
+          {}, // separator
           {
             label: 'John',
             avatar: 'statics/boy-avatar.png',
@@ -140,6 +183,25 @@ export default {
             this.$q.notify('Cancelled...')
           }
         }
+      })
+    },
+    deleteAction () {
+      this.$q.notify('Deleting...')
+    },
+    showNotification (item) {
+      if (item.label === 'Delete') {
+        return
+      }
+      this.$q.notify({
+        color: 'secondary',
+        message: `Clicked on "${item.label}"`
+      })
+    },
+    showCancel () {
+      this.$q.notify({
+        color: 'tertiary',
+        icon: 'done',
+        message: 'Action Sheet was dismissed'
       })
     }
   }
