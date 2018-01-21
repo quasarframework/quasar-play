@@ -20,12 +20,15 @@
       <p class="caption">Button with icons</p>
       <q-btn color="primary" icon="mail" label="On Left" />
       <q-btn color="secondary" icon-right="mail" label="On Right" />
-      <q-btn color="info" icon="mail" icon-right="send" label="On Left and Right" />
+      <q-btn color="red" icon="mail" icon-right="send" label="On Left and Right" />
+
+      <p class="caption">Button with custom text color</p>
+      <q-btn color="amber" text-color="purple" icon="camera_enhance" label="Purple text" />
 
       <p class="caption">Round Button</p>
       <q-btn round color="primary" icon="shopping_cart" />
       <q-btn round color="secondary" icon="navigation" />
-      <q-btn round color="amber" icon="layers_clear" />
+      <q-btn round color="amber" text-color="black" icon="layers_clear" />
       <q-btn round color="brown-5" icon="directions" />
       <q-btn round color="deep-orange" icon="edit_location" />
       <q-btn round color="purple" icon="local_grocery_store" />
@@ -55,7 +58,7 @@
         :icon="icons[i]"
       />
 
-      <p class="caption">Button sizes (dense) ({{ sizes.join(', ') }})</p>
+      <p class="caption">Dense button sizes ({{ sizes.join(', ') }})</p>
       <q-btn
         v-for="size in sizes" :key="`btn_size_dense_sq_${size}`"
         dense
@@ -82,10 +85,18 @@
         :icon="icons[i]"
       />
 
-      <p class="caption">Filled button</p>
-      <q-btn color="primary" label="Standard" />
-      <q-btn rounded color="primary" label="Standard Rounded" />
-      <q-btn round color="primary" icon="card_giftcard" />
+      <p class="caption">Custom button size</p>
+      <q-btn
+        size="10px"
+        color="primary"
+        label="Text height: 10px"
+      />
+      <q-btn
+        size="25px"
+        round
+        color="secondary"
+        icon="map"
+      />
 
       <p class="caption">Flat button</p>
       <q-btn flat color="primary" label="Flat" />
@@ -106,12 +117,20 @@
       <q-btn glossy color="primary" label="Glossy" />
       <q-btn glossy color="secondary" label="Glossy" />
       <q-btn glossy color="deep-orange" label="Glossy" />
+      <br>
       <q-btn glossy rounded color="primary" label="Glossy Rounded" />
       <q-btn glossy rounded color="secondary" label="Glossy Rounded" />
       <q-btn glossy rounded color="deep-orange" label="Glossy Rounded" />
+      <br>
       <q-btn glossy round color="primary" icon="card_giftcard" />
       <q-btn glossy round color="secondary" icon="local_florist" />
       <q-btn glossy round color="deep-orange" icon="local_activity" />
+
+      <p class="caption">Content alignment</p>
+      <q-btn align="left" class="btn-fixed-width" color="primary" label="Align to left" />
+      <q-btn align="right" class="btn-fixed-width" color="secondary" label="Align to right" />
+      <q-btn align="between" class="btn-fixed-width" color="tertiary" label="Align between" icon="flight_takeoff" />
+      <q-btn align="around" class="btn-fixed-width" color="brown-5" label="Align around" icon="lightbulb_outline" />
 
       <p class="caption">Disabled button</p>
       <q-btn color="primary" disable label="Disabled" />
@@ -129,9 +148,28 @@
       <q-btn color="primary" class="block" icon="alarm" label="Block" />
       <q-btn color="secondary" class="block" label="Block" />
 
-      <p class="caption">Full width button</p>
+      <p class="caption">Full width button (or use flex classes on parent)</p>
       <q-btn color="primary" class="full-width" label="Full-width" />
       <q-btn color="secondary" class="full-width" label="Full-width" />
+
+      <div class="mat" style="margin-top: 20px">
+        <p class="caption">Button with no auto-caps (Material Theme only)</p>
+        <q-btn color="primary" no-caps label="No caps" />
+
+        <p class="caption">No ripple effect (Material Theme only)</p>
+        <q-btn color="primary" no-ripple label="No Ripple Effect" />
+
+        <p class="caption">Wait for ripple then trigger (Material Theme only)</p>
+        <q-btn color="primary" wait-for-ripple label="Click me" @click="alert" />
+      </div>
+
+      <p class="caption">Button with timeout (keep pressing more than one second)</p>
+      <q-btn
+        :label="`Count ${count}`"
+        @click="count++"
+        :repeat-timeout="1000"
+        color="primary"
+      />
 
       <p class="caption">Button with progress</p>
       <q-btn loader color="secondary" @click="simulateProgress" label="Button" />
@@ -192,6 +230,7 @@
 export default {
   data () {
     return {
+      count: 0,
       progress: false,
       percentage1: 0,
       percentage2: 0,
@@ -232,6 +271,11 @@ export default {
           done()
         }
       }, 700)
+    },
+    alert () {
+      this.$q.dialog({
+        title: 'Good job!'
+      })
     }
   },
   beforeDestroy () {
@@ -242,6 +286,9 @@ export default {
 </script>
 
 <style lang="stylus">
-.docs-btn .q-btn
-  margin 5px
+.docs-btn
+  .q-btn
+    margin 5px
+  .btn-fixed-width
+    width 200px
 </style>

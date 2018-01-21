@@ -167,15 +167,32 @@ export default [
     ]
   },
   {
+    title: 'Buttons',
+    icon: 'touch_app',
+    hash: 'buttons',
+    features: [
+      {
+        title: 'Standard Button',
+        icon: 'panorama_wide_angle',
+        hash: 'btn'
+      },
+      {
+        title: 'Button Groups',
+        icon: 'group',
+        hash: 'btn-group'
+      },
+      {
+        title: 'Dropdown Buttons',
+        icon: 'details',
+        hash: 'btn-dropdown'
+      }
+    ]
+  },
+  {
     title: 'Forms',
     icon: 'assignment',
     hash: 'forms',
     features: [
-      {
-        title: 'Button',
-        icon: 'radio_button_unchecked',
-        hash: 'button'
-      },
       {
         title: 'Field',
         icon: 'text_fields',

@@ -1,89 +1,72 @@
 <template>
   <q-page padding>
-    <div class="label bg-secondary text-white">
-      Model <span class="right-detail"><em>{{ page }}</em></span>
-    </div>
-
-    <p class="caption">Page buttons</p>
+    <p class="caption">With buttons</p>
     <q-pagination
-      v-model="page" color="red"
-      :min="min"
-      :max="max"
-      :boundary-links="boundaryLinks"
-      :boundary-numbers="boundaryNumbers"
-      :direction-links="directionLinks"
-      :ellipses="ellipses"
-      :max-pages="maxPages"
+      v-model="page"
+      :min="1"
+      :max="6"
     />
 
-    <p class="caption">Page buttons - disabled</p>
+    <p class="caption">With inputbox</p>
     <q-pagination
-      v-model="page" color="red" disable
-      :min="min"
-      :max="max"
-      :boundary-links="boundaryLinks"
-      :boundary-numbers="boundaryNumbers"
-      :direction-links="directionLinks"
-      :ellipses="ellipses"
-      :max-pages="maxPages"
+      input
+      v-model="page"
+      :min="1"
+      :max="6"
     />
 
-    <p class="caption">
-      Input field<br>
-      <small>
-        You can also
-        <span class="desktop-only">click</span>
-        <span class="mobile-only">tap</span>
-        on the Input box and type out another page number
-        then hit &lt;ENTER&gt;
-      </small>
-    </p>
-
+    <p class="caption">With maximum number of links & custom color</p>
     <q-pagination
-      v-model="page" input
-      :min="min"
-      :max="max"
-      :boundary-links="boundaryLinks"
-      :direction-links="directionLinks"
-      :ellipses="ellipses"
-      :max-pages="maxPages"
+      v-model="page2"
+      color="secondary"
+      :min="1"
+      :max="15"
+      :max-pages="6"
     />
 
-    <p class="caption">Input field - disabled</p>
+    <p class="caption">With no ellipses</p>
     <q-pagination
-      v-model="page" input disable
-      :min="min"
-      :max="max"
-      :boundary-links="boundaryLinks"
-      :direction-links="directionLinks"
-      :ellipses="ellipses"
-      :max-pages="maxPages"
+      v-model="page2"
+      :min="1"
+      :max="15"
+      :max-pages="6"
+      :ellipses="false"
     />
 
-    <p class="caption">Configuration</p>
-    <div class="row gutter-sm items-center">
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-input type="number" v-model="min" stack-label="Minimum page number" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-input type="number" v-model="max" :min="min" stack-label="Maximum page number" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-input type="number" v-model="maxPages" stack-label="Maximum number of page buttons" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="boundaryLinks" toggle-indeterminate label="Show boundary buttons" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="directionLinks" toggle-indeterminate label="Show direction buttons" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="boundaryNumbers" toggle-indeterminate label="Always show first and last page" />
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-4 col-xl-3">
-        <q-checkbox v-model="ellipses" toggle-indeterminate label="Show ellipses" />
-      </div>
-    </div>
+    <p class="caption">With boundary links</p>
+    <q-pagination
+      v-model="page2"
+      :min="1"
+      :max="15"
+      :max-pages="6"
+      boundary-links
+    />
+
+    <p class="caption">With direction links</p>
+    <q-pagination
+      v-model="page2"
+      :min="1"
+      :max="15"
+      :max-pages="6"
+      direction-links
+    />
+
+    <p class="caption">With custom interval</p>
+    <q-pagination
+      v-model="page3"
+      :min="5"
+      :max="10"
+    />
+
+    <p class="caption">Mix and match</p>
+    <q-pagination
+      v-model="page4"
+      :min="7"
+      :max="18"
+      :max-pages="8"
+      boundary-links
+      direction-links
+    />
   </q-page>
 </template>
 
@@ -92,13 +75,9 @@ export default {
   data () {
     return {
       page: 5,
-      min: 1,
-      max: 17,
-      boundaryLinks: null,
-      boundaryNumbers: null,
-      directionLinks: null,
-      ellipses: null,
-      maxPages: 7
+      page2: 6,
+      page3: 7,
+      page4: 5
     }
   }
 }
