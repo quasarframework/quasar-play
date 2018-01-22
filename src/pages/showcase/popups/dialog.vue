@@ -20,10 +20,10 @@
           <q-item-side right icon="keyboard_arrow_right" />
         </q-item>
         <q-item-separator />
-        <q-list-header>Using QDialog as a component in template</q-list-header>
+        <q-list-header>Options</q-list-header>
         <q-item
           link
-          v-for="dialog in component"
+          v-for="dialog in options"
           :key="dialog.label"
           @click.native="dialog.handler()"
           v-ripple.mat
@@ -36,19 +36,41 @@
         <q-list-header>Appear from Edges</q-list-header>
         <q-item
           link
-          v-for="position in ['top', 'bottom', 'left', 'right']"
+          v-for="position in ['top', 'right', 'bottom', 'left']"
           :key="position"
-          :position="position"
-          @click.native="showFromEdge(position)"
+          @click.native="openSpecialPosition(position)"
           v-ripple.mat
         >
-          <q-item-side icon="open_with" />
+          <q-item-side :icon="positionalIcon[position]" />
           <q-item-main :label="`Dialog from ${position}`" />
           <q-item-side right icon="keyboard_arrow_right" />
         </q-item>
       </q-list>
 
-      <p class="caption">Form components can be combined and named however you wish. Check source code.</p>
+      <p class="caption">
+        For complex cases where you need a certain content (like different form components),
+        you can use the Dialog as a component. This way you can also add your custom logic
+        for content validation.
+      </p>
+      <q-btn color="primary" @click="customDialogModel = true" label="Show Dialog" />
+
+      <q-dialog
+        v-model="customDialogModel"
+        ref="dialog"
+        title="Custom title"
+        message="Custom message"
+        :stack-buttons="stackButtons"
+        @cancel="onCancel"
+        @ok="onOk"
+        @show="onShow"
+        @hide="onHide"
+      >
+        <q-toggle v-model="stackButtons" label="Stack Buttons" />
+        <template slot="buttons" slot-scope="props">
+          <q-btn flat label="Cancel" @click="props.cancel()" />
+          <q-btn flat label="OK" @click="props.ok()" />
+        </template>
+      </q-dialog>
     </div>
   </q-page>
 </template>
@@ -56,16 +78,36 @@
 <script>
 export default {
   methods: {
-    showFromEdge (position) {
+    openSpecialPosition (position) {
       this.$q.dialog({
         title: 'Positioned',
         message: `This dialog appears from ${position}.`,
         position
       })
+    },
+    onOk () {
+      console.log('ok')
+    },
+    onCancel () {
+      console.log('cancel')
+    },
+    onShow () {
+      console.log('show')
+    },
+    onHide () {
+      console.log('hide')
     }
   },
   data () {
     return {
+      stackButtons: false,
+      customDialogModel: false,
+      positionalIcon: {
+        top: 'arrow_upward',
+        right: 'arrow_forward',
+        bottom: 'arrow_downward',
+        left: 'arrow_back'
+      },
       types: [
         {
           label: 'Alert',
@@ -162,83 +204,38 @@ export default {
           }
         }
       ],
-      component: [
+      options: [
         {
-          label: 'TODO Custom CSS classes & style to buttons',
-          icon: 'format_color_fill',
+          label: 'Stack Buttons',
+          icon: 'dns',
           handler: () => {
             this.$q.dialog({
-              title: 'Confirm',
-              message: 'Customized buttons.',
-              color: 'secondary',
-              ok: 'Agree',
-              cancel: 'Disagree'
+              title: 'Stacked buttons',
+              message: 'Go to a movie.',
+              ok: 'Yes, please!',
+              cancel: 'Uhm, nope',
+              stackButtons: true
+            }).then(() => {
+              this.$q.notify('Agreed!')
+            }).catch(() => {
+              this.$q.notify('Disagreed...')
             })
           }
         },
         {
-          label: 'TODO Stacked Buttons Example',
-          icon: 'reorder',
+          label: 'Prevent accidental close',
+          icon: 'done_all',
           handler: () => {
             this.$q.dialog({
-              title: 'Favorite Superhero',
-              message: 'What is your superhero of choice?',
-              stackButtons: true,
-              buttons: [
-                {
-                  label: 'Choose Superman',
-                  handler: () => {
-                    console.log('Superman.')
-                  }
-                },
-                {
-                  label: 'Choose Batman',
-                  handler: () => {
-                    console.log('Batman.')
-                  }
-                },
-                {
-                  label: 'Choose Spiderman',
-                  handler: () => {
-                    console.log('Spiderman.')
-                  }
-                },
-                {
-                  label: 'No Thanks',
-                  color: 'primary',
-                  raised: true,
-                  handler: () => {
-                    console.log('Ok, no superhero.')
-                  }
-                }
-              ]
-            })
-          }
-        },
-        {
-          label: 'TODO Prevent Close on Button',
-          icon: 'clear',
-          handler: () => {
-            this.$q.dialog({
-              title: 'Prevent Close',
-              message: 'Having "Prevent" checkbox ticked and then hitting "Try to Close" button will prevent the dialog from closing.',
-              options: {
-                type: 'checkbox',
-                model: ['prevent'],
-                items: [
-                  {label: 'Prevent dialog close', value: 'prevent'}
-                ]
-              },
-              ok: 'Try to Close',
+              title: 'Prevent close',
+              message: 'This dialog cannot be dismissed by clicking/tapping on the background overlay.',
+              ok: true,
+              cancel: true,
               preventClose: true
-            }).then((data, close) => {
-              if (data[0] === 'prevent') {
-                this.$q.notify('Untick "Prevent" checkbox to be able to close the Dialog.')
-                return
-              }
-              close().then(() => {
-                this.$q.notify(`Finally. It's closed now.`)
-              })
+            }).then(() => {
+              this.$q.notify('You said OK!')
+            }).catch(() => {
+              this.$q.notify(`You didn't agree`)
             })
           }
         }
