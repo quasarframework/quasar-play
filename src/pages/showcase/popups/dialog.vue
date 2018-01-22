@@ -57,18 +57,30 @@
       <q-dialog
         v-model="customDialogModel"
         ref="dialog"
-        title="Custom title"
-        message="Custom message"
-        :stack-buttons="stackButtons"
+        title="Favorite Superhero"
+        message="What is your superhero of choice?"
+        stack-buttons
+        prevent-close
         @cancel="onCancel"
         @ok="onOk"
         @show="onShow"
         @hide="onHide"
       >
-        <q-toggle v-model="stackButtons" label="Stack Buttons" />
+        <q-field
+          icon="account_circle"
+          helper="We need your name so we can send you to the movies."
+          label="Your name"
+          :label-width="3"
+          :error="nameError"
+        >
+          <q-input v-model="name" />
+        </q-field>
+
         <template slot="buttons" slot-scope="props">
-          <q-btn flat label="Cancel" @click="props.cancel()" />
-          <q-btn flat label="OK" @click="props.ok()" />
+          <q-btn color="primary" label="Choose Superman" @click="choose(props.ok, 'Superman')" />
+          <q-btn color="black" label="Choose Batman" @click="choose(props.ok, 'Batman')" />
+          <q-btn color="negative" label="Choose Spiderman" @click="choose(props.ok, 'Spiderman')" />
+          <q-btn flat label="No thanks" @click="props.cancel()" />
         </template>
       </q-dialog>
     </div>
@@ -96,12 +108,34 @@ export default {
     },
     onHide () {
       console.log('hide')
+    },
+    async choose (okFn, hero) {
+      if (this.name.length === 0) {
+        this.error = true
+        this.$q.dialog({
+          title: 'Please specify your name!',
+          message: `Can't buy tickets without knowing your name`
+        })
+      }
+      else {
+        await okFn()
+        this.$q.notify(`Ok ${this.name}, going with ${hero}`)
+      }
+    }
+  },
+  watch: {
+    name (val) {
+      const err = val.length === 0
+      if (this.nameError !== err) {
+        this.nameError = err
+      }
     }
   },
   data () {
     return {
-      stackButtons: false,
       customDialogModel: false,
+      name: '',
+      nameError: false,
       positionalIcon: {
         top: 'arrow_upward',
         right: 'arrow_forward',
@@ -206,7 +240,7 @@ export default {
       ],
       options: [
         {
-          label: 'Stack Buttons',
+          label: 'Stacked Buttons',
           icon: 'dns',
           handler: () => {
             this.$q.dialog({
