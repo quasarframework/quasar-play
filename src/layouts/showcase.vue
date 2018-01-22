@@ -83,7 +83,7 @@
               v-for="feature in category.features"
               :key="feature.hash"
               :to="`/showcase/${category.hash}/${feature.hash}`"
-              replace
+              :replace="!category.extract"
             >
               <q-item-side :icon="feature.icon" />
               <q-item-main :label="feature.title" />
@@ -141,11 +141,9 @@ export default {
     },
     optionsState: {
       get () {
-        console.log(this.$store.state.showcase.optionsState)
         return this.$store.state.showcase.optionsState
       },
       set (val) {
-        console.log(this.$store.state.showcase.optionsState, val)
         this.$store.commit('showcase/updateOptionsState', val)
       }
     },

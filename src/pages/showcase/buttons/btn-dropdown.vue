@@ -2,9 +2,12 @@
   <q-page padding class="row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">These are just a few examples</p>
-      <q-btn-dropdown v-model="first" color="primary" label="Standard">
+      <q-btn-dropdown
+        color="primary"
+        label="Standard"
+      >
         <q-list link>
-          <q-item v-for="n in 2" :key="`1.${n}`" @click.native="first = false">
+          <q-item v-for="n in 2" :key="`1.${n}`" v-close-overlay @click.native="showNotification">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -14,7 +17,7 @@
           </q-item>
           <q-item-separator inset />
           <q-list-header inset>Files</q-list-header>
-          <q-item @click.native="first = false">
+          <q-item v-close-overlay @click.native="showNotification">
             <q-item-side icon="assignment" inverted color="secondary" />
             <q-item-main>
               <q-item-tile label>Vacation</q-item-tile>
@@ -28,14 +31,13 @@
       <p class="caption">Split with Glossy effect</p>
       <q-btn-dropdown
         split
-        v-model="second"
         color="secondary"
         glossy
         label="Click me"
         @click="splitClick"
       >
         <q-list link>
-          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="second = false">
+          <q-item v-for="n in 2" :key="`2.${n}`" v-close-overlay @click.native="showNotification">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -45,7 +47,7 @@
           </q-item>
           <q-item-separator inset />
           <q-list-header inset>Files</q-list-header>
-          <q-item @click.native="second = false">
+          <q-item v-close-overlay @click.native="showNotification">
             <q-item-side icon="assignment" inverted color="secondary" />
             <q-item-main>
               <q-item-tile label>Vacation</q-item-tile>
@@ -60,14 +62,13 @@
       <q-btn-dropdown
         split
         size="sm"
-        v-model="third"
         color="primary"
         outline
         label="Get directions"
         icon="map"
       >
         <q-list link>
-          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="third = false">
+          <q-item v-for="n in 2" :key="`2.${n}`" v-close-overlay @click.native="showNotification">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -77,7 +78,7 @@
           </q-item>
           <q-item-separator inset />
           <q-list-header inset>Files</q-list-header>
-          <q-item @click.native="third = false">
+          <q-item v-close-overlay @click.native="showNotification">
             <q-item-side icon="assignment" inverted color="secondary" />
             <q-item-main>
               <q-item-tile label>Vacation</q-item-tile>
@@ -88,10 +89,10 @@
         </q-list>
       </q-btn-dropdown>
 
-      <p class="caption">Push type with icon</p>
+      <p class="caption">Push type with icon and v-model</p>
       <q-btn-dropdown
         split
-        v-model="fourth"
+        v-model="dropdown"
         color="orange"
         text-color="black"
         push
@@ -99,7 +100,7 @@
         icon="map"
       >
         <q-list link>
-          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="fourth = false">
+          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="showNotification(), dropdown = false">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -109,7 +110,7 @@
           </q-item>
           <q-item-separator inset />
           <q-list-header inset>Files</q-list-header>
-          <q-item @click.native="fourth = false">
+          <q-item @click.native="showNotification(), dropdown = false">
             <q-item-side icon="assignment" inverted color="secondary" />
             <q-item-main>
               <q-item-tile label>Vacation</q-item-tile>
@@ -126,10 +127,7 @@
 <script>
 export default {
   data: () => ({
-    first: false,
-    second: false,
-    third: false,
-    fourth: false
+    dropdown: false
   }),
   methods: {
     splitClick () {
@@ -137,6 +135,9 @@ export default {
         position: 'right',
         message: 'Hey, why did you click on me?'
       })
+    },
+    showNotification () {
+      this.$q.notify('Option selected & closed dropdown')
     }
   }
 }

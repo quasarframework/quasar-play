@@ -9,29 +9,29 @@
 
     <div class="column items-center" style="margin-top: 100px; margin-bottom: 100px;">
       <q-fab color="purple" icon="keyboard_arrow_up" direction="up">
-        <q-fab-action @click="notify('mail')" icon="mail" />
-        <q-fab-action @click="notify('alarm')" icon="alarm" />
+        <q-fab-action color="primary" click="notify('mail')" icon="mail" />
+        <q-fab-action color="secondary" @click="notify('alarm')" icon="alarm" />
       </q-fab>
 
       <br>
 
-      <q-fab icon="keyboard_arrow_left" direction="left">
-        <q-fab-action @click="notify('mail')" icon="mail" />
-        <q-fab-action @click="notify('alarm')" icon="alarm" />
+      <q-fab color="amber" text-color="black" icon="keyboard_arrow_left" direction="left">
+        <q-fab-action color="amber" text-color="black" @click="notify('mail')" icon="mail" />
+        <q-fab-action color="amber" text-color="black" @click="notify('alarm')" icon="alarm" />
       </q-fab>
 
       <br>
 
       <q-fab color="secondary" push icon="keyboard_arrow_right" direction="right">
         <q-fab-action color="primary" @click="notify('mail')" icon="mail" />
-        <q-fab-action @click="notify('alarm')" icon="alarm" />
+        <q-fab-action color="tertiary" @click="notify('alarm')" icon="alarm" />
       </q-fab>
 
       <br>
 
       <q-fab color="tertiary" glossy icon="keyboard_arrow_down" direction="down">
-        <q-fab-action color="amber" @click="notify('mail')" icon="mail" />
-        <q-fab-action color="amber" @click="notify('alarm')" icon="alarm" />
+        <q-fab-action color="amber" text-color="black" @click="notify('mail')" icon="mail" />
+        <q-fab-action color="amber" text-color="black" @click="notify('alarm')" icon="alarm" />
       </q-fab>
     </div>
 

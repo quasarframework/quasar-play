@@ -20,7 +20,7 @@
           <q-item-side right icon="keyboard_arrow_right" />
         </q-item>
         <q-item-separator />
-        <q-list-header>Using QDialog component</q-list-header>
+        <q-list-header>Using QDialog as a component in template</q-list-header>
         <q-item
           link
           v-for="dialog in component"

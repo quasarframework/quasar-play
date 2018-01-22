@@ -11,12 +11,13 @@
         <q-btn color="primary">
           <q-icon name="assignment" />
 
-          <q-popover v-model="popover1">
+          <q-popover>
             <q-list link separator class="scroll" style="min-width: 100px">
               <q-item
                 v-for="n in 20"
                 :key="`a-${n}`"
-                @click.native="notify(), popover1 = false"
+                v-close-overlay
+                @click.native="notify"
               >
                 <q-item-main label="Label" sublabel="Click me" />
               </q-item>
@@ -38,7 +39,6 @@
               Tap Me
 
               <q-popover
-                ref="popover2"
                 :anchor="anchor"
                 :self="self"
               >
@@ -46,7 +46,8 @@
                   <q-item
                     v-for="n in 3"
                     :key="`b-${n}`"
-                    @click.native="notify(), $refs.popover2.hide()"
+                    v-close-overlay
+                    @click.native="notify"
                   >
                     <q-item-main label="Label" />
                   </q-item>
@@ -105,11 +106,12 @@
           <q-btn color="secondary">
             <q-icon name="directions" />
 
-            <q-popover v-model="popover3">
+            <!-- with v-model -->
+            <q-popover v-model="popover">
               <img
                 src="~assets/map.png"
                 style="height: 150px; width: 200px;"
-                @click="notify(), popover3 = false"
+                @click="notify(), popover = false"
               >
             </q-popover>
           </q-btn>
@@ -119,15 +121,15 @@
           <q-btn color="tertiary">
             <q-icon name="plus_one" />
 
-            <q-popover v-model="popover4">
+            <q-popover>
               <div class="group" style="width: 220px; text-align: center;">
-                <q-btn flat color="primary" @click="notify(), popover4 = false">
+                <q-btn flat color="primary" v-close-overlay @click="notify">
                   <q-icon name="thumb_up" />
                 </q-btn>
-                <q-btn flat color="primary" @click="notify(), popover4 = false">
+                <q-btn flat color="primary" v-close-overlay @click="notify">
                   <q-icon name="thumb_down" />
                 </q-btn>
-                <q-btn flat color="secondary" @click="notify(), popover4 = false">
+                <q-btn flat color="secondary" v-close-overlay @click="notify">
                   <q-icon name="share" />
                 </q-btn>
               </div>
@@ -140,12 +142,13 @@
         <q-btn color="primary">
           <q-icon name="menu" />
 
-          <q-popover v-model="popover5">
+          <!-- with Vue reference -->
+          <q-popover ref="popover">
             <q-list link separator class="scroll" style="min-width: 200px">
               <q-item
                 v-for="n in 20"
                 :key="`c-${n}`"
-                @click.native="notify(), popover5 = false"
+                @click.native="notify(), $refs.popover.hide()"
               >
                 <q-item-main label="Label" sublabel="Click me" />
               </q-item>
@@ -163,10 +166,7 @@ export default {
     return {
       anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
       selfOrigin: {vertical: 'top', horizontal: 'left'},
-      popover1: false,
-      popover3: false,
-      popover4: false,
-      popover5: false
+      popover: false
     }
   },
   computed: {

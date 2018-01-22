@@ -24,7 +24,7 @@
       <q-page-sticky position="top-left" :offset="[0, 100]">
         <a
           v-back-to-top.animate="1000"
-          class="animate-pop play-backtotop non-selectable"
+          class="animate-pop play-backtotop non-selectable shadow-2"
           v-ripple.mat
         >
           Back to top
