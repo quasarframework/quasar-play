@@ -11,12 +11,12 @@
         <q-btn color="primary">
           <q-icon name="assignment" />
 
-          <q-popover ref="popover1">
+          <q-popover v-model="popover1">
             <q-list link separator class="scroll" style="min-width: 100px">
               <q-item
                 v-for="n in 20"
                 :key="`a-${n}`"
-                @click.native="notify(), $refs.popover1.hide()"
+                @click.native="notify(), popover1 = false"
               >
                 <q-item-main label="Label" sublabel="Click me" />
               </q-item>
@@ -38,7 +38,7 @@
               Tap Me
 
               <q-popover
-                v-model="popover2"
+                ref="popover2"
                 :anchor="anchor"
                 :self="self"
               >
@@ -46,7 +46,7 @@
                   <q-item
                     v-for="n in 3"
                     :key="`b-${n}`"
-                    @click.native="notify(), popover2 = false"
+                    @click.native="notify(), $refs.popover2.hide()"
                   >
                     <q-item-main label="Label" />
                   </q-item>
@@ -163,7 +163,7 @@ export default {
     return {
       anchorOrigin: {vertical: 'bottom', horizontal: 'left'},
       selfOrigin: {vertical: 'top', horizontal: 'left'},
-      popover2: false,
+      popover1: false,
       popover3: false,
       popover4: false,
       popover5: false
