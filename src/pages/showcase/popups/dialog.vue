@@ -57,8 +57,6 @@
       <q-dialog
         v-model="customDialogModel"
         ref="dialog"
-        title="Favorite Superhero"
-        message="What is your superhero of choice?"
         stack-buttons
         prevent-close
         @cancel="onCancel"
@@ -66,15 +64,23 @@
         @show="onShow"
         @hide="onHide"
       >
-        <q-field
-          icon="account_circle"
-          helper="We need your name so we can send you to the movies."
-          label="Your name"
-          :label-width="3"
-          :error="nameError"
-        >
-          <q-input v-model="name" />
-        </q-field>
+        <!-- This or use "title" prop on <q-dialog> -->
+        <span slot="title">Favorite Superhero</span>
+
+        <!-- This or use "message" prop on <q-dialog> -->
+        <span slot="message">What is your superhero of choice?</span>
+
+        <div slot="body">
+          <q-field
+            icon="account_circle"
+            helper="We need your name so we can send you to the movies."
+            label="Your name"
+            :label-width="3"
+            :error="nameError"
+          >
+            <q-input v-model="name" />
+          </q-field>
+        </div>
 
         <template slot="buttons" slot-scope="props">
           <q-btn color="primary" label="Choose Superman" @click="choose(props.ok, 'Superman')" />
@@ -114,7 +120,7 @@ export default {
         this.error = true
         this.$q.dialog({
           title: 'Please specify your name!',
-          message: `Can't buy tickets without knowing your name`
+          message: `Can't buy tickets without knowing your name.`
         })
       }
       else {
@@ -258,7 +264,7 @@ export default {
         },
         {
           label: 'Prevent accidental close',
-          icon: 'done_all',
+          icon: 'power_settings_new',
           handler: () => {
             this.$q.dialog({
               title: 'Prevent close',
