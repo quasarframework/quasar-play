@@ -1,12 +1,12 @@
 <template>
-  <div class="row no-wrap">
+  <div class="row no-wrap col-xs-12 col-sm-auto">
     <q-select
       color="amber"
       v-model="lang"
       :options="langOptions"
       dark
       hide-underline
-      class="q-mr-sm"
+      class="q-mr-sm col-grow"
     />
     <q-select
       color="amber"
@@ -14,6 +14,7 @@
       :options="iconOptions"
       dark
       hide-underline
+      class="col-grow"
     />
   </div>
 </template>

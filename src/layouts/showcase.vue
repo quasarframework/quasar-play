@@ -13,7 +13,15 @@
           />
           {{ pageMeta.title }}
         </q-toolbar-title>
-        <app-options />
+        <app-options class="xs-hide" />
+        <q-btn
+          flat
+          round
+          dense
+          class="within-iframe-hide lt-sm"
+          @click="optionsState = !optionsState"
+          icon="settings"
+        />
         <q-btn
           flat
           round
@@ -22,6 +30,10 @@
           @click="drawerState = !drawerState"
           icon="menu"
         />
+      </q-toolbar>
+
+      <q-toolbar class="lt-sm" v-if="optionsState">
+        <app-options />
       </q-toolbar>
 
       <q-tabs
@@ -127,8 +139,17 @@ export default {
         this.$store.commit('showcase/updateDrawerState', val)
       }
     },
+    optionsState: {
+      get () {
+        console.log(this.$store.state.showcase.optionsState)
+        return this.$store.state.showcase.optionsState
+      },
+      set (val) {
+        console.log(this.$store.state.showcase.optionsState, val)
+        this.$store.commit('showcase/updateOptionsState', val)
+      }
+    },
     ...mapState('showcase', [
-      'backRoute',
       'pageMeta'
     ])
   },
