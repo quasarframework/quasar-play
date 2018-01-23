@@ -25,6 +25,7 @@
           </p>
 
           <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="primary" @click="$refs.stepper.goToStep('create_ad')">Create ad now</q-btn>
             <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
@@ -93,6 +94,7 @@
           </p>
 
           <q-stepper-navigation v-if="!globalNavigation">
+            <q-btn color="primary" @click="$refs.stepper.goToStep('disabled_step')">I want to pay</q-btn>
             <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
