@@ -56,7 +56,7 @@
           :max="max"
           :step="5"
         >
-          <q-icon class="on-left" name="euro_symbol" /> {{ model }}
+          {{ model }} <q-icon class="q-ml-xs" name="euro_symbol" />
         </q-knob>
       </div>
 
@@ -68,7 +68,7 @@
         color="primary"
         readonly
       >
-        <q-icon class="on-left" name="volume_up" /> {{ model }}
+        <q-icon class="q-mr-xs" name="volume_up" /> {{ model }}
       </q-knob>
 
       <p class="caption">Disabled state</p>
@@ -78,7 +78,7 @@
         :max="max"
         disable
       >
-        <q-icon class="on-left" name="volume_up" /> {{ model }}
+        <q-icon class="q-mr-xs" name="volume_up" /> {{ model }}%
       </q-knob>
 
       <p class="caption">Inside Field</p>

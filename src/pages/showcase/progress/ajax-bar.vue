@@ -51,7 +51,7 @@ export default {
     return {
       position: 'bottom',
       reverse: false,
-      size: 8,
+      size: 4,
 
       timeouts: []
     }

@@ -84,7 +84,7 @@ export default {
         position,
         avatar,
         actions: Math.random() * 100 > 50
-          ? [ { label: 'Reply', handler: () => console.log('wooow') } ]
+          ? [ { label: 'Reply', handler: () => console.log('Clicked on a notification handler') } ]
           : null,
         timeout: Math.random() * 5000 + 3000
       })

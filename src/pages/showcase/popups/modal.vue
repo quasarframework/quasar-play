@@ -5,6 +5,7 @@
         <span class="desktop-only">Click</span>
         <span class="mobile-only">Tap</span>
         on each type to see it in action.
+        <span class="desktop-only iframe-hide">And resize your browser window.</span>
       </p>
 
       <q-list style="max-width: 600px;">
@@ -35,12 +36,15 @@
           <q-item-side right icon="keyboard_arrow_right" />
         </q-item>
       </q-list>
+
+      <p class="caption">Using Vue reference and async/await. Opens then closes immediately.</p>
+      <q-btn color="primary" @click="showByReference" label="Show" />
     </div>
 
     <q-modal v-model="basicModal" :content-css="{padding: '50px', minWidth: '50vw'}">
       <h4>Basic Modal</h4>
       <p v-for="n in 25" :key="`a-${n}`">Scroll down to close</p>
-      <q-btn color="primary" @click="basicModal = false">Close</q-btn>
+      <q-btn color="primary" @click="basicModal = false" wait-for-ripple>Close</q-btn>
     </q-modal>
 
     <q-modal
@@ -52,7 +56,7 @@
     >
       <h4>Modal with Events</h4>
       <p v-for="n in 25" :key="`b-${n}`">Scroll down to close</p>
-      <q-btn color="primary" @click="eventsModal = false">Close</q-btn>
+      <q-btn color="primary" @click="eventsModal = false" wait-for-ripple>Close</q-btn>
     </q-modal>
 
     <q-modal v-model="layoutModal" :content-css="{minWidth: '80vw', minHeight: '80vh'}">
@@ -77,16 +81,17 @@
         <div class="layout-padding">
           <h1>Modal</h1>
 
-          <q-btn color="primary" @click="layoutModal = false">Close</q-btn>
+          <q-btn color="primary" @click="layoutModal = false" wait-for-ripple>Close</q-btn>
           <p class="caption" v-for="n in 15" :key="`c-${n}`">This is a Modal presenting a Layout.</p>
         </div>
       </q-modal-layout>
     </q-modal>
 
-    <q-modal v-model="minimizedModal" minimized :content-css="{padding: '50px'}">
+    <!-- specifying Vue ref for last example only -->
+    <q-modal v-model="minimizedModal" minimized :content-css="{padding: '50px'}" ref="modalRef">
       <h4>Minimized Modal</h4>
       <p>This one has backdrop on small screens too.</p>
-      <q-btn color="red" @click="minimizedModal = false">Close Me</q-btn>
+      <q-btn color="red" v-close-overlay>Close Me</q-btn>
     </q-modal>
 
     <q-modal v-model="maximizedModal" maximized :content-css="{padding: '50px'}">
@@ -122,7 +127,7 @@ export default {
           show: () => { this.eventsModal = true }
         },
         {
-          label: 'With Layout',
+          label: 'With Modal Layout',
           show: () => { this.layoutModal = true }
         },
         {
@@ -151,6 +156,14 @@ export default {
       this.position = position
       this.$nextTick(() => {
         this.positionModal = true
+      })
+    },
+    async showByReference () {
+      await this.$refs.modalRef.show()
+      await this.$refs.modalRef.hide()
+      this.$q.notify({
+        color: 'secondary',
+        message: 'Done opening and closing'
       })
     }
   }
