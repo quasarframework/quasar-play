@@ -11,12 +11,14 @@
         <q-item>
           <q-item-side image="statics/quasar-logo.png" />
           <q-item-main>
-            <q-item-tile label>Quasars</q-item-tile>
-            <q-item-tile sublabel>For passionates only</q-item-tile>
+            <q-item-tile label>Quasar</q-item-tile>
+            <q-item-tile sublabel>Empower your development skills</q-item-tile>
           </q-item-main>
           <q-item-side right icon="movie" />
         </q-item>
+
         <q-item-separator />
+
         <q-list-header>Movies</q-list-header>
         <q-item multiline>
           <q-item-side image="statics/parallax1.jpg" />

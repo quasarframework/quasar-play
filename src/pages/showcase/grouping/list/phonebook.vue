@@ -8,7 +8,7 @@
             <q-item-tile label>(650) 555 - 1234</q-item-tile>
             <q-item-tile sublabel>Mobile</q-item-tile>
           </q-item-main>
-          <q-item-side right icon="chat_bubble" />
+          <q-item-side right icon="chat_bubble" color="green" />
         </q-item>
         <q-item>
           <q-item-main inset>

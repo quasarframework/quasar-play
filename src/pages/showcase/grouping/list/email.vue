@@ -15,7 +15,9 @@
             sublabel="John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe"
             sublabel-lines="2"
           />
-          <q-item-side right stamp="1 week<br>ago" />
+          <q-item-side right>
+            <q-item-tile stamp>1 week ago</q-item-tile>
+          </q-item-side>
         </q-item>
         <q-item multiline>
           <q-item-side avatar="statics/boy-avatar.png" />
@@ -62,24 +64,26 @@
         </q-item>
       </q-list>
 
-      <q-list inset-separator>
+      <q-list inset-separator class="q-mt-md">
         <q-item>
           <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
-          <q-item-side right icon="more_vert">
-            <q-popover ref="popover">
-              <q-list link>
-                <q-item @click="$refs.popover.close()">
-                  <q-item-main label="Reply" />
-                </q-item>
-                <q-item @click="$refs.popover.close()">
-                  <q-item-main label="Forward" />
-                </q-item>
-                <q-item @click="$refs.popover.close()">
-                  <q-item-main label="Delete" />
-                </q-item>
-              </q-list>
-            </q-popover>
+          <q-item-side right>
+            <q-btn flat round dense icon="more_vert">
+              <q-popover>
+                <q-list link>
+                  <q-item v-close-overlay>
+                    <q-item-main label="Reply" />
+                  </q-item>
+                  <q-item v-close-overlay>
+                    <q-item-main label="Forward" />
+                  </q-item>
+                  <q-item v-close-overlay>
+                    <q-item-main label="Delete" />
+                  </q-item>
+                </q-list>
+              </q-popover>
+            </q-btn>
           </q-item-side>
         </q-item>
         <q-item>
