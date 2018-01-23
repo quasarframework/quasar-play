@@ -13,15 +13,6 @@
           />
           {{ pageMeta.title }}
         </q-toolbar-title>
-        <app-options class="xs-hide" />
-        <q-btn
-          flat
-          round
-          dense
-          class="within-iframe-hide lt-sm"
-          @click="optionsState = !optionsState"
-          icon="settings"
-        />
         <q-btn
           flat
           round
@@ -30,10 +21,6 @@
           @click="drawerState = !drawerState"
           icon="menu"
         />
-      </q-toolbar>
-
-      <q-toolbar class="lt-sm" v-if="optionsState">
-        <app-options />
       </q-toolbar>
 
       <q-tabs
@@ -76,7 +63,7 @@
           </q-item>
           <q-item-separator />
           <template v-for="category in categories">
-            <q-list-header>
+            <q-list-header :key="`header-${category.title}`">
               {{ category.title }}
             </q-list-header>
             <q-item
@@ -89,7 +76,7 @@
               <q-item-main :label="feature.title" />
               <q-item-side right icon="chevron_right" />
             </q-item>
-            <q-item-separator />
+            <q-item-separator :key="`separator-${category.title}`" />
           </template>
         </q-list>
       </q-scroll-area>
@@ -112,22 +99,11 @@
 <script>
 import { mapState } from 'vuex'
 import categories from 'assets/categories'
-import AppOptions from 'components/app-options'
 
 export default {
-  components: {
-    AppOptions
-  },
   data () {
     return {
       categories
-    }
-  },
-  watch: {
-    lang (lang) {
-      import(`quasar-framework/i18n/${lang}`).then(lang => {
-        this.$q.i18n.set(lang.default)
-      })
     }
   },
   computed: {
@@ -137,14 +113,6 @@ export default {
       },
       set (val) {
         this.$store.commit('showcase/updateDrawerState', val)
-      }
-    },
-    optionsState: {
-      get () {
-        return this.$store.state.showcase.optionsState
-      },
-      set (val) {
-        this.$store.commit('showcase/updateOptionsState', val)
       }
     },
     ...mapState('showcase', [
