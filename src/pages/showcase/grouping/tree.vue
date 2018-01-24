@@ -1,303 +1,306 @@
 <template>
-  <q-page padding>
-    <div>
-      <div class="row gutter-sm items-center">
-        <div class="col-xs-12 col-md-4">
-          <q-select v-model="tickStrategy" :options="[
-            {label: 'None', value: 'none'},
-            {label: 'Leaf', value: 'leaf'},
-            {label: 'Leaf Filtered', value: 'leaf-filtered'},
-            {label: 'Strict', value: 'strict'}
-          ]" stack-label="Tick Strategy" />
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <q-toggle v-model="accordion" label="Accordion mode" />
-          <q-toggle v-model="dark" label="On dark background" />
-          <q-toggle v-model="selectableNodes" label="Selectable nodes" />
-        </div>
-        <div class="col-xs-12 col-md-4">
-          <q-input v-model="filter" stack-label="Filter" />
-        </div>
-        <div class="col-6 scroll" style="height: 6em;">
-          <span class="text-bold">Ticked</span>:<br>{{ ticked }}
-        </div>
-        <div class="col-6 scroll" style="height: 6em;">
-          <span class="text-bold">Expanded</span>:<br>{{ expanded }}
-        </div>
-        <div v-if="selectableNodes" class="col-xs-12 col-md-6">
-          <span class="text-bold">Selected</span>:<br>{{ selected }}
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <q-btn @click="getNodeByKey" no-caps label="getNodeByKey test" />
-          <q-btn @click="expandAll" no-caps label="Expand all" />
-        </div>
-      </div>
-    </div>
-
-    <div class="q-mt-lg q-pa-lg" :class="{'bg-black': dark}">
+  <q-page padding class="row justify-center docs-tree">
+    <div style="width: 700px; max-width: 90vw;">
+      <p class="caption">Simplest Tree</p>
       <q-tree
-        ref="tree"
-        :nodes="nodes"
+        :nodes="simple"
         node-key="label"
-        :selected.sync="selected"
-        :tick-strategy="tickStrategy"
-        :ticked.sync="ticked"
-        :expanded.sync="expanded"
-        :dark="dark"
-        :accordion="accordion"
-        :color="color"
-        :filter="filter"
-        @lazy-load="onLazyLoad"
+      />
+
+      <p class="caption">Node icon/avatar/image and controlling expansion</p>
+      <q-btn size="sm" color="secondary" @click="togglePropsGoodServiceExpand" label="Toggle 'Good service' expansion" class="q-mb-sm" />
+      <q-tree
+        :nodes="props"
+        :expanded.sync="propsExpanded"
+        node-key="label"
+      />
+
+      <p class="caption">Customizing nodes (header and body slots)</p>
+      <q-tree
+        :nodes="customize"
+        node-key="label"
+        default-expand-all
       >
-        <!--
-          <div slot="default-header" slot-scope="prop">
-            Default H: {{prop.node.label}}
-          </div>
-          <div slot="default-body" slot-scope="prop">
-            Default body
-          </div>
-        -->
-        <div slot="header-custom" slot-scope="prop" class="row items-center">
-          <q-icon :name="prop.node.icon" size="32px" class="q-mr-sm" />
+        <div slot="header-root" slot-scope="prop" class="row items-center">
+          <img src="~assets/quasar-logo.svg" class="avatar q-mr-sm">
           <div>
-            {{ prop.node.label }} <q-chip color="red">New</q-chip>
-            <br>Wooooow. Custom
+            {{ prop.node.label }} <q-chip color="orange" small>New!</q-chip>
           </div>
         </div>
 
-        <div slot="body-2-1-2-1" slot-scope="prop">
-          Content for: {{ prop.key }}
+        <div slot="header-generic" slot-scope="prop" class="row items-center">
+          <q-icon :name="prop.node.icon || 'star'" color="orange" size="28px" class="q-mr-sm" />
+          <div class="text-weight-bold text-primary">{{ prop.node.label }}</div>
+        </div>
+
+        <div slot="body-story" slot-scope="prop">
+          <span class="text-weight-thin">The story is:</span> {{ prop.node.story }}
+        </div>
+
+        <div slot="body-toggle" slot-scope="prop">
+          <p class="caption">{{ prop.node.caption }}</p>
+          <q-toggle v-model="prop.node.enabled" label="I agree to the terms and conditions" />
         </div>
       </q-tree>
+
+      <p class="caption">Applying a default header and body slot</p>
+      <q-tree
+        :nodes="customize"
+        node-key="label"
+        default-expand-all
+      >
+        <div slot="default-header" slot-scope="prop" class="row items-center">
+          <q-icon :name="prop.node.icon || 'share'" color="orange" size="28px" class="q-mr-sm" />
+          <div class="text-weight-bold text-primary">{{ prop.node.label }}</div>
+        </div>
+
+        <div slot="default-body" slot-scope="prop">
+          <div v-if="prop.node.story">
+            <span class="text-weight-thin">This node has a story</span>: {{ prop.node.story }}
+          </div>
+          <span v-else class="text-weight-thin">This is some default content.</span>
+        </div>
+      </q-tree>
+
+      <p class="caption">Filtering nodes</p>
+      <q-input
+        v-model="filter"
+        stack-label="Filter"
+        class="q-mb-sm"
+      />
+      <q-tree
+        :nodes="simple"
+        :filter="filter"
+        default-expand-all
+        node-key="label"
+      />
+
+      <p class="caption">Accordion mode (sibling nodes get contracted when one gets expanded)</p>
+      <q-tree
+        :nodes="simple"
+        accordion
+        :expanded.sync="accordionExpanded"
+        node-key="label"
+      />
+
+      <p class="caption">Selectable nodes <q-chip small>{{ selected || 'No selection' }}</q-chip></p>
+      <div class="q-mb-sm">
+        <q-btn size="sm" color="primary" @click="selectGoodService" label="Select 'Good service'" />
+        <q-btn v-if="selected" size="sm" color="red" @click="unselectNode" label="Unselect node" />
+      </div>
+      <q-tree
+        :nodes="props"
+        default-expand-all
+        :selected.sync="selected"
+        node-key="label"
+      />
+
+      <p class="caption">Tickable nodes & strategies</p>
+      <p class="caption">Lazy loading nodes (try expanding)</p>
+      <q-tree
+        :nodes="lazy"
+        default-expand-all
+        node-key="label"
+        @lazy-load="onLazyLoad"
+      />
+
+      <p class="caption">On a dark background</p>
+
+      <div class="bg-black q-pa-md" style="border-radius: 5px">
+        <q-tree
+          dark
+          :nodes="props"
+          default-expand-all
+          node-key="label"
+        />
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
 export default {
-  computed: {
-    color () {
-      return this.dark ? 'red' : 'secondary'
-    }
-  },
-  watch: {
-    selectableNodes (v) {
-      this.selected = v
-        ? this.selected || null
-        : undefined
-    }
-  },
-  data () {
-    return {
-      selected: null,
-      tickStrategy: 'leaf',
-      ticked: ['Node 2.2'],
-      expanded: ['Node 2.1.4 - Disabled', 'Node 2.1.3 - freeze exp / tickable'],
-      selectableNodes: true,
-      dark: false,
-      accordion: false,
-      filter: '',
-      defaultExpandAll: false,
-      nodes: [
-        {
-          label: 'Node 1 - filter',
-          icon: 'alarm',
-          children: [
-            {
-              label: 'Node 1.1 - accordion test on children',
-              avatar: 'statics/boy-avatar.png',
-              children: [
-                {
-                  label: 'Node 1.1.1 - tick strategy leaf-filtered',
-                  tickStrategy: 'leaf-filtered',
-                  children: [
-                    {
-                      label: 'Node 1.1.1.1'
-                    }
-                  ]
-                },
-                {
-                  label: 'Node 1.1.2 - tick strategy leaf',
-                  tickStrategy: 'leaf',
-                  children: [
-                    {
-                      label: 'Node 1.1.2.1'
-                    }
-                  ]
-                },
-                {
-                  label: 'Node 1.1.3 -- not selectable',
-                  selectable: false
-                },
-                {
-                  label: 'Node 1.1.4 - not tickable',
-                  tickable: false,
-                  children: [
-                    {
-                      label: 'Node 1.1.4.1'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              label: 'Node 1.2',
-              icon: 'map',
-              header: 'custom'
-            },
-            {
-              label: 'Node 1.3 - tap on me!',
-              img: 'statics/mountains.jpg',
-              handler: () => {
-                this.$q.notify('Tapped on node 1.3')
+  data: () => ({
+    simple: [
+      {
+        label: 'Satisfied customers',
+        children: [
+          {
+            label: 'Good food',
+            children: [
+              { label: 'Quality ingredients' },
+              { label: 'Good recipe' }
+            ]
+          },
+          {
+            label: 'Good service (disabled node)',
+            disabled: true,
+            children: [
+              { label: 'Prompt attention' },
+              { label: 'Professional waiter' }
+            ]
+          },
+          {
+            label: 'Pleasant surroundings',
+            children: [
+              { label: 'Happy atmosphere' },
+              { label: 'Good table presentation' },
+              { label: 'Pleasing decor' }
+            ]
+          }
+        ]
+      }
+    ],
+
+    props: [
+      {
+        label: 'Satisfied customers',
+        avatar: 'statics/boy-avatar.png',
+        children: [
+          {
+            label: 'Good food',
+            icon: 'restaurant_menu',
+            children: [
+              { label: 'Quality ingredients' },
+              { label: 'Good recipe' }
+            ]
+          },
+          {
+            label: 'Good service',
+            icon: 'room_service',
+            children: [
+              { label: 'Prompt attention' },
+              { label: 'Professional waiter' }
+            ]
+          },
+          {
+            label: 'Pleasant surroundings',
+            icon: 'photo',
+            children: [
+              {
+                label: 'Happy atmosphere',
+                img: 'statics/parallax1.jpg'
+              },
+              {
+                label: 'Good table presentation',
+                img: 'statics/parallax2.jpg'
+              },
+              {
+                label: 'Pleasing decor',
+                img: 'statics/mountains.jpg'
               }
-            }
-          ]
-        },
-        {
-          label: 'Node 2',
-          children: [
-            {
-              label: 'Node 2.1',
-              children: [
-                {
-                  label: 'Node 2.1.1'
-                },
-                {
-                  label: 'Node 2.1.1 BIS - no tick present',
-                  noTick: true
-                },
-                {
-                  label: 'Node 2.1.2 - tick strategy strict',
-                  tickStrategy: 'strict',
-                  children: [
-                    {
-                      label: 'Node 2.1.2.1 - body slot',
-                      body: '2-1-2-1',
-                      children: [
-                        {
-                          label: 'Node q',
-                          lazy: true
-                        },
-                        {
-                          label: 'Node a',
-                          lazy: true
-                        }
-                      ]
-                    },
-                    {
-                      label: 'Node 2.1.2.2 - body slot & children',
-                      body: '2-1-2-1',
-                      children: [
-                        {
-                          label: 'Node 2.1.2.2.1'
-                        },
-                        {
-                          label: 'Node 2.1.2.2.2'
-                        }
-                      ]
-                    },
-                    {
-                      label: 'Node 2.1.2.3 - header slot',
-                      header: '2-1-2-2'
-                    }
-                  ]
-                },
-                {
-                  label: 'Node 2.1.x - Disabled',
-                  disabled: true,
-                  children: [
-                    {
-                      label: 'Node 2.1.x.1'
-                    },
-                    {
-                      label: 'Node 2.1.x.2'
-                    }
-                  ]
-                },
-                {
-                  label: 'Node 2.1.3 - freeze exp / tickable',
-                  expandable: false,
-                  tickable: true,
-                  children: [
-                    {
-                      label: 'Node 2.1.3.1'
-                    },
-                    {
-                      label: 'Node 2.1.3.2'
-                    }
-                  ]
-                },
-                {
-                  label: 'Node 2.1.4 - Disabled',
-                  disabled: true,
-                  children: [
-                    {
-                      label: 'Node 2.1.4.1'
-                    },
-                    {
-                      label: 'Node 2.1.4.2'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              label: 'Node 2.2'
-            },
-            {
-              label: 'Node 2.3',
-              children: [
-                {
-                  label: 'Node 2.3.1',
-                  body: '2-1-2-1'
-                },
-                {
-                  label: 'Node 2.3.2',
-                  body: '2-1-2-1'
-                }
-              ]
-            },
-            {
-              label: 'Node 2.4 - Lazy load',
-              lazy: true
-            },
-            {
-              label: 'Node 2.5 - Lazy load empty',
-              lazy: true
-            }
-          ]
-        }
-      ]
-    }
-  },
+            ]
+          }
+        ]
+      }
+    ],
+    propsExpanded: ['Satisfied customers', 'Pleasant surroundings'],
+
+    customize: [
+      {
+        label: 'Satisfied customers',
+        header: 'root',
+        children: [
+          {
+            label: 'Good food',
+            icon: 'restaurant_menu',
+            header: 'generic',
+            children: [
+              {
+                label: 'Quality ingredients',
+                header: 'generic',
+                body: 'story',
+                story: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt exercitationem quam est ea optio, rem placeat veritatis commodi dignissimos aspernatur labore, asperiores facilis dicta. Veniam enim molestiae odit obcaecati eum.'
+              },
+              {
+                label: 'Good recipe',
+                body: 'story',
+                story: 'A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.'
+              }
+            ]
+          },
+          {
+            label: 'Good service',
+            header: 'generic',
+            body: 'toggle',
+            caption: 'Why are we as consumers so captivated by stories of great customer service? Perhaps it is because...',
+            enabled: false,
+            children: [
+              { label: 'Prompt attention' },
+              { label: 'Professional waiter' }
+            ]
+          },
+          {
+            label: 'Pleasant surroundings',
+            children: [
+              { label: 'Happy atmosphere' },
+              { label: 'Good table presentation', header: 'generic' },
+              { label: 'Pleasing decor' }
+            ]
+          }
+        ]
+      }
+    ],
+
+    filter: 'quality',
+    accordionExpanded: ['Satisfied customers', 'Good service'],
+    selected: 'Happy atmosphere',
+
+    lazy: [
+      {
+        label: 'Node 1',
+        children: [
+          { label: 'Node 1.1', lazy: true },
+          { label: 'Node 1.2', lazy: true }
+        ]
+      },
+      {
+        label: 'Node 2',
+        lazy: true
+      },
+      {
+        label: 'Lazy load empty',
+        lazy: true
+      }
+    ]
+  }),
   methods: {
-    getNodeByKey () {
-      console.log(this.$refs.tree.getNodeByKey('Node 2.1.1'))
+    togglePropsGoodServiceExpand () {
+      const index = this.propsExpanded.indexOf('Good service')
+      if (index > -1) {
+        this.propsExpanded.splice(index, 1)
+      }
+      else {
+        this.propsExpanded.push('Good service')
+      }
     },
-    expandAll () {
-      this.$refs.tree.expandAll()
+    selectGoodService () {
+      if (this.selected !== 'Good service') {
+        this.selected = 'Good service'
+      }
+    },
+    unselectNode () {
+      this.selected = null
     },
     onLazyLoad ({ node, key, done, fail }) {
       // call fail() if any error occurs
 
       setTimeout(() => {
+        // simulate loading and setting an empty node
         if (key.indexOf('Lazy load empty') > -1) {
           done([])
           return
         }
 
-        const label = node.label.replace(' - Lazy load', '')
-
+        const label = node.label
         done([
           { label: `${label}.1` },
-          { label: `${label}.2` },
-          { label: `${label}.3`, lazy: true },
+          { label: `${label}.2`, lazy: true },
           {
-            label: `${label}.4`,
+            label: `${label}.3`,
             children: [
-              { label: `${label}.4.1`, lazy: true },
-              { label: `${label}.4.2`, lazy: true }
+              { label: `${label}.3.1`, lazy: true },
+              { label: `${label}.3.2`, lazy: true }
             ]
           }
         ])
@@ -306,3 +309,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.docs-tree p.caption:not(:first-of-type)
+  margin-top 38px
+</style>
