@@ -94,7 +94,7 @@
           </p>
 
           <q-stepper-navigation v-if="!globalNavigation">
-            <q-btn color="primary" @click="$refs.stepper.goToStep('disabled_step')">I want to pay</q-btn>
+            <q-btn color="primary" @click="$refs.stepper2.goToStep('disabled_step')">I want to pay</q-btn>
             <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
