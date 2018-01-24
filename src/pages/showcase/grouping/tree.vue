@@ -7,11 +7,12 @@
         node-key="label"
       />
 
-      <p class="caption">Node icon/avatar/image and controlling expansion</p>
+      <p class="caption">Node icon/avatar/image, controlling expansion and colored</p>
       <q-btn size="sm" color="secondary" @click="togglePropsGoodServiceExpand" label="Toggle 'Good service' expansion" class="q-mb-sm" />
       <q-tree
         :nodes="props"
         :expanded.sync="propsExpanded"
+        color="red"
         node-key="label"
       />
 
@@ -66,6 +67,7 @@
       <q-input
         v-model="filter"
         stack-label="Filter"
+        clearable
         class="q-mb-sm"
       />
       <q-tree
@@ -96,6 +98,39 @@
       />
 
       <p class="caption">Tickable nodes & strategies</p>
+      <div class="q-mb-sm row no-wrap items-center">
+        <q-select
+          v-model="tickStrategy"
+          color="secondary"
+          stack-label="Tick Strategy"
+          :options="[
+            {label: 'None', value: 'none'},
+            {label: 'Leaf', value: 'leaf'},
+            {label: 'Leaf Filtered', value: 'leaf-filtered'},
+            {label: 'Strict', value: 'strict'}
+          ]"
+          class="q-ma-none q-mr-sm"
+          style="width: 150px"
+        />
+        <q-input
+          v-if="tickStrategy === 'leaf-filtered'"
+          color="secondary"
+          stack-label="Filter"
+          v-model="tickFilter"
+          class="q-ma-none"
+          clearable
+        />
+      </div>
+      <q-tree
+        :nodes="props"
+        color="secondary"
+        default-expand-all
+        :ticked.sync="ticked"
+        :tick-strategy="tickStrategy"
+        :filter="tickFilter"
+        node-key="label"
+      />
+
       <p class="caption">Lazy loading nodes (try expanding)</p>
       <q-tree
         :nodes="lazy"
@@ -105,7 +140,6 @@
       />
 
       <p class="caption">On a dark background</p>
-
       <div class="bg-black q-pa-md" style="border-radius: 5px">
         <q-tree
           dark
@@ -245,6 +279,10 @@ export default {
     filter: 'quality',
     accordionExpanded: ['Satisfied customers', 'Good service'],
     selected: 'Happy atmosphere',
+
+    ticked: [],
+    tickStrategy: 'leaf',
+    tickFilter: null,
 
     lazy: [
       {
