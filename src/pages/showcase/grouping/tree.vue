@@ -122,7 +122,7 @@
         />
       </div>
       <q-tree
-        :nodes="props"
+        :nodes="tickable"
         color="secondary"
         default-expand-all
         :ticked.sync="ticked"
@@ -280,6 +280,74 @@ export default {
     accordionExpanded: ['Satisfied customers', 'Good service'],
     selected: 'Happy atmosphere',
 
+    tickable: [
+      {
+        label: 'Satisfied customers',
+        avatar: 'statics/boy-avatar.png',
+        children: [
+          {
+            label: 'Good food',
+            icon: 'restaurant_menu',
+            children: [
+              { label: 'Quality ingredients' },
+              { label: 'Good recipe' }
+            ]
+          },
+          {
+            label: 'Good service',
+            icon: 'room_service',
+            children: [
+              { label: 'Prompt attention' },
+              { label: 'Professional waiter' }
+            ]
+          },
+          {
+            label: 'Pleasant surroundings',
+            icon: 'photo',
+            children: [
+              {
+                label: 'Happy atmosphere (not tickable)',
+                tickable: false,
+                img: 'statics/parallax1.jpg'
+              },
+              {
+                label: 'Good table presentation (disabled node)',
+                disabled: true,
+                img: 'statics/parallax2.jpg'
+              },
+              {
+                label: 'Pleasing decor',
+                img: 'statics/mountains.jpg'
+              }
+            ]
+          },
+          {
+            label: 'Extra information (has no tick)',
+            noTick: true,
+            icon: 'photo'
+          },
+          {
+            label: 'Forced tick strategy (strict)',
+            tickStrategy: 'strict',
+            icon: 'school',
+            children: [
+              {
+                label: 'Happy atmosphere',
+                img: 'statics/parallax1.jpg'
+              },
+              {
+                label: 'Good table presentation',
+                img: 'statics/parallax2.jpg'
+              },
+              {
+                label: 'Pleasing decor',
+                img: 'statics/mountains.jpg'
+              }
+            ]
+          }
+        ]
+      }
+    ],
     ticked: [],
     tickStrategy: 'leaf',
     tickFilter: null,
@@ -299,6 +367,13 @@ export default {
       {
         label: 'Lazy load empty',
         lazy: true
+      },
+      {
+        label: 'Node is not expandable',
+        expandable: false,
+        children: [
+          { label: 'Some node' }
+        ]
       }
     ]
   }),
