@@ -12,19 +12,9 @@
         icon="palette"
         label="Color"
       >
-        <div class="row no-wrap">
-          <q-input
-            v-model="color"
-            class="col"
-            float-label="Color Palette"
-          />
-          <q-select
-            class="col"
-            v-model="color"
-            float-label="Quick Pick"
-            :options="colorOptions"
-          />
-        </div>
+        <q-color
+          v-model="color"
+        />
       </q-field>
 
       <p class="caption">
@@ -36,7 +26,7 @@
           <component
             :is="`q-spinner-${spinner}`"
             :size="size"
-            :color="color"
+            :style="spinnerStyle"
           />
           <q-tooltip :offset="[0, 8]">{{ spinner }}</q-tooltip>
         </div>
@@ -44,7 +34,7 @@
 
       <p class="caption">
         Default Theme Spinner:
-        <q-spinner :color="color" :size="size" style="margin-left: 1rem;" />
+        <q-spinner color="primary" :size="size" style="margin-left: 1rem;" />
       </p>
     </div>
   </q-page>
@@ -55,45 +45,18 @@ export default {
   data () {
     return {
       size: 36,
-      color: 'primary',
+      color: '#027be3ff',
       spinners: [
         'audio', 'ball', 'bars', 'circles', 'comment',
         'cube', 'dots', 'facebook', 'gears', 'grid', 'hearts',
         'hourglass', 'infinity', 'ios', 'mat', 'oval',
         'pie', 'puff', 'radio', 'rings', 'tail'
-      ],
-      colorOptions: [
-        {
-          label: 'Black',
-          color: 'black',
-          value: 'black'
-        },
-        {
-          label: 'Primary',
-          color: 'primary',
-          value: 'primary'
-        },
-        {
-          label: 'Secondary',
-          color: 'secondary',
-          value: 'secondary'
-        },
-        {
-          label: 'Red',
-          color: 'red',
-          value: 'red'
-        },
-        {
-          label: 'Green',
-          color: 'green',
-          value: 'green'
-        },
-        {
-          label: 'Blue',
-          color: 'blue',
-          value: 'blue'
-        }
       ]
+    }
+  },
+  computed: {
+    spinnerStyle () {
+      return `color: ${this.color}`
     }
   }
 }
