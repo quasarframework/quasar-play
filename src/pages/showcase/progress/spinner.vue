@@ -12,9 +12,7 @@
         icon="palette"
         label="Color"
       >
-        <q-color
-          v-model="color"
-        />
+        <q-color v-model="color" />
       </q-field>
 
       <p class="caption">

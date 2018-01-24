@@ -1,24 +1,53 @@
 <template>
-  <q-page padding style="max-width: 500px;">
-    <q-chat-message
-      v-for="msg in messages"
-      :key="msg.label"
-      :label="msg.label"
-      :sent="msg.sent"
-      :text-color="msg.textColor"
-      :bg-color="msg.bgColor"
-      :name="msg.name"
-      :avatar="msg.avatar"
-      :text="msg.text"
-      :stamp="msg.stamp"
-    />
+  <q-page padding class="row justify-center">
+    <div style="width: 500px; max-width: 90vw;">
+      <div class="q-display-1 q-mb-md text-grey">Chat with avatar</div>
+      <p class="caption">To mix messages with avatar and without avatar in the same thread, use a placeholder avatar image.</p>
+      <q-chat-message
+        v-for="(msg, index) in messages"
+        :key="`reg-${index}`"
+        :label="msg.label"
+        :sent="msg.sent"
+        :text-color="msg.textColor"
+        :bg-color="msg.bgColor"
+        :name="msg.name"
+        :avatar="msg.avatar"
+        :text="msg.text"
+        :stamp="msg.stamp"
+      />
+      <q-chat-message
+        name="Vladimir"
+        avatar="/statics/boy-avatar.png"
+      >
+        <q-spinner-dots size="2rem" />
+      </q-chat-message>
 
-    <q-chat-message
-      name="Vladimir"
-      avatar="statics/boy-avatar.png"
-    >
-      <q-spinner-dots size="2rem" />
-    </q-chat-message>
+      <div class="q-display-1 q-mt-xl q-mb-md text-grey">Chat using avatar slot</div>
+      <q-chat-message
+        name="Vladimir"
+        :text="['Use your own spacing or class q-message-avatar']"
+      >
+        <q-icon name="face" size="4em" slot="avatar"/>
+      </q-chat-message>
+
+      <div class="q-display-1 q-mt-xl q-mb-md text-grey">Chat without avatar</div>
+      <q-chat-message
+        v-for="(msg, index) in messages"
+        :key="`avatar-${index}`"
+        :label="msg.label"
+        :sent="msg.sent"
+        :text-color="msg.textColor"
+        :bg-color="msg.bgColor"
+        :name="msg.name"
+        :text="msg.text"
+        :stamp="msg.stamp"
+      />
+      <q-chat-message
+        name="Vladimir"
+      >
+        <q-spinner-dots size="2rem" />
+      </q-chat-message>
+    </div>
   </q-page>
 </template>
 
