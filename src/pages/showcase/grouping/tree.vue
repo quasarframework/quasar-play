@@ -325,25 +325,25 @@ export default {
             label: 'Extra information (has no tick)',
             noTick: true,
             icon: 'photo'
+          }
+        ]
+      },
+      {
+        label: 'Forced tick strategy (strict)',
+        tickStrategy: 'strict',
+        icon: 'school',
+        children: [
+          {
+            label: 'Happy atmosphere',
+            img: 'statics/parallax1.jpg'
           },
           {
-            label: 'Forced tick strategy (strict)',
-            tickStrategy: 'strict',
-            icon: 'school',
-            children: [
-              {
-                label: 'Happy atmosphere',
-                img: 'statics/parallax1.jpg'
-              },
-              {
-                label: 'Good table presentation',
-                img: 'statics/parallax2.jpg'
-              },
-              {
-                label: 'Pleasing decor',
-                img: 'statics/mountains.jpg'
-              }
-            ]
+            label: 'Good table presentation',
+            img: 'statics/parallax2.jpg'
+          },
+          {
+            label: 'Very pleasing decor',
+            img: 'statics/mountains.jpg'
           }
         ]
       }
