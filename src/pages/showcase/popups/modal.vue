@@ -42,27 +42,34 @@
     </div>
 
     <q-modal v-model="basicModal" :content-css="{padding: '50px', minWidth: '50vw'}">
-      <h4>Basic Modal</h4>
+      <div class="q-display-1 q-mb-md">Basic Modal</div>
       <p v-for="n in 25" :key="`a-${n}`">Scroll down to close</p>
-      <q-btn color="primary" @click="basicModal = false" wait-for-ripple>Close</q-btn>
+      <q-btn color="primary" @click="basicModal = false" wait-for-ripple label="Close" />
     </q-modal>
 
     <q-modal
       v-model="eventsModal"
-      @open="notify('open')"
+      @show="notify('show')"
       @escape-key="notify('escape-key')"
-      @close="notify('close')"
+      @hide="notify('hide')"
       :content-css="{padding: '50px', minWidth: '50vw'}"
     >
-      <h4>Modal with Events</h4>
+      <div class="q-display-1 q-mb-md">Modal with Events</div>
       <p v-for="n in 25" :key="`b-${n}`">Scroll down to close</p>
-      <q-btn color="primary" @click="eventsModal = false" wait-for-ripple>Close</q-btn>
+      <q-btn color="primary" @click="eventsModal = false" wait-for-ripple label="Close" />
     </q-modal>
 
     <q-modal v-model="layoutModal" :content-css="{minWidth: '80vw', minHeight: '80vh'}">
       <q-modal-layout>
         <q-toolbar slot="header">
-          <q-btn flat round dense @click="layoutModal = false" icon="keyboard_arrow_left" />
+          <q-btn
+            flat
+            round
+            dense
+            @click="layoutModal = false"
+            icon="reply"
+            wait-for-ripple
+          />
           <q-toolbar-title>
             Header
           </q-toolbar-title>
@@ -79,9 +86,7 @@
         </q-toolbar>
 
         <div class="layout-padding">
-          <h1>Modal</h1>
-
-          <q-btn color="primary" @click="layoutModal = false" wait-for-ripple>Close</q-btn>
+          <q-btn color="primary" @click="layoutModal = false" wait-for-ripple label="Close" />
           <p class="caption" v-for="n in 15" :key="`c-${n}`">This is a Modal presenting a Layout.</p>
         </div>
       </q-modal-layout>
@@ -89,19 +94,19 @@
 
     <!-- specifying Vue ref for last example only -->
     <q-modal v-model="minimizedModal" minimized :content-css="{padding: '50px'}" ref="modalRef">
-      <h4>Minimized Modal</h4>
+      <div class="q-display-1 q-mb-md">Minimized Modal</div>
       <p>This one has backdrop on small screens too.</p>
-      <q-btn color="red" v-close-overlay>Close Me</q-btn>
+      <q-btn color="red" v-close-overlay label="Close" />
     </q-modal>
 
     <q-modal v-model="maximizedModal" maximized :content-css="{padding: '50px'}">
-      <h4>Maximized Modal</h4><p>This one is maximized on bigger screens too.</p>
-      <q-btn color="tertiary" @click="maximizedModal = false">Close Me</q-btn>
+      <div class="q-display-1 q-mb-md">Maximized Modal</div><p>This one is maximized on bigger screens too.</p>
+      <q-btn color="tertiary" @click="maximizedModal = false" wait-for-ripple label="Close" />
     </q-modal>
 
     <q-modal v-model="positionModal" :position="position" :content-css="{padding: '20px'}">
-      <h4>Modal</h4><p>This one gets displayed from {{ position }}.</p>
-      <q-btn color="orange" @click="positionModal = false">Close Me</q-btn>
+      <div class="q-display-1 q-mb-md">Modal</div><p>This one gets displayed from {{ position }}.</p>
+      <q-btn color="orange" @click="positionModal = false" wait-for-ripple label="Close" />
     </q-modal>
   </q-page>
 </template>
