@@ -1,7 +1,7 @@
 <template>
   <q-page padding style="max-width: 800px">
     <q-timeline color="secondary" style="padding: 0 24px;">
-      <q-timeline-entry heading>Timeline (3 breakpoints)</q-timeline-entry>
+      <q-timeline-entry heading>Timeline (3 media breakpoints)</q-timeline-entry>
 
       <q-timeline-entry
         title="Event Title"
@@ -14,7 +14,7 @@
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="Event Title Event Title Event Title Event Title Event Title Event Title Event Title Event Title "
+        title="Event Title"
         subtitle="February 21, 1986"
         side="right"
         icon="delete"
@@ -91,7 +91,7 @@
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="Event Title Event Title Event Title Event Title Event Title Event Title Event Title Event Title "
+        title="Event Title"
         subtitle="February 22, 1986"
         side="right"
       >
@@ -101,7 +101,7 @@
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="Event Title Event Title Event Title Event Title Event Title Event Title Event Title Event Title "
+        title="Event Title"
         subtitle="February 22, 1986"
         side="left"
       >
