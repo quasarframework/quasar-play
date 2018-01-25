@@ -168,7 +168,7 @@ export default [
   },
   {
     title: 'Buttons',
-    icon: 'touch_app',
+    icon: 'panorama_wide_angle',
     hash: 'buttons',
     features: [
       {
@@ -556,6 +556,28 @@ export default [
         title: 'Timeline',
         icon: 'date_range',
         hash: 'timeline'
+      }
+    ]
+  },
+  {
+    title: 'Touch Directives',
+    icon: 'touch_app',
+    hash: 'touch-directives',
+    features: [
+      {
+        title: 'Swipe',
+        icon: 'touch_app',
+        hash: 'touch-swipe'
+      },
+      {
+        title: 'Pan',
+        icon: 'touch_app',
+        hash: 'touch-pan'
+      },
+      {
+        title: 'Hold',
+        icon: 'touch_app',
+        hash: 'touch-hold'
       }
     ]
   },
