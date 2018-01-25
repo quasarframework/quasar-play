@@ -261,6 +261,11 @@ export default [
         hash: 'radio'
       },
       {
+        title: 'Radio Button',
+        icon: 'view_compact',
+        hash: 'radio-button'
+      },
+      {
         title: 'Checkbox',
         icon: 'check_box',
         hash: 'checkbox'
