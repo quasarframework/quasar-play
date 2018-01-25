@@ -28,21 +28,12 @@
         </div>
         <div v-else>Click/touch and hold for 3 seconds</div>
       </div>
-
-      <div
-        ref="test"
-        class="custom-area row flex-center q-mt-md"
-      >
-        TEST left/middle/right click here
-      </div>
     </div>
   </q-page>
 </template>
 
 <script>
 import './touch-style.styl'
-import { event } from 'quasar'
-const { leftClick, middleClick, rightClick } = event
 
 export default {
   data () {
@@ -61,19 +52,6 @@ export default {
     holdExtended () {
       this.hold = true
     }
-  },
-  mounted () {
-    this.$refs.test.addEventListener('mousedown', (e) => {
-      if (leftClick(e)) {
-        console.log('left click')
-      }
-      if (middleClick(e)) {
-        console.log('middle click')
-      }
-      if (rightClick(e)) {
-        console.log('right click')
-      }
-    })
   }
 }
 </script>
