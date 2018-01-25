@@ -2,7 +2,8 @@ module.exports = {
   root: true,
   parserOptions: {
     parser: 'babel-eslint',
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaVersion: 8
   },
   env: {
     browser: true
