@@ -261,11 +261,6 @@ export default [
         hash: 'radio'
       },
       {
-        title: 'Radio Button',
-        icon: 'view_compact',
-        hash: 'radio-button'
-      },
-      {
         title: 'Checkbox',
         icon: 'check_box',
         hash: 'checkbox'
@@ -274,6 +269,11 @@ export default [
         title: 'Toggle',
         icon: 'repeat',
         hash: 'toggle'
+      },
+      {
+        title: 'Button Toggle',
+        icon: 'view_compact',
+        hash: 'button-toggle'
       },
       {
         title: 'Option Group',

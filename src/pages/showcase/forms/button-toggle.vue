@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="row justify-center">
-    TODO with QRadioBtn
+    TODO with QBtnToggle
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">Standard</p>
       <q-radio v-model="radio1" val="one" />
