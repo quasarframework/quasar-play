@@ -13,9 +13,8 @@
           class="full-width"
           icon="layers"
           wait-for-ripple
-        >
-          Quasar Showcase
-        </q-btn>
+          label="Quasar Showcase"
+        />
 
         <q-btn
           color="secondary"
@@ -23,9 +22,8 @@
           @click="launch"
           icon="launch"
           wait-for-ripple
-        >
-          Quasar Docs
-        </q-btn>
+          label="Quasar Docs"
+        />
 
         <a
           class="row flex-center text-secondary"
@@ -80,8 +78,8 @@ export default {
       width 140px
 
 .ribbon
-  width 12.1em
-  height 12.1em
+  width 14.1em
+  height 14.1em
   position absolute
   overflow hidden
   top 0
@@ -114,9 +112,9 @@ export default {
   &:before, &:after
     position absolute
     display block
-    width 15.38em
+    width 23.38em
     height 1.74em
-    top 3.23em
-    right -3.23em
+    top 4.8em
+    right -5.8em
     transform rotate(45deg)
 </style>
