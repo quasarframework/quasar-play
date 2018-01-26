@@ -79,7 +79,7 @@
         :error="error"
         error-label="Oops, we got an error."
       >
-        <q-input v-model="email" type="email" suffix="@email.com" />
+        <q-input v-model="email" type="email" suffix="@email.com" stack-label="Email address" />
       </q-field>
 
       <q-field
@@ -108,7 +108,7 @@
         :error="error"
         error-label="Oops, we got an error."
       >
-        <q-input inverted color="secondary" v-model="email" type="email" suffix="@email.com" />
+        <q-input inverted color="secondary" v-model="email" type="email" suffix="@email.com" float-label="Email address" />
       </q-field>
 
       <p class="caption">Wrapping form components</p>
@@ -183,6 +183,14 @@
       </q-field>
 
       <q-field
+        icon="format_color_fill"
+        label="Choose color"
+        helper="I'll fill it with this color"
+      >
+        <q-color v-model="color" color="primary" float-label="Color" />
+      </q-field>
+
+      <q-field
         icon="edit_location"
         count
         label="Favorite cities"
@@ -202,7 +210,6 @@
       <p class="caption">On dark background</p>
       <div class="dark-example">
         <q-field
-          dark
           :count="10"
           helper="Some helper"
         >
@@ -210,7 +217,6 @@
         </q-field>
 
         <q-field
-          dark
           icon="place"
           label="Meeting city"
           helper="Pick a city"
@@ -235,6 +241,67 @@
           helper="How much do you like the review?"
         >
           <q-rating size="2rem" v-model="rating" :max="5" />
+        </q-field>
+      </div>
+
+      <p class="caption">Orientation</p>
+      <div class="dark-example">
+        <q-field
+          label="Vertical"
+          orientation="vertical"
+          :count="10"
+          helper="Some helper"
+        >
+          <q-input dark color="orange" v-model="text" />
+        </q-field>
+
+        <q-field
+          orientation="vertical"
+          icon="edit_location"
+          label="First"
+          count
+          helper="Pick some you want to visit"
+        >
+          <q-option-group
+            type="toggle"
+            dark
+            color="orange"
+            v-model="group2"
+            :options="[
+              {label: 'Bucharest', value: 'bucharest'},
+              {label: 'London', value: 'london'},
+              {label: 'Paris', value: 'paris'}
+            ]"
+          />
+        </q-field>
+
+        <q-field
+          orientation="horizontal"
+          icon="edit_location"
+          label="Next"
+          count
+          helper="And next go to"
+        >
+          <q-option-group
+            type="radio"
+            dark
+            color="orange"
+            v-model="group3"
+            :options="[
+              {label: 'Bucharest', value: 'bucharest'},
+              {label: 'London', value: 'london'},
+              {label: 'Paris', value: 'paris'}
+            ]"
+          />
+        </q-field>
+
+        <q-field
+          dark
+          orientation="horizontal"
+          label="Review horizontal"
+          helper="How much do you like the review?"
+        >
+          <q-rating size="2rem" color="orange" v-model="rating" :max="4" />
         </q-field>
       </div>
 
@@ -297,6 +364,15 @@
       >
         <q-input v-model="text2" />
       </q-field>
+
+      <q-field
+        :label-width="12"
+        icon="wifi"
+        label="Width 12/12"
+        helper="Some helper"
+      >
+        <q-input v-model="text2" />
+      </q-field>
     </div>
   </q-page>
 </template>
@@ -313,7 +389,9 @@ export default {
       select: 'bucharest',
       group: 'pineapple',
       group2: ['paris'],
+      group3: 'london',
       chips: ['Jim'],
+      color: null,
       date: null,
       rating: 0,
 
