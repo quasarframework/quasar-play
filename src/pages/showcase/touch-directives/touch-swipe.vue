@@ -10,7 +10,9 @@
         v-touch-swipe="handleSwipe"
         class="custom-area row flex-center"
       >
-        <pre v-if="info">{{ info }}</pre>
+        <div v-if="info" class="custom-info">
+          <pre>{{ info }}</pre>
+        </div>
         <div v-else class="text-center">
           <q-icon name="arrow_upward" />
           <div class="row items-center">
@@ -32,9 +34,8 @@
         v-touch-swipe.right="swipeToRight"
         class="custom-area row flex-center"
       >
-        <div v-if="swipedRight">
-          <q-icon name="done" size="48px" />
-          <q-btn flat label="Reset" @click="swipedRight = false" />
+        <div v-if="infoRight" class="custom-info">
+          <pre>{{ infoRight }}</pre>
         </div>
         <div v-else>
           Swipe to right only
@@ -47,9 +48,8 @@
         v-touch-swipe.up.right="swipeToCustom"
         class="custom-area row flex-center"
       >
-        <div v-if="swipedCustom">
-          <q-icon name="done" size="48px" />
-          <q-btn flat label="Reset" @click="swipedCustom = false" />
+        <div v-if="infoCustom" class="custom-info">
+          <pre>{{ infoCustom }}</pre>
         </div>
         <div v-else class="text-center">
           <q-icon name="arrow_upward" />
@@ -72,8 +72,8 @@ export default {
   data () {
     return {
       info: null,
-      swipedRight: false,
-      swipedCustom: false
+      infoRight: null,
+      infoCustom: null
     }
   },
   methods: {
@@ -81,13 +81,13 @@ export default {
       this.info = { direction, duration, distance }
 
       // native Javascript event
-      console.log(evt)
+      // console.log(evt)
     },
-    swipeToRight () {
-      this.swipedRight = true
+    swipeToRight ({ direction, duration, distance }) {
+      this.infoRight = { direction, duration, distance }
     },
-    swipeToCustom () {
-      this.swipedCustom = true
+    swipeToCustom ({ direction, duration, distance }) {
+      this.infoCustom = { direction, duration, distance }
     }
   }
 }

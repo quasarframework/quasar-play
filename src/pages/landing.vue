@@ -12,6 +12,7 @@
           @click="$router.push('/showcase')"
           class="full-width"
           icon="layers"
+          wait-for-ripple
         >
           Quasar Showcase
         </q-btn>
@@ -21,6 +22,7 @@
           class="full-width"
           @click="launch"
           icon="launch"
+          wait-for-ripple
         >
           Quasar Docs
         </q-btn>

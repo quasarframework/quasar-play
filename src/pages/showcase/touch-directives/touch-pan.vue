@@ -5,14 +5,17 @@
         <span class="desktop-only">Click then pan in a direction with your mouse</span>
         <span class="mobile-only">Touch and pan in a direction</span>
         on the area below to see it in action.
+        <br>
+        Page scrolling is prevented, but you can opt out if you wish.
       </p>
       <div
-        v-touch-pan="handlePan"
-        class="custom-area row flex-center relative-position"
-        style="height: 350px"
+        v-touch-pan.prevent="handlePan"
+        class="custom-area row flex-center"
         ref="area"
       >
-        <pre v-if="info">{{ info }}</pre>
+        <div v-if="info" class="custom-info">
+          <pre>{{ info }}</pre>
+        </div>
         <div v-else class="text-center">
           <q-icon name="arrow_upward" />
           <div class="row items-center">
@@ -30,33 +33,44 @@
 
       <p class="caption">
         Panning works both with a mouse or a native touch action.
-        <br>You can also capture pan to certain directions (any) only as you'll see below.
+        <br>
+        You can also capture pan to certain directions (any) only as you'll see below.
       </p>
 
-      <p class="caption">Example on capturing only horizontal panning:</p>
+      <p class="caption">
+        Example on capturing only horizontal panning.
+        <br>
+        Notice that on touch capable devices the scrolling is automatically not blocked, since
+        we are only capturing horizontally.
+      </p>
       <div
-        v-touch-pan.horizontal="panHorizontally"
+        v-touch-pan.horizontal.prevent="panHorizontally"
         class="custom-area row flex-center"
       >
-        <div v-if="pannedHorizontally" class="q-ma-none">
-          <q-icon name="done" size="48px" />
-          <q-btn flat label="Reset" @click="pannedHorizontally = false" />
+        <div v-if="infoHorizontal" class="custom-info">
+          <pre>{{ infoHorizontal }}</pre>
         </div>
         <div v-else class="row items-center">
           <q-icon name="arrow_back" />
           <div>Pan to left or right only</div>
           <q-icon name="arrow_forward" />
         </div>
+
+        <div v-if="panningHorizontal" class="touch-signal">
+          <q-icon name="touch_app" />
+        </div>
       </div>
 
-      <p class="caption">Example on capturing only vertically panning:</p>
+      <p class="caption">
+        Example on capturing only vertically panning.
+        Page scrolling is prevented, but you can opt out if you wish.
+      </p>
       <div
-        v-touch-pan.vertical="panVertically"
+        v-touch-pan.vertical.prevent="panVertically"
         class="custom-area row flex-center"
       >
-        <div v-if="pannedVertically" class="q-ma-none">
-          <q-icon name="done" size="48px" />
-          <q-btn flat label="Reset" @click="pannedVertically = false" />
+        <div v-if="infoVertical" class="custom-info">
+          <pre>{{ infoVertical }}</pre>
         </div>
         <div v-else class="text-center">
           <q-icon name="arrow_upward" />
@@ -64,6 +78,10 @@
             Pan to up or down only
           </div>
           <q-icon name="arrow_downward" />
+        </div>
+
+        <div v-if="panningVertical" class="touch-signal">
+          <q-icon name="touch_app" />
         </div>
       </div>
 
@@ -80,8 +98,12 @@ export default {
     return {
       info: null,
       panning: false,
-      pannedHorizontally: false,
-      pannedVertically: false
+
+      infoHorizontal: null,
+      panningHorizontal: false,
+
+      infoVertical: null,
+      panningVertical: false
     }
   },
   methods: {
@@ -98,14 +120,30 @@ export default {
         this.panning = false
       }
     },
-    panHorizontally () {
-      if (this.pannedHorizontally !== true) {
-        this.pannedHorizontally = true
+    panHorizontally ({ position, direction, duration, distance, delta, isFirst, isFinal, evt }) {
+      this.infoHorizontal = { position, direction, duration, distance, delta, isFirst, isFinal }
+
+      // native Javascript event
+      // console.log(evt)
+
+      if (isFirst) {
+        this.panningHorizontal = true
+      }
+      else if (isFinal) {
+        this.panningHorizontal = false
       }
     },
-    panVertically () {
-      if (this.pannedVertically !== true) {
-        this.pannedVertically = true
+    panVertically ({ position, direction, duration, distance, delta, isFirst, isFinal, evt }) {
+      this.infoVertical = { position, direction, duration, distance, delta, isFirst, isFinal }
+
+      // native Javascript event
+      // console.log(evt)
+
+      if (isFirst) {
+        this.panningVertical = true
+      }
+      else if (isFinal) {
+        this.panningVertical = false
       }
     }
   }

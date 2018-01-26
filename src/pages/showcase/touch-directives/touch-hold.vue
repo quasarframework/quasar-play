@@ -5,13 +5,17 @@
         <span class="desktop-only">Click and hold with your mouse</span>
         <span class="mobile-only">Touch and hold</span>
         on the area below to see it in action.
+        <br>
+        Notice that on touch capable devices the scrolling is not blocked.
       </p>
 
       <div
         v-touch-hold="handleHold"
         class="custom-area row flex-center"
       >
-        <pre v-if="info">{{ info }}</pre>
+        <div v-if="info" class="custom-info">
+          <pre>{{ info }}</pre>
+        </div>
         <div v-else class="text-center">
           Click/touch and hold for at least 800ms.
         </div>
@@ -22,9 +26,8 @@
         v-touch-hold:3000="holdExtended"
         class="custom-area row flex-center"
       >
-        <div v-if="hold">
-          <q-icon name="done" size="48px" />
-          <q-btn flat label="Reset" @click="hold = false" />
+        <div v-if="infoExtended" class="custom-info">
+          <pre>{{ infoExtended }}</pre>
         </div>
         <div v-else>Click/touch and hold for 3 seconds</div>
       </div>
@@ -39,7 +42,7 @@ export default {
   data () {
     return {
       info: null,
-      hold: false
+      infoExtended: null
     }
   },
   methods: {
@@ -47,10 +50,10 @@ export default {
       this.info = { position, duration }
 
       // native Javascript event
-      console.log(evt)
+      // console.log(evt)
     },
-    holdExtended () {
-      this.hold = true
+    holdExtended ({ position, duration }) {
+      this.infoExtended = { position, duration }
     }
   }
 }
