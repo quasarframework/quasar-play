@@ -50,7 +50,7 @@
         <q-input inverted color="secondary" v-model="email" type="email" suffix="@email.com" />
       </q-field>
 
-      <p class="caption">Error state</p>
+      <p class="caption">Error/warning states</p>
       <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
       <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
 
