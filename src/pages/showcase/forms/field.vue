@@ -51,13 +51,16 @@
       </q-field>
 
       <p class="caption">Error state</p>
-      <q-toggle v-model="error" label="Toggle error state" />
+      <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+      <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
 
       <q-field
         :count="10"
         helper="Some helper"
         :error="error"
         error-label="Oops, we got an error."
+        :warning="warning"
+        warning-label="Hey, we got a warning."
       >
         <q-input v-model="text" />
       </q-field>
@@ -68,6 +71,8 @@
         helper="Some helper"
         :error="error"
         error-label="Oops, we got an error."
+        :warning="warning"
+        warning-label="Hey, we got a warning."
       >
         <q-input v-model="text" float-label="Input float label" />
       </q-field>
@@ -78,6 +83,8 @@
         helper="Some helper"
         :error="error"
         error-label="Oops, we got an error."
+        :warning="warning"
+        warning-label="Hey, we got a warning."
       >
         <q-input v-model="email" type="email" suffix="@email.com" stack-label="Email address" />
       </q-field>
@@ -87,6 +94,8 @@
         helper="Some helper"
         :error="error"
         error-label="Oops, we got an error."
+        :warning="warning"
+        warning-label="Hey, we got a warning."
       >
         <q-input inverted v-model="text" />
       </q-field>
@@ -97,6 +106,8 @@
         helper="Some helper"
         :error="error"
         error-label="Oops, we got an error."
+        :warning="warning"
+        warning-label="Hey, we got a warning."
       >
         <q-input inverted color="amber" v-model="text" stack-label="Input stack label" />
       </q-field>
@@ -107,6 +118,8 @@
         helper="Some helper"
         :error="error"
         error-label="Oops, we got an error."
+        :warning="warning"
+        warning-label="Hey, we got a warning."
       >
         <q-input inverted color="secondary" v-model="email" type="email" suffix="@email.com" float-label="Email address" />
       </q-field>
@@ -247,7 +260,7 @@
       <p class="caption">Orientation</p>
       <div class="dark-example">
         <q-field
-          label="Vertical"
+          label="Always vertical"
           orientation="vertical"
           :count="10"
           helper="Some helper"
@@ -258,7 +271,7 @@
         <q-field
           orientation="vertical"
           icon="edit_location"
-          label="First"
+          label="Always vertical"
           count
           helper="Pick some you want to visit"
         >
@@ -278,7 +291,7 @@
         <q-field
           orientation="horizontal"
           icon="edit_location"
-          label="Next"
+          label="Always horizontal"
           count
           helper="And next go to"
         >
@@ -298,10 +311,11 @@
         <q-field
           dark
           orientation="horizontal"
-          label="Review horizontal"
+          label="Always horizontal"
+          :label-width="4"
           helper="How much do you like the review?"
         >
-          <q-rating size="2rem" color="orange" v-model="rating" :max="4" />
+          <q-rating size="2rem" color="orange" v-model="rating" :max="3" />
         </q-field>
       </div>
 
@@ -395,7 +409,20 @@ export default {
       date: null,
       rating: 0,
 
-      error: false
+      error: true,
+      warning: false
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
+      }
     }
   }
 }
