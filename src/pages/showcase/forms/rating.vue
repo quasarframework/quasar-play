@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="row justify-center">
+  <q-page padding class="docs-input row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <div style="font-size: 2rem;">
         <q-rating v-model="ratingModel" :max="3" />
@@ -25,11 +25,26 @@
       >
         <q-rating size="2rem" v-model="ratingModel" :max="5" />
       </q-field>
+
+      <p class="caption">On a dark background</p>
+      <div class="dark-example">
+        <q-rating color="amber" v-model="ratingModel" :max="5" icon="pets" size="2rem" class="q-my-md" />
+        <q-field
+          dark
+          icon="thumb_up"
+          label="Rating"
+          helper="How much do you rate this article?"
+        >
+          <q-rating size="2rem" v-model="ratingModel" :max="5" />
+        </q-field>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
+import './docs-input.styl'
+
 export default {
   data () {
     return {
