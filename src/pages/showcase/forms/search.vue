@@ -32,11 +32,23 @@
         <q-search inverted v-model="model2" />
       </q-field>
 
-      <p class="caption">Disable / Error state</p>
+      <p class="caption">Hide the underline</p>
+      <q-search v-model="textUnderline" hide-underline />
+
+      <p class="caption">Readonly state</p>
+      <q-search readonly icon="local_dining" color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
+      <q-search readonly icon="local_dining" inverted color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
+
+      <p class="caption">Disable state</p>
       <q-search disable icon="local_dining" color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
       <q-search disable icon="local_dining" inverted color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
-      <q-search error icon="ev_station" color="secondary" v-model="model2" stack-label="Seach for an ev station" placeholder="Type a name"/>
-      <q-search error icon="ev_station" inverted color="secondary" v-model="model2" stack-label="Seach for an ev station" placeholder="Type a name"/>
+
+      <p class="caption">Error/Warning states</p>
+      <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+      <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
+
+      <q-search :error="error" :warning="warning" icon="ev_station" color="secondary" v-model="model2" stack-label="Seach for an ev station" placeholder="Type a name"/>
+      <q-search :error="error" :warning="warning" icon="ev_station" inverted color="secondary" v-model="model2" stack-label="Seach for an ev station" placeholder="Type a name"/>
 
       <p class="caption">On a dark background</p>
       <div class="dark-example">
@@ -62,7 +74,23 @@ export default {
   data () {
     return {
       model: '',
-      model2: ''
+      model2: '',
+      textUnderline: 'No underline',
+
+      error: true,
+      warning: false
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
+      }
     }
   }
 }
