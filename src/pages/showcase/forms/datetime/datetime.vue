@@ -24,17 +24,26 @@
       <!-- Date & Time -->
       <q-datetime color="purple" v-model="date3" type="datetime" float-label="Date & Time" />
 
-      <br><br>
+      <p class="caption">Clearable</p>
+      <q-datetime
+        type="date"
+        v-model="today"
+        color="amber"
+        clearable
+      />
 
+      <p class="caption">With default selection</p>
       <q-datetime
         :default-selection="defaultSelection"
         type="datetime"
         v-model="date4"
         color="brown"
+        clearable
         float-label="With default selection & placeholder"
         placeholder="Start of this year as default"
       />
 
+      <p class="caption">With display value</p>
       <q-datetime
         :display-value="date5 ? 'Picked date. Thanks!' : 'Pick a date, will ya?'"
         type="date"
@@ -44,13 +53,26 @@
         stack-label="With display value"
       />
 
+      <p class="caption">With custom format</p>
       <q-datetime
         type="date"
-        v-model="today"
-        color="amber"
-        stack-label="No 'Clear' button"
-        no-clear
+        v-model="date5"
+        color="brown"
+        format="YYYY-MMMM-dddd Do Qo Q"
       />
+
+      <p  v-if="$q.theme === 'mat'" class="caption">With default view</p>
+      <q-datetime
+         v-if="$q.theme === 'mat'"
+        type="date"
+        v-model="date4"
+        color="brown"
+        default-view="month"
+      />
+
+      <p class="caption">Force either modal or popover</p>
+      <q-datetime v-model="today" modal stack-label="Always open modal" />
+      <q-datetime v-model="today" popover stack-label="Always open popover" />
 
       <p class="caption">Min / max selection</p>
       <q-datetime
@@ -71,7 +93,18 @@
         stack-label="Pick a date & time in an interval"
       />
 
-      <p class="caption">Disable / Error states</p>
+      <p class="caption">Readonly state</p>
+      <q-datetime
+        readonly
+        v-model="state"
+      />
+      <q-datetime
+        readonly
+        inverted
+        v-model="state"
+      />
+
+      <p class="caption">Disable state</p>
       <q-datetime
         disable
         v-model="state"
@@ -81,15 +114,28 @@
         inverted
         v-model="state"
       />
+
+      <p class="caption">Error/Warning states</p>
+      <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+      <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
+
       <q-datetime
-        error
-        float-label="Hey, an error!"
+        :error="error"
+        :warning="warning"
+        float-label="Float label"
         v-model="state"
       />
       <q-datetime
-        error
+        :error="error"
+        :warning="warning"
         inverted
-        float-label="Look, look. An error."
+        float-label="Float label"
+        v-model="state"
+      />
+
+      <p class="caption">Hide underline</p>
+      <q-datetime
+        hide-underline
         v-model="state"
       />
 
@@ -116,6 +162,30 @@
         />
       </q-field>
 
+      <p class="caption">On dark background</p>
+      <div class="dark-example">
+        <q-datetime
+          dark
+          stack-label="Pick start time"
+          color="amber"
+          v-model="date6"
+          type="time"
+        />
+        <q-field
+          dark
+          icon="school"
+          label="Javascript"
+          helper="Pick a start time"
+        >
+          <q-datetime
+            dark
+            color="secondary"
+            v-model="date6"
+            type="time"
+          />
+        </q-field>
+      </div>
+
       <p class="caption">In a List</p>
       <q-list>
         <q-list-header>Date or Time</q-list-header>
@@ -140,30 +210,6 @@
           </q-item-main>
         </q-item>
       </q-list>
-
-      <p class="caption">On dark background</p>
-      <div class="dark-example">
-        <q-datetime
-          dark
-          stack-label="Pick start time"
-          color="amber"
-          v-model="date6"
-          type="time"
-        />
-        <q-field
-          dark
-          icon="school"
-          label="Javascript"
-          helper="Pick a start time"
-        >
-          <q-datetime
-            dark
-            color="secondary"
-            v-model="date6"
-            type="time"
-          />
-        </q-field>
-      </div>
     </div>
   </q-page>
 </template>
@@ -187,12 +233,37 @@ export default {
       date7: null,
       date8: null,
       date9: null,
+      error: true,
+      warning: false,
       today,
       tomorrow: addToDate(today, { days: 1 }),
       yesterday: subtractFromDate(today, { days: 1 }),
       state: new Date(),
 
       defaultSelection: startOfDate(today, 'year')
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
+      }
+    },
+
+    error2 (val) {
+      if (val) {
+        this.warning2 = false
+      }
+    },
+    warning2 (val) {
+      if (val) {
+        this.error2 = false
+      }
     }
   }
 }

@@ -19,7 +19,7 @@
           </span>
         </small>
       </p>
-      <q-inline-datetime v-model="model" type="date" />
+      <q-datetime-picker v-model="model" type="date" />
 
       <p class="caption">
         Time
@@ -34,28 +34,28 @@
           <span class="mat-only">inside of the clock</span>.
         </small>
       </p>
-      <q-inline-datetime color="amber" v-model="model" type="time" />
+      <q-datetime-picker color="amber" v-model="model" type="time" />
 
       <p class="caption">Time 24hr format</p>
-      <q-inline-datetime color="black" v-model="model" type="time" format24h />
+      <q-datetime-picker color="black" v-model="model" type="time" format24h />
 
       <p class="caption">Date & Time</p>
-      <q-inline-datetime color="secondary" v-model="model" type="datetime" />
+      <q-datetime-picker color="secondary" v-model="model" type="datetime" />
 
       <p class="caption">Monday as first day of week</p>
-      <q-inline-datetime color="purple" v-model="model" monday-first type="date" />
+      <q-datetime-picker color="purple" v-model="model" monday-first type="date" />
 
       <p class="caption">Saturday as first day of week</p>
-      <q-inline-datetime color="purple" v-model="model" saturday-first type="date" />
+      <q-datetime-picker color="purple" v-model="model" saturday-first type="date" />
 
       <p class="caption">Disabled state</p>
-      <q-inline-datetime disable v-model="model" type="datetime" />
+      <q-datetime-picker disable v-model="model" type="datetime" />
 
       <p class="caption">Readonly state</p>
-      <q-inline-datetime color="orange" readonly v-model="model" type="datetime" />
+      <q-datetime-picker color="orange" readonly v-model="model" type="datetime" />
 
       <p class="caption">Min & max</p>
-      <q-inline-datetime color="brown" type="datetime" v-model="minMaxModel" :min="min" :max="max" />
+      <q-datetime-picker color="brown" type="datetime" v-model="minMaxModel" :min="min" :max="max" />
     </div>
   </q-page>
 </template>

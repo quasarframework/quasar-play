@@ -287,21 +287,15 @@ export default [
         tabs: [
           {
             title: 'DateTime Input',
-            label: 'Input',
+            label: 'Datetime Input',
             icon: 'event',
-            hash: 'input-datetime'
+            hash: 'datetime'
           },
           {
-            title: 'Inline DateTime',
-            label: 'Inline',
+            title: 'DateTime Picker',
+            label: 'Datetime',
             icon: 'event_note',
-            hash: 'inline-datetime'
-          },
-          {
-            title: 'DateTime Range',
-            label: 'Range',
-            icon: 'date_range',
-            hash: 'range-datetime'
+            hash: 'datetime-picker'
           }
         ]
       },
