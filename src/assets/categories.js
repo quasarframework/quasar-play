@@ -226,7 +226,7 @@ export default [
             title: 'Color Input',
             label: 'Color Picker Input',
             icon: 'format_color_fill',
-            hash: 'input-color-picker'
+            hash: 'color'
           }
         ]
       },

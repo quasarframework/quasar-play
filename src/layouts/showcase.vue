@@ -45,9 +45,9 @@
         style="width: 100%; height: 100%;"
         class="bg-grey-3"
       >
-        <div class="row flex-center bg-white" style="width: 100%; height: 100px;">
+        <div class="row flex-center bg-white" style="height: 100px">
           <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;">
-          <div style="margin-left: 15px">
+          <div class="caption q-ml-md">
             Quasar v{{ $q.version }}
           </div>
         </div>
