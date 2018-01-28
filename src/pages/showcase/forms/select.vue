@@ -21,6 +21,12 @@
         :options="listOptions"
       />
       <q-select
+        color="amber"
+        stack-label="List with stack label"
+        v-model="select"
+        :options="options"
+      />
+      <q-select
         radio
         color="secondary"
         float-label="With Radio"
@@ -84,7 +90,20 @@
         :options="options"
       />
 
-      <p class="caption">Disable / Error states</p>
+      <p class="caption">Readonly state</p>
+      <q-select
+        readonly
+        v-model="select"
+        :options="options"
+      />
+      <q-select
+        readonly
+        inverted
+        v-model="select"
+        :options="options"
+      />
+
+      <p class="caption">Disable state</p>
       <q-select
         disable
         v-model="select"
@@ -96,6 +115,8 @@
         v-model="select"
         :options="options"
       />
+
+      <p class="caption">Error state</p>
       <q-select
         error
         float-label="Hey, an error!"
@@ -107,6 +128,30 @@
         inverted
         multiple
         float-label="Look, look. An error."
+        v-model="multipleSelect"
+        :options="options"
+      />
+
+      <p class="caption">Warning state</p>
+      <q-select
+        warning
+        float-label="Hey, an warning!"
+        v-model="select"
+        :options="options"
+      />
+      <q-select
+        warning
+        inverted
+        multiple
+        float-label="Look, look. An warning."
+        v-model="multipleSelect"
+        :options="options"
+      />
+
+      <p class="caption">Hide underline</p>
+      <q-select
+        multiple
+        hide-underline
         v-model="multipleSelect"
         :options="options"
       />
