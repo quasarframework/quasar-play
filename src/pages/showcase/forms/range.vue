@@ -16,11 +16,11 @@
         With Floating Point Precision
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{ precision.min }} to {{ precision.max }} (0.1 to 1.0)
+            Model: {{ precision.min }} to {{ precision.max }} (0.1 to 1.5)
           </q-chip>
         </span>
       </p>
-      <q-range v-model="precision" :min="0.1" :max="1.0" :step="0.1" :decimals="1" color="amber" />
+      <q-range v-model="precision" :min="0.1" :max="1.5" :step="0.1" :decimals="1" color="amber" />
 
       <p class="caption">
         With Label
@@ -116,12 +116,19 @@
       </p>
       <q-range v-model="onlyRange" :min="0" :max="100" :step="5" drag-only-range label color="info" />
 
+      <p class="caption">Readonly State</p>
+      <q-range v-model="standard" color="secondary" :min="0" :max="50" readonly />
+
       <p class="caption">Disabled State</p>
-      <q-range v-model="standard" :min="0" :max="50" disable />
+      <q-range v-model="standard" color="secondary" :min="0" :max="50" disable />
 
       <p class="caption">Error State</p>
       <q-range error v-model="standard" :min="0" :max="50" />
       <q-range error label-always v-model="standard" :min="0" :max="50" />
+
+      <p class="caption">Warning State</p>
+      <q-range warning v-model="standard" :min="0" :max="50" />
+      <q-range warning label-always v-model="standard" :min="0" :max="50" />
 
       <p class="caption">In a Field</p>
       <q-field

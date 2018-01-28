@@ -16,11 +16,11 @@
         With Floating Point Precision
         <span class="chip-container">
           <q-chip square color="secondary">
-            Model: {{ precision }} (0.1 to 1.0)
+            Model: {{ precision }} (0.1 to 1.5)
           </q-chip>
         </span>
       </p>
-      <q-slider v-model="precision" :min="0.1" :max="1" :step="0.1" :decimals="1" color="amber" />
+      <q-slider v-model="precision" :min="0.1" :max="1.5" :step="0.1" :decimals="1" color="amber" />
 
       <p class="caption">
         With Step
@@ -82,12 +82,19 @@
       </p>
       <q-slider :label-value="`${label}px`" v-model="label" :min="-20" :max="20" :step="4" label-always color="brown" />
 
+      <p class="caption">Readonly State</p>
+      <q-slider v-model="standard" color="secondary" :min="0" :max="50" readonly />
+
       <p class="caption">Disabled State</p>
-      <q-slider v-model="standard" :min="0" :max="50" disable />
+      <q-slider v-model="standard" color="secondary" :min="0" :max="50" disable />
 
       <p class="caption">Error State</p>
       <q-slider error v-model="standard" :min="0" :max="50" />
       <q-slider error color="amber" v-model="standard" :min="0" :max="50" label-always />
+
+      <p class="caption">Warning State</p>
+      <q-slider warning v-model="standard" :min="0" :max="50" />
+      <q-slider warning color="amber" v-model="standard" :min="0" :max="50" label-always />
 
       <p class="caption">In a Field</p>
       <q-field
