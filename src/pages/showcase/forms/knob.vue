@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="row justify-center">
+  <q-page padding class="docs-input row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">Standard</p>
       <q-knob
@@ -8,7 +8,7 @@
         :max="max"
       />
       <q-knob
-        class="text-primary"
+        color="secondary"
         v-model="model"
         :min="min"
         :max="max"
@@ -93,11 +93,40 @@
           :max="max"
         />
       </q-field>
+
+      <p class="caption">On a dark background</p>
+      <div class="dark-example">
+        <q-knob
+          color="orange"
+          track-color="grey-8"
+          v-model="model"
+          :min="min"
+          :max="max"
+          class="q-my-md"
+        />
+        <q-field
+          dark
+          icon="thumb_up"
+          label="Rating"
+          helper="How much do you rate this article?"
+        >
+          <q-knob
+            color="orange"
+            track-color="grey-8"
+            v-model="model"
+            :min="min"
+            :max="max"
+            class="q-my-md"
+          />
+        </q-field>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
+import './docs-input.styl'
+
 export default {
   data () {
     return {
