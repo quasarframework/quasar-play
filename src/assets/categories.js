@@ -313,6 +313,11 @@ export default [
         title: 'Knob',
         icon: 'timelapse',
         hash: 'knob'
+      },
+      {
+        title: 'Uploader',
+        icon: 'cloud_upload',
+        hash: 'uploader'
       }
     ]
   },

@@ -75,6 +75,23 @@
         :options="listOptions"
       />
 
+      <p class="caption">
+        Lazy input
+      </p>
+      <span class="chip-container">
+        <q-chip square color="secondary">
+          Model: {{ lazy }}
+        </q-chip>
+      </span>
+      <q-select
+        :value="lazy"
+        @change="val => lazy = val"
+        multiple
+        inverted
+        color="tertiary"
+        :options="options"
+      />
+
       <p class="caption">With filter / search</p>
       <q-select
         filter
@@ -219,6 +236,7 @@ import './docs-input.styl'
 export default {
   data () {
     return {
+      lazy: [],
       select: 'fb',
       multipleSelect: ['goog', 'twtr'],
       options: [

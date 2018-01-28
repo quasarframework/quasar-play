@@ -43,6 +43,20 @@
         placeholder="Some placeholder"
       />
 
+      <p class="caption">
+        Lazy input
+      </p>
+      <span class="chip-container">
+        <q-chip square color="secondary">
+          Model: {{ lazy }}
+        </q-chip>
+      </span>
+      <q-chips-input
+        :value="lazy"
+        @change="val => lazy = val"
+        placeholder="Type some names"
+      />
+
       <p class="caption">Hide underline</p>
       <q-chips-input v-model="chips6" hide-underline />
 
@@ -117,7 +131,8 @@ export default {
       chips3: ['Jim'],
       chips4: ['Joe'],
       chips5: ['Jim'],
-      chips6: ['Jack', 'Jim']
+      chips6: ['Jack', 'Jim'],
+      lazy: ['Joe']
     }
   }
 }

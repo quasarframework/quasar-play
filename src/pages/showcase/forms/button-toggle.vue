@@ -123,15 +123,15 @@
           helper="Pick what you'd like for desert."
         >
           <q-btn-toggle
-          v-model="field"
-          push
-          glossy
-          toggle-color="primary"
-          :options="[
-            {label: 'Cake', value: 'cake'},
-            {label: 'Ice cream', value: 'ice-cream'}
-          ]"
-        />
+            v-model="field"
+            push
+            glossy
+            toggle-color="primary"
+            :options="[
+              {label: 'Cake', value: 'cake'},
+              {label: 'Ice cream', value: 'ice-cream'}
+            ]"
+          />
         </q-field>
       </div>
     </div>

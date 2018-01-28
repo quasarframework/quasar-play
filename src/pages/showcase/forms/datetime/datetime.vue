@@ -24,6 +24,22 @@
       <!-- Date & Time -->
       <q-datetime color="purple" v-model="date3" type="datetime" float-label="Date & Time" />
 
+      <p class="caption">
+        Lazy input
+      </p>
+      <span class="chip-container">
+        <q-chip square color="secondary">
+          Model: {{ lazy }}
+        </q-chip>
+      </span>
+      <q-datetime
+        :value="lazy"
+        @change="val => lazy = val"
+        type="date"
+        color="amber"
+        clearable
+      />
+
       <p class="caption">Clearable</p>
       <q-datetime
         type="date"
@@ -233,6 +249,8 @@ export default {
       date7: null,
       date8: null,
       date9: null,
+      lazy: null,
+
       error: true,
       warning: false,
       today,
