@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="row justify-center">
+  <q-page padding class="docs-input row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">Radio group</p>
       <q-option-group
@@ -50,6 +50,20 @@
         ]"
       />
 
+      <p class="caption">Keep color for unchecked options</p>
+      <q-option-group
+        inline
+        type="checkbox"
+        keep-color
+        color="orange"
+        v-model="toggle"
+        :options="[
+          { label: 'Bucharest', value: 'bucharest' },
+          { label: 'London', value: 'london' },
+          { label: 'Paris', value: 'paris' }
+        ]"
+      />
+
       <p class="caption">Labels on left side</p>
       <q-option-group
         left-label
@@ -61,6 +75,19 @@
           { label: 'Bucharest', value: 'bucharest' },
           { label: 'London', value: 'london' },
           { label: 'Paris', value: 'paris', color: 'orange' }
+        ]"
+      />
+
+      <p class="caption">Readonly</p>
+      <q-option-group
+        type="radio"
+        readonly
+        color="secondary"
+        v-model="radio"
+        :options="[
+          { label: 'Bucharest', value: 'bucharest' },
+          { label: 'London', value: 'london' },
+          { label: 'Paris', value: 'paris', color: 'red' }
         ]"
       />
 
@@ -93,11 +120,47 @@
           ]"
         />
       </q-field>
+
+      <p class="caption">On a dark background</p>
+      <div class="dark-example">
+        <q-option-group
+          dark
+          type="radio"
+          color="secondary"
+          v-model="radio"
+          :options="[
+            { label: 'Bucharest', value: 'bucharest' },
+            { label: 'London', value: 'london' },
+            { label: 'Paris', value: 'paris', color: 'red' }
+          ]"
+          class="q-my-md"
+        />
+
+        <q-field
+          icon="vibration"
+          helper="Select which notifications you want to receive"
+          label="Notifications"
+        >
+          <q-option-group
+            dark
+            type="radio"
+            color="secondary"
+            v-model="radio"
+            :options="[
+              { label: 'Bucharest', value: 'bucharest' },
+              { label: 'London', value: 'london' },
+              { label: 'Paris', value: 'paris', color: 'red' }
+            ]"
+          />
+        </q-field>
+      </div>
     </div>
   </q-page>
 </template>
 
 <script>
+import './docs-input.styl'
+
 export default {
   data () {
     return {
