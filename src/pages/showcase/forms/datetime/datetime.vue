@@ -61,9 +61,9 @@
         format="YYYY-MMMM-dddd Do Qo Q"
       />
 
-      <p  v-if="$q.theme === 'mat'" class="caption">With default view</p>
+      <p v-if="$q.theme === 'mat'" class="caption">With default view</p>
       <q-datetime
-         v-if="$q.theme === 'mat'"
+        v-if="$q.theme === 'mat'"
         type="date"
         v-model="date4"
         color="brown"
