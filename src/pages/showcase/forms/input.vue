@@ -28,10 +28,10 @@
         Lazy input
       </p>
       <span class="chip-container">
-          <q-chip square color="secondary">
-            Model: {{ lazy }}
-          </q-chip>
-        </span>
+        <q-chip square color="secondary">
+          Model: {{ lazy }}
+        </q-chip>
+      </span>
       <q-input :value="lazy" @change="val => lazy = val" max-length="30" />
 
       <p class="caption">Hide the underline</p>

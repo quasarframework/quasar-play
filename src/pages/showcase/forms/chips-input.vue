@@ -21,6 +21,12 @@
         float-label="Float label"
       />
       <q-chips-input
+        color="secondary"
+        v-model="chips2"
+        add-icon="done"
+        float-label="Custom add icon (type something)"
+      />
+      <q-chips-input
         inverted
         color="dark"
         frame-color="amber"
@@ -37,11 +43,22 @@
         placeholder="Some placeholder"
       />
 
-      <p class="caption">Disable / Error states</p>
+      <p class="caption">Hide underline</p>
+      <q-chips-input v-model="chips6" hide-underline />
+
+      <p class="caption">Read only</p>
+      <q-chips-input v-model="chips6" readonly placeholder="Read only" />
+      <q-chips-input v-model="chips6" readonly inverted color="tertiary" frame-color="amber" placeholder="Read only" />
+
+      <p class="caption">Disabled</p>
       <q-chips-input v-model="chips6" disable placeholder="Disabled" />
       <q-chips-input v-model="chips6" disable inverted color="tertiary" frame-color="amber" placeholder="Disabled" />
+
+      <p class="caption">Error/Warning states</p>
       <q-chips-input v-model="chips6" error float-label="Signaling error" />
       <q-chips-input v-model="chips6" error inverted color="tertiary" frame-color="amber" float-label="Signaling error" />
+      <q-chips-input v-model="chips6" warning float-label="Signaling warning" />
+      <q-chips-input v-model="chips6" warning inverted color="tertiary" frame-color="amber" float-label="Signaling warning" />
 
       <p class="caption">In a Field</p>
       <q-field
