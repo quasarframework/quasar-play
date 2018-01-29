@@ -36,6 +36,7 @@
           :label="tab.label"
           exact
           replace
+          :alert="tab.status !== void 0"
         />
       </q-tabs>
     </q-layout-header>
@@ -59,7 +60,6 @@
           >
             <q-item-side icon="home" />
             <q-item-main label="Showcase home" />
-            <q-item-side right icon="chevron_right" />
           </q-item>
           <q-item-separator />
           <template v-for="category in categories">
@@ -74,7 +74,9 @@
             >
               <q-item-side :icon="feature.icon" />
               <q-item-main :label="feature.title" />
-              <q-item-side right icon="chevron_right" />
+              <q-item-side right v-if="feature.status">
+                <q-chip small color="secondary">{{ feature.status }}</q-chip>
+              </q-item-side>
             </q-item>
             <q-item-separator :key="`separator-${category.title}`" />
           </template>
