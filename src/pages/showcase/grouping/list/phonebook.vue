@@ -42,7 +42,7 @@
 
       <q-list class="q-mt-md dark-example" dark>
         <q-item>
-          <q-item-side icon="phone" color="primary" />
+          <q-item-side icon="phone" color="amber" />
           <q-item-main>
             <q-item-tile label>(650) 555 - 1234</q-item-tile>
             <q-item-tile sublabel>Mobile</q-item-tile>
@@ -65,7 +65,7 @@
         </q-item>
         <q-item-separator inset />
         <q-item>
-          <q-item-side icon="mail" color="primary" />
+          <q-item-side icon="mail" color="amber" />
           <q-item-main>
             <q-item-tile label>john@doe.com</q-item-tile>
             <q-item-tile sublabel>Personal</q-item-tile>

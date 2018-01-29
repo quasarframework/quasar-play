@@ -112,13 +112,13 @@
         <q-item>
           <q-item-side icon="supervisor_account" />
           <q-item-main>
-            <q-select class="q-ma-none full-width" v-model="select" :options="selectOptions" />
+            <q-select hide-underline class="q-ma-none full-width" v-model="select" :options="selectOptions" />
           </q-item-main>
         </q-item>
         <q-item>
           <q-item-side icon="supervisor_account" />
           <q-item-main>
-            <q-select class="q-ma-none full-width" multiple toggle v-model="multipleSelect" :options="selectOptions" />
+            <q-select hide-underline class="q-ma-none full-width" multiple toggle v-model="multipleSelect" :options="selectOptions" />
           </q-item-main>
         </q-item>
 
@@ -151,13 +151,13 @@
         <q-list-header>Radios</q-list-header>
         <q-item link tag="label">
           <q-item-side>
-            <q-radio v-model="option" val="opt1" />
+            <q-radio dark v-model="option" val="opt1" />
           </q-item-side>
           <q-item-main label="Option 1" />
         </q-item>
         <q-item link tag="label">
           <q-item-side>
-            <q-radio color="secondary" v-model="option" val="opt2" />
+            <q-radio dark color="secondary" v-model="option" val="opt2" />
           </q-item-side>
           <q-item-main>
             <q-item-tile label>Option 2</q-item-tile>
@@ -166,7 +166,7 @@
         </q-item>
         <q-item link tag="label">
           <q-item-side>
-            <q-radio color="amber" v-model="option" val="opt3" />
+            <q-radio dark color="amber" v-model="option" val="opt3" />
           </q-item-side>
           <q-item-main>
             <q-item-tile label>Option 3</q-item-tile>
@@ -180,7 +180,7 @@
         <q-item link tag="label">
           <q-item-main label="Events and reminders" />
           <q-item-side right>
-            <q-toggle v-model="checked_one" />
+            <q-toggle dark v-model="checked_one" color="lime" />
           </q-item-side>
         </q-item>
         <q-item link tag="label" multiline>
@@ -189,7 +189,7 @@
             <q-item-tile sublabel>Lorem ipsum</q-item-tile>
           </q-item-main>
           <q-item-side right>
-            <q-toggle v-model="checked_two" color="secondary" />
+            <q-toggle dark v-model="checked_two" color="secondary" />
           </q-item-side>
         </q-item>
         <q-item link tag="label" multiline>
@@ -203,7 +203,7 @@
             </q-item-tile>
           </q-item-main>
           <q-item-side right>
-            <q-toggle v-model="checked_three" color="amber" />
+            <q-toggle dark v-model="checked_three" color="amber" />
           </q-item-side>
         </q-item>
 
@@ -213,13 +213,13 @@
         <q-item>
           <q-item-side icon="supervisor_account" />
           <q-item-main>
-            <q-select class="q-ma-none full-width" dark v-model="select" :options="selectOptions" />
+            <q-select hide-underline class="q-ma-none full-width" dark v-model="select" :options="selectOptions" />
           </q-item-main>
         </q-item>
         <q-item>
           <q-item-side icon="supervisor_account" />
           <q-item-main>
-            <q-select class="q-ma-none full-width" dark multiple toggle v-model="multipleSelect" :options="selectOptions" />
+            <q-select hide-underline class="q-ma-none full-width" dark multiple toggle v-model="multipleSelect" :options="selectOptions" />
           </q-item-main>
         </q-item>
 
@@ -229,7 +229,7 @@
         <q-item>
           <q-item-side icon="volume_down" />
           <q-item-main>
-            <q-slider v-model="range" :min="0" :max="50" label />
+            <q-slider v-model="range" :min="0" :max="50" label color="grey" />
           </q-item-main>
           <q-item-side right icon="volume_up" />
         </q-item>

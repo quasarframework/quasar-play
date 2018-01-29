@@ -110,7 +110,7 @@
           <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
           <q-item-side right>
-            <q-btn flat round dense icon="more_vert">
+            <q-btn flat round dense icon="more_vert" text-color="white">
               <q-popover>
                 <q-list link>
                   <q-item v-close-overlay>
@@ -131,7 +131,7 @@
           <q-item-side avatar="statics/boy-avatar.png" />
           <q-item-main label="Brunch this weekend?" />
           <q-item-side right>
-            <q-chip square color="primary" class="shadow-2">10k</q-chip>
+            <q-chip square color="secondary" class="shadow-2">10k</q-chip>
           </q-item-side>
         </q-item>
         <q-item>

@@ -8,6 +8,15 @@
       row-key="name"
     />
 
+    <p class="caption">Force dense mode (see on wide windows)</p>
+    <q-table
+      dense
+      title="Table Title"
+      :data="tableData"
+      :columns="columns"
+      row-key="name"
+    />
+
     <p class="caption">Filter, Column selection, Separators, Toggle fullscreen</p>
     <q-table
       :data="tableData"
