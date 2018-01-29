@@ -1,6 +1,11 @@
 <template>
   <q-page padding class="docs-input row justify-center">
     <div style="width: 500px; max-width: 90vw;">
+      <q-alert type="warning">
+        The following examples use a bogus upload URL ({{ url }}).
+        As a result, the upload process itself won't actually work for this demo.
+      </q-alert>
+
       <p class="caption">Single File Upload</p>
       <q-uploader :url="url" />
       <q-uploader color="secondary" stack-label="Stack Label" :url="url" />
