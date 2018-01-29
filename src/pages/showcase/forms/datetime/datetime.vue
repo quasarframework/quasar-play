@@ -14,8 +14,8 @@
 
       <!-- Default: implicit "date" type -->
       <q-datetime v-model="date1" float-label="Date" />
-      <q-datetime inverted color="secondary" monday-first v-model="date1" stack-label="Date (Monday as first day)" />
-      <q-datetime inverted color="light-blue" saturday-first v-model="date1" stack-label="Date (Saturday as first day)" />
+      <q-datetime inverted color="secondary" :first-day-of-week="1" v-model="date1" stack-label="Date (Monday as first day)" />
+      <q-datetime inverted color="light-blue" :first-day-of-week="6" v-model="date1" stack-label="Date (Saturday as first day)" />
 
       <!-- Only Time -->
       <q-datetime inverted color="orange" v-model="date2" type="time" float-label="Time" />

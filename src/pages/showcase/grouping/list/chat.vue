@@ -125,6 +125,72 @@
           </q-item-side>
         </q-item>
       </q-list>
+
+      <q-list inset-separator class="q-mt-md dark-example" dark>
+        <q-item>
+          <q-item-side>
+            <q-item-tile letter color="secondary">Q</q-item-tile>
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile letter color="secondary">Q</q-item-tile>
+          </q-item-side>
+        </q-item>
+        <q-item>
+          <q-item-side>
+            <q-item-tile inverted letter color="secondary">Q</q-item-tile>
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile inverted letter color="secondary">Q</q-item-tile>
+          </q-item-side>
+        </q-item>
+        <q-item>
+          <q-item-side>
+            <q-item-tile inverted letter color="amber" text-color="black">Q</q-item-tile>
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile inverted letter color="amber" text-color="black">Q</q-item-tile>
+          </q-item-side>
+        </q-item>
+        <q-item>
+          <q-item-side>
+            <q-item-tile stamp color="secondary">Stamp</q-item-tile>
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile stamp color="secondary">Stamp</q-item-tile>
+          </q-item-side>
+        </q-item>
+        <q-item>
+          <q-item-side>
+            <q-item-tile icon="map" color="secondary" />
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile icon="map" color="secondary" />
+          </q-item-side>
+        </q-item>
+        <q-item>
+          <q-item-side>
+            <q-item-tile inverted icon="map" color="secondary" />
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile inverted icon="map" color="secondary" />
+          </q-item-side>
+        </q-item>
+        <q-item>
+          <q-item-side>
+            <q-item-tile inverted icon="map" color="amber" text-color="black" />
+          </q-item-side>
+          <q-item-main label="John Doe" />
+          <q-item-side right>
+            <q-item-tile inverted icon="map" color="amber" text-color="black" />
+          </q-item-side>
+        </q-item>
+      </q-list>
     </div>
   </q-page>
 </template>
