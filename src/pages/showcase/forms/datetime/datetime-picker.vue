@@ -42,10 +42,10 @@
       <p class="caption">Date & Time</p>
       <q-datetime-picker color="secondary" v-model="model" type="datetime" />
 
-      <p class="caption">Monday as first day of week</p>
+      <p class="caption">Forcing Monday as first day of week (Changing Quasar I18n automatically configures first day of the week)</p>
       <q-datetime-picker color="purple" v-model="model" monday-first type="date" />
 
-      <p class="caption">Saturday as first day of week</p>
+      <p class="caption">Forcing Saturday as first day of week (Changing Quasar I18n automatically configures first day of the week)</p>
       <q-datetime-picker color="purple" v-model="model" saturday-first type="date" />
 
       <p class="caption">Disabled state</p>
