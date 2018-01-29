@@ -5,7 +5,7 @@
       <q-color v-model="modelRgb" placeholder="Placeholder" />
       <q-color v-model="modelHex" stack-label="Stack label" />
       <q-color v-model="modelHex" float-label="Float label" />
-      <q-color v-model="modelHexa" float-label="Car color" prefix="~ " clearable />
+      <q-color v-model="modelHexa" float-label="Car color" prefix="~ " suffix=" ~" />
       <q-color v-model="modelRgba" stack-label="Clearable" clearable />
       <q-color v-model="defaultSelection" stack-label="Default selection" default-selection="#1c32b0" clearable />
       <q-color v-model="forceType" stack-label="Forced type" type="rgba" />
@@ -29,7 +29,7 @@
           </q-chip>
         </span>
       </p>
-      <q-color :value="lazy" @change="val => lazy = val" />
+      <q-color :value="lazy" @change="val => lazy = val" clearable />
 
       <p class="caption">Before/after icons</p>
       <q-color v-model="modelHex" :before="[{icon: 'mail', handler () {}}]" suffix="Toyota" />
