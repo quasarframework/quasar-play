@@ -139,7 +139,7 @@
         :count="10"
         helper="Type names"
       >
-        <q-chips-input inverted color="black" frame-color="secondary" float-label="Chips Input" v-model="chips" />
+        <q-chips-input inverted float-label="Chips Input" v-model="chips" />
       </q-field>
 
       <q-field

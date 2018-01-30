@@ -116,6 +116,16 @@
       </p>
       <q-range v-model="onlyRange" :min="0" :max="100" :step="5" drag-only-range label color="info" />
 
+      <p class="caption">
+        Lazy input
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{ lazy }}
+          </q-chip>
+        </span>
+      </p>
+      <q-range :value="lazy" @change="val => { lazy = val }" :min="0" :max="50" label />
+
       <p class="caption">Readonly State</p>
       <q-range v-model="standard" color="secondary" :min="0" :max="50" readonly />
 
@@ -123,12 +133,13 @@
       <q-range v-model="standard" color="secondary" :min="0" :max="50" disable />
 
       <p class="caption">Error State</p>
-      <q-range error v-model="standard" :min="0" :max="50" />
-      <q-range error label-always v-model="standard" :min="0" :max="50" />
+      <div class="q-ma-xs q-mb-md">
+        <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+        <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
+      </div>
 
-      <p class="caption">Warning State</p>
-      <q-range warning v-model="standard" :min="0" :max="50" />
-      <q-range warning label-always v-model="standard" :min="0" :max="50" />
+      <q-range :error="error" :warning="warning" v-model="standard" :min="0" :max="50" />
+      <q-range :error="error" :warning="warning" label-always v-model="standard" :min="0" :max="50" />
 
       <p class="caption">In a Field</p>
       <q-field
@@ -207,6 +218,26 @@ export default {
       onlyRange: {
         min: 10,
         max: 35
+      },
+
+      lazy: {
+        min: 10,
+        max: 35
+      },
+
+      error: true,
+      warning: false
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
       }
     }
   }

@@ -14,6 +14,16 @@
 
       <q-search icon="local_movies" inverted color="black" loading v-model="model" />
 
+      <p class="caption">
+        Lazy input
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{ lazy }}
+          </q-chip>
+        </span>
+      </p>
+      <q-search :value="lazy" @change="val => lazy = val" icon="local_movies" inverted color="purple" loading />
+
       <p class="caption">In a Field</p>
       <q-field
         icon="local_hospital"
@@ -75,6 +85,7 @@ export default {
     return {
       model: '',
       model2: '',
+      lazy: null,
       textUnderline: 'No underline',
 
       error: true,

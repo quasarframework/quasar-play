@@ -82,19 +82,30 @@
       </p>
       <q-slider :label-value="`${label}px`" v-model="label" :min="-20" :max="20" :step="4" label-always color="brown" />
 
+      <p class="caption">
+        Lazy input
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{ lazy }}
+          </q-chip>
+        </span>
+      </p>
+      <q-slider :value="lazy" @change="val => { lazy = val }" :min="0" :max="45" :step="5" color="purple" label />
+
       <p class="caption">Readonly State</p>
       <q-slider v-model="standard" color="secondary" :min="0" :max="50" readonly />
 
       <p class="caption">Disabled State</p>
       <q-slider v-model="standard" color="secondary" :min="0" :max="50" disable />
 
-      <p class="caption">Error State</p>
-      <q-slider error v-model="standard" :min="0" :max="50" />
-      <q-slider error color="amber" v-model="standard" :min="0" :max="50" label-always />
+      <p class="caption">Error/Warning states</p>
+      <div class="q-ma-xs q-mb-md">
+        <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+        <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
+      </div>
 
-      <p class="caption">Warning State</p>
-      <q-slider warning v-model="standard" :min="0" :max="50" />
-      <q-slider warning color="amber" v-model="standard" :min="0" :max="50" label-always />
+      <q-slider :error="error" :warning="warning" v-model="standard" :min="0" :max="50" />
+      <q-slider :error="error" :warning="warning" v-model="standard" :min="0" :max="50" label-always />
 
       <p class="caption">In a Field</p>
       <q-field
@@ -143,7 +154,23 @@ export default {
       step: 30,
       label: 5,
       snap: 2,
-      marker: 6
+      marker: 6,
+      lazy: 6,
+
+      error: true,
+      warning: false
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
+      }
     }
   }
 }

@@ -60,6 +60,22 @@
         </q-knob>
       </div>
 
+      <p class="caption">
+        Lazy input
+        <span class="chip-container">
+          <q-chip square color="secondary">
+            Model: {{ lazy }}
+          </q-chip>
+        </span>
+      </p>
+      <q-knob
+        :value="lazy"
+        @change="val => { lazy = val }"
+        color="purple"
+        :min="min"
+        :max="max"
+      />
+
       <p class="caption">Readonly state</p>
       <q-knob
         v-model="model"
@@ -132,7 +148,9 @@ export default {
     return {
       model: 30,
       min: 0,
-      max: 50
+      max: 50,
+
+      lazy: 30
     }
   }
 }

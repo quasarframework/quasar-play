@@ -53,7 +53,7 @@
       </span>
       <q-chips-input
         :value="lazy"
-        @change="val => lazy = val"
+        @change="val => { lazy = val }"
         placeholder="Type some names"
       />
 
@@ -62,17 +62,18 @@
 
       <p class="caption">Read only</p>
       <q-chips-input v-model="chips6" readonly placeholder="Read only" />
-      <q-chips-input v-model="chips6" readonly inverted color="tertiary" frame-color="amber" placeholder="Read only" />
+      <q-chips-input v-model="chips6" readonly inverted placeholder="Read only" />
 
       <p class="caption">Disabled</p>
       <q-chips-input v-model="chips6" disable placeholder="Disabled" />
-      <q-chips-input v-model="chips6" disable inverted color="tertiary" frame-color="amber" placeholder="Disabled" />
+      <q-chips-input v-model="chips6" disable inverted placeholder="Disabled" />
 
       <p class="caption">Error/Warning states</p>
-      <q-chips-input v-model="chips6" error float-label="Signaling error" />
-      <q-chips-input v-model="chips6" error inverted color="tertiary" frame-color="amber" float-label="Signaling error" />
-      <q-chips-input v-model="chips6" warning float-label="Signaling warning" />
-      <q-chips-input v-model="chips6" warning inverted color="tertiary" frame-color="amber" float-label="Signaling warning" />
+      <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+      <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
+
+      <q-chips-input v-model="chips6" :error="error" :warning="warning" float-label="Signaling error" />
+      <q-chips-input v-model="chips6" :error="error" :warning="warning" inverted float-label="Signaling error" />
 
       <p class="caption">In a Field</p>
       <q-field
@@ -132,7 +133,22 @@ export default {
       chips4: ['Joe'],
       chips5: ['Jim'],
       chips6: ['Jack', 'Jim'],
-      lazy: ['Joe']
+      lazy: ['Joe'],
+
+      error: true,
+      warning: false
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
+      }
     }
   }
 }
