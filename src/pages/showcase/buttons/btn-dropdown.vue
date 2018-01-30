@@ -58,11 +58,10 @@
         </q-list>
       </q-btn-dropdown>
 
-      <p class="caption">Outline type of small size</p>
+      <p class="caption">Outline</p>
       <q-btn-dropdown
         split
-        size="sm"
-        color="primary"
+        color="black"
         outline
         label="Get directions"
         icon="map"
@@ -93,9 +92,38 @@
       <q-btn-dropdown
         split
         v-model="dropdown"
-        color="orange"
-        text-color="black"
+        color="purple"
         push
+        label="Get directions"
+        icon="map"
+      >
+        <q-list link>
+          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="showNotification(), dropdown = false">
+            <q-item-side icon="folder" inverted color="primary" />
+            <q-item-main>
+              <q-item-tile label>Photos</q-item-tile>
+              <q-item-tile sublabel>February 22, 2016</q-item-tile>
+            </q-item-main>
+            <q-item-side right icon="info" color="amber" />
+          </q-item>
+          <q-item-separator inset />
+          <q-list-header inset>Files</q-list-header>
+          <q-item @click.native="showNotification(), dropdown = false">
+            <q-item-side icon="assignment" inverted color="secondary" />
+            <q-item-main>
+              <q-item-tile label>Vacation</q-item-tile>
+              <q-item-tile sublabel>February 22, 2016</q-item-tile>
+            </q-item-main>
+            <q-item-side right icon="info" color="amber" />
+          </q-item>
+        </q-list>
+      </q-btn-dropdown>
+
+      <p class="caption">Push type with icon and v-model</p>
+      <q-btn-dropdown
+        split
+        color="red"
+        rounded
         label="Get directions"
         icon="map"
       >

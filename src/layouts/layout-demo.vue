@@ -71,7 +71,7 @@
       :behavior="rightBehavior"
       :breakpoint="rightBreakpoint"
       content-class="bg-grey-3 q-pa-sm"
-      :content-style="{'font-size': '16px'}"
+      :content-style="{fontSize: '16px'}"
     >
       <q-list-header>Right Panel</q-list-header>
       <div v-if="scrolling" style="padding: 25px 16px 16px;">

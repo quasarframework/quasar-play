@@ -95,6 +95,31 @@ export default [
     ]
   },
   {
+    title: 'Buttons',
+    icon: 'panorama_wide_angle',
+    hash: 'buttons',
+    features: [
+      {
+        title: 'Standard Button',
+        icon: 'panorama_wide_angle',
+        hash: 'btn',
+        status: 'Update'
+      },
+      {
+        title: 'Button Groups',
+        icon: 'group',
+        hash: 'btn-group',
+        status: 'New'
+      },
+      {
+        title: 'Dropdown Buttons',
+        icon: 'details',
+        hash: 'btn-dropdown',
+        status: 'New'
+      }
+    ]
+  },
+  {
     title: 'Navigation',
     icon: 'rowing',
     hash: 'navigation',
@@ -145,58 +170,6 @@ export default [
         title: 'Pagination',
         icon: 'linear_scale',
         hash: 'pagination',
-        status: 'New'
-      }
-    ]
-  },
-  {
-    title: 'Scrolling',
-    icon: 'format_line_spacing',
-    hash: 'scrolling',
-    features: [
-      {
-        title: 'Infinite Scroll',
-        icon: 'update',
-        hash: 'infinite-scroll'
-      },
-      {
-        title: 'Scroll Area',
-        icon: 'aspect_ratio',
-        hash: 'scroll-area'
-      },
-      {
-        title: 'Scroll Fire',
-        icon: 'low_priority',
-        hash: 'scroll-fire'
-      },
-      {
-        title: 'Back to Top',
-        icon: 'vertical_align_top',
-        hash: 'back-to-top'
-      }
-    ]
-  },
-  {
-    title: 'Buttons',
-    icon: 'panorama_wide_angle',
-    hash: 'buttons',
-    features: [
-      {
-        title: 'Standard Button',
-        icon: 'panorama_wide_angle',
-        hash: 'btn',
-        status: 'Update'
-      },
-      {
-        title: 'Button Groups',
-        icon: 'group',
-        hash: 'btn-group',
-        status: 'New'
-      },
-      {
-        title: 'Dropdown Buttons',
-        icon: 'details',
-        hash: 'btn-dropdown',
         status: 'New'
       }
     ]
@@ -350,49 +323,6 @@ export default [
     ]
   },
   {
-    title: 'Popups',
-    icon: 'aspect_ratio',
-    hash: 'popups',
-    features: [
-      {
-        title: 'Action Sheet',
-        icon: 'assignment',
-        hash: 'action-sheet',
-        status: 'Update'
-      },
-      {
-        title: 'Dialog',
-        icon: 'question_answer',
-        hash: 'dialog',
-        status: 'New'
-      },
-      {
-        title: 'Modal',
-        icon: 'settings_overscan',
-        hash: 'modal',
-        status: 'Update'
-      },
-      {
-        title: 'Notify',
-        icon: 'warning',
-        hash: 'notify',
-        status: 'New'
-      },
-      {
-        title: 'Popover',
-        icon: 'filter_none',
-        hash: 'popover',
-        status: 'Update'
-      },
-      {
-        title: 'Tooltip',
-        icon: 'speaker_notes',
-        hash: 'tooltip',
-        status: 'Update'
-      }
-    ]
-  },
-  {
     title: 'Grouping',
     icon: 'view_module',
     hash: 'grouping',
@@ -498,6 +428,49 @@ export default [
     ]
   },
   {
+    title: 'Popups',
+    icon: 'aspect_ratio',
+    hash: 'popups',
+    features: [
+      {
+        title: 'Action Sheet',
+        icon: 'assignment',
+        hash: 'action-sheet',
+        status: 'Update'
+      },
+      {
+        title: 'Dialog',
+        icon: 'question_answer',
+        hash: 'dialog',
+        status: 'New'
+      },
+      {
+        title: 'Modal',
+        icon: 'settings_overscan',
+        hash: 'modal',
+        status: 'Update'
+      },
+      {
+        title: 'Notify',
+        icon: 'warning',
+        hash: 'notify',
+        status: 'New'
+      },
+      {
+        title: 'Popover',
+        icon: 'filter_none',
+        hash: 'popover',
+        status: 'Update'
+      },
+      {
+        title: 'Tooltip',
+        icon: 'speaker_notes',
+        hash: 'tooltip',
+        status: 'Update'
+      }
+    ]
+  },
+  {
     title: 'Progress',
     icon: 'hourglass_full',
     hash: 'progress',
@@ -550,6 +523,33 @@ export default [
         title: 'Video Embedding',
         icon: 'movie',
         hash: 'video'
+      }
+    ]
+  },
+  {
+    title: 'Scrolling',
+    icon: 'format_line_spacing',
+    hash: 'scrolling',
+    features: [
+      {
+        title: 'Infinite Scroll',
+        icon: 'update',
+        hash: 'infinite-scroll'
+      },
+      {
+        title: 'Scroll Area',
+        icon: 'aspect_ratio',
+        hash: 'scroll-area'
+      },
+      {
+        title: 'Scroll Fire',
+        icon: 'low_priority',
+        hash: 'scroll-fire'
+      },
+      {
+        title: 'Back to Top',
+        icon: 'vertical_align_top',
+        hash: 'back-to-top'
       }
     ]
   },
