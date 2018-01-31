@@ -7,7 +7,7 @@
       <q-color v-model="modelHex" float-label="Float label" />
       <q-color v-model="modelHexa" float-label="Car color" prefix="~ " suffix=" ~" />
       <q-color v-model="modelRgba" stack-label="Clearable" clearable />
-      <q-color v-model="defaultSelection" stack-label="Default selection" default-selection="#1c32b0" clearable />
+      <q-color v-model="defaultValue" stack-label="Default value" default-value="#1c32b0" clearable />
       <q-color v-model="forceType" stack-label="Forced type" type="rgba" />
       <q-color v-model="modelHex" :display-value="customDisplayValue" stack-label="Custom display value" />
 
@@ -158,7 +158,7 @@ export default {
       modelRgb: { r: 112, g: 204, b: 55 },
       modelRgba: { r: 138, g: 36, b: 138, a: 64 },
 
-      defaultSelection: null,
+      defaultValue: null,
       forceType: null,
 
       lazy: '#C7044B',

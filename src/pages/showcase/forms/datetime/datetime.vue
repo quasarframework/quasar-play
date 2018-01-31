@@ -48,14 +48,14 @@
         clearable
       />
 
-      <p class="caption">With default selection</p>
+      <p class="caption">With default value</p>
       <q-datetime
-        :default-selection="defaultSelection"
+        :default-value="defaultValue"
         type="datetime"
         v-model="date4"
         color="brown"
         clearable
-        float-label="With default selection & placeholder"
+        float-label="With default value & placeholder"
         placeholder="Start of this year as default"
       />
 
@@ -258,7 +258,7 @@ export default {
       yesterday: subtractFromDate(today, { days: 1 }),
       state: new Date(),
 
-      defaultSelection: startOfDate(today, 'year')
+      defaultValue: startOfDate(today, 'year')
     }
   },
   watch: {
