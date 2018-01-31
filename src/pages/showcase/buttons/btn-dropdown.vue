@@ -67,7 +67,7 @@
         icon="map"
       >
         <q-list link>
-          <q-item v-for="n in 2" :key="`2.${n}`" v-close-overlay @click.native="showNotification">
+          <q-item v-for="n in 2" :key="`3.${n}`" v-close-overlay @click.native="showNotification">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -98,7 +98,7 @@
         icon="map"
       >
         <q-list link>
-          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="showNotification(), dropdown = false">
+          <q-item v-for="n in 2" :key="`4.${n}`" @click.native="showNotification(), dropdown = false">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -128,7 +128,7 @@
         icon="map"
       >
         <q-list link>
-          <q-item v-for="n in 2" :key="`2.${n}`" @click.native="showNotification(), dropdown = false">
+          <q-item v-for="n in 2" :key="`5.${n}`" v-close-overlay @click.native="showNotification()">
             <q-item-side icon="folder" inverted color="primary" />
             <q-item-main>
               <q-item-tile label>Photos</q-item-tile>
@@ -138,7 +138,7 @@
           </q-item>
           <q-item-separator inset />
           <q-list-header inset>Files</q-list-header>
-          <q-item @click.native="showNotification(), dropdown = false">
+          <q-item v-close-overlay @click.native="showNotification()">
             <q-item-side icon="assignment" inverted color="secondary" />
             <q-item-main>
               <q-item-tile label>Vacation</q-item-tile>
