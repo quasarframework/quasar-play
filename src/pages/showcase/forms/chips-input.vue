@@ -10,6 +10,11 @@
       </p>
       <br>
 
+      <span class="chip-container">
+        <q-chip square color="secondary">
+          Model: {{ chips1 }}
+        </q-chip>
+      </span>
       <q-chips-input
         v-model="chips1"
         placeholder="Type some names"
