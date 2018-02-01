@@ -14,7 +14,7 @@
       <p class="caption">Inverted</p>
       <q-color v-model="modelHexa" inverted />
       <q-color v-model="modelRgba" inverted color="secondary" suffix="Suffix" />
-      <q-color v-model="modelHex" inverted color="amber" clearable />
+      <q-color v-model="modelHex" inverted-light color="amber" clearable />
       <q-color v-model="modelHex" align="right" suffix="(no alpha)" inverted color="brown" stack-label="Color aligned to right" />
 
       <p class="caption">Force either modal or popover</p>
@@ -35,7 +35,7 @@
       <q-color v-model="modelHex" :before="[{icon: 'mail', handler () {}}]" suffix="Toyota" />
       <q-color v-model="modelRgb" clearable float-label="Icon dissapears on empty input" :after="[{icon: 'arrow_forward', content: true, handler () {}}]" />
       <q-color v-model="modelHexa" inverted color="secondary" :after="[{icon: 'arrow_forward', content: true, handler () {}}]" />
-      <q-color v-model="modelRgba" float-label="Color to paint walls" inverted color="amber" clearable :after="[{icon: 'done', condition: modelRgba, handler () {}}]" />
+      <q-color v-model="modelRgba" float-label="Color to paint walls" inverted-light color="amber" clearable :after="[{icon: 'done', condition: modelRgba, handler () {}}]" />
       <q-color v-model="modelHex" inverted color="brown" :before="[{icon: 'brush', handler () {}}]" />
 
       <p class="caption">Error/warning states</p>
@@ -122,13 +122,13 @@
         :warning="warning2"
         warning-label="Hey, we got a warning"
       >
-        <q-color v-model="modelHex" color="amber" :inverted="error" float-label="Float Label" :after="[{icon: 'arrow_forward', content: true, handler () {}}]"/>
+        <q-color v-model="modelHex" inverted color="purple" float-label="Float Label" :after="[{icon: 'arrow_forward', content: true, handler () {}}]"/>
       </q-field>
 
       <p class="caption">On a dark background</p>
       <div class="dark-example">
-        <q-color v-model="modelHexa" float-label="Colored" dark color="yellow" prefix="$" suffix="TSP" />
-        <q-color v-model="modelHexa" float-label="Colored" dark color="secondary" prefix="$" suffix="TSP" />
+        <q-color v-model="modelHexa" float-label="Colored" dark color="yellow" suffix="TSP" />
+        <q-color v-model="modelHexa" float-label="Colored" dark color="secondary" suffix="TSP" />
 
         <q-field
           icon="wifi"

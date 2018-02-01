@@ -39,7 +39,7 @@
         :count="10"
         helper="Some helper"
       >
-        <q-input inverted color="amber" v-model="text" stack-label="Input stack label" />
+        <q-input inverted-light color="amber" v-model="text" stack-label="Input stack label" />
       </q-field>
 
       <q-field
@@ -109,7 +109,7 @@
         :warning="warning"
         warning-label="Hey, we got a warning."
       >
-        <q-input inverted color="amber" v-model="text" stack-label="Input stack label" />
+        <q-input inverted color="purple" v-model="text" stack-label="Input stack label" />
       </q-field>
 
       <q-field

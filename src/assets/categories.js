@@ -72,19 +72,19 @@ export default [
         title: 'Play with Layout',
         icon: 'play_circle_outline',
         hash: 'play-with-layout',
-        status: 'New'
+        status: 'Revamp'
       },
       {
         title: 'Drawer Panels',
         icon: 'view_array',
         hash: 'drawer-panels',
-        status: 'New'
+        status: 'Revamp'
       },
       {
         title: 'Sticky Position',
         icon: 'pin_drop',
         hash: 'sticky-position',
-        status: 'New'
+        status: 'Revamp'
       },
       {
         title: 'Floating Action Button',
@@ -206,16 +206,16 @@ export default [
         iframeTabs: true,
         tabs: [
           {
-            title: 'Color Picker',
-            label: 'Color Picker',
-            icon: 'colorize',
-            hash: 'color-picker'
-          },
-          {
             title: 'Color Input',
             label: 'Color Picker Input',
             icon: 'format_color_fill',
             hash: 'color'
+          },
+          {
+            title: 'Color Picker',
+            label: 'Color Picker',
+            icon: 'colorize',
+            hash: 'color-picker'
           }
         ]
       },
@@ -335,13 +335,14 @@ export default [
       {
         title: 'Collapsible',
         icon: 'format_line_spacing',
-        hash: 'collapsible'
+        hash: 'collapsible',
+        status: 'Revamp'
       },
       {
         title: 'Data Table',
         icon: 'border_all',
         hash: 'table',
-        status: 'New',
+        status: 'Revamp',
         iframeTabs: true,
         tabs: [
           {
@@ -363,11 +364,6 @@ export default [
             hash: 'table-customize'
           }
         ]
-      },
-      {
-        title: 'HTML Table',
-        icon: 'widgets',
-        hash: 'html-table'
       },
       {
         title: 'List',
@@ -423,7 +419,7 @@ export default [
         title: 'Tree',
         icon: 'format_indent_increase',
         hash: 'tree',
-        status: 'New'
+        status: 'Revamp'
       }
     ]
   },
@@ -436,13 +432,13 @@ export default [
         title: 'Action Sheet',
         icon: 'assignment',
         hash: 'action-sheet',
-        status: 'Update'
+        status: 'Revamp'
       },
       {
         title: 'Dialog',
         icon: 'question_answer',
         hash: 'dialog',
-        status: 'New'
+        status: 'Revamp'
       },
       {
         title: 'Modal',
@@ -512,7 +508,7 @@ export default [
         title: 'Carousel',
         icon: 'vibration',
         hash: 'carousel',
-        status: 'New'
+        status: 'Revamp'
       },
       {
         title: 'Parallax',
@@ -580,7 +576,7 @@ export default [
         title: 'Alert',
         icon: 'assignment_late',
         hash: 'alert',
-        status: 'Update'
+        status: 'Revamp'
       },
       {
         title: 'Chip',

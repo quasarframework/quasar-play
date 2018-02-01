@@ -8,7 +8,7 @@
       />
       <q-select
         stack-label="Delimited options"
-        inverted
+        inverted-light
         color="amber"
         separator
         v-model="select"
@@ -53,7 +53,7 @@
       <q-select
         multiple
         toggle
-        inverted
+        inverted-light
         color="orange"
         float-label="List with float label & toggles"
         v-model="multipleSelect"
@@ -133,34 +133,23 @@
         :options="options"
       />
 
-      <p class="caption">Error state</p>
+      <p class="caption">Error/warning states</p>
+      <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
+      <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
+
       <q-select
-        error
+        :error="error"
+        :warning="warning"
         float-label="Hey, an error!"
         v-model="select"
         :options="options"
       />
       <q-select
-        error
+        :error="error"
+        :warning="warning"
         inverted
         multiple
-        float-label="Look, look. An error."
-        v-model="multipleSelect"
-        :options="options"
-      />
-
-      <p class="caption">Warning state</p>
-      <q-select
-        warning
-        float-label="Hey, an warning!"
-        v-model="select"
-        :options="options"
-      />
-      <q-select
-        warning
-        inverted
-        multiple
-        float-label="Look, look. An warning."
+        float-label="Select something"
         v-model="multipleSelect"
         :options="options"
       />
@@ -192,10 +181,23 @@
         helper="Pick company names"
       >
         <q-select
-          inverted
           chips
-          color="black"
-          frame-color="amber"
+          color="amber"
+          multiple
+          v-model="multipleSelect"
+          :options="options"
+        />
+      </q-field>
+      <q-field
+        icon="public"
+        :count="5"
+        label="Pick employers"
+        helper="Pick company names"
+      >
+        <q-select
+          chips
+          inverted-light
+          color="amber"
           multiple
           v-model="multipleSelect"
           :options="options"
@@ -221,7 +223,8 @@
             dark
             stack-label="Stack label"
             color="lime"
-            v-model="select"
+            multiple
+            v-model="multipleSelect"
             :options="options"
           />
         </q-field>
@@ -239,6 +242,8 @@ export default {
       lazy: [],
       select: 'fb',
       multipleSelect: ['goog', 'twtr'],
+      error: true,
+      warning: false,
       options: [
         {
           label: 'Google',
@@ -293,6 +298,18 @@ export default {
           value: 'ora'
         }
       ]
+    }
+  },
+  watch: {
+    error (val) {
+      if (val) {
+        this.warning = false
+      }
+    },
+    warning (val) {
+      if (val) {
+        this.error = false
+      }
     }
   }
 }

@@ -18,7 +18,7 @@
       <q-datetime inverted color="light-blue" :first-day-of-week="6" v-model="date1" stack-label="Date (Saturday as first day)" />
 
       <!-- Only Time -->
-      <q-datetime inverted color="orange" v-model="date2" type="time" float-label="Time" />
+      <q-datetime inverted-light color="orange" v-model="date2" type="time" float-label="Time" />
       <q-datetime color="brown" v-if="$q.theme === 'mat'" v-model="date2" type="time" format24h float-label="Time (24h) format" />
 
       <!-- Date & Time -->
@@ -182,10 +182,10 @@
       <div class="dark-example">
         <q-datetime
           dark
-          stack-label="Pick start time"
+          stack-label="Pick start date & time"
           color="amber"
           v-model="date6"
-          type="time"
+          type="datetime"
         />
         <q-field
           dark

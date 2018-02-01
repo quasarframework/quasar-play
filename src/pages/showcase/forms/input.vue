@@ -21,7 +21,7 @@
       <p class="caption">Inverted</p>
       <q-input v-model="text" inverted />
       <q-input v-model="email" type="email" inverted color="secondary" suffix="@gmail.com" />
-      <q-input v-model="password" type="password" inverted color="amber" clearable />
+      <q-input v-model="password" type="password" inverted-light color="amber" clearable />
       <q-input v-model="num" type="number" align="right" suffix="EUR" inverted color="brown" stack-label="Number aligned to right" />
 
       <p class="caption">
@@ -41,7 +41,7 @@
       <q-input v-model="email" type="email" :before="[{icon: 'mail', handler () {}}]" suffix="@gmail.com" />
       <q-input v-model="text" inverted float-label="Icon when input has content" :after="[{icon: 'arrow_forward', content: true, handler () {}}]" />
       <q-input v-model="text" inverted color="secondary" :after="[{icon: 'arrow_forward', content: true, handler () {}}]" />
-      <q-input v-model="password" float-label="Minimum 5 characters password" inverted color="amber" type="password" :after="[{icon: 'done', condition: password.length >= 5, handler () {}}]" />
+      <q-input v-model="password" float-label="Minimum 5 characters password" inverted-light color="amber" type="password" :after="[{icon: 'done', condition: password.length >= 5, handler () {}}]" />
       <q-input v-model="email" inverted color="brown" type="email" :before="[{icon: 'mail', handler () {}}]" suffix="@gmail.com" />
       <q-input v-model="num" inverted type="number" :before="[{icon: 'monetization_on', handler () {}}]" />
 
@@ -71,13 +71,13 @@
 
       <p class="caption">Read only</p>
       <q-input v-model="text" readonly float-label="Read only text input" />
-      <q-input v-model="text" readonly inverted color="amber" float-label="Read only & inverted" />
+      <q-input v-model="text" readonly inverted-light color="amber" float-label="Read only & inverted" />
       <q-input :min-rows="5" v-model="area" readonly type="textarea" float-label="Read only textarea" />
       <q-input :min-rows="5" v-model="area" readonly inverted type="textarea" float-label="Read only & inverted textarea" />
 
       <p class="caption">Disabled</p>
       <q-input v-model="text" disable float-label="Disabled text input" />
-      <q-input v-model="text" disable inverted color="amber" float-label="Disabled & inverted" />
+      <q-input v-model="text" disable inverted-light color="amber" float-label="Disabled & inverted" />
       <q-input :min-rows="5" v-model="area" disable type="textarea" float-label="Disabled textarea" />
       <q-input :min-rows="5" v-model="area" disable inverted type="textarea" float-label="Disabled & inverted textarea" />
 

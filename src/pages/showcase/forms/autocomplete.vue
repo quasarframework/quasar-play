@@ -15,7 +15,7 @@
       </q-search>
 
       <p class="caption">Maximum of 2 results at a time</p>
-      <q-search inverted color="amber" v-model="terms">
+      <q-search inverted-light color="amber" v-model="terms">
         <q-autocomplete
           @search="search"
           :max-results="2"

@@ -32,8 +32,8 @@
         float-label="Custom add icon (type something)"
       />
       <q-chips-input
-        inverted
-        color="dark"
+        inverted-light
+        color="white"
         frame-color="amber"
         v-model="chips3"
         placeholder="Type some names"
@@ -77,8 +77,8 @@
       <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
       <q-toggle class="q-ma-xs" v-model="warning" color="warning" label="Toggle warning state" />
 
-      <q-chips-input v-model="chips6" :error="error" :warning="warning" float-label="Signaling error" />
-      <q-chips-input v-model="chips6" :error="error" :warning="warning" inverted float-label="Signaling error" />
+      <q-chips-input v-model="chips6" :error="error" :warning="warning" float-label="Float Label" />
+      <q-chips-input v-model="chips6" :error="error" :warning="warning" inverted float-label="Float Label" />
 
       <p class="caption">In a Field</p>
       <q-field

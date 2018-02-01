@@ -8,11 +8,11 @@
       <q-search icon="place" color="amber" v-model="model" stack-label="Seach for a place" />
       <q-search icon="local_airport" color="secondary" v-model="model" float-label="Search for an airport" suffix="@ nearby" />
 
-      <q-search icon="local_dining" inverted v-model="model" placeholder="Search for a nearby restaurant" />
-      <q-search icon="ev_station" inverted color="amber" v-model="model" stack-label="Seach for an ev station" placeholder="Type a name"/>
+      <q-search icon="local_dining" inverted v-model="model" clearable placeholder="Search for a nearby restaurant" />
+      <q-search icon="ev_station" inverted-light color="amber" clearable v-model="model" stack-label="Seach for an ev station" placeholder="Type a name"/>
       <q-search icon="hotel" inverted color="secondary" v-model="model" float-label="Search for a hotel" />
 
-      <q-search icon="local_movies" inverted color="black" loading v-model="model" />
+      <q-search icon="local_movies" inverted color="black" clearable v-model="model" />
 
       <p class="caption">
         Lazy input
@@ -31,7 +31,7 @@
         :count="15"
         helper="Type a name"
       >
-        <q-search v-model="model2" />
+        <q-search v-model="model2" clearable />
       </q-field>
       <q-field
         icon="local_car_wash"
@@ -39,7 +39,7 @@
         :count="12"
         helper="Type a name"
       >
-        <q-search inverted v-model="model2" />
+        <q-search inverted v-model="model2" clearable />
       </q-field>
 
       <p class="caption">Hide the underline</p>
@@ -47,11 +47,11 @@
 
       <p class="caption">Readonly state</p>
       <q-search readonly icon="local_dining" color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
-      <q-search readonly icon="local_dining" inverted color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
+      <q-search readonly icon="local_dining" inverted-light color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
 
       <p class="caption">Disable state</p>
       <q-search disable icon="local_dining" color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
-      <q-search disable icon="local_dining" inverted color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
+      <q-search disable icon="local_dining" inverted-light color="orange" v-model="model2" placeholder="Search for a nearby restaurant" />
 
       <p class="caption">Error/Warning states</p>
       <q-toggle class="q-ma-xs" v-model="error" color="negative" label="Toggle error state" />
@@ -62,7 +62,7 @@
 
       <p class="caption">On a dark background</p>
       <div class="dark-example">
-        <q-search dark icon="local_airport" color="secondary" v-model="model" stack-label="Search for an airport" />
+        <q-search dark icon="local_airport" color="secondary" v-model="model" stack-label="Search for an airport" clearable />
         <q-field
           dark
           icon="local_car_wash"
