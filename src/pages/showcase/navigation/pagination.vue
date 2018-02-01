@@ -27,6 +27,7 @@
     <p class="caption">With no ellipses</p>
     <q-pagination
       v-model="page2"
+      color="amber"
       :min="1"
       :max="15"
       :max-pages="6"
@@ -36,6 +37,7 @@
     <p class="caption">With boundary links</p>
     <q-pagination
       v-model="page2"
+      color="purple"
       :min="1"
       :max="15"
       :max-pages="6"
@@ -45,6 +47,7 @@
     <p class="caption">With direction links</p>
     <q-pagination
       v-model="page2"
+      color="teal"
       :min="1"
       :max="15"
       :max-pages="6"
@@ -61,6 +64,7 @@
     <p class="caption">Mix and match</p>
     <q-pagination
       v-model="page4"
+      color="tertiary"
       :min="7"
       :max="18"
       :max-pages="8"
@@ -77,7 +81,7 @@ export default {
       page: 5,
       page2: 6,
       page3: 7,
-      page4: 5
+      page4: 9
     }
   }
 }
