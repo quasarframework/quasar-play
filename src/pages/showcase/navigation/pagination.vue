@@ -28,6 +28,7 @@
     <q-pagination
       v-model="page2"
       color="amber"
+      text-color="black"
       :min="1"
       :max="15"
       :max-pages="6"
