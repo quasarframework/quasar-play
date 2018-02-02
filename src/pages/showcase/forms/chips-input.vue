@@ -26,23 +26,23 @@
         float-label="Float label"
       />
       <q-chips-input
-        color="secondary"
+        color="tertiary"
         v-model="chips2"
         add-icon="done"
         float-label="Custom add icon (type something)"
       />
       <q-chips-input
         inverted-light
-        color="white"
-        frame-color="amber"
+        color="amber"
         v-model="chips3"
         placeholder="Type some names"
         stack-label="Stack label & inverted"
       />
       <q-chips-input
         inverted
-        color="orange"
-        frame-color="brown"
+        color="brown"
+        chips-color="black"
+        chips-bg-color="amber"
         float-label="Float Label"
         v-model="chips4"
         placeholder="Some placeholder"
@@ -106,6 +106,8 @@
         <q-chips-input
           dark
           color="amber"
+          chips-color="dark"
+          chips-bg-color="amber"
           float-label="Float Label"
           v-model="chips5"
           placeholder="Some placeholder"

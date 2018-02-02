@@ -170,7 +170,7 @@ export default [
         title: 'Pagination',
         icon: 'linear_scale',
         hash: 'pagination',
-        status: 'New'
+        status: 'Revamp'
       }
     ]
   },
