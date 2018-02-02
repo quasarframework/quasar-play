@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="card-examples row items-start">
-    <q-card inline class="bigger">
+    <q-card inline class="bigger q-ma-sm">
       <q-card-media>
         <img src="~assets/donuts.png">
       </q-card-media>
@@ -27,13 +27,13 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-main>
         {{ lorem }}
       </q-card-main>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-title>
         Title
         <span slot="subtitle">Subtitle</span>
@@ -43,7 +43,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card inline color="secondary">
+    <q-card inline color="secondary q-ma-sm">
       <q-card-title>
         Title
         <span slot="subtitle">Subtitle</span>
@@ -59,7 +59,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-title>
         Title
         <span slot="subtitle">Subtitle</span>
@@ -89,7 +89,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-title>
         Title
         <span slot="subtitle">Subtitle</span>
@@ -101,7 +101,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-title>
         Title
         <span slot="subtitle">Subtitle</span>
@@ -112,7 +112,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/mountains.jpg">
       </q-card-media>
@@ -125,7 +125,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/parallax2.jpg">
 
@@ -135,7 +135,7 @@
       </q-card-media>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/parallax2.jpg">
 
@@ -149,7 +149,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media overlay-position="top">
         <img src="statics/parallax2.jpg">
 
@@ -160,7 +160,7 @@
       </q-card-media>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media overlay-position="top">
         <img src="statics/parallax2.jpg">
 
@@ -170,7 +170,7 @@
       </q-card-media>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media overlay-position="full">
         <img src="statics/parallax2.jpg">
 
@@ -181,7 +181,7 @@
       </q-card-media>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/parallax2.jpg">
 
@@ -196,7 +196,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <q-parallax src="statics/parallax1.jpg" :height="150">
           <div slot="loading">Loading...</div>
@@ -213,7 +213,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-item>
         <q-item-side avatar="/statics/boy-avatar.png" />
         <q-item-main>
@@ -234,7 +234,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/parallax2.jpg">
       </q-card-media>
@@ -269,7 +269,7 @@
       </q-list>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-title>
         Title
       </q-card-title>
@@ -294,7 +294,7 @@
       </q-list>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <q-video src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0" />
       </q-card-media>
@@ -320,7 +320,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/mountains.jpg">
       </q-card-media>
@@ -331,7 +331,7 @@
       </q-card-actions>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-media>
         <img src="statics/mountains.jpg">
       </q-card-media>
@@ -363,6 +363,7 @@ export default {
     width 300px
   .bigger
     width 450px
+    max-width 90vw
   @media (max-width $breakpoint-xs-max)
     .q-card
       width 100%
