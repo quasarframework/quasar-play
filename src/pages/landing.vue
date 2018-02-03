@@ -25,13 +25,15 @@
           label="Quasar Docs"
         />
 
-        <a
-          class="row flex-center text-secondary"
+        <q-btn
+          color="grey-7"
+          label="Read Privacy Policy"
           @click="viewPrivacyPolicy"
-          style="margin-top: 15px; font-size: .75rem"
-        >
-          <div>Read Privacy Policy</div>
-        </a>
+          flat
+          rounded
+          no-caps
+          class="q-mt-sm"
+        />
 
         <privacy-policy ref="privacy" />
       </div>
