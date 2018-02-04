@@ -13,7 +13,7 @@
       <q-tabs>
         <q-route-tab slot="title" icon="play_circle_outline" to="/showcase/layout-demo/play-with-layout" replace label="Play with Layout" />
         <q-route-tab slot="title" icon="view_array" to="/showcase/layout-demo/drawer-panels" replace label="Drawer Panels" />
-        <q-route-tab slot="title" icon="pin_drop" to="/showcase/layout-demo/sticky-position" replace label="Sticky Position" />
+        <q-route-tab slot="title" icon="pin_drop" to="/showcase/layout-demo/page-sticky" replace label="Sticky Position" />
         <q-route-tab slot="title" icon="play_for_work" to="/showcase/layout-demo/floating-action-button" replace label="Floating Action Button" />
       </q-tabs>
     </q-layout-header>
@@ -47,7 +47,7 @@
           <q-item-side icon="view_array" />
           <q-item-main label="Drawer Panels" sublabel="Layout left/right sides" />
         </q-item>
-        <q-item to="/showcase/layout-demo/sticky-position">
+        <q-item to="/showcase/layout-demo/page-sticky">
           <q-item-side icon="pin_drop" />
           <q-item-main label="Sticky Position" sublabel="...on a Layout" />
         </q-item>

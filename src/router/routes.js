@@ -69,7 +69,7 @@ routes.push({
   children: [
     {path: 'play-with-layout', component: () => import('pages/layout-demo/play-with-layout')},
     {path: 'drawer-panels', component: () => import('pages/layout-demo/drawer-panels')},
-    {path: 'sticky-position', component: () => import('pages/layout-demo/sticky-position')},
+    {path: 'page-sticky', component: () => import('pages/layout-demo/page-sticky')},
     {path: 'floating-action-button', component: () => import('pages/layout-demo/floating-action-button')}
   ]
 })

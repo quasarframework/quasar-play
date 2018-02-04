@@ -81,9 +81,9 @@ export default [
         status: 'Revamp'
       },
       {
-        title: 'Sticky Position',
+        title: 'Page Sticky',
         icon: 'pin_drop',
-        hash: 'sticky-position',
+        hash: 'page-sticky',
         status: 'Revamp'
       },
       {
