@@ -15,7 +15,7 @@ module.exports = function (ctx) {
     supportIE: true,
     build: {
       scopeHoisting: true,
-      vueRouterMode: 'history',
+      vueRouterMode: ctx.prod ? 'hash' : 'history',
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
