@@ -8,7 +8,7 @@
     </q-breadcrumbs>
 
     <p class="caption">With links and custom icon separator</p>
-    <q-breadcrumbs icon-separator="chevron_right" active-color="secondary" color="light">
+    <q-breadcrumbs separator="->" active-color="secondary" color="light">
       <q-breadcrumbs-el label="Home" to="/" />
       <q-breadcrumbs-el label="Components" to="/components" />
       <q-breadcrumbs-el label="Breadcrumbs" to="/components/breadcrums" />

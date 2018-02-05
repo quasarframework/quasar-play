@@ -5,9 +5,25 @@
         <q-card-title class="bg-primary text-center">
           <q-btn push color="orange" @click="show = !show">Toggle</q-btn>
         </q-card-title>
-        <q-card-main class="row">
-          <q-select class="col-xs-12 col-sm-6" filter v-model="enter" :options="enterSelectOptions" stack-label="CSS Enter Class" />
-          <q-select class="col-xs-12 col-sm-6" filter v-model="leave" :options="leaveSelectOptions" stack-label="CSS Leave Class" />
+        <q-card-main>
+          <div class="row q-px-sm q-pt-md gutter-sm">
+            <q-select
+              class="col-xs-12 col-sm-6"
+              filter
+              hide-underline
+              v-model="enter"
+              :options="enterSelectOptions"
+              stack-label="CSS Enter Class"
+            />
+            <q-select
+              class="col-xs-12 col-sm-6"
+              filter
+              hide-underline
+              v-model="leave"
+              :options="leaveSelectOptions"
+              stack-label="CSS Leave Class"
+            />
+          </div>
         </q-card-main>
       </q-card>
 
