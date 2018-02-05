@@ -43,13 +43,11 @@
 
       <p class="caption">Floating Label Chips</p>
       <p>
-        <q-btn color="light" class="text-black relative-position">
-          Inbox
+        <q-btn color="light" class="text-black relative-position" label="Inbox">
           <q-chip floating color="primary">22</q-chip>
         </q-btn>
         &nbsp;&nbsp;
-        <q-btn color="red" class="relative-position">
-          Inbox
+        <q-btn color="red" class="relative-position" label="Inbox">
           <q-chip floating color="dark">22</q-chip>
         </q-btn>
       </p>
