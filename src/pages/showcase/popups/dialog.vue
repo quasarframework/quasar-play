@@ -56,7 +56,6 @@
 
       <q-dialog
         v-model="customDialogModel"
-        ref="dialog"
         stack-buttons
         prevent-close
         @cancel="onCancel"
@@ -86,7 +85,7 @@
           <q-btn color="primary" label="Choose Superman" @click="choose(props.ok, 'Superman')" />
           <q-btn color="black" label="Choose Batman" @click="choose(props.ok, 'Batman')" />
           <q-btn color="negative" label="Choose Spiderman" @click="choose(props.ok, 'Spiderman')" />
-          <q-btn flat label="No thanks" @click="props.cancel()" />
+          <q-btn flat label="No thanks" @click="props.cancel" />
         </template>
       </q-dialog>
     </div>
@@ -155,7 +154,7 @@ export default {
           handler: () => {
             this.$q.dialog({
               title: 'Alert',
-              message: 'Modern HTML5 Single Page Application front-end framework on steroids.'
+              message: 'Modern HTML5 front-end framework on steroids.'
             })
           }
         },
@@ -165,7 +164,7 @@ export default {
           handler: () => {
             this.$q.dialog({
               title: 'Confirm',
-              message: 'Modern HTML5 Single Page Application front-end framework on steroids.',
+              message: 'Modern HTML5 front-end framework on steroids.',
               ok: 'Agree',
               cancel: 'Disagree'
             }).then(() => {

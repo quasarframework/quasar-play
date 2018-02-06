@@ -33,8 +33,8 @@
       <q-action-sheet
         v-model="actionSheet"
         title="Action Sheet"
-        @ok="showNotification"
-        @cancel="showCancel"
+        @ok="onOk"
+        @cancel="onCancel"
         :actions="[
           {
             label: 'Delete',
@@ -176,20 +176,19 @@ export default {
               this.$q.notify('Shared to Jack!')
             }
           }
-        ],
-        dismiss: {
-          label: 'Cancel',
-          handler: () => {
-            this.$q.notify('Cancelled...')
-          }
-        }
+        ]
+      }).then(action => {
+        // user picked an action
+      }).catch(() => {
+        // user dismissed
       })
     },
     deleteAction () {
       this.$q.notify('Deleting...')
     },
-    showNotification (item) {
-      if (item.label === 'Delete') {
+    onOk (item) {
+      if (item.handler) {
+        // if we've already triggered a handler
         return
       }
       this.$q.notify({
@@ -197,7 +196,7 @@ export default {
         message: `Clicked on "${item.label}"`
       })
     },
-    showCancel () {
+    onCancel () {
       this.$q.notify({
         color: 'tertiary',
         icon: 'done',
