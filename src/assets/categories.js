@@ -201,15 +201,14 @@ export default [
       {
         title: 'Color Picker',
         icon: 'brush',
-        hash: 'color-picker',
+        hash: 'color',
         status: 'New',
-        iframeTabs: true,
         tabs: [
           {
             title: 'Color Input',
             label: 'Color Picker Input',
             icon: 'format_color_fill',
-            hash: 'color'
+            hash: 'color-input'
           },
           {
             title: 'Color Picker',
@@ -288,7 +287,7 @@ export default [
             title: 'DateTime Input',
             label: 'Datetime Input',
             icon: 'event',
-            hash: 'datetime'
+            hash: 'datetime-input'
           },
           {
             title: 'DateTime Picker',

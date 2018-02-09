@@ -1,4 +1,5 @@
 import categories from 'assets/categories'
+import LayoutShowcase from 'layouts/showcase'
 
 const routes = [
   {
@@ -17,7 +18,7 @@ function lazyLoad (path, meta) {
 
 const showcase = {
   path: '/showcase',
-  component: () => import('layouts/showcase'),
+  component: LayoutShowcase,
   children: [
     {
       path: '',

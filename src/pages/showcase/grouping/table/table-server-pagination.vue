@@ -90,9 +90,8 @@ export default {
     }
   },
   mounted () {
-    const table = this.$refs.table
     this.request({
-      pagination: table.computedPagination,
+      pagination: this.serverPagination,
       filter: this.filter
     })
   }
