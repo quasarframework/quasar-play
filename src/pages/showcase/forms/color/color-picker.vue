@@ -30,6 +30,11 @@
       </p>
       <q-color-picker :value="lazy" @change="val => lazy = val" clearable />
 
+      <p class="caption">On Dark Background</p>
+      <div class="dark-example bg-black row justify-center">
+        <q-color-picker class="q-mt-lg q-ma-md" dark v-model="modelRgba" />
+      </div>
+
       <p class="caption">Inside Field</p>
       <q-field
         label="Car color"

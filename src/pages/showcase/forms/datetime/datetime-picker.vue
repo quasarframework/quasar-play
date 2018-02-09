@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="row justify-center">
+  <q-page padding class="docs-input row justify-center">
     <div style="width: 500px; max-width: 90vw;">
       <p class="caption">
         Date
@@ -41,6 +41,9 @@
 
       <p class="caption">Date & Time</p>
       <q-datetime-picker color="secondary" v-model="model" type="datetime" />
+
+      <p class="caption">On a dark background</p>
+      <q-datetime-picker dark color="secondary" v-model="model" type="datetime" />
 
       <p class="caption">Forcing Monday as first day of week (Changing Quasar I18n automatically configures first day of the week)</p>
       <q-datetime-picker color="purple" v-model="model" :first-day-of-week="1" type="date" />
