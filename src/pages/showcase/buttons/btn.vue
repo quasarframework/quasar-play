@@ -172,16 +172,16 @@
       />
 
       <p class="caption">Button with progress</p>
-      <q-btn loader color="secondary" @click="simulateProgress" label="Button" />
-      <q-btn loader color="red" @click="simulateProgress">
+      <q-btn :loading="loading1" color="secondary" @click="simulateProgress(1)" label="Button" />
+      <q-btn :loading="loading2" color="red" @click="simulateProgress(2)">
         Button
         <span slot="loading">Loading...</span>
       </q-btn>
-      <q-btn loader color="purple" @click="simulateProgress">
+      <q-btn :loading="loading3" color="purple" @click="simulateProgress(3)">
         Button
         <q-spinner-radio slot="loading" />
       </q-btn>
-      <q-btn loader color="primary" @click="simulateProgress">
+      <q-btn :loading="loading4" color="primary" @click="simulateProgress(4)">
         Button
         <span slot="loading">
           <q-spinner-hourglass class="on-left" />
@@ -189,24 +189,24 @@
         </span>
       </q-btn>
       <br>
-      <q-btn round loader color="brown" @click="simulateProgress" icon="camera_front">
+      <q-btn round :loading="loading5" color="brown" @click="simulateProgress(5)" icon="camera_front">
         <q-spinner-facebook slot="loading" />
       </q-btn>
-      <q-btn round loader color="black" @click="simulateProgress" icon="camera_rear">
+      <q-btn round :loading="loading6" color="black" @click="simulateProgress(6)" icon="camera_rear">
         <q-spinner-gears slot="loading" />
       </q-btn>
       <br>
-      <q-btn v-model="progress" loader color="primary">
-        Controlled with v-model
+      <q-btn :loading="progress" color="primary" @click="progress = true">
+        Controlled from outside
         <span slot="loading">
           <q-spinner-radio class="on-left" />
           Click "Stop" Button
         </span>
       </q-btn>
-      <q-btn :disable="!progress" color="negative" @click="stopProgress">Stop</q-btn>
+      <q-btn :disable="!progress" color="negative" @click="progress = false" label="Stop" />
 
       <p class="caption">Button with deterministic progress</p>
-      <q-btn loader :percentage="percentage1" color="primary" @click="startComputing1">
+      <q-btn :loading="loading7" :percentage="percentage1" color="primary" @click="startComputing(1, 7)">
         Compute PI
         <span slot="loading">
           <q-spinner-gears class="on-left" />
@@ -215,11 +215,11 @@
       </q-btn>
 
       <q-btn
-        loader
+        :loading="loading8"
         :percentage="percentage2"
         round
         color="secondary"
-        @click="startComputing2"
+        @click="startComputing(2, 8)"
         icon="cloud_upload"
       />
     </div>
@@ -231,6 +231,14 @@ export default {
   data () {
     return {
       count: 0,
+      loading1: false,
+      loading2: false,
+      loading3: false,
+      loading4: false,
+      loading5: false,
+      loading6: false,
+      loading7: false,
+      loading8: false,
       progress: false,
       percentage1: 0,
       percentage2: 0,
@@ -245,30 +253,24 @@ export default {
     }
   },
   methods: {
-    simulateProgress (e, done) {
+    simulateProgress (number) {
+      // we set loading state
+      this[`loading${number}`] = true
+
       // simulate a delay
-      setTimeout(done, 3000)
+      setTimeout(() => {
+        // we're done, we reset loading state
+        this[`loading${number}`] = false
+      }, 3000)
     },
-    stopProgress () {
-      this.progress = false
-    },
-    startComputing1 (e, done) {
-      this.percentage1 = 0
-      this.interval1 = setInterval(() => {
-        this.percentage1 += Math.floor(Math.random() * 8 + 10)
-        if (this.percentage1 >= 100) {
-          clearInterval(this.interval1)
-          done()
-        }
-      }, 700)
-    },
-    startComputing2 (e, done) {
-      this.percentage2 = 0
-      this.interval2 = setInterval(() => {
-        this.percentage2 += Math.floor(Math.random() * 8 + 10)
-        if (this.percentage2 >= 100) {
-          clearInterval(this.interval2)
-          done()
+    startComputing (percentageId, modelId) {
+      this[`loading${modelId}`] = true
+      this[`percentage${percentageId}`] = 0
+      const interval = setInterval(() => {
+        this[`percentage${percentageId}`] += Math.floor(Math.random() * 8 + 10)
+        if (this[`percentage${percentageId}`] >= 100) {
+          clearInterval(interval)
+          this[`loading${modelId}`] = true
         }
       }, 700)
     },

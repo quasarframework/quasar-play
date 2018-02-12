@@ -67,7 +67,7 @@
       :columns="columns"
       :selection="selection"
       :selected.sync="selected"
-      :loader="loader"
+      :loading="loading"
       :dark="dark"
       row-key="name"
       color="secondary"
@@ -102,7 +102,7 @@
       </template>
       <div slot="top-right" slot-scope="props" class="column">
         <q-toggle
-          v-model="loader"
+          v-model="loading"
           label="Loading state"
           color="secondary"
           :dark="dark"
@@ -207,7 +207,7 @@ export default {
         page: 2
       },
       paginationControl: { rowsPerPage: 3, page: 1 },
-      loader: false,
+      loading: false,
       dark: true,
       selectedSecond: [
         { name: 'Eclair' }

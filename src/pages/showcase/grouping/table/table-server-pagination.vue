@@ -13,7 +13,7 @@
       row-key="name"
       :pagination.sync="serverPagination"
       @request="request"
-      :loader="loader"
+      :loading="loading"
     >
       <template slot="top-right" slot-scope="props">
         <q-search hide-underline v-model="filter" />
@@ -56,12 +56,12 @@ export default {
         // initial selection
         { name: 'Ice cream sandwich' }
       ],
-      loader: false
+      loading: false
     }
   },
   methods: {
     request (props) {
-      this.loader = true
+      this.loading = true
       setTimeout(() => {
         this.serverPagination = props.pagination
 
@@ -85,7 +85,7 @@ export default {
         }
 
         this.serverData = rows
-        this.loader = false
+        this.loading = false
       }, 1500)
     }
   },
