@@ -62,6 +62,7 @@
 </template>
 
 <script>
+import './docs-input.styl'
 import { uid, filter } from 'quasar'
 import countries from 'assets/autocomplete.json'
 
