@@ -270,7 +270,7 @@ export default {
         this[`percentage${percentageId}`] += Math.floor(Math.random() * 8 + 10)
         if (this[`percentage${percentageId}`] >= 100) {
           clearInterval(interval)
-          this[`loading${modelId}`] = true
+          this[`loading${modelId}`] = false
         }
       }, 700)
     },

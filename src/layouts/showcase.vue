@@ -23,23 +23,12 @@
         />
       </q-toolbar>
 
-      <q-tabs
-        v-if="pageMeta.tabs.length > 0"
-        :class="{'within-iframe-hide': !pageMeta.iframeTabs}"
-      >
-        <q-route-tab
-          v-for="tab in pageMeta.tabs"
-          :key="tab.hash"
-          slot="title"
-          :icon="tab.icon"
-          :to="`/showcase${pageMeta.hash}/${tab.hash}`"
-          :label="tab.label"
-          exact
-          replace
-          :alert="tab.status !== void 0"
-        />
-      </q-tabs>
+      <showcase-tabs v-if="$q.theme === 'mat'" />
     </q-layout-header>
+
+    <q-layout-footer reveal v-if="$q.theme === 'ios'">
+      <showcase-tabs />
+    </q-layout-footer>
 
     <q-layout-drawer v-model="drawerState">
       <q-scroll-area
@@ -99,10 +88,14 @@
 </template>
 
 <script>
+import ShowcaseTabs from 'components/showcase-tabs'
 import { mapState } from 'vuex'
 import categories from 'assets/categories'
 
 export default {
+  components: {
+    ShowcaseTabs
+  },
   data () {
     return {
       categories

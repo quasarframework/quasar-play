@@ -7,18 +7,14 @@
           Header
           <span slot="subtitle">Header Subtitle</span>
         </q-toolbar-title>
-        <q-btn flat dense v-if="!$q.platform.within.iframe" label="Go to Showcase" @click="$router.replace('/showcase')" />
+        <q-btn flat dense v-if="!$q.platform.within.iframe" class="q-mr-sm" label="Go to Showcase" @click="$router.replace('/showcase')" />
         <q-btn flat round dense icon="menu" @click="right = !right" />
       </q-toolbar>
-      <q-tabs>
-        <q-route-tab slot="title" icon="play_circle_outline" to="/showcase/layout-demo/play-with-layout" replace label="Play with Layout" />
-        <q-route-tab slot="title" icon="view_array" to="/showcase/layout-demo/drawer-panels" replace label="Drawer Panels" />
-        <q-route-tab slot="title" icon="pin_drop" to="/showcase/layout-demo/page-sticky" replace label="Page Sticky" />
-        <q-route-tab slot="title" icon="play_for_work" to="/showcase/layout-demo/floating-action-button" replace label="Floating Action Button" />
-      </q-tabs>
+      <demo-tabs v-if="$q.theme === 'mat'" />
     </q-layout-header>
 
     <q-layout-footer v-model="footer" :reveal="footerReveal">
+      <demo-tabs v-if="$q.theme === 'ios'" />
       <q-toolbar>
         <q-btn flat round dense icon="menu" @click="left = !left" />
         <q-toolbar-title>
@@ -90,9 +86,13 @@
 </template>
 
 <script>
+import DemoTabs from 'components/demo-tabs'
 import { mapState, mapGetters } from 'vuex'
 
 export default {
+  components: {
+    DemoTabs
+  },
   computed: {
     header: {
       get () { return this.$store.state.layoutDemo.header },
