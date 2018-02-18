@@ -56,9 +56,6 @@
       <dt>Malesuada porta</dt>
       <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
     </dl>
-
-    <p class="caption">Links</p>
-    <p>Links: <a>Some link</a> and <a>Some other link</a>.</p>
   </q-page>
 </template>
 

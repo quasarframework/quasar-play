@@ -137,19 +137,18 @@
         />
 
         <q-field
-          icon="vibration"
-          helper="Select which notifications you want to receive"
-          label="Notifications"
+          icon="place"
+          label="City of residence"
+          helper="Pick the city you live in the most"
         >
           <q-option-group
             dark
             type="radio"
-            color="secondary"
             v-model="radio"
             :options="[
-              { label: 'Bucharest', value: 'bucharest' },
-              { label: 'London', value: 'london' },
-              { label: 'Paris', value: 'paris', color: 'red' }
+              { label: 'Bucharest', value: 'bucharest', color: 'amber' },
+              { label: 'London', value: 'london', color: 'secondary' },
+              { label: 'Paris', value: 'paris', color: 'primary' }
             ]"
           />
         </q-field>

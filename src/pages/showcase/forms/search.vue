@@ -4,6 +4,7 @@
       <p class="caption">Works great with Autocomplete so you might want to check its page.</p>
       <br>
 
+      <q-search v-model="model" no-icon />
       <q-search v-model="model" />
       <q-search icon="place" color="amber" v-model="model" stack-label="Seach for a place" />
       <q-search icon="local_airport" color="secondary" v-model="model" float-label="Search for an airport" suffix="@ nearby" />
