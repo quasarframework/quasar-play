@@ -1,7 +1,7 @@
 <template>
   <q-layout :view="view">
     <q-layout-header v-model="header" :reveal="headerReveal">
-      <q-toolbar>
+      <q-toolbar :inverted="$q.theme === 'ios'">
         <q-btn flat round dense icon="menu" @click="left = !left" />
         <q-toolbar-title>
           Header
@@ -15,7 +15,7 @@
 
     <q-layout-footer v-model="footer" :reveal="footerReveal">
       <demo-tabs v-if="$q.theme === 'ios'" />
-      <q-toolbar>
+      <q-toolbar :inverted="$q.theme === 'ios'">
         <q-btn flat round dense icon="menu" @click="left = !left" />
         <q-toolbar-title>
           Footer
@@ -30,7 +30,7 @@
       :overlay="leftOverlay"
       :behavior="leftBehavior"
       :breakpoint="leftBreakpoint"
-      content-class="bg-grey-3"
+      :content-class="$q.theme === 'mat' ? 'bg-grey-3' : null"
     >
       <q-scroll-area class="fit">
         <q-list-header>Left Panel</q-list-header>
@@ -66,7 +66,7 @@
       :overlay="rightOverlay"
       :behavior="rightBehavior"
       :breakpoint="rightBreakpoint"
-      content-class="bg-grey-3 q-pa-sm"
+      :content-class="$q.theme === 'mat' ? 'bg-grey-3' : null"
       :content-style="{fontSize: '16px'}"
     >
       <q-list-header>Right Panel</q-list-header>

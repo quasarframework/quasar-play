@@ -1,7 +1,7 @@
 <template>
   <q-layout view="Lhh lpr lFf">
     <q-layout-header reveal>
-      <q-toolbar>
+      <q-toolbar :inverted="$q.theme === 'ios'">
         <q-btn flat dense v-go-back.single="pageMeta.backRoute" class="cordova-only electron-only">
           <q-icon name="arrow_back" />
         </q-btn>
@@ -33,7 +33,7 @@
     <q-layout-drawer v-model="drawerState">
       <q-scroll-area
         style="width: 100%; height: 100%;"
-        class="bg-grey-3"
+        :class="$q.theme === 'mat' ? 'bg-grey-3' : null"
       >
         <div class="row flex-center bg-white" style="height: 100px">
           <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;">

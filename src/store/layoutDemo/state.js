@@ -15,13 +15,13 @@ export default {
 
   topleft: 'h',
   topcenter: 'H',
-  topright: 'r',
+  topright: 'h',
   middleleft: 'L',
   middlecenter: 'p',
   middleright: 'r',
   bottomleft: 'l',
   bottomcenter: 'F',
-  bottomright: 'r',
+  bottomright: 'f',
 
   scrolling: true
 }
