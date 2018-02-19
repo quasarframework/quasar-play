@@ -215,7 +215,7 @@
 
     <q-card inline class="q-ma-sm">
       <q-item>
-        <q-item-side avatar="/statics/boy-avatar.png" />
+        <q-item-side avatar="statics/boy-avatar.png" />
         <q-item-main>
           <q-item-tile label>Title</q-item-tile>
           <q-item-tile sublabel>Subhead</q-item-tile>
@@ -307,7 +307,7 @@
       </q-card-main>
     </q-card>
 
-    <q-card inline>
+    <q-card inline class="q-ma-sm">
       <q-card-title>
         Title
       </q-card-title>
