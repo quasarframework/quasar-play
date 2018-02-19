@@ -76,7 +76,7 @@
         </q-toolbar>
 
         <q-toolbar slot="header">
-          <q-search inverted v-model="search" color="none" />
+          <q-search class="full-width" inverted v-model="search" color="none" />
         </q-toolbar>
 
         <q-toolbar slot="footer">
