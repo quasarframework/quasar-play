@@ -7,6 +7,8 @@
     "clean": "node build/script.clean.js",
     "dev": "node build/script.dev.js",
     "build": "node build/script.build.js",
+    "build:mat": "node build/script.build.js mat",
+    "build:ios": "node build/script.build.js ios",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
