@@ -1,35 +1,14 @@
 {
   "name": "quasar-play",
-<<<<<<< HEAD
-  "version": "0.14.9",
-=======
   "version": "0.15.0",
->>>>>>> next
   "description": "Quasar Play for Quasar Framework",
   "productName": "Quasar Play",
   "cordovaId": "com.quasarframework.quasarplay",
   "author": "Razvan Stoenescu <razvan.stoenescu@gmail.com>",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
-    "clean": "node build/script.clean.js",
-    "dev": "node build/script.dev.js",
-    "build": "node build/script.build.js",
-    "build:mat": "node build/script.build.js mat",
-    "build:ios": "node build/script.build.js ios",
-    "lint": "eslint --ext .js,.vue src"
-  },
-  "dependencies": {
-    "babel-runtime": "^6.0.0",
-    "es6-promise": "^4.1.1",
-    "quasar-extras": "0.0.8",
-    "quasar-framework": "0.14.9",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
-=======
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
->>>>>>> next
   },
   "devDependencies": {
     "babel-eslint": "8.2.1",
