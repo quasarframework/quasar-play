@@ -2,11 +2,9 @@
 
 # Quasar Play
 
-> App which helps develop Quasar Framework Apps.
+> Quasar Framework Showcase webiste/app; Used on official documentation too.
 
-Instead of using mobile emulators for testing your Quasar Apps, use this App instead. You can develop apps directly on your phone/tablet (hot reload supported!), without even installing your app.
-
-Currently only on [Google Play](https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1). Requiring funding to pay fees on Apple Store and release the iOS counterpart too. Help [here](http://quasar-framework.org/support-quasar-framework.html).
+Currently only on [Google Play](https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1) BUT **way outdated** (uses very old Quasar v0.13). Requiring funding to pay fees on Apple Store and release the iOS counterpart too. Help [here](http://quasar-framework.org/support-quasar-framework.html).
 
 Please rate it on [Google Play](https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay) and comment about it in the [Community Forum](http://forum.quasar-framework.org).
 
