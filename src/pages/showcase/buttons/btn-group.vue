@@ -43,6 +43,35 @@
         <q-btn color="amber" rounded glossy icon="visibility" />
         <q-btn color="amber" rounded glossy icon-right="update" label="Update" />
       </q-btn-group>
+      
+      <br><br>
+      <q-btn-group outline>
+        <q-btn outline label="One" />
+        <q-btn outline label="Two" />
+        <q-btn-dropdown outline label="Three" split>
+          <!-- dropdown content goes here -->
+          <q-list link>
+              <q-item v-close-overlay>
+                <q-item-side icon="folder" inverted color="primary" />
+                <q-item-main>
+                  <q-item-tile label>Photos</q-item-tile>
+                  <q-item-tile sublabel>February 22, 2016</q-item-tile>
+                </q-item-main>
+                <q-item-side right icon="info" color="amber" />
+              </q-item>
+              <q-item-separator inset />
+              <q-list-header inset>Files</q-list-header>
+              <q-item v-close-overlay>
+                <q-item-side icon="folder" inverted color="primary" />
+                <q-item-main>
+                  <q-item-tile label>Photos</q-item-tile>
+                  <q-item-tile sublabel>February 22, 2016</q-item-tile>
+                </q-item-main>
+                <q-item-side right icon="info" color="amber" />
+              </q-item>
+          </q-list>
+        </q-btn-dropdown>
+      </q-btn-group>
     </div>
   </q-page>
 </template>
