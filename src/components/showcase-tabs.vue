@@ -3,7 +3,7 @@
     v-if="pageMeta.tabs.length > 0"
     :class="{'within-iframe-hide': !pageMeta.iframeTabs}"
     :inverted="$q.theme === 'ios'"
-    :style="$q.theme === 'ios' ? { background: 'rgba(255,255,255,0.9' } : null"
+    :style="$q.theme === 'ios' ? { background: 'rgba(255,255,255,0.95' } : null"
   >
     <q-route-tab
       v-for="tab in pageMeta.tabs"
