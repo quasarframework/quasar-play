@@ -19,6 +19,7 @@
 
       <q-field
         icon="wifi"
+        icon-color="amber"
         label="Field label"
         helper="Some helper"
       >
