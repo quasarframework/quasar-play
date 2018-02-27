@@ -18,6 +18,9 @@
       <q-uploader color="orange" inverted float-label="Float Label" :url="url" />
       <q-uploader color="brown-5" inverted stack-label="Stack Label" :url="url" />
 
+      <p class="caption">Accepting only .jpg</p>
+      <q-uploader extensions=".jpg" multiple :url="url" auto-expand />
+
       <p class="caption">Some of the options</p>
       <q-uploader color="secondary" multiple no-thumbnails stack-label="No thumbnails" :url="url" />
       <q-uploader color="secondary" multiple auto-expand stack-label="Auto expand" :url="url" />
