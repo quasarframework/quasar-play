@@ -36,7 +36,7 @@
         <q-btn flat round dense icon="sim_card" />
         <q-btn flat round dense icon="gamepad" />
       </q-toolbar>
-      <q-toolbar color="yellow" class="text-dark">
+      <q-toolbar color="yellow" text-color="dark">
         <q-btn flat round dense icon="assignment_ind" />
         <q-toolbar-title>
           Toolbar
