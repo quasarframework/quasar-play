@@ -2,13 +2,13 @@
   <q-layout :view="view">
     <q-layout-header v-model="header" :reveal="headerReveal">
       <q-toolbar :inverted="$q.theme === 'ios'">
-        <q-btn flat round dense icon="menu" @click="left = !left" />
+        <q-btn flat round dense icon="menu" @click="left = !left" aria-label="Toggle menu on left side" />
         <q-toolbar-title>
           Header
           <span slot="subtitle">Header Subtitle</span>
         </q-toolbar-title>
         <q-btn flat dense v-if="!$q.platform.within.iframe" class="q-mr-sm" label="Go to Showcase" @click="$router.replace('/showcase')" />
-        <q-btn flat round dense icon="menu" @click="right = !right" />
+        <q-btn flat round dense icon="menu" @click="right = !right" aria-label="Toggle menu on right side" />
       </q-toolbar>
       <demo-tabs v-if="$q.theme === 'mat'" />
     </q-layout-header>
@@ -16,11 +16,11 @@
     <q-layout-footer v-model="footer" :reveal="footerReveal">
       <demo-tabs v-if="$q.theme === 'ios'" />
       <q-toolbar :inverted="$q.theme === 'ios'">
-        <q-btn flat round dense icon="menu" @click="left = !left" />
+        <q-btn flat round dense icon="menu" @click="left = !left" aria-label="Toggle menu on left side" />
         <q-toolbar-title>
           Footer
         </q-toolbar-title>
-        <q-btn flat round dense icon="menu" @click="right = !right" />
+        <q-btn flat round dense icon="menu" @click="right = !right" aria-label="Toggle menu on right side" />
       </q-toolbar>
     </q-layout-footer>
 
