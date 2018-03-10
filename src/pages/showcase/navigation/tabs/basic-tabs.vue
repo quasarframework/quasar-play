@@ -41,9 +41,29 @@
 
       <p class="caption">They come in all colors</p>
       <q-tabs
-        v-for="color in ['secondary', 'amber', 'purple']"
+        v-for="color in ['secondary', 'purple', 'red']"
         :key="color"
         :color="color"
+        class="shadow-2"
+        align="justify"
+      >
+        <q-tab slot="title" icon="mail" />
+        <q-tab slot="title" icon="alarm" />
+        <q-tab slot="title" icon="movie" />
+      </q-tabs>
+      <q-tabs
+        color="amber"
+        text-color="dark"
+        class="shadow-2"
+        align="justify"
+      >
+        <q-tab slot="title" icon="mail" />
+        <q-tab slot="title" icon="alarm" />
+        <q-tab slot="title" icon="movie" />
+      </q-tabs>
+      <q-tabs
+        color="negative"
+        text-color="black"
         class="shadow-2"
         align="justify"
       >
