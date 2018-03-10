@@ -37,7 +37,7 @@
       <showcase-tabs />
     </q-layout-footer>
 
-    <q-layout-drawer v-model="drawerState">
+    <q-layout-drawer v-model="drawerState" ref="x">
       <q-scroll-area
         style="width: 100%; height: 100%;"
         :class="$q.theme === 'mat' ? 'bg-grey-3' : null"
