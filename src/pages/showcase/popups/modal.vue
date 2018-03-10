@@ -96,7 +96,6 @@
       <div class="q-display-1 q-mb-md">Minimized Modal</div>
       <p>This one has backdrop on small screens too.</p>
       <q-btn color="red" v-close-overlay label="Close" />
-      <q-input type="textarea" v-model="textarea" />
     </q-modal>
 
     <q-modal v-model="maximizedModal" maximized :content-css="{padding: '50px'}">
@@ -116,7 +115,6 @@ export default {
   data () {
     return {
       search: '',
-      textarea: 'Textarea',
       basicModal: false,
       eventsModal: false,
       layoutModal: false,
