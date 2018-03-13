@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     launch () {
-      openURL('http://beta.quasar-framework.org')
+      openURL('http://quasar-framework.org')
     },
     viewPrivacyPolicy () {
       this.$refs.privacy.show()
