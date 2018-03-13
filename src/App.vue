@@ -21,6 +21,9 @@ export default {
       document.body.scrollTop = 0
       done()
     }
+  },
+  created () {
+    this.$q.addressbarColor.set()
   }
 }
 </script>

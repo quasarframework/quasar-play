@@ -16,7 +16,7 @@ module.exports = function (ctx) {
     build: {
       // rtl: true,
       scopeHoisting: true,
-      vueRouterMode: ctx.prod ? 'hash' : 'history',
+      vueRouterMode: 'hash',
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',

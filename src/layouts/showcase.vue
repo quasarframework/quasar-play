@@ -2,9 +2,15 @@
   <q-layout view="Lhh lpr lFf">
     <q-layout-header reveal>
       <q-toolbar :inverted="$q.theme === 'ios'">
-        <q-btn flat dense v-go-back.single="pageMeta.backRoute" class="cordova-only electron-only">
-          <q-icon name="arrow_back" />
-        </q-btn>
+        <q-btn
+          flat
+          round
+          dense
+          v-go-back.single="pageMeta.backRoute"
+          class="cordova-only electron-only"
+          icon="arrow_back"
+          aria-label="Go back"
+        />
         <q-toolbar-title>
           <q-icon
             v-show="pageMeta.icon"
@@ -20,6 +26,7 @@
           class="within-iframe-hide"
           @click="drawerState = !drawerState"
           icon="menu"
+          aria-label="Menu"
         />
       </q-toolbar>
 
@@ -30,13 +37,13 @@
       <showcase-tabs />
     </q-layout-footer>
 
-    <q-layout-drawer v-model="drawerState">
+    <q-layout-drawer v-model="drawerState" ref="x">
       <q-scroll-area
         style="width: 100%; height: 100%;"
         :class="$q.theme === 'mat' ? 'bg-grey-3' : null"
       >
-        <div class="row flex-center bg-white" style="height: 100px">
-          <img src="~assets/quasar-logo.svg" style="height: 75px; width 75px;">
+        <div class="row flex-center bg-white" style="height: 115px">
+          <img alt="Quasar logo" src="~assets/quasar-logo.svg" style="height: 75px; width 75px;">
           <div class="caption q-ml-md">
             Quasar v{{ $q.version }}
           </div>
@@ -63,9 +70,11 @@
             >
               <q-item-side :icon="feature.icon" />
               <q-item-main :label="feature.title" />
+              <!--
               <q-item-side right v-if="feature.status">
-                <q-chip small color="secondary">{{ feature.status }}</q-chip>
+                <q-chip dense color="faded">{{ feature.status }}</q-chip>
               </q-item-side>
+              -->
             </q-item>
             <q-item-separator :key="`separator-${category.title}`" />
           </template>

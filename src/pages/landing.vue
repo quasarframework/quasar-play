@@ -12,7 +12,7 @@
           @click="$router.push('/showcase')"
           class="full-width"
           icon="layers"
-          wait-for-ripple
+          no-ripple
           label="Quasar Showcase"
         />
 
@@ -21,7 +21,7 @@
           class="full-width"
           @click="launch"
           icon="launch"
-          wait-for-ripple
+          no-ripple
           label="Quasar Docs"
         />
 
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     launch () {
-      openURL('http://beta.quasar-framework.org')
+      openURL('http://quasar-framework.org')
     },
     viewPrivacyPolicy () {
       this.$refs.privacy.show()

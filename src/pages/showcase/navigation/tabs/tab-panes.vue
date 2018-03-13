@@ -24,7 +24,7 @@
       </q-tabs>
 
       <p class="caption">Tab Panes above</p>
-      <q-tabs position="bottom" color="amber" align="justify">
+      <q-tabs position="bottom" color="amber" text-color="dark" align="justify">
         <q-tab default name="mails" slot="title" icon="mail" label="Mails" />
         <q-tab name="alarms" slot="title" icon="alarm" label="Alarms" />
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
@@ -35,7 +35,7 @@
       </q-tabs>
 
       <p class="caption">Tab Panes above (inverted)</p>
-      <q-tabs inverted position="bottom" color="amber" align="justify">
+      <q-tabs inverted position="bottom" color="purple" align="justify">
         <q-tab default name="mails" slot="title" icon="mail" />
         <q-tab name="alarms" slot="title" icon="alarm" />
         <q-tab name="movies" slot="title" icon="movie" />
