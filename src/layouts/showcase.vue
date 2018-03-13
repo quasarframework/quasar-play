@@ -42,7 +42,7 @@
         style="width: 100%; height: 100%;"
         :class="$q.theme === 'mat' ? 'bg-grey-3' : null"
       >
-        <div class="row flex-center bg-white" style="height: 100px">
+        <div class="row flex-center bg-white" style="height: 115px">
           <img alt="Quasar logo" src="~assets/quasar-logo.svg" style="height: 75px; width 75px;">
           <div class="caption q-ml-md">
             Quasar v{{ $q.version }}
@@ -70,9 +70,11 @@
             >
               <q-item-side :icon="feature.icon" />
               <q-item-main :label="feature.title" />
+              <!--
               <q-item-side right v-if="feature.status">
-                <q-chip small color="secondary">{{ feature.status }}</q-chip>
+                <q-chip dense color="faded">{{ feature.status }}</q-chip>
               </q-item-side>
+              -->
             </q-item>
             <q-item-separator :key="`separator-${category.title}`" />
           </template>
