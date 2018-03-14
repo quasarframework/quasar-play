@@ -17,7 +17,7 @@
           <pre>{{ info }}</pre>
         </div>
         <div v-else class="text-center">
-          Click/touch and hold for at least 800ms.
+          Click/touch and hold for at least 600ms.
         </div>
       </div>
 
