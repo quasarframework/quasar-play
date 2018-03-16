@@ -48,7 +48,7 @@
       <p class="caption">Textarea (auto-grows)</p>
       <q-input v-model="area" type="textarea" />
       <q-input v-model="area" inverted color="secondary" float-label="Inverted textarea" type="textarea" />
-      <q-input v-model="area" inverted color="purple" :min-rows="5" float-label="Inverted textarea" type="textarea" />
+      <q-input v-model="area" inverted color="purple" rows="5" float-label="Inverted textarea" type="textarea" />
 
       <p class="caption">Textarea (has max height)</p>
       <q-input v-model="areaMax" type="textarea" :max-height="50" />
@@ -72,14 +72,14 @@
       <p class="caption">Read only</p>
       <q-input v-model="text" readonly float-label="Read only text input" />
       <q-input v-model="text" readonly inverted-light color="amber" float-label="Read only & inverted" />
-      <q-input :min-rows="5" v-model="area" readonly type="textarea" float-label="Read only textarea" />
-      <q-input :min-rows="5" v-model="area" readonly inverted type="textarea" float-label="Read only & inverted textarea" />
+      <q-input rows="5" v-model="area" readonly type="textarea" float-label="Read only textarea" />
+      <q-input rows="5" v-model="area" readonly inverted type="textarea" float-label="Read only & inverted textarea" />
 
       <p class="caption">Disabled</p>
       <q-input v-model="text" disable float-label="Disabled text input" />
       <q-input v-model="text" disable inverted-light color="amber" float-label="Disabled & inverted" />
-      <q-input :min-rows="5" v-model="area" disable type="textarea" float-label="Disabled textarea" />
-      <q-input :min-rows="5" v-model="area" disable inverted type="textarea" float-label="Disabled & inverted textarea" />
+      <q-input rows="5" v-model="area" disable type="textarea" float-label="Disabled textarea" />
+      <q-input rows="5" v-model="area" disable inverted type="textarea" float-label="Disabled & inverted textarea" />
 
       <p class="caption">With loading state</p>
       <q-toggle v-model="loading" label="Toggle loading state" />
