@@ -46,7 +46,9 @@
         <q-btn flat round dense icon="gamepad" />
       </q-toolbar>
       <q-toolbar color="orange">
-        <q-btn flat round dense icon="mail" />
+        <q-btn flat round dense icon="mail">
+          <q-chip floating color="red">2</q-chip>
+        </q-btn>
         <q-toolbar-title>
           Long title for Toolbar. Very very very very very very long title.
         </q-toolbar-title>
