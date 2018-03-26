@@ -24,6 +24,11 @@
       <!-- Date & Time -->
       <q-datetime color="purple" v-model="date3" type="datetime" float-label="Date & Time" />
 
+      <template v-if="$q.theme === 'mat'">
+        <p class="caption">Minimal Datetime Interface (No header)</p>
+        <q-datetime minimal color="purple" v-model="date3" type="datetime" float-label="Date & Time" />
+      </template>
+
       <p class="caption">
         Lazy input
       </p>
