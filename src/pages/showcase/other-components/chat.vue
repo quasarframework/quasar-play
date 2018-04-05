@@ -17,7 +17,7 @@
       />
       <q-chat-message
         name="Vladimir"
-        avatar="/statics/boy-avatar.png"
+        avatar="statics/boy-avatar.png"
       >
         <q-spinner-dots size="2rem" />
       </q-chat-message>
