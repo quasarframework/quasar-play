@@ -8,6 +8,7 @@
         <br>
         The Backspace key removes previously entered Chip if textfield is empty.
       </p>
+      <p class="caption">Works great with Autocomplete so you might want to check its page.</p>
       <br>
 
       <span class="chip-container">
