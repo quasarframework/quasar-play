@@ -28,6 +28,40 @@
       <q-carousel-slide img-src="statics/parallax2.jpg" />
     </q-carousel>
 
+    <p class="caption">Carousel with image slides and thumbnails</p>
+    <q-toggle
+      v-model="thumbnailsHorizontal"
+      label="Horizontal thumbnails"
+      class="q-mb-md"
+    />
+    <q-carousel
+      color="white"
+      arrows
+      height="300px"
+      :thumbnails="[
+        'statics/mountains.jpg',
+        'statics/parallax1.jpg',
+        'statics/parallax2.jpg',
+        'statics/mountains.jpg',
+        'statics/parallax1.jpg',
+        'statics/parallax2.jpg',
+        'statics/mountains.jpg',
+        'statics/parallax1.jpg',
+        'statics/parallax2.jpg',
+      ]"
+      :thumbnails-horizontal="thumbnailsHorizontal"
+    >
+      <q-carousel-slide img-src="statics/mountains.jpg" />
+      <q-carousel-slide img-src="statics/parallax1.jpg" />
+      <q-carousel-slide img-src="statics/parallax2.jpg" />
+      <q-carousel-slide img-src="statics/mountains.jpg" />
+      <q-carousel-slide img-src="statics/parallax1.jpg" />
+      <q-carousel-slide img-src="statics/parallax2.jpg" />
+      <q-carousel-slide img-src="statics/mountains.jpg" />
+      <q-carousel-slide img-src="statics/parallax1.jpg" />
+      <q-carousel-slide img-src="statics/parallax2.jpg" />
+    </q-carousel>
+
     <p class="caption">Example creating custom captions for each slide.</p>
     <q-carousel
       color="white"
@@ -276,7 +310,8 @@ export default {
       'orange',
       'grey-2'
     ],
-    modal: false
+    modal: false,
+    thumbnailsHorizontal: false
   })
 }
 </script>

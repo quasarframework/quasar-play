@@ -129,6 +129,11 @@ export default {
       document.body.scrollTop = 0
       done()
     }
+  },
+  mounted () {
+    if (this.$q.platform.is.desktop && !this.drawerState) {
+      this.drawerState = true
+    }
   }
 }
 </script>
