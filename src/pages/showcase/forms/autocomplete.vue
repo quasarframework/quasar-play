@@ -14,6 +14,10 @@
         <q-autocomplete @search="search" @selected="selected" />
       </q-search>
 
+      <q-chips-input v-model="chips1" placeholder="Select from list or add new one" stack-label="List of countries" @duplicate="duplicate">
+        <q-autocomplete @search="search" @selected="selected" />
+      </q-chips-input>
+
       <p class="caption">Maximum of 2 results at a time</p>
       <q-search inverted-light color="amber" v-model="terms">
         <q-autocomplete
@@ -48,6 +52,12 @@
           @selected="selected"
         />
       </q-search>
+      <q-chips-input inverted color="primary" v-model="chips2" placeholder="Select from list or add new one" stack-label="List of countries" @duplicate="duplicate">
+        <q-autocomplete
+          :static-data="{field: 'value', list: countries}"
+          @selected="selected"
+        />
+      </q-chips-input>
 
       <p class="caption">Separator between results</p>
       <q-search v-model="terms">
@@ -97,7 +107,9 @@ export default {
   data () {
     return {
       terms: '',
-      countries: parseCountries()
+      countries: parseCountries(),
+      chips1: ['Romania', 'Algeria'],
+      chips2: ['Bahamas', 'Costa Rica']
     }
   },
   methods: {
@@ -108,6 +120,9 @@ export default {
     },
     selected (item) {
       this.$q.notify(`Selected suggestion "${item.label}"`)
+    },
+    duplicate (label) {
+      this.$q.notify(`"${label}" already in list`)
     }
   }
 }

@@ -15,8 +15,10 @@ module.exports = function (ctx) {
     supportIE: true,
     build: {
       // rtl: true,
+      publicPath: 'spa-mat',
       scopeHoisting: true,
       vueRouterMode: 'hash',
+      // preloadChunks: false,
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
@@ -33,7 +35,8 @@ module.exports = function (ctx) {
     framework: 'all',
     animations: 'all',
     pwa: {
-      cacheExt: 'js,html,css,ttf,eot,otf,woff,woff2,json,svg,gif,jpg,jpeg,png,wav,ogg,webm,flac,aac,mp4,mp3',
+      // workboxPluginMode: 'InjectManifest',
+      // workboxOptions: {},
       manifest: {
         name: 'Quasar Play',
         short_name: 'Quasar-Play',
@@ -75,6 +78,7 @@ module.exports = function (ctx) {
       // id: 'org.cordova.quasar.app'
     },
     electron: {
+      // bundler: 'builder',
       packager: {
         // OS X / Mac App Store
         // appBundleId: '',
