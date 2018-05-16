@@ -15,7 +15,6 @@ module.exports = function (ctx) {
     supportIE: true,
     build: {
       // rtl: true,
-      publicPath: 'spa-mat',
       scopeHoisting: true,
       vueRouterMode: 'hash',
       // preloadChunks: false,
