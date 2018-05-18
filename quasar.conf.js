@@ -5,12 +5,15 @@ module.exports = function (ctx) {
     css: [
       'app.styl'
     ],
+    plugins: [
+      'start'
+    ],
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
-      'material-icons'
+      'material-icons' // at least for QEditor if "ios" theme
       // 'mdi',
       // 'fontawesome',
-      // ctx.theme.ios ? 'ionicons' : null
+      ctx.theme.ios ? 'ionicons' : null
     ],
     supportIE: true,
     build: {
