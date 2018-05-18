@@ -10,7 +10,7 @@ module.exports = function (ctx) {
     ],
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
-      'material-icons' // at least for QEditor if "ios" theme
+      'material-icons', // at least for QEditor if "ios" theme
       // 'mdi',
       // 'fontawesome',
       ctx.theme.ios ? 'ionicons' : null
