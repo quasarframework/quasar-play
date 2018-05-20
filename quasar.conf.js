@@ -7,10 +7,10 @@ module.exports = function (ctx) {
     ],
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
-      'material-icons',
-      'mdi',
-      'ionicons',
-      'fontawesome'
+      'material-icons', // at least for QEditor if "ios" theme
+      // 'mdi',
+      // 'fontawesome',
+      ctx.theme.ios ? 'ionicons' : null
     ],
     supportIE: true,
     build: {
@@ -31,7 +31,10 @@ module.exports = function (ctx) {
       open: false,
       port: 9090
     },
-    framework: 'all',
+    framework: {
+      all: true,
+      iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
+    },
     animations: 'all',
     pwa: {
       // workboxPluginMode: 'InjectManifest',
@@ -40,6 +43,10 @@ module.exports = function (ctx) {
         name: 'Quasar Play',
         short_name: 'Quasar-Play',
         description: 'Quasar Framework Showcase',
+        display: 'standalone',
+        orientation: 'portrait',
+        background_color: '#ffffff',
+        theme_color: '#027be3',
         icons: [
           {
             'src': 'statics/icons/icon-128x128.png',
@@ -66,11 +73,7 @@ module.exports = function (ctx) {
             'sizes': '512x512',
             'type': 'image/png'
           }
-        ],
-        display: 'standalone',
-        orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#027be3'
+        ]
       }
     },
     cordova: {
