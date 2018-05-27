@@ -35,5 +35,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 10"
-  ]
+  ],
+  "dependencies": {
+    "electron-packager": "^12.1.0"
+  }
 }
