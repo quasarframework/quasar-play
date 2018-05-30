@@ -154,7 +154,7 @@
         <q-btn color="secondary" flat label="Action 1" class="q-mr-sm" />
         <q-btn color="secondary" flat label="Action 2" />
         <div class="col" />
-        <q-btn color="negative" flat round delete icon="delete" @click="deleteRow" />
+        <q-btn color="negative" flat round icon="delete" @click="deleteRow" />
       </template>
     </q-table>
 
