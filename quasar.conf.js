@@ -8,16 +8,12 @@ module.exports = function (ctx) {
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
       'material-icons', // at least for QEditor if "ios" theme
-      // 'mdi',
-      // 'fontawesome',
       ctx.theme.ios ? 'ionicons' : null
     ],
+    animations: 'all',
     supportIE: true,
     build: {
-      // rtl: true,
-      scopeHoisting: true,
       vueRouterMode: 'hash',
-      // preloadChunks: false,
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
@@ -35,7 +31,9 @@ module.exports = function (ctx) {
       all: true,
       iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
     },
-    animations: 'all',
+    ssr: {
+      pwa: false
+    },
     pwa: {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {},
