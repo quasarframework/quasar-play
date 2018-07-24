@@ -27,7 +27,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
-    "quasar-cli": "^0.17.0-beta.22"
+    "quasar-cli": "0.17.0"
   },
   "engines": {
     "node": ">= 8.9.0",
