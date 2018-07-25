@@ -12,8 +12,7 @@ export default [
       {
         title: 'Typography',
         icon: 'format_bold',
-        hash: 'typography',
-        status: 'Update'
+        hash: 'typography'
       },
       {
         title: 'Material Ripples',
@@ -32,7 +31,6 @@ export default [
         icon: 'web',
         hash: 'flex-css',
         iframeTabs: true,
-        status: 'Update',
         tabs: [
           {
             title: 'Row',
@@ -50,8 +48,7 @@ export default [
             title: 'Gutter',
             label: 'Gutter',
             icon: 'web',
-            hash: 'flex-gutter',
-            status: 'Update'
+            hash: 'flex-gutter'
           }
         ]
       },
@@ -71,26 +68,22 @@ export default [
       {
         title: 'Play with Layout',
         icon: 'play_circle_outline',
-        hash: 'play-with-layout',
-        status: 'Revamp'
+        hash: 'play-with-layout'
       },
       {
         title: 'Drawer Panels',
         icon: 'view_array',
-        hash: 'drawer-panels',
-        status: 'Revamp'
+        hash: 'drawer-panels'
       },
       {
         title: 'Page Sticky',
         icon: 'pin_drop',
-        hash: 'page-sticky',
-        status: 'Revamp'
+        hash: 'page-sticky'
       },
       {
         title: 'Floating Action Button',
         icon: 'play_for_work',
-        hash: 'floating-action-button',
-        status: 'Update'
+        hash: 'floating-action-button'
       }
     ]
   },
@@ -102,20 +95,17 @@ export default [
       {
         title: 'Standard Button',
         icon: 'panorama_wide_angle',
-        hash: 'btn',
-        status: 'Update'
+        hash: 'btn'
       },
       {
         title: 'Button Groups',
         icon: 'group',
-        hash: 'btn-group',
-        status: 'New'
+        hash: 'btn-group'
       },
       {
         title: 'Dropdown Buttons',
         icon: 'details',
-        hash: 'btn-dropdown',
-        status: 'New'
+        hash: 'btn-dropdown'
       }
     ]
   },
@@ -127,8 +117,7 @@ export default [
       {
         title: 'Toolbar',
         icon: 'view_day',
-        hash: 'toolbar',
-        status: 'Update'
+        hash: 'toolbar'
       },
       {
         title: 'Tabs',
@@ -163,14 +152,12 @@ export default [
       {
         title: 'Breadcrumbs',
         icon: 'skip_next',
-        hash: 'breadcrumbs',
-        status: 'New'
+        hash: 'breadcrumbs'
       },
       {
         title: 'Pagination',
         icon: 'linear_scale',
-        hash: 'pagination',
-        status: 'Revamp'
+        hash: 'pagination'
       }
     ]
   },
@@ -188,21 +175,18 @@ export default [
         title: 'Input Textfield',
         label: 'Textbox',
         hash: 'input',
-        icon: 'text_format',
-        status: 'Update'
+        icon: 'text_format'
       },
       {
         title: 'Chips Input',
         label: 'Chips',
         hash: 'chips-input',
-        icon: 'dns',
-        status: 'Update'
+        icon: 'dns'
       },
       {
         title: 'Color Picker',
         icon: 'brush',
         hash: 'color',
-        status: 'New',
         tabs: [
           {
             title: 'Color Input',
@@ -226,62 +210,52 @@ export default [
       {
         title: 'Editor (WYSIWYG)',
         icon: 'mode_edit',
-        hash: 'editor',
-        status: 'New'
+        hash: 'editor'
       },
       {
         title: 'Search',
         icon: 'search',
-        hash: 'search',
-        status: 'Update'
+        hash: 'search'
       },
       {
         title: 'Slider',
         icon: 'tune',
-        hash: 'slider',
-        status: 'Update'
+        hash: 'slider'
       },
       {
         title: 'Range',
         icon: 'linear_scale',
-        hash: 'range',
-        status: 'Update'
+        hash: 'range'
       },
       {
         title: 'Radio',
         icon: 'radio_button_checked',
-        hash: 'radio',
-        status: 'Update'
+        hash: 'radio'
       },
       {
         title: 'Checkbox',
         icon: 'check_box',
-        hash: 'checkbox',
-        status: 'Update'
+        hash: 'checkbox'
       },
       {
         title: 'Toggle',
         icon: 'repeat',
-        hash: 'toggle',
-        status: 'Update'
+        hash: 'toggle'
       },
       {
         title: 'Button Toggle',
         icon: 'view_compact',
-        hash: 'button-toggle',
-        status: 'New'
+        hash: 'button-toggle'
       },
       {
         title: 'Option Group',
         icon: 'toc',
-        hash: 'option-group',
-        status: 'Update'
+        hash: 'option-group'
       },
       {
         title: 'Date & Time',
         icon: 'access_time',
         hash: 'datetime',
-        status: 'Update',
         tabs: [
           {
             title: 'DateTime Input',
@@ -300,8 +274,7 @@ export default [
       {
         title: 'Select',
         icon: 'event_note',
-        hash: 'select',
-        status: 'Update'
+        hash: 'select'
       },
       {
         title: 'Rating',
@@ -316,8 +289,7 @@ export default [
       {
         title: 'Uploader',
         icon: 'cloud_upload',
-        hash: 'uploader',
-        status: 'Update'
+        hash: 'uploader'
       }
     ]
   },
@@ -334,14 +306,12 @@ export default [
       {
         title: 'Collapsible',
         icon: 'format_line_spacing',
-        hash: 'collapsible',
-        status: 'Revamp'
+        hash: 'collapsible'
       },
       {
         title: 'Data Table',
         icon: 'border_all',
         hash: 'table',
-        status: 'Revamp',
         iframeTabs: true,
         tabs: [
           {
@@ -368,7 +338,6 @@ export default [
         title: 'List',
         icon: 'list',
         hash: 'list',
-        status: 'Update',
         iframeTabs: true,
         tabs: [
           {
@@ -417,8 +386,7 @@ export default [
       {
         title: 'Tree',
         icon: 'format_indent_increase',
-        hash: 'tree',
-        status: 'Revamp'
+        hash: 'tree'
       }
     ]
   },
@@ -430,38 +398,32 @@ export default [
       {
         title: 'Action Sheet',
         icon: 'assignment',
-        hash: 'action-sheet',
-        status: 'Revamp'
+        hash: 'action-sheet'
       },
       {
         title: 'Dialog',
         icon: 'question_answer',
-        hash: 'dialog',
-        status: 'Revamp'
+        hash: 'dialog'
       },
       {
         title: 'Modal',
         icon: 'settings_overscan',
-        hash: 'modal',
-        status: 'Update'
+        hash: 'modal'
       },
       {
         title: 'Notify',
         icon: 'warning',
-        hash: 'notify',
-        status: 'New'
+        hash: 'notify'
       },
       {
         title: 'Popover',
         icon: 'filter_none',
-        hash: 'popover',
-        status: 'Update'
+        hash: 'popover'
       },
       {
         title: 'Tooltip',
         icon: 'speaker_notes',
-        hash: 'tooltip',
-        status: 'Update'
+        hash: 'tooltip'
       }
     ]
   },
@@ -478,8 +440,7 @@ export default [
       {
         title: 'Loading',
         icon: 'hourglass_full',
-        hash: 'loading',
-        status: 'Update'
+        hash: 'loading'
       },
       {
         title: 'Inner Loading',
@@ -506,8 +467,7 @@ export default [
       {
         title: 'Carousel',
         icon: 'vibration',
-        hash: 'carousel',
-        status: 'Revamp'
+        hash: 'carousel'
       },
       {
         title: 'Parallax',
@@ -556,8 +516,7 @@ export default [
       {
         title: 'Transition',
         icon: 'transform',
-        hash: 'transition',
-        status: 'Update'
+        hash: 'transition'
       },
       {
         title: 'Slide Transition',
@@ -574,8 +533,7 @@ export default [
       {
         title: 'Alert',
         icon: 'assignment_late',
-        hash: 'alert',
-        status: 'Revamp'
+        hash: 'alert'
       },
       {
         title: 'Chip',
@@ -585,14 +543,17 @@ export default [
       {
         title: 'Chat',
         icon: 'chat',
-        hash: 'chat',
-        status: 'Update'
+        hash: 'chat'
+      },
+      {
+        title: 'Jumbotron',
+        icon: 'description',
+        hash: 'jumbotron'
       },
       {
         title: 'Timeline',
         icon: 'date_range',
-        hash: 'timeline',
-        status: 'New'
+        hash: 'timeline'
       }
     ]
   },
@@ -604,20 +565,17 @@ export default [
       {
         title: 'Swipe',
         icon: 'touch_app',
-        hash: 'touch-swipe',
-        status: 'Update'
+        hash: 'touch-swipe'
       },
       {
         title: 'Pan',
         icon: 'touch_app',
-        hash: 'touch-pan',
-        status: 'Update'
+        hash: 'touch-pan'
       },
       {
         title: 'Hold',
         icon: 'touch_app',
-        hash: 'touch-hold',
-        status: 'Update'
+        hash: 'touch-hold'
       }
     ]
   },
@@ -629,14 +587,12 @@ export default [
       {
         title: 'App Fullscreen',
         icon: 'fullscreen',
-        hash: 'app-fullscreen',
-        status: 'Update'
+        hash: 'app-fullscreen'
       },
       {
         title: 'App Visibility',
         icon: 'visibility',
-        hash: 'app-visibility',
-        status: 'Update'
+        hash: 'app-visibility'
       }
     ]
   },

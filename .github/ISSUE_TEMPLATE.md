@@ -4,20 +4,15 @@ Got a question?
 ===
 The issue list of this repo is **exclusively** for bug reports and feature requests. For simple questions, please use the following resources:
 
-- Read the docs: http://quasar-framework.org
-- For simple/quick questions ask on the Discord chat room: https://discord.gg/5TDhbDg
-- For complex questions or requiring help, ask on the forum: http://forum.quasar-framework.org/
+- Read the docs: https://quasar-framework.org
+- For simple/quick questions ask on the Discord chat room: http://chat.quasar-framework.org
+- For complex questions or requiring help, ask on the forum: https://forum.quasar-framework.org/
 
 Reporting a bug?
 ================
 - Are you sure it isn't already reported? Do a search first! It may have already been answered or even fixed in the development branch (`dev`).
 
-- Are you sure you are reporting to the right repo? If you are not reporting an issue which deals directly with Quasar distributable, then there are [multiple Quasar repos](https://github.com/quasarframework) besides this one:
-  -- Quasar CLI: https://github.com/quasarframework/quasar-cli
-  -- Quasar Starter Kit (project folder template): https://github.com/quasarframework/quasar-template-default
-  -- Electron Wrapper: https://github.com/quasarframework/electron-wrapper
-  -- Quasar Play: https://github.com/quasarframework/quasar-play
-  -- Documentation Website: https://github.com/quasarframework/quasar-framework.org
+- Are you sure you are reporting to the right repo? If you are not reporting an issue which deals directly with Quasar distributable, then there are [multiple Quasar repos](https://github.com/quasarframework) besides this one. Find the right one.
 
 - Check if the issue is reproducible with the latest stable version of Quasar Play. If you are using a pre-release, please indicate the specific version you are using.
 
@@ -27,12 +22,13 @@ Reporting a bug?
 
 Have a feature suggestion/request?
 =======================
-Remove the template from below and provide thoughtful commentary *and code samples* on what this feature means for your product. What will it allow you to do that you can't do today? How will it make current work-arounds straightforward? What potential bugs and edge cases does it help to avoid? etc. Please keep it product-centric.
+Remove the template from below and provide thoughtful commentary *and code samples* on what this feature means for your product. What will it allow you to do that you can't do today? How will it make current workarounds straightforward? What potential bugs and edge cases does it help to avoid? etc. Please keep it product-centric.
 -->
 
 <!-- BUG REPORT TEMPLATE -->
 ### Software version
 
+<!-- You can use the `quasar info` command and copy paste it here -->
 Quasar Play:
 OS:
 Node:

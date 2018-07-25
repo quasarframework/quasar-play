@@ -9,7 +9,7 @@
         <br>
         <q-btn
           color="primary"
-          @click="$router.push('/showcase')"
+          to="/showcase"
           class="full-width"
           icon="layers"
           no-ripple
@@ -19,7 +19,9 @@
         <q-btn
           color="secondary"
           class="full-width"
-          @click="launch"
+          type="a"
+          href="https://quasar-framework.org"
+          target="_blank"
           icon="launch"
           no-ripple
           label="Quasar Docs"

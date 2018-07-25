@@ -8,6 +8,57 @@
       row-key="name"
     />
 
+    <div class="caption" style="margin: 20px 0 16px">
+      Grid mode (v0.17+) - click on items.
+      <br class="desktop-hide">
+      <span class="desktop-hide">Best viewed on a desktop view.</span>
+    </div>
+    <q-table
+      grid
+      hide-header
+      :data="tableData"
+      :columns="columns"
+      :filter="filter"
+      :selection="selection"
+      :selected.sync="selected"
+      :visible-columns="visibleColumns"
+      row-key="name"
+    >
+      <template slot="top-right" slot-scope="props">
+        <q-search hide-underline clearable v-model="filter" />
+      </template>
+
+      <div
+        slot="item"
+        slot-scope="props"
+        class="q-pa-xs col-xs-12 col-sm-6 col-md-4 transition-generic"
+        :style="props.selected ? 'transform: scale(0.95);' : ''"
+      >
+        <q-card
+          class="transition-generic cursor-pointer"
+          :class="props.selected ? 'bg-grey-2' : ''"
+          @click.native="props.selected = !props.selected"
+        >
+          <q-card-title class="relative-position">
+            {{ props.row.name }}
+          </q-card-title>
+          <q-card-separator />
+          <q-card-main class="q-pa-none">
+            <q-list no-border>
+              <q-item v-for="col in props.cols.filter(col => col.name !== 'desc')" :key="col.name">
+                <q-item-main>
+                  <q-item-tile label>{{ col.label }}</q-item-tile>
+                </q-item-main>
+                <q-item-side right>
+                  <q-item-tile>{{ col.value }}</q-item-tile>
+                </q-item-side>
+              </q-item>
+            </q-list>
+          </q-card-main>
+        </q-card>
+      </div>
+    </q-table>
+
     <p class="caption">Force dense mode (see on wide windows)</p>
     <q-table
       dense
@@ -154,7 +205,7 @@
         <q-btn color="secondary" flat label="Action 1" class="q-mr-sm" />
         <q-btn color="secondary" flat label="Action 2" />
         <div class="col" />
-        <q-btn color="negative" flat round delete icon="delete" @click="deleteRow" />
+        <q-btn color="negative" flat round icon="delete" @click="deleteRow" />
       </template>
     </q-table>
 

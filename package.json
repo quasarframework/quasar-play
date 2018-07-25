@@ -1,6 +1,6 @@
 {
   "name": "quasar-play",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "Quasar Play for Quasar Framework",
   "productName": "Quasar Play",
   "cordovaId": "com.quasarframework.quasarplay",
@@ -12,10 +12,12 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-imports": "^1.5.0",
     "devtron": "1.4.0",
     "electron": "2.0.0",
     "electron-debug": "1.5.0",
     "electron-devtools-installer": "2.2.4",
+    "electron-packager": "^12.1.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^3.0.0",
@@ -25,7 +27,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
-    "quasar-cli": "0.16.1"
+    "quasar-cli": "0.17.0"
   },
   "engines": {
     "node": ">= 8.9.0",
