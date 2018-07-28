@@ -14,6 +14,7 @@ module.exports = function (ctx) {
     supportIE: true,
     build: {
       vueRouterMode: 'hash',
+      // analyze: true,
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
