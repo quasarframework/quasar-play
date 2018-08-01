@@ -10,7 +10,7 @@
       <br>
       <div>
         <q-btn color="secondary" @click="number--">Less content</q-btn>
-        <q-btn color="secondary" @click="number++">More content</q-btn>
+        <q-btn class="q-ml-sm" color="secondary" @click="number++">More content</q-btn>
       </div>
 
       <div style="height: 100px" />

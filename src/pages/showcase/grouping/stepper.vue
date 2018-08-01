@@ -26,7 +26,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="primary" @click="$refs.stepper.goToStep('create_ad')">Create ad now</q-btn>
-            <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
+            <q-btn class="q-ml-sm" color="primary" @click="$refs.stepper.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -35,7 +35,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
-            <q-btn color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
+            <q-btn class="q-ml-sm" color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -47,7 +47,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="primary" @click="$refs.stepper.next()">Continue</q-btn>
-            <q-btn color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
+            <q-btn class="q-ml-sm" color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -61,7 +61,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="primary" @click="$refs.stepper.goToStep('campaign')">Restart</q-btn>
-            <q-btn color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
+            <q-btn class="q-ml-sm" color="primary" flat @click="$refs.stepper.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -75,7 +75,7 @@
             Back
           </q-btn>
 
-          <q-btn color="primary" @click="$refs.stepper.next()">
+          <q-btn class="q-ml-sm" color="primary" @click="$refs.stepper.next()">
             {{ step === 'create_ad' ? 'Finalize' : 'Next' }}
           </q-btn>
         </q-stepper-navigation>
@@ -95,7 +95,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="primary" @click="$refs.stepper2.goToStep('disabled_step')">I want to pay</q-btn>
-            <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
+            <q-btn class="q-ml-sm" color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -104,7 +104,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
-            <q-btn color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
+            <q-btn class="q-ml-sm" color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -116,7 +116,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="secondary" @click="$refs.stepper2.next()">Continue</q-btn>
-            <q-btn color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
+            <q-btn class="q-ml-sm" color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
@@ -130,7 +130,7 @@
 
           <q-stepper-navigation v-if="!globalNavigation">
             <q-btn color="secondary" @click="$refs.stepper2.goToStep('campaign')">Restart</q-btn>
-            <q-btn color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
+            <q-btn class="q-ml-sm" color="secondary" flat @click="$refs.stepper2.previous()">Back</q-btn>
           </q-stepper-navigation>
         </q-step>
 
