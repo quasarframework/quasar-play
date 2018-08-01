@@ -419,7 +419,7 @@
     padding 15px
     max-height 1000px
   .minheight-rows .row
-    min-height 5rem
+    height 5rem
   .with-bg .row
     background rgba(255,0,0,.1)
   @media (max-width $breakpoint-xs-max)

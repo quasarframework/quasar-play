@@ -25,7 +25,7 @@
           </q-popover>
         </q-btn>
 
-        <q-btn ref="target4" color="negative">
+        <q-btn ref="target4" color="negative" class="q-ml-sm">
           Disabled Popover
 
           <q-popover disable>

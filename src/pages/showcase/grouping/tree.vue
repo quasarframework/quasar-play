@@ -88,7 +88,7 @@
       <p class="caption">Selectable nodes <q-chip small>{{ selected || 'No selection' }}</q-chip></p>
       <div class="q-mb-sm">
         <q-btn size="sm" color="primary" @click="selectGoodService" label="Select 'Good service'" />
-        <q-btn v-if="selected" size="sm" color="red" @click="unselectNode" label="Unselect node" />
+        <q-btn class="q-ml-sm" v-if="selected" size="sm" color="red" @click="unselectNode" label="Unselect node" />
       </div>
       <q-tree
         :nodes="props"
