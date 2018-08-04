@@ -41,8 +41,6 @@
 
 .play-backtotop
   color white
-  position fixed
-  left 0
   top 30%
   padding 15px
   width 90px
