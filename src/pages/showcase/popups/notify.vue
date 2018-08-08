@@ -58,7 +58,8 @@
 
 <script>
 const alerts = [
-  { color: 'negative', message: 'Woah! Danger! You are getting good at this!', icon: 'report_problem' },
+  { color: 'negative', message: 'Danger, Will Robinson! Danger!', icon: 'warning' },
+  { color: 'blue', message: 'Woah! Cool! You are getting good at this!', icon: 'thumb_up' },
   { color: 'pink', message: 'You need to know about this!', icon: 'warning' },
   { color: 'orange', textColor: 'black', message: 'Wow! Nice job!', icon: 'thumb_up' },
   { color: 'secondary', message: 'Quasar is cool! Right?', icon: 'tag_faces' },
