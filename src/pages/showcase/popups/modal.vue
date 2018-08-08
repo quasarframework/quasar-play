@@ -41,10 +41,12 @@
       <q-btn color="primary" @click="showByReference" label="Show" />
     </div>
 
-    <q-modal v-model="basicModal" :content-css="{padding: '50px', minWidth: '50vw'}">
-      <div class="q-display-1 q-mb-md">Basic Modal</div>
-      <p v-for="n in 25" :key="`a-${n}`">Scroll down to close</p>
-      <q-btn color="primary" @click="basicModal = false" label="Close" />
+    <q-modal v-model="basicModal" :content-css="{minWidth: '50vw'}">
+      <div style="padding: 50px">
+        <div class="q-display-1 q-mb-md">Basic Modal</div>
+        <p v-for="n in 25" :key="`a-${n}`">Scroll down to close</p>
+        <q-btn color="primary" @click="basicModal = false" label="Close" />
+      </div>
     </q-modal>
 
     <q-modal
@@ -52,11 +54,13 @@
       @show="notify('show')"
       @escape-key="notify('escape-key')"
       @hide="notify('hide')"
-      :content-css="{padding: '50px', minWidth: '50vw'}"
+      :content-css="{minWidth: '50vw'}"
     >
-      <div class="q-display-1 q-mb-md">Modal with Events</div>
-      <p v-for="n in 25" :key="`b-${n}`">Scroll down to close</p>
-      <q-btn color="primary" @click="eventsModal = false" label="Close" />
+      <div style="padding: 50px">
+        <div class="q-display-1 q-mb-md">Modal with Events</div>
+        <p v-for="n in 25" :key="`b-${n}`">Scroll down to close</p>
+        <q-btn color="primary" @click="eventsModal = false" label="Close" />
+      </div>
     </q-modal>
 
     <q-modal v-model="layoutModal" :content-css="{minWidth: '80vw', minHeight: '80vh'}">
@@ -92,20 +96,26 @@
     </q-modal>
 
     <!-- specifying Vue ref for last example only -->
-    <q-modal v-model="minimizedModal" minimized :content-css="{padding: '50px'}" ref="modalRef">
-      <div class="q-display-1 q-mb-md">Minimized Modal</div>
-      <p>This one has backdrop on small screens too.</p>
-      <q-btn color="red" v-close-overlay label="Close" />
+    <q-modal v-model="minimizedModal" minimized ref="modalRef">
+      <div style="padding: 50px">
+        <div class="q-display-1 q-mb-md">Minimized Modal</div>
+        <p>This one has backdrop on small screens too.</p>
+        <q-btn color="red" v-close-overlay label="Close" />
+      </div>
     </q-modal>
 
-    <q-modal v-model="maximizedModal" maximized :content-css="{padding: '50px'}">
-      <div class="q-display-1 q-mb-md">Maximized Modal</div><p>This one is maximized on bigger screens too.</p>
-      <q-btn color="tertiary" @click="maximizedModal = false" label="Close" />
+    <q-modal v-model="maximizedModal" maximized>
+      <div style="padding: 50px">
+        <div class="q-display-1 q-mb-md">Maximized Modal</div><p>This one is maximized on bigger screens too.</p>
+        <q-btn color="tertiary" @click="maximizedModal = false" label="Close" />
+      </div>
     </q-modal>
 
-    <q-modal v-model="positionModal" :position="position" :content-css="{padding: '20px'}">
-      <div class="q-display-1 q-mb-md">Modal</div><p>This one gets displayed from {{ position }}.</p>
-      <q-btn color="orange" @click="positionModal = false" label="Close" />
+    <q-modal v-model="positionModal" :position="position">
+      <div style="padding: 20px">
+        <div class="q-display-1 q-mb-md">Modal</div><p>This one gets displayed from {{ position }}.</p>
+        <q-btn color="orange" @click="positionModal = false" label="Close" />
+      </div>
     </q-modal>
   </q-page>
 </template>

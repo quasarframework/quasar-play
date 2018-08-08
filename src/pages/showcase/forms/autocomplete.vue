@@ -36,6 +36,22 @@
         />
       </q-input>
 
+      <p class="caption">Trigger search on focus (if no value is set)</p>
+      <q-input color="amber" v-model="terms" placeholder="Focus me">
+        <q-autocomplete
+          @search="search"
+          :min-characters="0"
+          @selected="selected"
+        />
+      </q-input>
+      <q-input color="amber" v-model="terms" placeholder="Focus me too" class="q-mt-md">
+        <q-autocomplete
+          :static-data="{field: 'value', list: countries}"
+          :min-characters="0"
+          @selected="selected"
+        />
+      </q-input>
+
       <p class="caption">Custom debounce before triggering search</p>
       <q-input color="amber" v-model="terms" placeholder="One second debounce">
         <q-autocomplete
@@ -107,6 +123,7 @@ export default {
   data () {
     return {
       terms: '',
+      terms2: '',
       countries: parseCountries(),
       chips1: ['Romania', 'Algeria'],
       chips2: ['Bahamas', 'Costa Rica']
