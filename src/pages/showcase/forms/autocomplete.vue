@@ -123,7 +123,6 @@ export default {
   data () {
     return {
       terms: '',
-      terms2: '',
       countries: parseCountries(),
       chips1: ['Romania', 'Algeria'],
       chips2: ['Bahamas', 'Costa Rica']
