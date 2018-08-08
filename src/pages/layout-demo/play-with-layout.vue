@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <div class="row no-wrap justify-center">
-      <div class="col gutter-xs q-pr-xs" style="max-width: 180px;">
+      <div class="gutter-xs q-pr-xs" style="max-width: 180px;">
         <div>
           <q-toggle v-model="header" label="Header" />
         </div>
@@ -15,7 +15,7 @@
           <q-toggle v-model="leftOverlay" label="Left as Overlay" />
         </div>
       </div>
-      <div class="col gutter-xs" style="max-width: 180px;">
+      <div class="gutter-xs" style="max-width: 180px;">
         <div>
           <q-toggle v-model="footer" label="Footer" />
         </div>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="row no-wrap justify-center q-mt-sm">
-      <div class="col gutter-xs q-pr-xs" style="max-width: 180px;">
+      <div class="gutter-xs q-pr-xs" style="max-width: 180px;">
         <div>
           <q-select v-model="leftBehavior" :options="drawerBehaviorOptions" class="no-margin" />
         </div>
@@ -40,7 +40,7 @@
           <q-input type="number" align="right" prefix="Bkpt" placeholder="Bkpt" :value="leftBreakpoint" @change="v => leftBreakpoint = v" class="no-margin" />
         </div>
       </div>
-      <div class="col gutter-xs" style="max-width: 180px;">
+      <div class="gutter-xs" style="max-width: 180px;">
         <div>
           <q-select v-model="rightBehavior" :options="drawerBehaviorOptions" class="no-margin" />
         </div>
