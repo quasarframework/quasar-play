@@ -37,16 +37,16 @@
       </q-input>
 
       <p class="caption">Trigger search on focus (if no value is set)</p>
-      <q-input color="amber" v-model="terms" placeholder="Focus me">
+      <q-input color="amber" v-model="terms2" placeholder="Focus me too" class="q-mt-md">
         <q-autocomplete
-          @search="search"
+          :static-data="{field: 'value', list: countries}"
           :min-characters="0"
           @selected="selected"
         />
       </q-input>
-      <q-input color="amber" v-model="terms" placeholder="Focus me too" class="q-mt-md">
+      <q-input color="amber" v-model="terms3" placeholder="Focus me">
         <q-autocomplete
-          :static-data="{field: 'value', list: countries}"
+          @search="search"
           :min-characters="0"
           @selected="selected"
         />
@@ -124,6 +124,7 @@ export default {
     return {
       terms: '',
       terms2: '',
+      terms3: '',
       countries: parseCountries(),
       chips1: ['Romania', 'Algeria'],
       chips2: ['Bahamas', 'Costa Rica']
