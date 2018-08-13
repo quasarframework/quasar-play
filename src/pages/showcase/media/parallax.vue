@@ -6,43 +6,36 @@
         if on desktop) to see Parallax in action.
       </p>
 
-      <p v-for="n in 7" :key="`a-${n}`" class="par-text">{{ loremipsum }}</p>
-    </div>
-
-    <q-parallax src="statics/parallax1.jpg" :height="200">
-      <div slot="loading">Loading...</div>
-      <h1>Parallax  Title</h1>
-    </q-parallax>
-
-    <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" :key="`b-${n}`" class="par-text">{{ loremipsum }}</p>
+      <p v-for="n in 3" :key="`a-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
 
     <q-parallax src="statics/parallax2.jpg">
-      <div slot="loading">Loading...</div>
       <h1>Bridge</h1>
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" :key="`c-${n}`" class="par-text">{{ loremipsum }}</p>
+      <p class="par-text">{{ loremipsum }}</p>
     </div>
 
-    <q-parallax src="statics/parallax1.jpg">
-      <div slot="loading">Loading...</div>
+    <q-parallax :height="150">
+      <video slot="media" poster="http://www.markhillard.com/sandbox/media/polina.jpg" autoplay loop muted>
+        <source type="video/webm" src="http://www.markhillard.com/sandbox/media/polina.webm">
+        <source type="video/mp4" src="http://www.markhillard.com/sandbox/media/polina.mp4">
+      </video>
+
+      <h1>Video</h1>
+    </q-parallax>
+
+    <div class="q-mx-xl q-my-md">
+      <p class="par-text">{{ loremipsum }}</p>
+    </div>
+
+    <q-parallax src="statics/parallax1.jpg" :height="200">
       <h1>Title</h1>
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" :key="`d-${n}`" class="par-text">{{ loremipsum }}</p>
-    </div>
-
-    <q-parallax src="statics/mountains.jpg" :height="200">
-      <div slot="loading">Loading...</div>
-      <h1>Mountains</h1>
-    </q-parallax>
-
-    <div class="q-mx-xl q-my-md">
-      <p v-for="n in 7" :key="`e-${n}`" class="par-text">{{ loremipsum }}</p>
+      <p v-for="n in 3" :key="`e-${n}`" class="par-text">{{ loremipsum }}</p>
     </div>
   </q-page>
 </template>
