@@ -10,7 +10,7 @@
     </div>
 
     <q-parallax src="statics/parallax2.jpg">
-      <h1>Bridge</h1>
+      <h1>Image</h1>
     </q-parallax>
 
     <div class="q-mx-xl q-my-md">
