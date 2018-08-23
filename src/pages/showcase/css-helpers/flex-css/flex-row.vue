@@ -116,17 +116,17 @@
         </div>
 
         <h4>Stacked to horizontal</h4>
-        Using a single set of .col-sm-* classes, you can create a basic grid system that starts out stacked on small devices before becoming horizontal on desktop (medium) devices.
+        Using a combination of .col-12 and .col-md-* classes, you can create a basic grid system that starts out stacked on small devices before becoming horizontal on desktop (medium) devices.
 
         <div class="doc-container">
           <div class="row">
-            <div class="col-sm-8">col-sm-8</div>
-            <div class="col-sm-4">col-sm-4</div>
+            <div class="col-12 col-md-8">col-12 col-md-8</div>
+            <div class="col-12 col-md-4">col-12 col-md-4</div>
           </div>
           <div class="row">
-            <div class="col-sm">col-sm</div>
-            <div class="col-sm">col-sm</div>
-            <div class="col-sm">col-sm</div>
+            <div class="col-12 col-md">col-12 col-md</div>
+            <div class="col-12 col-md">col-12 col-md</div>
+            <div class="col-12 col-md">col-12 col-md</div>
           </div>
         </div>
 
