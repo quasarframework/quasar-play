@@ -424,6 +424,11 @@ export default [
         title: 'Tooltip',
         icon: 'speaker_notes',
         hash: 'tooltip'
+      },
+      {
+        title: 'Popup Edit',
+        icon: 'insert_comment',
+        hash: 'popup-edit'
       }
     ]
   },

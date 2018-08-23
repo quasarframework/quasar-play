@@ -1,8 +1,8 @@
 <template>
   <q-page padding class="docs-tab-pane row justify-center">
     <div style="width: 400px; max-width: 90vw;">
-      <p class="caption">Tab Panes below</p>
-      <q-tabs color="secondary" glossy align="justify">
+      <p class="caption">Tab Panes below (shadow, animated, swipeable)</p>
+      <q-tabs class="shadow-1" animated swipeable color="secondary" glossy align="justify">
         <q-tab default name="mails" slot="title" icon="mail" label="Mails" />
         <q-tab name="alarms" slot="title" icon="alarm" label="Alarms" />
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
@@ -13,7 +13,7 @@
       </q-tabs>
 
       <p class="caption">Tab Panes below (inverted)</p>
-      <q-tabs inverted color="secondary" align="justify">
+      <q-tabs animated swipeable inverted color="secondary" align="justify">
         <q-tab default name="mails" slot="title" icon="mail" label="Mails" />
         <q-tab name="alarms" slot="title" icon="alarm" label="Alarms" />
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
@@ -24,7 +24,7 @@
       </q-tabs>
 
       <p class="caption">Tab Panes above</p>
-      <q-tabs position="bottom" color="amber" text-color="dark" align="justify">
+      <q-tabs animated swipeable position="bottom" color="amber" text-color="dark" align="justify">
         <q-tab default name="mails" slot="title" icon="mail" label="Mails" />
         <q-tab name="alarms" slot="title" icon="alarm" label="Alarms" />
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
@@ -35,7 +35,7 @@
       </q-tabs>
 
       <p class="caption">Tab Panes above (inverted)</p>
-      <q-tabs inverted position="bottom" color="purple" align="justify">
+      <q-tabs class="shadow-1" animated swipeable inverted position="bottom" color="purple" align="justify">
         <q-tab default name="mails" slot="title" icon="mail" />
         <q-tab name="alarms" slot="title" icon="alarm" />
         <q-tab name="movies" slot="title" icon="movie" />
@@ -46,7 +46,7 @@
       </q-tabs>
 
       <p class="caption">Keeping tabs alive (Vue won't destroy content on Tab selection change)</p>
-      <q-tabs color="tertiary" glossy align="justify">
+      <q-tabs class="shadow-1" animated swipeable color="tertiary" glossy align="justify">
         <q-tab default name="mails" slot="title" icon="mail" label="Mails" />
         <q-tab name="alarms" slot="title" icon="alarm" label="Alarms" />
         <q-tab name="movies" slot="title" icon="movie" label="Movies" />
