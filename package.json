@@ -1,6 +1,6 @@
 {
   "name": "quasar-play",
-  "version": "0.17.9",
+  "version": "0.17.10",
   "description": "Quasar Play for Quasar Framework",
   "productName": "Quasar Play",
   "cordovaId": "com.quasarframework.quasarplay",
@@ -27,7 +27,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
-    "quasar-cli": "0.17.11",
+    "quasar-cli": "0.17.13",
     "strip-ansi": "=3.0.1"
   },
   "engines": {
