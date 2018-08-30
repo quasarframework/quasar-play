@@ -37,7 +37,7 @@
       <showcase-tabs />
     </q-layout-footer>
 
-    <q-layout-drawer v-model="drawerState" ref="x">
+    <q-layout-drawer v-model="drawerState" show-if-above>
       <q-scroll-area
         style="width: 100%; height: 100%;"
         :class="$q.theme === 'mat' ? 'bg-grey-3' : null"
@@ -128,11 +128,6 @@ export default {
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
       done()
-    }
-  },
-  mounted () {
-    if (this.$q.platform.is.desktop && !this.drawerState) {
-      this.drawerState = true
     }
   }
 }
