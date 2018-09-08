@@ -146,7 +146,7 @@
           color="amber" text-color="black"
           icon="keyboard_arrow_left"
           round dense
-          class="q-mr-small"
+          class="q-mr-sm"
         />
         <q-btn
           @click="carousel.next"
