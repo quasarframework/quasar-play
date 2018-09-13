@@ -42,6 +42,20 @@
       <p class="caption">Date & Time</p>
       <q-datetime-picker color="secondary" v-model="model" type="datetime" />
 
+      <template v-if="$q.theme === 'mat'">
+        <p class="caption">Minimal Datetime Interface (No header)</p>
+        <q-datetime-picker minimal color="purple" v-model="dateMinimal" type="datetime" />
+
+        <p class="caption">Minimal Date Interface (No header)</p>
+        <q-datetime-picker minimal color="orange" v-model="dateMinimal" type="date" />
+
+        <p class="caption">Minimal Date Interface - Default View Year (No header)</p>
+        <q-datetime-picker minimal inverted color="light-blue" v-model="dateMinimal" type="date" default-view="year" />
+
+        <p class="caption">Minimal Time Interface (No header)</p>
+        <q-datetime-picker minimal color="primary" v-model="dateMinimal" type="time" />
+      </template>
+
       <p class="caption">On a dark background</p>
       <q-datetime-picker dark color="secondary" v-model="model" type="datetime" />
 
@@ -74,6 +88,7 @@ export default {
   data () {
     return {
       model: '2016-10-24T10:40:14.674Z',
+      dateMinimal: null,
       minMaxModel: today,
       min: subtractFromDate(today, {days: 5}),
       max: addToDate(today, {days: 4, month: 1, minutes: 10})
