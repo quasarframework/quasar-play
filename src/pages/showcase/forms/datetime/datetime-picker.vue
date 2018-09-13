@@ -42,6 +42,20 @@
       <p class="caption">Date & Time</p>
       <q-datetime-picker color="secondary" v-model="model" type="datetime" />
 
+      <template v-if="$q.theme === 'mat'">
+        <p class="caption">Minimal Datetime Interface (No header)</p>
+        <q-datetime-picker minimal color="purple" v-model="date3" type="datetime" />
+
+        <p class="caption">Minimal Date Interface (No header)</p>
+        <q-datetime-picker minimal color="orange" v-model="date3" type="date" />
+
+        <p class="caption">Minimal Date Interface - Default View Year (No header)</p>
+        <q-datetime-picker minimal inverted color="light-blue" v-model="date3" type="date" default-view="year" />
+
+        <p class="caption">Minimal Time Interface (No header)</p>
+        <q-datetime-picker minimal color="primary" v-model="date3" type="time" />
+      </template>
+
       <p class="caption">On a dark background</p>
       <q-datetime-picker dark color="secondary" v-model="model" type="datetime" />
 

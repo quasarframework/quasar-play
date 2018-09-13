@@ -27,6 +27,13 @@
       <template v-if="$q.theme === 'mat'">
         <p class="caption">Minimal Datetime Interface (No header)</p>
         <q-datetime minimal color="purple" v-model="date3" type="datetime" float-label="Date & Time" />
+
+        <p class="caption">Minimal Date Interface (No header)</p>
+        <q-datetime minimal color="orange" v-model="date3" type="date" float-label="Date" />
+        <q-datetime minimal inverted color="light-blue" v-model="date3" type="date" default-view="year" float-label="Date - Default View Year" />
+
+        <p class="caption">Minimal Time Interface (No header)</p>
+        <q-datetime minimal color="primary" v-model="date3" type="time" float-label="Time" />
       </template>
 
       <p class="caption">
