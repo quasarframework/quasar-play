@@ -100,7 +100,7 @@ export default {
         title: 'Positioned',
         message: `This dialog appears from ${position}.`,
         position
-      })
+      }).catch(() => {})
     },
     onOk () {
       console.log('ok')
@@ -120,7 +120,7 @@ export default {
         this.$q.dialog({
           title: 'Please specify your name!',
           message: `Can't buy tickets without knowing your name.`
-        })
+        }).catch(() => {})
       }
       else {
         await okFn()
@@ -155,7 +155,7 @@ export default {
             this.$q.dialog({
               title: 'Alert',
               message: 'Modern HTML5 front-end framework on steroids.'
-            })
+            }).catch(() => {})
           }
         },
         {
@@ -215,7 +215,7 @@ export default {
               color: 'secondary'
             }).then(data => {
               this.$q.notify(`You selected: ${data}`)
-            })
+            }).catch(() => {})
           }
         },
         {
@@ -239,7 +239,7 @@ export default {
               color: 'secondary'
             }).then(data => {
               this.$q.notify(`You selected: ${JSON.stringify(data)}`)
-            })
+            }).catch(() => {})
           }
         }
       ],
