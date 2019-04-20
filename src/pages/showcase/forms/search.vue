@@ -6,7 +6,7 @@
 
       <q-search v-model="model" no-icon />
       <q-search v-model="model" />
-      <q-search icon="place" color="amber" v-model="model" stack-label="Seach for a place" />
+      <q-search icon="place" color="amber" v-model="model" stack-label="Search for a place" />
       <q-search icon="local_airport" color="secondary" v-model="model" float-label="Search for an airport" suffix="@ nearby" />
 
       <q-search icon="local_dining" inverted v-model="model" clearable placeholder="Search for a nearby restaurant" />
